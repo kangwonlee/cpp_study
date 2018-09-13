@@ -1,9 +1,22 @@
 #include <iostream>
 #include <cstdio>
 
-int main(int argn, char * argv[]){
-    printf("Hello World!\n");
-    std::cout << "Hello World!" << '\n';
+using namespace std;
 
-    return 0;
+int main(int argn, char * argv[]){
+	int a = int(argv[0][0]);
+	int b = int(argv[0][1]);
+
+	printf("argv[0] = %s\n", argv[0]);	
+	printf("a, b = %d, %d\n", a, b);
+
+	b++;
+	puts("b++\n");
+	printf("a, b = %d, %d\n", a, b);
+
+	b+=a;
+	puts("b+=a\n");
+	printf("a, b = %d, %d\n", a, b);
+
+	return 0;
 }
