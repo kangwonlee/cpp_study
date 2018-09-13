@@ -4,6 +4,7 @@
 using namespace std;
 
 int main(int argn, char * argv[]){
+
 	int a = int(argv[0][0]);
 	int b = int(argv[0][1]);
 
@@ -18,5 +19,10 @@ int main(int argn, char * argv[]){
 	puts("b+=a\n");
 	printf("a, b = %d, %d\n", a, b);
 
+	b = b + a;
+	puts("b = b + a\n");
+	printf("a, b = %d, %d\n", a, b);
+
 	return 0;
+
 }
