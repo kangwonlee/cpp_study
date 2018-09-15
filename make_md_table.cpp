@@ -12,13 +12,31 @@ int main(int argn, char *argv[]){
 	ofs << " " << n << " bit bit pattern | `unsigned int" << n << "_t` | `char`\n";
 	ofs << ":-----------------:|:--------:|:------:\n";
 
-	std::bitset<n> x();
-
 	for (int i=0; i<(8+1); ++i){
-		std::bitset<n> x(i);
-		ofs << x << " | " << i << " | " << char(i) << '\n';
+		ofs << std::bitset<n>(i) << " | " << i << " | " << char(i) << '\n';
 	}
 	ofs << elipsis_line;
+
+        for (int i=14; i<(50+1); ++i){
+                ofs << std::bitset<n>(i) << " | " << i << " | " << char(i) << '\n';
+        }
+        ofs << elipsis_line;
+
+        for (int i=57; i<(65+1); ++i){
+                ofs << std::bitset<n>(i) << " | " << i << " | " << char(i) << '\n';
+        }
+        ofs << elipsis_line;
+
+	for (int i=90; i<(97+1); ++i){
+                ofs << std::bitset<n>(i) << " | " << i << " | " << char(i) << '\n';
+        }
+        ofs << elipsis_line;
+
+	for (int i=122; i<(127+1); ++i){
+                ofs << std::bitset<n>(i) << " | " << i << " | " << char(i) << '\n';
+        }
+        ofs << elipsis_line;
+
 
 	ofs.close();
 
