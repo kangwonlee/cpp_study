@@ -1,17 +1,27 @@
 // http://www.cplusplus.com/reference/fstream/fstream/
-// https://stackoverflow.com/questions/35045781/no-matching-function-for-call-to-stdbasic-ofstreamchar-stdchar-traitscha
-#include <cstdio>
+#include <fstream>
+// https://stackoverflow.com/questions/7349689/how-to-print-using-cout-the-way-a-number-is-stored-in-memory
+#include <bitset>
 
 int main(int argn, char *argv[]){
-	FILE *fp = fopen("ascii_table.md", "w");
 
-	const char elipsis_line[] = " ... | ... | ... \n";
+	std::ofstream ofs("ascii_table.md", std::ofstream::out);	
+	char elipsis_line[] = " ... | ... | ... \n";
 	const int n = 8;
 
+	ofs << " " << n << " bit bit pattern | `unsigned int" << n << "_t` | `char`\n";
+	ofs << ":-----------------:|:--------:|:------:\n";
 
-	fprintf(fp, "%d bit bit pattern | `unsigned int%d_t` | `char \n", n, n);
-	fputs(":-----------------:|:--------:|:------:\n", fp);
-	fputs(elipsis_line, fp);
+	std::bitset<n> x();
 
-	fclose(fp);
+	for (int i=0; i<(8+1); ++i){
+		std::bitset<n> x(i);
+		ofs << x << " | " << i << " | " << char(i) << '\n';
+	}
+	ofs << elipsis_line;
+
+	ofs.close();
+
+	return 0;
 }
+
