@@ -6,10 +6,10 @@ CC = g++
 
 all : $(SRC) $(ASM)
 
-hello : $(CPP)
+$(SRC) : $(CPP)
 	$(CC) -Wall -g $(CPP) -o $(SRC)
 
-hello.s : $(CPP)
+$(ASM) : $(CPP)
 	$(CC) -g $(CPP) -Wa,-adhln=$(ASM) 
 
 clean : 
