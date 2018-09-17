@@ -15,14 +15,16 @@ struct cmp_str
 };
 
 int main(int argn, char * argv[]){
-	map<char *, char *, cmp_str>s;
+	map<const char *, const char *, cmp_str>s;
 
 	s["name"] = "python";
+	s["year"] = "AD1989";
+	s["cmd"] = "python";
 
 	// https://stackoverflow.com/questions/14070940/
 	
 	for (auto& t: s){
-		cout << t.first << '\n';
+		cout << t.first << ':' << t.second << '\n';
 	}
 	return 0;
 }
