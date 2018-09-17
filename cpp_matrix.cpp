@@ -88,6 +88,18 @@ int main(int argn, char *argv[]){
 	cout << "zeros[1] = " << zeros[1] << '\n';
 	cout << "zeros[2] = " << zeros[2] << '\n';
 
+	double id_0[] = {1.0, 0.0};
+	double id_1[] = {0.0, 1.0};
+	double * id_01 [] = {id_0, id_1};
+
+	Matrix id(2, 2, id_01);
+	
+	for (int i=0; i < 2; ++i){
+		for (int j=0; j < 2; ++j){
+			cout << id[i][j] << ' ';
+		}
+		cout << '\n';
+	}
 
 	return 0;
 }
