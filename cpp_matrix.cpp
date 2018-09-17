@@ -1,4 +1,5 @@
 #include <iostream>
+#include <exception>
 
 using namespace std;
 
@@ -33,6 +34,15 @@ class RowVector {
 		return columns[i];
 	}	
 };
+
+
+// http://www.cplusplus.com/doc/tutorial/exceptions/
+class exception_mat_mul_size_mismatch: public exception{
+  virtual const char* what() const throw()
+  {
+    return "Matrix multiplication size mismatch";
+  }
+} sz_mismatch;
 
 
 class Matrix {
