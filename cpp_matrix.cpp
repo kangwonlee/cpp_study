@@ -22,6 +22,11 @@ class RowVector {
 			    columns[i] = values[i];
 		    }
 	    }
+			else{
+				for (int i=0; i<n; ++i){
+					columns[i] = 0.0;
+        }
+			}
         }
 
 	double operator[](const int i){
