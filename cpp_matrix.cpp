@@ -30,6 +30,30 @@ class RowVector {
 };
 
 
+class Matrix {
+	protected:
+		int n_col;
+		int n_row;
+		RowVector * rows;
+	public:
+		//constructor
+		Matrix(const int no_rows, const int no_columns, double ** value){
+
+			n_row = no_rows;
+			n_col = no_columns;
+
+			rows = new RowVector[no_rows];
+			for (int i=0; i<no_rows; ++i){
+				rows[i] = RowVector(n_col, value[i]);
+			}
+		}
+
+	RowVector operator[](const int i){
+		return rows[i];
+	}	
+};
+
+
 int main(int argn, char *argv[]){
 	double s[] = {1.0, 2.0};
 	RowVector row (2, s);
