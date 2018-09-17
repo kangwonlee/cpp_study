@@ -8,7 +8,12 @@ class RowVector {
         int n_col;
         double * columns;
     public:
-        // constructor
+        // Default constructor
+		RowVector(){
+			n_col = 0;
+			columns = NULL;
+		}
+
         RowVector(const int n, double *values=NULL){
             n_col = n;
             columns = new double[n];
