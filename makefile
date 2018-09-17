@@ -1,4 +1,4 @@
-SRC = hello
+SRC = cpp_matrix
 CPP = $(SRC).cpp
 ASM = $(SRC).s
 
