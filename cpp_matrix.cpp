@@ -30,7 +30,7 @@ class RowVector {
 			}
         }
 
-	double operator[](const int i){
+	double & operator[](const int i){
 		return columns[i];
 	}	
 };
