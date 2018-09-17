@@ -51,7 +51,12 @@ class Matrix {
 		int n_row;
 		RowVector * rows;
 	public:
-		//constructor
+		//Default constructor
+		Matrix(){
+			n_row = n_col = 0;
+			rows = NULL;
+		}
+
 		Matrix(const int no_rows, const int no_columns, double ** value=NULL){
 
 			n_row = no_rows;
