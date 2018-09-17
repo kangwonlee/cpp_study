@@ -42,14 +42,21 @@ class Matrix {
 		RowVector * rows;
 	public:
 		//constructor
-		Matrix(const int no_rows, const int no_columns, double ** value){
+		Matrix(const int no_rows, const int no_columns, double ** value=NULL){
 
 			n_row = no_rows;
 			n_col = no_columns;
 
 			rows = new RowVector[no_rows];
+			if (value){
 			for (int i=0; i<no_rows; ++i){
 				rows[i] = RowVector(n_col, value[i]);
+			}
+		}
+			else{
+				for (int i=0; i<no_rows; ++i){
+					rows[i] = RowVector(n_col);
+				}
 			}
 		}
 
