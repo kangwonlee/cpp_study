@@ -75,9 +75,30 @@ class Matrix {
 			}
 		}
 
-	RowVector operator[](const int i){
-		return rows[i];
-	}	
+		RowVector operator[](const int i){
+			return rows[i];
+		}
+
+		Matrix operator * (Matrix B){
+
+			if (n_col != B.n_row){
+				throw sz_mismatch;
+			}
+
+			Matrix result(n_row, B.n_col);
+
+			for (int i=0; i<n_row; ++i){
+				for (int j=0; j < B.n_col; ++j){
+					result[i][j] = 0.0;
+					for (int k=0; j< n_col; ++k){
+						result[i][j] += rows[i][k] * B[k][j];
+					}
+				}
+			}
+
+			return result;
+		}
+
 };
 
 
