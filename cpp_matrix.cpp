@@ -93,10 +93,23 @@ int main(int argn, char *argv[]){
 	double * id_01 [] = {id_0, id_1};
 
 	Matrix id(2, 2, id_01);
-	
+
 	for (int i=0; i < 2; ++i){
 		for (int j=0; j < 2; ++j){
 			cout << id[i][j] << ' ';
+		}
+		cout << '\n';
+	}
+
+	double m_0[] = {1.0, 2.0};
+	double m_1[] = {3.0, 4.0};
+	double * m_1234 [] = {m_0, m_1};
+
+	Matrix m1234(2, 2, m_1234);
+
+	for (int i=0; i < 2; ++i){
+		for (int j=0; j < 2; ++j){
+			cout << m1234[i][j] << ' ';
 		}
 		cout << '\n';
 	}
