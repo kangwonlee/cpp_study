@@ -69,9 +69,15 @@ class Matrix {
 int main(int argn, char *argv[]){
 	double s[] = {1.0, 2.0};
 	RowVector row (2, s);
+	RowVector zeros(3);
 
 	cout << "row[0] = " << row[0] << '\n';
 	cout << "row[1] = " << row[1] << '\n';
+
+	cout << "zeros[0] = " << zeros[0] << '\n';
+	cout << "zeros[1] = " << zeros[1] << '\n';
+	cout << "zeros[2] = " << zeros[2] << '\n';
+
 
 	return 0;
 }
