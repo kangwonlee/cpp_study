@@ -30,6 +30,16 @@ int main(const int argn, const char * argv[]){
         exit(EXIT_FAILURE);
     }
 
+    cout << "i = " << i << '\t'
+	 << "sizeof(i) = " << sizeof(i) << '\n';
+
+    cout << "m = " << m << '\t'
+         << "sizeof(m) = " << sizeof m << '\n';
+
+    cout << "c = " << c << '\t'
+         << "sizeof(c) = " << sizeof c << '\n';
+
+
     for (int i=0; n > i; ++i){
         cout << "m[" << setw(2) << dec << i << "] = "
              << hex << m[i] << '\t';
