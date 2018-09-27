@@ -21,13 +21,16 @@ int main(int argn, char *argv[]){
         // Address of the array variable;
         cout << "&(a[" << i << "])  = " << setw(16) << &(a[i]) << '\n';
 
-        // Integer value at the location p
+        // Integer value at the location p + i
         cout << "*(p + " << i << ") = " << setw(16) << hex << *(p+i) << '\n';
-        // Value of the pointer variable p
+        // Address where p + i is pointing to
         cout << "p + " << i << "    = " << setw(16) <<  (p+i) << '\n';
-        // Address of the pointer variable p
-        cout << "&p   = " << setw(16) << &p << '\n';
 
+        // Integer value at the location p_inc
+        cout << "*(p_inc) = " << setw(16) << hex << *(p_inc) << '\n';
+        // Value of the pointer variable p
+        cout << "p_inc    = " << setw(16) <<  (p_inc) << '\n';
+	p_inc ++;
     }
 
     return 0;
