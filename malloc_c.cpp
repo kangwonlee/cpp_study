@@ -22,7 +22,9 @@ int main(const int argn, const char * argv[]){
              << ")\n";
         exit(EXIT_FAILURE);
     }
-    
+
+    cout << "sizeof m = " << sizeof m << "\n";
+
     for (int i=0; n > i; ++i){
         cout << "m[" << setw(2) << dec << i << "] = " 
 	     << hex << m[i] << '\t';
