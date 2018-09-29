@@ -12,178 +12,222 @@
   12      3D202573 
   12      0A00
   13              	.LC1:
-  14 000f 612C2062 		.string	"a, b = %d, %d\n"
-  14      203D2025 
-  14      642C2025 
-  14      640A00
+  14 000f 61726776 		.string	"argv[1] = %s\n"
+  14      5B315D20 
+  14      3D202573 
+  14      0A00
   15              	.LC2:
-  16 001e 622B2B0A 		.string	"b++\n"
-  16      00
+  16 001d 61726776 		.string	"argv[2] = %s\n\n"
+  16      5B325D20 
+  16      3D202573 
+  16      0A0A00
   17              	.LC3:
-  18 0023 622B3D61 		.string	"b+=a\n"
-  18      0A00
+  18 002c 612C2062 		.string	"a, b, c = %d, %d, %d\n"
+  18      2C206320 
+  18      3D202564 
+  18      2C202564 
+  18      2C202564 
   19              	.LC4:
-  20 0029 62203D20 		.string	"b = b + a\n"
-  20      62202B20 
-  20      610A00
-  21              		.text
-  22              		.globl	main
-  24              	main:
-  25              	.LFB1493:
-  26              		.file 1 "hello.cpp"
+  20 0042 0A622B2B 		.string	"\nb++"
+  20      00
+  21              	.LC5:
+  22 0047 0A622B3D 		.string	"\nb+=a"
+  22      6100
+  23              	.LC6:
+  24 004d 0A63203D 		.string	"\nc = a + b"
+  24      2061202B 
+  24      206200
+  25              		.text
+  26              		.globl	main
+  28              	main:
+  29              	.LFB1493:
+  30              		.file 1 "hello.cpp"
    1:hello.cpp     **** #include <iostream>
    2:hello.cpp     **** #include <cstdio>
    3:hello.cpp     **** 
-   4:hello.cpp     **** using namespace std;
+   4:hello.cpp     **** int main(int argn, char * argv[]){
+  31              		.loc 1 4 0
+  32              		.cfi_startproc
+  33 0000 55       		pushq	%rbp
+  34              		.cfi_def_cfa_offset 16
+  35              		.cfi_offset 6, -16
+  36 0001 4889E5   		movq	%rsp, %rbp
+  37              		.cfi_def_cfa_register 6
+  38 0004 4883EC20 		subq	$32, %rsp
+  39 0008 897DEC   		movl	%edi, -20(%rbp)
+  40 000b 488975E0 		movq	%rsi, -32(%rbp)
    5:hello.cpp     **** 
-   6:hello.cpp     **** int main(int argn, char * argv[]){
-  27              		.loc 1 6 0
-  28              		.cfi_startproc
-  29 0000 55       		pushq	%rbp
-  30              		.cfi_def_cfa_offset 16
-  31              		.cfi_offset 6, -16
-  32 0001 4889E5   		movq	%rsp, %rbp
-  33              		.cfi_def_cfa_register 6
-  34 0004 4883EC20 		subq	$32, %rsp
-  35 0008 897DEC   		movl	%edi, -20(%rbp)
-  36 000b 488975E0 		movq	%rsi, -32(%rbp)
-   7:hello.cpp     **** 
-   8:hello.cpp     **** 	int a = int(argv[0][0]);
-  37              		.loc 1 8 0
-  38 000f 488B45E0 		movq	-32(%rbp), %rax
-  39 0013 488B00   		movq	(%rax), %rax
-  40 0016 0FB600   		movzbl	(%rax), %eax
-  41 0019 0FBEC0   		movsbl	%al, %eax
-  42 001c 8945F8   		movl	%eax, -8(%rbp)
-   9:hello.cpp     **** 	int b = int(argv[0][1]);
-  43              		.loc 1 9 0
-  44 001f 488B45E0 		movq	-32(%rbp), %rax
-  45 0023 488B00   		movq	(%rax), %rax
-  46 0026 4883C001 		addq	$1, %rax
-  47 002a 0FB600   		movzbl	(%rax), %eax
-  48 002d 0FBEC0   		movsbl	%al, %eax
-  49 0030 8945FC   		movl	%eax, -4(%rbp)
-  10:hello.cpp     **** 
-  11:hello.cpp     **** 	printf("argv[0] = %s\n", argv[0]);	
-  50              		.loc 1 11 0
-  51 0033 488B45E0 		movq	-32(%rbp), %rax
-  52 0037 488B00   		movq	(%rax), %rax
-  53 003a 4889C6   		movq	%rax, %rsi
-  54 003d 488D3D00 		leaq	.LC0(%rip), %rdi
-  54      000000
-  55 0044 B8000000 		movl	$0, %eax
-  55      00
-  56 0049 E8000000 		call	printf@PLT
-  56      00
-  12:hello.cpp     **** 	printf("a, b = %d, %d\n", a, b);
-  57              		.loc 1 12 0
-  58 004e 8B55FC   		movl	-4(%rbp), %edx
-  59 0051 8B45F8   		movl	-8(%rbp), %eax
-  60 0054 89C6     		movl	%eax, %esi
-  61 0056 488D3D00 		leaq	.LC1(%rip), %rdi
-  61      000000
-  62 005d B8000000 		movl	$0, %eax
+   6:hello.cpp     **** 	int a = int(argv[0][0]);
+  41              		.loc 1 6 0
+  42 000f 488B45E0 		movq	-32(%rbp), %rax
+  43 0013 488B00   		movq	(%rax), %rax
+  44 0016 0FB600   		movzbl	(%rax), %eax
+  45 0019 0FBEC0   		movsbl	%al, %eax
+  46 001c 8945F4   		movl	%eax, -12(%rbp)
+   7:hello.cpp     **** 	int b = int(argv[0][1]);
+  47              		.loc 1 7 0
+  48 001f 488B45E0 		movq	-32(%rbp), %rax
+  49 0023 488B00   		movq	(%rax), %rax
+  50 0026 4883C001 		addq	$1, %rax
+  51 002a 0FB600   		movzbl	(%rax), %eax
+  52 002d 0FBEC0   		movsbl	%al, %eax
+  53 0030 8945F8   		movl	%eax, -8(%rbp)
+   8:hello.cpp     **** 	int c = 0;
+  54              		.loc 1 8 0
+  55 0033 C745FC00 		movl	$0, -4(%rbp)
+  55      000000
+   9:hello.cpp     **** 
+  10:hello.cpp     **** 	printf("argv[0] = %s\n", argv[0]);
+  56              		.loc 1 10 0
+  57 003a 488B45E0 		movq	-32(%rbp), %rax
+  58 003e 488B00   		movq	(%rax), %rax
+  59 0041 4889C6   		movq	%rax, %rsi
+  60 0044 488D3D00 		leaq	.LC0(%rip), %rdi
+  60      000000
+  61 004b B8000000 		movl	$0, %eax
+  61      00
+  62 0050 E8000000 		call	printf@PLT
   62      00
-  63 0062 E8000000 		call	printf@PLT
-  63      00
+  11:hello.cpp     **** 	printf("argv[1] = %s\n", argv[1]);
+  63              		.loc 1 11 0
+  64 0055 488B45E0 		movq	-32(%rbp), %rax
+  65 0059 4883C008 		addq	$8, %rax
+  66 005d 488B00   		movq	(%rax), %rax
+  67 0060 4889C6   		movq	%rax, %rsi
+  68 0063 488D3D00 		leaq	.LC1(%rip), %rdi
+  68      000000
+  69 006a B8000000 		movl	$0, %eax
+  69      00
+  70 006f E8000000 		call	printf@PLT
+  70      00
+  12:hello.cpp     **** 	printf("argv[2] = %s\n\n", argv[2]);
+  71              		.loc 1 12 0
+  72 0074 488B45E0 		movq	-32(%rbp), %rax
+  73 0078 4883C010 		addq	$16, %rax
+  74 007c 488B00   		movq	(%rax), %rax
+  75 007f 4889C6   		movq	%rax, %rsi
+  76 0082 488D3D00 		leaq	.LC2(%rip), %rdi
+  76      000000
+  77 0089 B8000000 		movl	$0, %eax
+  77      00
+  78 008e E8000000 		call	printf@PLT
+  78      00
   13:hello.cpp     **** 
-  14:hello.cpp     **** 	b++;
-  64              		.loc 1 14 0
-  65 0067 8345FC01 		addl	$1, -4(%rbp)
-  15:hello.cpp     **** 	puts("b++\n");
-  66              		.loc 1 15 0
-  67 006b 488D3D00 		leaq	.LC2(%rip), %rdi
-  67      000000
-  68 0072 E8000000 		call	puts@PLT
-  68      00
-  16:hello.cpp     **** 	printf("a, b = %d, %d\n", a, b);
-  69              		.loc 1 16 0
-  70 0077 8B55FC   		movl	-4(%rbp), %edx
-  71 007a 8B45F8   		movl	-8(%rbp), %eax
-  72 007d 89C6     		movl	%eax, %esi
-  73 007f 488D3D00 		leaq	.LC1(%rip), %rdi
-  73      000000
-  74 0086 B8000000 		movl	$0, %eax
-  74      00
-  75 008b E8000000 		call	printf@PLT
-  75      00
-  17:hello.cpp     **** 
-  18:hello.cpp     **** 	b+=a;
-  76              		.loc 1 18 0
-  77 0090 8B45F8   		movl	-8(%rbp), %eax
-  78 0093 0145FC   		addl	%eax, -4(%rbp)
-  19:hello.cpp     **** 	puts("b+=a\n");
-  79              		.loc 1 19 0
-  80 0096 488D3D00 		leaq	.LC3(%rip), %rdi
-  80      000000
-  81 009d E8000000 		call	puts@PLT
-  81      00
-  20:hello.cpp     **** 	printf("a, b = %d, %d\n", a, b);
-  82              		.loc 1 20 0
-  83 00a2 8B55FC   		movl	-4(%rbp), %edx
-  84 00a5 8B45F8   		movl	-8(%rbp), %eax
-  85 00a8 89C6     		movl	%eax, %esi
-  86 00aa 488D3D00 		leaq	.LC1(%rip), %rdi
-  86      000000
-  87 00b1 B8000000 		movl	$0, %eax
-  87      00
-  88 00b6 E8000000 		call	printf@PLT
-  88      00
-  21:hello.cpp     **** 
-  22:hello.cpp     **** 	b = b + a;
-  89              		.loc 1 22 0
-  90 00bb 8B45F8   		movl	-8(%rbp), %eax
-  91 00be 0145FC   		addl	%eax, -4(%rbp)
-  23:hello.cpp     **** 	puts("b = b + a\n");
-  92              		.loc 1 23 0
-  93 00c1 488D3D00 		leaq	.LC4(%rip), %rdi
-  93      000000
-  94 00c8 E8000000 		call	puts@PLT
-  94      00
-  24:hello.cpp     **** 	printf("a, b = %d, %d\n", a, b);
-  95              		.loc 1 24 0
-  96 00cd 8B55FC   		movl	-4(%rbp), %edx
-  97 00d0 8B45F8   		movl	-8(%rbp), %eax
-  98 00d3 89C6     		movl	%eax, %esi
-  99 00d5 488D3D00 		leaq	.LC1(%rip), %rdi
-  99      000000
- 100 00dc B8000000 		movl	$0, %eax
- 100      00
- 101 00e1 E8000000 		call	printf@PLT
- 101      00
-  25:hello.cpp     **** 
-  26:hello.cpp     **** 	return 0;
- 102              		.loc 1 26 0
- 103 00e6 B8000000 		movl	$0, %eax
- 103      00
+  14:hello.cpp     **** 	printf("a, b, c = %d, %d, %d\n", a, b, c);
+  79              		.loc 1 14 0
+  80 0093 8B4DFC   		movl	-4(%rbp), %ecx
+  81 0096 8B55F8   		movl	-8(%rbp), %edx
+  82 0099 8B45F4   		movl	-12(%rbp), %eax
+  83 009c 89C6     		movl	%eax, %esi
+  84 009e 488D3D00 		leaq	.LC3(%rip), %rdi
+  84      000000
+  85 00a5 B8000000 		movl	$0, %eax
+  85      00
+  86 00aa E8000000 		call	printf@PLT
+  86      00
+  15:hello.cpp     **** 
+  16:hello.cpp     **** 	b++;
+  87              		.loc 1 16 0
+  88 00af 8345F801 		addl	$1, -8(%rbp)
+  17:hello.cpp     **** 	puts("\nb++");
+  89              		.loc 1 17 0
+  90 00b3 488D3D00 		leaq	.LC4(%rip), %rdi
+  90      000000
+  91 00ba E8000000 		call	puts@PLT
+  91      00
+  18:hello.cpp     **** 	printf("a, b, c = %d, %d, %d\n", a, b, c);
+  92              		.loc 1 18 0
+  93 00bf 8B4DFC   		movl	-4(%rbp), %ecx
+  94 00c2 8B55F8   		movl	-8(%rbp), %edx
+  95 00c5 8B45F4   		movl	-12(%rbp), %eax
+  96 00c8 89C6     		movl	%eax, %esi
+  97 00ca 488D3D00 		leaq	.LC3(%rip), %rdi
+  97      000000
+  98 00d1 B8000000 		movl	$0, %eax
+  98      00
+  99 00d6 E8000000 		call	printf@PLT
+  99      00
+  19:hello.cpp     **** 
+  20:hello.cpp     **** 	b+=a;
+ 100              		.loc 1 20 0
+ 101 00db 8B45F4   		movl	-12(%rbp), %eax
+ 102 00de 0145F8   		addl	%eax, -8(%rbp)
+  21:hello.cpp     **** 	puts("\nb+=a");
+ 103              		.loc 1 21 0
+ 104 00e1 488D3D00 		leaq	.LC5(%rip), %rdi
+ 104      000000
+ 105 00e8 E8000000 		call	puts@PLT
+ 105      00
+  22:hello.cpp     **** 	printf("a, b, c = %d, %d, %d\n", a, b, c);
+ 106              		.loc 1 22 0
+ 107 00ed 8B4DFC   		movl	-4(%rbp), %ecx
+ 108 00f0 8B55F8   		movl	-8(%rbp), %edx
+ 109 00f3 8B45F4   		movl	-12(%rbp), %eax
+ 110 00f6 89C6     		movl	%eax, %esi
+ 111 00f8 488D3D00 		leaq	.LC3(%rip), %rdi
+ 111      000000
+ 112 00ff B8000000 		movl	$0, %eax
+ 112      00
+ 113 0104 E8000000 		call	printf@PLT
+ 113      00
+  23:hello.cpp     **** 
+  24:hello.cpp     **** 	c = a + b;
+ 114              		.loc 1 24 0
+ 115 0109 8B55F4   		movl	-12(%rbp), %edx
+ 116 010c 8B45F8   		movl	-8(%rbp), %eax
+ 117 010f 01D0     		addl	%edx, %eax
+ 118 0111 8945FC   		movl	%eax, -4(%rbp)
+  25:hello.cpp     **** 	puts("\nc = a + b");
+ 119              		.loc 1 25 0
+ 120 0114 488D3D00 		leaq	.LC6(%rip), %rdi
+ 120      000000
+ 121 011b E8000000 		call	puts@PLT
+ 121      00
+  26:hello.cpp     **** 	printf("a, b, c = %d, %d, %d\n", a, b, c);
+ 122              		.loc 1 26 0
+ 123 0120 8B4DFC   		movl	-4(%rbp), %ecx
+ 124 0123 8B55F8   		movl	-8(%rbp), %edx
+ 125 0126 8B45F4   		movl	-12(%rbp), %eax
+ 126 0129 89C6     		movl	%eax, %esi
+ 127 012b 488D3D00 		leaq	.LC3(%rip), %rdi
+ 127      000000
+ 128 0132 B8000000 		movl	$0, %eax
+ 128      00
+ 129 0137 E8000000 		call	printf@PLT
+ 129      00
   27:hello.cpp     **** 
-  28:hello.cpp     **** }
- 104              		.loc 1 28 0
- 105 00eb C9       		leave
- 106              		.cfi_def_cfa 7, 8
- 107 00ec C3       		ret
- 108              		.cfi_endproc
- 109              	.LFE1493:
- 112              	_Z41__static_initialization_and_destruction_0ii:
- 113              	.LFB1974:
- 114              		.loc 1 28 0
- 115              		.cfi_startproc
- 116 00ed 55       		pushq	%rbp
- 117              		.cfi_def_cfa_offset 16
- 118              		.cfi_offset 6, -16
- 119 00ee 4889E5   		movq	%rsp, %rbp
- 120              		.cfi_def_cfa_register 6
- 121 00f1 4883EC10 		subq	$16, %rsp
- 122 00f5 897DFC   		movl	%edi, -4(%rbp)
- 123 00f8 8975F8   		movl	%esi, -8(%rbp)
- 124              		.loc 1 28 0
- 125 00fb 837DFC01 		cmpl	$1, -4(%rbp)
- 126 00ff 7532     		jne	.L5
- 127              		.loc 1 28 0 is_stmt 0 discriminator 1
- 128 0101 817DF8FF 		cmpl	$65535, -8(%rbp)
- 128      FF0000
- 129 0108 7529     		jne	.L5
- 130              		.file 2 "/usr/include/c++/7/iostream"
+  28:hello.cpp     **** 	return 0;
+ 130              		.loc 1 28 0
+ 131 013c B8000000 		movl	$0, %eax
+ 131      00
+  29:hello.cpp     **** 
+  30:hello.cpp     **** }
+ 132              		.loc 1 30 0
+ 133 0141 C9       		leave
+ 134              		.cfi_def_cfa 7, 8
+ 135 0142 C3       		ret
+ 136              		.cfi_endproc
+ 137              	.LFE1493:
+ 140              	_Z41__static_initialization_and_destruction_0ii:
+ 141              	.LFB1974:
+ 142              		.loc 1 30 0
+ 143              		.cfi_startproc
+ 144 0143 55       		pushq	%rbp
+ 145              		.cfi_def_cfa_offset 16
+ 146              		.cfi_offset 6, -16
+ 147 0144 4889E5   		movq	%rsp, %rbp
+ 148              		.cfi_def_cfa_register 6
+ 149 0147 4883EC10 		subq	$16, %rsp
+ 150 014b 897DFC   		movl	%edi, -4(%rbp)
+ 151 014e 8975F8   		movl	%esi, -8(%rbp)
+ 152              		.loc 1 30 0
+ 153 0151 837DFC01 		cmpl	$1, -4(%rbp)
+ 154 0155 7532     		jne	.L5
+ 155              		.loc 1 30 0 is_stmt 0 discriminator 1
+ 156 0157 817DF8FF 		cmpl	$65535, -8(%rbp)
+ 156      FF0000
+ 157 015e 7529     		jne	.L5
+ 158              		.file 2 "/usr/include/c++/7/iostream"
    1:/usr/include/c++/7/iostream **** // Standard iostream objects -*- C++ -*-
    2:/usr/include/c++/7/iostream **** 
    3:/usr/include/c++/7/iostream **** // Copyright (C) 1997-2017 Free Software Foundation, Inc.
@@ -258,97 +302,97 @@
   72:/usr/include/c++/7/iostream **** 
   73:/usr/include/c++/7/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
   74:/usr/include/c++/7/iostream ****   static ios_base::Init __ioinit;
- 131              		.loc 2 74 0 is_stmt 1
- 132 010a 488D3D00 		leaq	_ZStL8__ioinit(%rip), %rdi
- 132      000000
- 133 0111 E8000000 		call	_ZNSt8ios_base4InitC1Ev@PLT
- 133      00
- 134 0116 488D1500 		leaq	__dso_handle(%rip), %rdx
- 134      000000
- 135 011d 488D3500 		leaq	_ZStL8__ioinit(%rip), %rsi
- 135      000000
- 136 0124 488B0500 		movq	_ZNSt8ios_base4InitD1Ev@GOTPCREL(%rip), %rax
- 136      000000
- 137 012b 4889C7   		movq	%rax, %rdi
- 138 012e E8000000 		call	__cxa_atexit@PLT
- 138      00
- 139              	.L5:
- 140              		.loc 1 28 0
- 141 0133 90       		nop
- 142 0134 C9       		leave
- 143              		.cfi_def_cfa 7, 8
- 144 0135 C3       		ret
- 145              		.cfi_endproc
- 146              	.LFE1974:
- 149              	_GLOBAL__sub_I_main:
- 150              	.LFB1975:
- 151              		.loc 1 28 0
- 152              		.cfi_startproc
- 153 0136 55       		pushq	%rbp
- 154              		.cfi_def_cfa_offset 16
- 155              		.cfi_offset 6, -16
- 156 0137 4889E5   		movq	%rsp, %rbp
- 157              		.cfi_def_cfa_register 6
- 158              		.loc 1 28 0
- 159 013a BEFFFF00 		movl	$65535, %esi
- 159      00
- 160 013f BF010000 		movl	$1, %edi
- 160      00
- 161 0144 E8A4FFFF 		call	_Z41__static_initialization_and_destruction_0ii
- 161      FF
- 162 0149 5D       		popq	%rbp
- 163              		.cfi_def_cfa 7, 8
- 164 014a C3       		ret
- 165              		.cfi_endproc
- 166              	.LFE1975:
- 168              		.section	.init_array,"aw"
- 169              		.align 8
- 170 0000 00000000 		.quad	_GLOBAL__sub_I_main
- 170      00000000 
- 171              		.text
- 172              	.Letext0:
- 173              		.file 3 "/usr/include/c++/7/cwchar"
- 174              		.file 4 "/usr/include/c++/7/new"
- 175              		.file 5 "/usr/include/c++/7/bits/exception_ptr.h"
- 176              		.file 6 "/usr/include/c++/7/type_traits"
- 177              		.file 7 "/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h"
- 178              		.file 8 "/usr/include/c++/7/bits/cpp_type_traits.h"
- 179              		.file 9 "/usr/include/c++/7/bits/stl_pair.h"
- 180              		.file 10 "/usr/include/c++/7/debug/debug.h"
- 181              		.file 11 "/usr/include/c++/7/bits/char_traits.h"
- 182              		.file 12 "/usr/include/c++/7/cstdint"
- 183              		.file 13 "/usr/include/c++/7/clocale"
- 184              		.file 14 "/usr/include/c++/7/cstdlib"
- 185              		.file 15 "/usr/include/c++/7/cstdio"
- 186              		.file 16 "/usr/include/c++/7/bits/basic_string.h"
- 187              		.file 17 "/usr/include/c++/7/system_error"
- 188              		.file 18 "/usr/include/c++/7/bits/ios_base.h"
- 189              		.file 19 "/usr/include/c++/7/cwctype"
- 190              		.file 20 "/usr/include/c++/7/iosfwd"
- 191              		.file 21 "/usr/include/c++/7/bits/predefined_ops.h"
- 192              		.file 22 "/usr/include/c++/7/ext/new_allocator.h"
- 193              		.file 23 "/usr/include/c++/7/ext/numeric_traits.h"
- 194              		.file 24 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h"
- 195              		.file 25 "<built-in>"
- 196              		.file 26 "/usr/include/x86_64-linux-gnu/bits/types/wint_t.h"
- 197              		.file 27 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h"
- 198              		.file 28 "/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h"
- 199              		.file 29 "/usr/include/x86_64-linux-gnu/bits/types/__FILE.h"
- 200              		.file 30 "/usr/include/x86_64-linux-gnu/bits/libio.h"
- 201              		.file 31 "/usr/include/x86_64-linux-gnu/bits/types/FILE.h"
- 202              		.file 32 "/usr/include/wchar.h"
- 203              		.file 33 "/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h"
- 204              		.file 34 "/usr/include/x86_64-linux-gnu/bits/types.h"
- 205              		.file 35 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h"
- 206              		.file 36 "/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h"
- 207              		.file 37 "/usr/include/stdint.h"
- 208              		.file 38 "/usr/include/locale.h"
- 209              		.file 39 "/usr/include/time.h"
- 210              		.file 40 "/usr/include/x86_64-linux-gnu/c++/7/bits/atomic_word.h"
- 211              		.file 41 "/usr/include/stdlib.h"
- 212              		.file 42 "/usr/include/x86_64-linux-gnu/bits/_G_config.h"
- 213              		.file 43 "/usr/include/stdio.h"
- 214              		.file 44 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h"
- 215              		.file 45 "/usr/include/errno.h"
- 216              		.file 46 "/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h"
- 217              		.file 47 "/usr/include/wctype.h"
+ 159              		.loc 2 74 0 is_stmt 1
+ 160 0160 488D3D00 		leaq	_ZStL8__ioinit(%rip), %rdi
+ 160      000000
+ 161 0167 E8000000 		call	_ZNSt8ios_base4InitC1Ev@PLT
+ 161      00
+ 162 016c 488D1500 		leaq	__dso_handle(%rip), %rdx
+ 162      000000
+ 163 0173 488D3500 		leaq	_ZStL8__ioinit(%rip), %rsi
+ 163      000000
+ 164 017a 488B0500 		movq	_ZNSt8ios_base4InitD1Ev@GOTPCREL(%rip), %rax
+ 164      000000
+ 165 0181 4889C7   		movq	%rax, %rdi
+ 166 0184 E8000000 		call	__cxa_atexit@PLT
+ 166      00
+ 167              	.L5:
+ 168              		.loc 1 30 0
+ 169 0189 90       		nop
+ 170 018a C9       		leave
+ 171              		.cfi_def_cfa 7, 8
+ 172 018b C3       		ret
+ 173              		.cfi_endproc
+ 174              	.LFE1974:
+ 177              	_GLOBAL__sub_I_main:
+ 178              	.LFB1975:
+ 179              		.loc 1 30 0
+ 180              		.cfi_startproc
+ 181 018c 55       		pushq	%rbp
+ 182              		.cfi_def_cfa_offset 16
+ 183              		.cfi_offset 6, -16
+ 184 018d 4889E5   		movq	%rsp, %rbp
+ 185              		.cfi_def_cfa_register 6
+ 186              		.loc 1 30 0
+ 187 0190 BEFFFF00 		movl	$65535, %esi
+ 187      00
+ 188 0195 BF010000 		movl	$1, %edi
+ 188      00
+ 189 019a E8A4FFFF 		call	_Z41__static_initialization_and_destruction_0ii
+ 189      FF
+ 190 019f 5D       		popq	%rbp
+ 191              		.cfi_def_cfa 7, 8
+ 192 01a0 C3       		ret
+ 193              		.cfi_endproc
+ 194              	.LFE1975:
+ 196              		.section	.init_array,"aw"
+ 197              		.align 8
+ 198 0000 00000000 		.quad	_GLOBAL__sub_I_main
+ 198      00000000 
+ 199              		.text
+ 200              	.Letext0:
+ 201              		.file 3 "/usr/include/c++/7/cwchar"
+ 202              		.file 4 "/usr/include/c++/7/new"
+ 203              		.file 5 "/usr/include/c++/7/bits/exception_ptr.h"
+ 204              		.file 6 "/usr/include/c++/7/type_traits"
+ 205              		.file 7 "/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h"
+ 206              		.file 8 "/usr/include/c++/7/bits/cpp_type_traits.h"
+ 207              		.file 9 "/usr/include/c++/7/bits/stl_pair.h"
+ 208              		.file 10 "/usr/include/c++/7/debug/debug.h"
+ 209              		.file 11 "/usr/include/c++/7/bits/char_traits.h"
+ 210              		.file 12 "/usr/include/c++/7/cstdint"
+ 211              		.file 13 "/usr/include/c++/7/clocale"
+ 212              		.file 14 "/usr/include/c++/7/cstdlib"
+ 213              		.file 15 "/usr/include/c++/7/cstdio"
+ 214              		.file 16 "/usr/include/c++/7/bits/basic_string.h"
+ 215              		.file 17 "/usr/include/c++/7/system_error"
+ 216              		.file 18 "/usr/include/c++/7/bits/ios_base.h"
+ 217              		.file 19 "/usr/include/c++/7/cwctype"
+ 218              		.file 20 "/usr/include/c++/7/iosfwd"
+ 219              		.file 21 "/usr/include/c++/7/bits/predefined_ops.h"
+ 220              		.file 22 "/usr/include/c++/7/ext/new_allocator.h"
+ 221              		.file 23 "/usr/include/c++/7/ext/numeric_traits.h"
+ 222              		.file 24 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h"
+ 223              		.file 25 "<built-in>"
+ 224              		.file 26 "/usr/include/x86_64-linux-gnu/bits/types/wint_t.h"
+ 225              		.file 27 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h"
+ 226              		.file 28 "/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h"
+ 227              		.file 29 "/usr/include/x86_64-linux-gnu/bits/types/__FILE.h"
+ 228              		.file 30 "/usr/include/x86_64-linux-gnu/bits/libio.h"
+ 229              		.file 31 "/usr/include/x86_64-linux-gnu/bits/types/FILE.h"
+ 230              		.file 32 "/usr/include/wchar.h"
+ 231              		.file 33 "/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h"
+ 232              		.file 34 "/usr/include/x86_64-linux-gnu/bits/types.h"
+ 233              		.file 35 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h"
+ 234              		.file 36 "/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h"
+ 235              		.file 37 "/usr/include/stdint.h"
+ 236              		.file 38 "/usr/include/locale.h"
+ 237              		.file 39 "/usr/include/time.h"
+ 238              		.file 40 "/usr/include/x86_64-linux-gnu/c++/7/bits/atomic_word.h"
+ 239              		.file 41 "/usr/include/stdlib.h"
+ 240              		.file 42 "/usr/include/x86_64-linux-gnu/bits/_G_config.h"
+ 241              		.file 43 "/usr/include/stdio.h"
+ 242              		.file 44 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h"
+ 243              		.file 45 "/usr/include/errno.h"
+ 244              		.file 46 "/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h"
+ 245              		.file 47 "/usr/include/wctype.h"
