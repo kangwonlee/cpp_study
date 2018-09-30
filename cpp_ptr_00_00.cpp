@@ -27,6 +27,10 @@ int main(int argn, char *argv[]){
     cout << "(p + 1)   = " << setw(16) << (p + 1) << '\n';
     // size of p
     cout << "sizeof(p) = " << setw(16) << sizeof(p) << '\n';
+    // Value at (p + 1)
+    cout << "*(p + 1)  = " << setw(16) << *(p + 1) << '\n';
+    // Value at (p + 2)
+    cout << "*(p + 2)  = " << setw(16) << *(p + 2) << '\n';
 
     return 0;
 }
