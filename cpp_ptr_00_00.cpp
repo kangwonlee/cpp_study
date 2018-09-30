@@ -14,6 +14,8 @@ int main(int argn, char *argv[]){
     cout << "i  = " << setw(16) << hex <<  i << '\n';
     // Address of the variable i
     cout << "&i = " << setw(16) << &i << '\n';
+    // size of i
+    cout << "sizeof(i) = " << setw(16) << sizeof(i) << '\n';
 
     // Integer value at the location p
     cout << "*p = " << setw(16) << hex << *p << '\n';
