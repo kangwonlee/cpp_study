@@ -11,20 +11,20 @@ int main(int argn, char *argv[]){
     int *p = &i;
 
     // Value of the variable i
-    cout << "i  = " << setw(16) << hex <<  i << '\n';
+    cout << "i         = " << setw(16) << hex <<  i << '\n';
     // Address of the variable i
-    cout << "&i = " << setw(16) << &i << '\n';
+    cout << "&i        = " << setw(16) << &i << '\n';
     // size of i
     cout << "sizeof(i) = " << setw(16) << sizeof(i) << '\n';
 
     // Integer value at the location p
-    cout << "*p = " << setw(16) << hex << *p << '\n';
+    cout << "*p        = " << setw(16) << hex << *p << '\n';
     // Value of the pointer variable p
-    cout << "p  = " << setw(16) <<  p << '\n';
+    cout << "p         = " << setw(16) <<  p << '\n';
     // Address of the pointer variable p
-    cout << "&p = " << setw(16) << &p << '\n';
+    cout << "&p        = " << setw(16) << &p << '\n';
     // Address of the pointer value (p + 1)
-    cout << "(p + 1) = " << setw(16) << (p + 1) << '\n';
-    
+    cout << "(p + 1)   = " << setw(16) << (p + 1) << '\n';
+
     return 0;
 }
