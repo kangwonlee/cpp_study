@@ -21,6 +21,8 @@ int main(int argn, char *argv[]){
     cout << "p  = " << setw(16) <<  p << '\n';
     // Address of the pointer variable p
     cout << "&p = " << setw(16) << &p << '\n';
-
+    // Address of the pointer value (p + 1)
+    cout << "(p + 1) = " << setw(16) << (p + 1) << '\n';
+    
     return 0;
 }
