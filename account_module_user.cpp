@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int32_t main(int32_t argn, char * argv[]){
+int32_t main(int32_t argn, char ** argv){
 
     cout << "account_module.check() = "<< check() <<'\n';
 
