@@ -15,7 +15,7 @@ def test_build_and_run(cpp_file):
     assert os.path.exists(os.path.join(cpp_path, cpp_file)), "Cannot find file {cpp_file}exist"
 
     with tempfile.NamedTemporaryFile() as fout:
-        subprocess.check_call(['g++', '-Wall', '-g', cpp_file, '-o', fout.name])
+        subprocess.check_call(['g++', '-Wall', '-std=c++14', '-g', cpp_file, '-o', fout.name])
 
         subprocess.check_call([fout.name])
 
