@@ -1,25 +1,37 @@
+// Begin account_module_user.cpp
 #include <iostream>
 #include <cstdint>
 
-#include "account_module.h"
+namespace account_a{
+    #include "account_module.h"
+}
+
+namespace account_b{
+    #include "account_module.h"
+}
 
 using namespace std;
 
 int32_t main(int32_t argn, char ** argv){
 
-    cout << "account_module.check() = "<< account::check() <<'\n';
+    cout << "account_a::check() = "<< account_a::check() <<'\n';
+    cout << "account_b::check() = "<< account_b::check() <<'\n';
 
-    account::deposit(10000);
+    account_a::deposit(10000);
 
-    cout << "account_module.check() = "<< account::check() <<'\n';
+    cout << "account_a::check() = "<< account_a::check() <<'\n';
+    cout << "account_b::check() = "<< account_b::check() <<'\n';
 
-    account::withdraw(3000);
+    account_a::withdraw(3000);
 
-    cout << "account_module.check() = "<< account::check() <<'\n';
+    cout << "account_a::check() = "<< account_a::check() <<'\n';
+    cout << "account_b::check() = "<< account_b::check() <<'\n';
 
-    account::deposit(5000);
+    account_a::deposit(5000);
 
-    cout << "account_module.check() = "<< account::check() <<'\n';
+    cout << "account_a::check() = "<< account_a::check() <<'\n';
+    cout << "account_b::check() = "<< account_b::check() <<'\n';
 
     return 0;
 }
+// End account_module_user.cpp
