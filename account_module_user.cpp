@@ -7,19 +7,19 @@ using namespace std;
 
 int32_t main(int32_t argn, char ** argv){
 
-    cout << "account_module.check() = "<< check() <<'\n';
+    cout << "account_module.check() = "<< account::check() <<'\n';
 
-    deposit(10000);
+    account::deposit(10000);
 
-    cout << "account_module.check() = "<< check() <<'\n';
+    cout << "account_module.check() = "<< account::check() <<'\n';
 
-    withdraw(3000);
+    account::withdraw(3000);
 
-    cout << "account_module.check() = "<< check() <<'\n';
+    cout << "account_module.check() = "<< account::check() <<'\n';
 
-    deposit(5000);
+    account::deposit(5000);
 
-    cout << "account_module.check() = "<< check() <<'\n';
+    cout << "account_module.check() = "<< account::check() <<'\n';
 
     return 0;
 }
