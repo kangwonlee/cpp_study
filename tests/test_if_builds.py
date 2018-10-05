@@ -15,9 +15,17 @@ def test_build_and_run(cpp_file):
     assert os.path.exists(os.path.join(cpp_path, cpp_file)), "Cannot find file {cpp_file}exist"
 
     with tempfile.NamedTemporaryFile() as fout:
-        subprocess.check_call(['g++', '-Wall', '-std=c++14', '-g', cpp_file, '-o', fout.name])
+        output_filename = fout.name
 
-        subprocess.check_call([fout.name])
+    subprocess.check_call(['g++', '-Wall', '-std=c++14', '-g', cpp_file, '-o', output_filename])
 
+    # see if execution file runs
+    subprocess.check_call([output_filename])
+
+    # delete execution file
+    if os.path.exists(output_filename):
+        os.remove(output_filename)
+
+    # delete debug symbol information
     if os.path.exists('.'.join([fout.name, 'dSYM'])):
         shutil.rmtree('.'.join([fout.name, 'dSYM']))
