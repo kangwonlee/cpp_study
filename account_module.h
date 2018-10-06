@@ -6,21 +6,21 @@ int32_t balance;
 
 
 void deposit (int32_t amount){
-    std::cout << "Deposit " << amount << '\n';
-    std::cout << "to " << & balance << '\n';
+    std::cout << "Deposit\t" << amount << ' ';
+    std::cout << "to\t" << & balance << '\n';
     balance += amount;
 }
 
 
 void withdraw (int32_t amount){
-    std::cout << "Withdraws " << amount << '\n';
-    std::cout << "from " << & balance << '\n';
+    std::cout << "Withdraw\t" << amount << ' ';
+    std::cout << "from\t" << & balance << '\n';
     balance += -amount;
 }
 
 
 int32_t check(){
-    std::cout << "balance of " << & balance << '\n';
+    std::cout << "(balance of " << & balance << ") ";
     return balance;
 }
 // End account_module.h
