@@ -12,7 +12,7 @@ void deposit (int32_t amount){
 
 
 void withdraw (int32_t amount){
-    std::cout << "Depowithdrawsit " << amount << '\n';
+    std::cout << "Withdraw " << amount << '\n';
     balance += -amount;
 }
 
