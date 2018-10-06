@@ -28,7 +28,7 @@ int32_t main(int32_t argn, char ** argv){
     cout << "account_a::check() = "<< account_a::check() <<'\n';
     cout << "account_b::check() = "<< account_b::check() <<'\n';
 
-    account_a::deposit(5000);
+    account_b::deposit(5000);
 
     cout << "account_a::check() = "<< account_a::check() <<'\n';
     cout << "account_b::check() = "<< account_b::check() <<'\n';
