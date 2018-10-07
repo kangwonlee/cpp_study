@@ -202,6 +202,16 @@ def get_cpp_src_from_ipynb(path):
     #        For now just use list of strings of files' contents
 
     # save the C++ source code and try to build it
+    results_list = build_and_run_markdown_cpp_cell_list(markdown_cpp_code_cells)
+
+    return not(any(results_list))
+
+
+def build_and_run_markdown_cpp_cell_list(markdown_cpp_code_cells):
+    # TODO : Separate parts extracting cpp code vs building and running
+    #        For now just use list of strings of files' contents
+
+    # save the C++ source code and try to build it
     results_map = map(build_markdown_cpp_cell, markdown_cpp_code_cells)
 
     results_list = []
@@ -217,7 +227,7 @@ def get_cpp_src_from_ipynb(path):
         if os.path.exists(cpp_file_name):
             os.remove(cpp_file_name)
 
-    return not(any(results_list))
+    return results_list
 
 
 def main(arg):
