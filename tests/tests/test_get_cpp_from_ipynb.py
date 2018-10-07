@@ -1,4 +1,4 @@
-import utils.get_cpp_from_ipynb as gcpp 
+from .. import get_cpp_from_ipynb as gcpp 
 import pytest
 
 
