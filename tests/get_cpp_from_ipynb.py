@@ -198,6 +198,9 @@ def get_cpp_src_from_ipynb(path):
         nb['cells']
     )
 
+    # TODO : Separate parts extracting cpp code vs building and running
+    #        For now just use list of strings of files' contents
+
     # save the C++ source code and try to build it
     results_map = map(build_markdown_cpp_cell, markdown_cpp_code_cells)
 
