@@ -1,4 +1,4 @@
-// Begin account_class_00.cpp
+// Begin account_class.cpp
 
 #include <cstdint>
 #include <iostream>
@@ -33,4 +33,4 @@ uint32_t BankAccount::check_balance(void){
     return balance;
 }
 
-// End account_class_00.cpp
+// End account_class.cpp

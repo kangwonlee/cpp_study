@@ -1,4 +1,4 @@
-// Begin account_class_sample_transaction.cpp
+// Begin account_transaction.cpp
 
 #include <cstdint>
 #include <iostream>
@@ -43,4 +43,4 @@ void sample_transactions(BankAccount& account_a, BankAccount& account_b){
 }
 
 
-// End account_class_sample_transaction.cpp
+// End account_transaction.cpp
