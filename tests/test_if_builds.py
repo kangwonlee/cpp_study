@@ -17,10 +17,10 @@ def test_build_and_run(cpp_file):
     with tempfile.NamedTemporaryFile() as fout:
         output_filename = fout.name
 
-    subprocess.check_call(['g++', '-Wall', '-std=c++14', '-g', cpp_file, '-o', output_filename])
+    subprocess.check_call(['g++', '-Wall', '-std=c++14', '-g', cpp_file, '-fsyntax-only'])
 
     # see if execution file runs
-    subprocess.check_call([output_filename])
+    # subprocess.check_call([output_filename])
 
     # delete execution file
     if os.path.exists(output_filename):
