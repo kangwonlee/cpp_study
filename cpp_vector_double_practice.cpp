@@ -96,6 +96,11 @@ int main(int argn, char *argv[]){
     row.show();
     another_row.show();
 
+    another_row[1] += 0.5;
+    std::cout << "another_row[1] += 0.5;\n";
+    row.show();
+    another_row.show();
+
     RowVector row_plus_another(row + another_row);
     std::cout << "RowVector row_plus_another(row + another_row);\n";
     row.show();
