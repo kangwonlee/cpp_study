@@ -23,8 +23,9 @@ def test_build_and_run(cpp_file):
         get_build_command(cpp_file, output_filename)
     )
 
-    # see if execution file runs
-    # subprocess.check_call([output_filename])
+    if '-fsyntax-only' not in get_build_command(cpp_file, output_filename):
+        # see if execution file runs
+        subprocess.check_call([output_filename])
 
     # delete execution file
     if os.path.exists(output_filename):
@@ -49,12 +50,16 @@ def get_build_command(cpp_file, output_filename):
 
     if gcpp.get_build_command_in_last_line(txt):
         # use the last line command
-        build_command = tuple(gcpp.get_build_command_in_last_line(txt).split())
+        build_command = gcpp.get_build_command_in_last_line(txt).split()
+        # overwrite output filename
+        if '-o' in build_command:
+            i = build_command.index('-o')
+            build_command[i+1] = output_filename
     elif gcpp.has_main_function(txt):
         # compile the file
         # May want to add "-Wa,-adhln={output_filename}.s" option 
         #   would work with `g++` but need to check `clang`
-        build_command = ('g++', '-Wall', '-std=c++14', '-g', cpp_file, '-o {output_filename}')
+        build_command = ('g++', '-Wall', '-std=c++14', '-g', cpp_file, '-o', f'{output_filename}')
     else:
         # just check grammar
         build_command = ('g++', '-Wall', '-std=c++14', '-g', cpp_file, '-fsyntax-only')
