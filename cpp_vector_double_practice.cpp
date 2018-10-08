@@ -92,7 +92,8 @@ int main(int argn, char *argv[]){
     row.show();
 
 	RowVector another_row (row);
-
+    std::cout << "RowVector another_row (row);\n";
+    row.show();
     another_row.show();
 
     RowVector row_plus_another(row + another_row);
