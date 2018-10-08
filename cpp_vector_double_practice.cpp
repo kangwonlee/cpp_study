@@ -90,8 +90,8 @@ class RowVector
             RowVector temp(*this);
 
             // Element loop
-            for (uint32_t i=0; columns.size() > i; ++i){
-                temp[i] *= a;
+            for (auto & element : temp.columns){
+                element *= a;
             }
 
             // Returning a temporary image
