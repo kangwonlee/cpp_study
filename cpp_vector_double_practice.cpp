@@ -44,6 +44,22 @@ class RowVector
         double & operator [] (int i){
             return columns[i];
         }
+
+        RowVector operator + (RowVector & other){
+            // Check size
+            assert(columns.size() == other.columns.size());
+
+            // Make a new vector to return
+            RowVector temp(other);
+
+            // Element loop
+            for (unsigned int i=0; columns.size() > i; ++i){
+                temp[i] += columns[i];
+            }
+
+            // Returning a temporary image
+            return temp;
+        }
 };
 
 
