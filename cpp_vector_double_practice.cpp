@@ -124,7 +124,7 @@ class RowVector
 int32_t main(int32_t argn, char *argv[]){
 	double s[] = {1.0, 2.0};
 
-	RowVector row (2, s, "row");
+	RowVector row (2u, s, "row");
 
     row.show();
 
