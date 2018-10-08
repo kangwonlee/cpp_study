@@ -1,3 +1,4 @@
+#include <cassert>
 #include <iostream>
 #include <exception>
 #include <vector>
@@ -31,6 +32,15 @@ class RowVector
             }
         }
 
+        RowVector(const RowVector & other){
+            // https://codereview.stackexchange.com/questions/149669/c-operator-overloading-for-matrix-operations-follow-up
+            // http://www.cplusplus.com/reference/vector/vector/resize/
+            columns.resize(other.columns.size());
+            for(unsigned int i=0; columns.size() > i; ++i){
+                columns[i] = other.columns[i];
+            }
+        }
+
         double & operator [] (int i){
             return columns[i];
         }
@@ -40,10 +50,14 @@ class RowVector
 int main(int argn, char *argv[]){
 	double s[] = {1.0, 2.0};
 	RowVector row (2, s);
+	RowVector another_row (row);
 	RowVector zeros(3);
 
 	std::cout << "row[0] = " << row[0] << '\n';
 	std::cout << "row[1] = " << row[1] << '\n';
+
+	std::cout << "another_row[0] = " << another_row[0] << '\n';
+	std::cout << "another_row[1] = " << another_row[1] << '\n';
 
 	std::cout << "zeros[0] = " << zeros[0] << '\n';
 	std::cout << "zeros[1] = " << zeros[1] << '\n';
