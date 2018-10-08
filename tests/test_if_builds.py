@@ -19,9 +19,9 @@ def test_build_and_run(cpp_file):
     with tempfile.NamedTemporaryFile() as fout:
         output_filename = fout.name
 
-    build_command = ['g++', '-Wall', '-std=c++14', '-g', cpp_file, '-fsyntax-only']
-
-    subprocess.check_call(build_command)
+    subprocess.check_call(
+        get_build_command(cpp_file)
+    )
 
     # see if execution file runs
     # subprocess.check_call([output_filename])
@@ -33,3 +33,17 @@ def test_build_and_run(cpp_file):
     # delete debug symbol information
     if os.path.exists('.'.join([fout.name, 'dSYM'])):
         shutil.rmtree('.'.join([fout.name, 'dSYM']))
+
+
+def get_build_command(cpp_file):
+    """
+    Generate command building cpp_file
+
+    With main() function, try to make the execution file
+    Without ", just check the syntax
+    If there is a build instruction near the end, use it instead
+    """
+
+    build_command = ['g++', '-Wall', '-std=c++14', '-g', cpp_file, '-fsyntax-only']
+
+    return build_command
