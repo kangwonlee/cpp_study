@@ -19,7 +19,9 @@ def test_build_and_run(cpp_file):
     with tempfile.NamedTemporaryFile() as fout:
         output_filename = fout.name
 
-    subprocess.check_call(['g++', '-Wall', '-std=c++14', '-g', cpp_file, '-fsyntax-only'])
+    build_command = ['g++', '-Wall', '-std=c++14', '-g', cpp_file, '-fsyntax-only']
+
+    subprocess.check_call(build_command)
 
     # see if execution file runs
     # subprocess.check_call([output_filename])
