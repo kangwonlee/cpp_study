@@ -157,5 +157,9 @@ int32_t main(int32_t argn, char *argv[]){
     std::cout << "double dot = row * ortho;\n";
     std::cout << "dot  = " << dot << '\n';
 
+    dot = row * row;
+    std::cout << "dot = row * row;\n";
+    std::cout << "dot  = " << dot << '\n';
+
 }
 
