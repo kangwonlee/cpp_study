@@ -1,4 +1,5 @@
 #include <cassert>
+#include <cstdint>
 #include <exception>
 #include <iostream>
 #include <string>
@@ -51,7 +52,7 @@ class RowVector
             // https://codereview.stackexchange.com/questions/149669/c-operator-overloading-for-matrix-operations-follow-up
             // http://www.cplusplus.com/reference/vector/vector/resize/
             columns.resize(other.columns.size());
-            for(unsigned int i=0; columns.size() > i; ++i){
+            for(uint32_t i=0; columns.size() > i; ++i){
                 columns[i] = other.columns[i];
             }
 
@@ -76,7 +77,7 @@ class RowVector
             RowVector temp(other);
 
             // Element loop
-            for (unsigned int i=0; columns.size() > i; ++i){
+            for (uint32_t i=0; columns.size() > i; ++i){
                 temp[i] += columns[i];
             }
 
@@ -85,7 +86,7 @@ class RowVector
         }
 
         void show(){
-            for (unsigned int i=0; columns.size()> i; ++i){
+            for (uint32_t i=0; columns.size()> i; ++i){
                 std::cout << name << '[' << i << "] = " << columns[i] << '\n';
             }
         }
