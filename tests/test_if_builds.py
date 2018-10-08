@@ -20,7 +20,7 @@ def test_build_and_run(cpp_file):
         output_filename = fout.name
 
     subprocess.check_call(
-        get_build_command(cpp_file)
+        get_build_command(cpp_file, output_filename)
     )
 
     # see if execution file runs
@@ -35,7 +35,7 @@ def test_build_and_run(cpp_file):
         shutil.rmtree('.'.join([fout.name, 'dSYM']))
 
 
-def get_build_command(cpp_file):
+def get_build_command(cpp_file, output_filename):
     """
     Generate command building cpp_file
 
@@ -44,6 +44,17 @@ def get_build_command(cpp_file):
     If there is a build instruction near the end, use it instead
     """
 
-    build_command = ('g++', '-Wall', '-std=c++14', '-g', cpp_file, '-fsyntax-only')
+    with open(cpp_file, 'rt') as cpp:
+        txt = cpp.read()
+
+    if gcpp.get_build_command_in_last_line(txt):
+        # use the last line command
+        build_command = tuple(gcpp.get_build_command_in_last_line(txt).split())
+    elif gcpp.has_main_function(txt):
+        # compile the file
+        build_command = ('g++', '-Wall', '-std=c++14', '-g', cpp_file, '-o {output_filename}')
+    else:
+        # just check grammar
+        build_command = ('g++', '-Wall', '-std=c++14', '-g', cpp_file, '-fsyntax-only')
 
     return build_command
