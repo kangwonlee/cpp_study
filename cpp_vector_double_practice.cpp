@@ -21,18 +21,18 @@ class RowVector
             name = "None";
 		}
 
-        RowVector(const int32_t n, double *values=NULL, const char *new_name="None"){
+        RowVector(const uint32_t n, const double *values=NULL, const char *new_name="None"){
             columns.resize(n);
 
             // If initial values available, copy each value
             if (values){
-                for (int32_t i=0; i<n; ++i){
+                for (uint32_t i = 0; columns.size() > i; ++i){
                     columns[i] = values[i];
                 }
             }
             // If no initial values, set all values zero
             else{
-                for (int32_t i=0; i<n; ++i){
+                for (uint32_t i = 0; columns.size() > i; ++i){
                     columns[i] = 0.0;
                 }
             }
@@ -40,10 +40,10 @@ class RowVector
             name = new_name;
         }
 
-        RowVector(const int32_t n, const char *new_name="None"){
+        RowVector(const uint32_t n, const char *new_name="None"){
             columns.resize(n);
             name = new_name;
-            for (int32_t i=0; i<n; ++i){
+            for (uint32_t i=0; n>i; ++i){
                 columns[i] = 0.0;
             }
         }
@@ -60,7 +60,7 @@ class RowVector
             name.append("2");
         }
 
-        double & operator [] (int32_t i){
+        double & operator [] (const uint32_t i){
             return columns[i];
         }
 
@@ -116,7 +116,7 @@ int32_t main(int32_t argn, char *argv[]){
     another_row.show();
     row_plus_another.show();
 
-	RowVector zeros(3, "zeros");
+	RowVector zeros(3u, "zeros");
     std::cout << "RowVector zeros(3);\n";
     row.show();
     another_row.show();
