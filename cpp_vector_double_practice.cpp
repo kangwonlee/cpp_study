@@ -150,5 +150,12 @@ int32_t main(int32_t argn, char *argv[]){
     another_row.show();
     row_plus_another.show();
     zeros.show();
+
+    double t[] = {2.0, -1.0};
+	RowVector ortho (2u, t, "ortho");
+    double dot = row * ortho;
+    std::cout << "double dot = row * ortho;\n";
+    std::cout << "dot  = " << dot << '\n';
+
 }
 
