@@ -44,3 +44,4 @@ void sample_transactions(BankAccount& account_a, BankAccount& account_b){
 
 
 // End account_transaction.cpp
+// Build command : g++ -Wall -g account_transaction.cpp account_class.cpp
