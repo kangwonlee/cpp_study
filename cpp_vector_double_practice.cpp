@@ -72,6 +72,12 @@ class RowVector
             // Returning a temporary image
             return temp;
         }
+
+        void show(){
+            for (unsigned int i=0; columns.size()> i; ++i){
+                std::cout << name << '[' << i << "] = " << columns[i] << '\n';
+            }
+        }
 };
 
 
@@ -80,9 +86,7 @@ int main(int argn, char *argv[]){
 
 	RowVector row (2, s, "row");
 
-    std::cout << "row.get_name() = " << row.get_name() << '\n';
-	std::cout << "row[0] = " << row[0] << '\n';
-	std::cout << "row[1] = " << row[1] << '\n';
+    row.show();
 
 	RowVector another_row (row);
 
