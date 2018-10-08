@@ -135,7 +135,7 @@ def build_markdown_cpp_cell(cell):
     # https://www.linuxquestions.org/questions/programming-9/trouble-with-double-complex-numbers-in-c-4175567740/
     # https://stackoverflow.com/questions/31965413/compile-c14-code-with-g
 
-    if re_main_function.findall(txt):
+    if has_main_function(txt):
         # if txt includes the main() function, build execution file
 
         # if the C++ source code seems to have build command, use it
@@ -167,6 +167,13 @@ def build_markdown_cpp_cell(cell):
     }
 
     return result_dict
+
+
+def has_main_function(txt):
+    """
+    Returns true if txt seems including main() function declaration
+    """
+    return re_main_function.findall(txt)
 
 
 def get_temp_cpp_filename():
