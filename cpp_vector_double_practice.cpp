@@ -52,11 +52,14 @@ class RowVector
                 columns[i] = other.columns[i];
             }
 
+            // Copy name of the other one
             name = other.name;
+            // Then append
             name.append("2");
         }
 
         double & operator [] (const uint32_t i){
+            // Return reference; otherwise, unable to assign
             return columns[i];
         }
 
