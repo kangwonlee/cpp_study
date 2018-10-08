@@ -54,7 +54,7 @@ def get_build_command(cpp_file, output_filename):
         # compile the file
         # May want to add "-Wa,-adhln={output_filename}.s" option 
         #   would work with `g++` but need to check `clang`
-        build_command = ('g++', '-Wall', '-std=c++14', '-g', cpp_file, '-o {output_filename}')
+        build_command = ('g++', '-Wall', '-std=c++14', '-g', cpp_file, '-o', f'{output_filename}')
     else:
         # just check grammar
         build_command = ('g++', '-Wall', '-std=c++14', '-g', cpp_file, '-fsyntax-only')
