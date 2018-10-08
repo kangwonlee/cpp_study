@@ -68,7 +68,7 @@ class RowVector
             return name;
         }
 
-        RowVector operator + (RowVector & other){
+        RowVector operator + (const RowVector & other){
             // Check size
             assert(columns.size() == other.columns.size());
 
