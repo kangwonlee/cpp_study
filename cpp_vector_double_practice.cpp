@@ -1,6 +1,7 @@
 #include <cassert>
-#include <iostream>
 #include <exception>
+#include <iostream>
+#include <string>
 #include <vector>
 
 
@@ -10,12 +11,16 @@ class RowVector
     // https://stackoverflow.com/questions/8553464/vector-as-a-class-member
     std::vector<double> columns;
 
+    protected:
+        std::string name;
+
     public:
         // Default constructor
 		RowVector(){
+            name = "None";
 		}
 
-        RowVector(const int n, double *values=NULL){
+        RowVector(const int n, double *values=NULL, const char *new_name="None"){
             columns.resize(n);
 
             // If initial values available, copy each value
@@ -30,6 +35,8 @@ class RowVector
                         columns[i] = 0.0;
                 }
             }
+
+            name = new_name;
         }
 
         RowVector(const RowVector & other){
@@ -43,6 +50,11 @@ class RowVector
 
         double & operator [] (int i){
             return columns[i];
+        }
+
+        const std::string get_name(){
+            // Return constant; to prevent change
+            return name;
         }
 
         RowVector operator + (RowVector & other){
@@ -66,8 +78,9 @@ class RowVector
 int main(int argn, char *argv[]){
 	double s[] = {1.0, 2.0};
 
-	RowVector row (2, s);
+	RowVector row (2, s, "row");
 
+    std::cout << "row.get_name() = " << row.get_name() << '\n';
 	std::cout << "row[0] = " << row[0] << '\n';
 	std::cout << "row[1] = " << row[1] << '\n';
 
