@@ -79,7 +79,7 @@ class Matrix {
 			return rows[i];
 		}
 
-		Matrix & operator * (Matrix B){
+		Matrix operator * (Matrix &B) {
 
 			if (n_col != B.n_row){
 				throw sz_mismatch;
