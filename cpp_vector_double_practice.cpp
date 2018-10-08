@@ -39,6 +39,14 @@ class RowVector
             name = new_name;
         }
 
+        RowVector(const int n, const char *new_name="None"){
+            columns.resize(n);
+            name = new_name;
+            for (int i=0; i<n; ++i){
+                columns[i] = 0.0;
+            }
+        }
+
         RowVector(const RowVector & other){
             // https://codereview.stackexchange.com/questions/149669/c-operator-overloading-for-matrix-operations-follow-up
             // http://www.cplusplus.com/reference/vector/vector/resize/
