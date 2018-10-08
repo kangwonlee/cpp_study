@@ -52,6 +52,8 @@ def get_build_command(cpp_file, output_filename):
         build_command = tuple(gcpp.get_build_command_in_last_line(txt).split())
     elif gcpp.has_main_function(txt):
         # compile the file
+        # May want to add "-Wa,-adhln={output_filename}.s" option 
+        #   would work with `g++` but need to check `clang`
         build_command = ('g++', '-Wall', '-std=c++14', '-g', cpp_file, '-o {output_filename}')
     else:
         # just check grammar
