@@ -44,6 +44,6 @@ def get_build_command(cpp_file):
     If there is a build instruction near the end, use it instead
     """
 
-    build_command = ['g++', '-Wall', '-std=c++14', '-g', cpp_file, '-fsyntax-only']
+    build_command = ('g++', '-Wall', '-std=c++14', '-g', cpp_file, '-fsyntax-only')
 
     return build_command
