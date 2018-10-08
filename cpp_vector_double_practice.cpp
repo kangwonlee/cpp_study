@@ -32,8 +32,8 @@ class RowVector
             }
             // If no initial values, set all values zero
             else{
-                    for (int32_t i=0; i<n; ++i){
-                        columns[i] = 0.0;
+                for (int32_t i=0; i<n; ++i){
+                    columns[i] = 0.0;
                 }
             }
 
