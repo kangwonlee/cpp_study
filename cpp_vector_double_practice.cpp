@@ -84,6 +84,20 @@ class RowVector
             return temp;
         }
 
+        RowVector operator * (const double a){
+
+            // Make a new vector to return
+            RowVector temp(*this);
+
+            // Element loop
+            for (uint32_t i=0; columns.size() > i; ++i){
+                temp[i] *= a;
+            }
+
+            // Returning a temporary image
+            return temp;
+        }
+
         void show(){
             for (uint32_t i=0; columns.size()> i; ++i){
                 std::cout << name << '[' << i << "] = " << columns[i] << '\n';
