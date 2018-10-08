@@ -21,18 +21,18 @@ class RowVector
             name = "None";
 		}
 
-        RowVector(const int n, double *values=NULL, const char *new_name="None"){
+        RowVector(const int32_t n, double *values=NULL, const char *new_name="None"){
             columns.resize(n);
 
             // If initial values available, copy each value
             if (values){
-                for (int i=0; i<n; ++i){
+                for (int32_t i=0; i<n; ++i){
                     columns[i] = values[i];
                 }
             }
             // If no initial values, set all values zero
             else{
-                    for (int i=0; i<n; ++i){
+                    for (int32_t i=0; i<n; ++i){
                         columns[i] = 0.0;
                 }
             }
@@ -40,10 +40,10 @@ class RowVector
             name = new_name;
         }
 
-        RowVector(const int n, const char *new_name="None"){
+        RowVector(const int32_t n, const char *new_name="None"){
             columns.resize(n);
             name = new_name;
-            for (int i=0; i<n; ++i){
+            for (int32_t i=0; i<n; ++i){
                 columns[i] = 0.0;
             }
         }
@@ -60,7 +60,7 @@ class RowVector
             name.append("2");
         }
 
-        double & operator [] (int i){
+        double & operator [] (int32_t i){
             return columns[i];
         }
 
@@ -93,7 +93,7 @@ class RowVector
 };
 
 
-int main(int argn, char *argv[]){
+int32_t main(int32_t argn, char *argv[]){
 	double s[] = {1.0, 2.0};
 
 	RowVector row (2, s, "row");
