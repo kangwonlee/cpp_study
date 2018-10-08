@@ -98,6 +98,21 @@ class RowVector
             return temp;
         }
 
+        const double operator * (const RowVector & other){
+            // Check size
+            assert(columns.size() == other.columns.size());
+
+            double dot_product = 0.0;
+
+            // Element loop
+            for (uint32_t i = 0; columns.size() > i; ++i){
+                dot_product += columns[i] * other.columns[i];
+            }
+
+            // Returning a temporary image
+            return dot_product;
+        }
+
         void show(){
             for (uint32_t i=0; columns.size()> i; ++i){
                 std::cout << name << '[' << i << "] = " << columns[i] << '\n';
