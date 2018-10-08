@@ -97,11 +97,13 @@ int main(int argn, char *argv[]){
     another_row.show();
 
     RowVector row_plus_another(row + another_row);
-
+    std::cout << "RowVector row_plus_another(row + another_row);\n";
+    row.show();
+    another_row.show();
     row_plus_another.show();
 
 	RowVector zeros(3);
-
+    std::cout << "RowVector zeros(3);\n";
 	std::cout << "zeros[0] = " << zeros[0] << '\n';
 	std::cout << "zeros[1] = " << zeros[1] << '\n';
 	std::cout << "zeros[2] = " << zeros[2] << '\n';
