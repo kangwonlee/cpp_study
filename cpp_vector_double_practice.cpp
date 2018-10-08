@@ -46,6 +46,9 @@ class RowVector
             for(unsigned int i=0; columns.size() > i; ++i){
                 columns[i] = other.columns[i];
             }
+
+            name = other.name;
+            name.append("2");
         }
 
         double & operator [] (int i){
