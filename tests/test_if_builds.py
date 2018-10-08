@@ -14,7 +14,7 @@ cpp_file_list = filter(lambda filename:os.path.isfile(filename) and filename.end
 @pytest.mark.parametrize("cpp_file", cpp_file_list)
 def test_build_and_run(cpp_file):
 
-    assert os.path.exists(os.path.join(cpp_path, cpp_file)), "Cannot find file {cpp_file}exist"
+    assert os.path.exists(os.path.join(cpp_path, cpp_file)), "Cannot find file {cpp_file}"
 
     with tempfile.NamedTemporaryFile() as fout:
         output_filename = fout.name
