@@ -1,9 +1,11 @@
-import pytest
 import os
 import shutil
 import subprocess
 import tempfile
 
+import pytest
+
+from . import get_cpp_from_ipynb as gcpp
 
 cpp_path = os.path.abspath(os.path.join(os.path.split(__file__)[0], os.pardir))
 cpp_file_list = filter(lambda filename:os.path.isfile(filename) and filename.endswith('.cpp'), os.listdir(cpp_path))
