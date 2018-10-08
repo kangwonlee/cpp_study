@@ -40,12 +40,8 @@ class RowVector
             name = new_name;
         }
 
-        RowVector(const uint32_t n, const char *new_name="None"){
-            columns.resize(n);
-            name = new_name;
-            for (uint32_t i=0; n>i; ++i){
-                columns[i] = 0.0;
-            }
+        // Instead of implementing another constructor, reusing an existing one
+        RowVector(const uint32_t n, const char *new_name="None") : RowVector(n, NULL, new_name){
         }
 
         RowVector(const RowVector & other){
