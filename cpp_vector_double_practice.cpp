@@ -76,6 +76,11 @@ int main(int argn, char *argv[]){
 	std::cout << "another_row[0] = " << another_row[0] << '\n';
 	std::cout << "another_row[1] = " << another_row[1] << '\n';
 
+    RowVector row_plus_another(row + another_row);
+
+	std::cout << "row_plus_another[0] = " << row_plus_another[0] << '\n';
+	std::cout << "row_plus_another[1] = " << row_plus_another[1] << '\n';
+
 	RowVector zeros(3);
 
 	std::cout << "zeros[0] = " << zeros[0] << '\n';
