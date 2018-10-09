@@ -82,23 +82,7 @@ class RowVector
             return temp;
         }
 
-        RowVector operator * (const double a){
-#ifdef LOG
-            std::cout << '[' << &columns << ']' << "RowVector operator * (" << a << ")\n";
-#endif
-
-            // Make a new vector to return
-            RowVector temp(*this);
-
-            // Element loop in `for each` style
-            // c++ 11 or later
-            for (auto & element : temp.columns){
-                element *= a;
-            }
-
-            // Returning a temporary image
-            return temp;
-        }
+        RowVector operator * (const double a);
 
         const double operator * (const RowVector & other);
 
@@ -145,6 +129,25 @@ RowVector::RowVector(const RowVector & other){
     name = other.name;
     // Then append
     name.append("2");
+}
+
+
+RowVector RowVector::operator * (const double a){
+#ifdef LOG
+    std::cout << '[' << &columns << ']' << "RowVector operator * (" << a << ")\n";
+#endif
+
+    // Make a new vector to return
+    RowVector temp(*this);
+
+    // Element loop in `for each` style
+    // c++ 11 or later
+    for (auto & element : temp.columns){
+        element *= a;
+    }
+
+    // Returning a temporary image
+    return temp;
 }
 
 
