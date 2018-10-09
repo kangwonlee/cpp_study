@@ -39,11 +39,7 @@ class RowVector
 
         // Instead of implementing another constructor, reusing an existing one
         // c++ 11 or later
-        RowVector(const uint32_t n, std::string new_name="None") : RowVector(n, NULL, new_name){
-#ifdef LOG
-            std::cout << '[' << &columns << ']' << "RowVector(" << n << ", " << new_name << ")\n";
-#endif
-        }
+        RowVector(const uint32_t n, std::string new_name="None");
 
         RowVector(const RowVector & other);
 
@@ -82,6 +78,12 @@ RowVector::RowVector(const uint32_t n, const double *values, std::string new_nam
     }
 
     name = new_name;
+}
+
+RowVector::RowVector(const uint32_t n, std::string new_name) : RowVector(n, NULL, new_name){
+#ifdef LOG
+    std::cout << '[' << &columns << ']' << "RowVector(" << n << ", " << new_name << ")\n";
+#endif
 }
 
 
