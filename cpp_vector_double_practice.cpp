@@ -21,10 +21,12 @@ class RowVector
             name = "None";
 		}
 
+        // Default arguments
+        // If the function could not find the argument in the call, it uses the default value.
         RowVector(const uint32_t n, const double *values=NULL, const char *new_name="None"){
             columns.resize(n);
 
-            // If initial values available, copy each value
+            // If initial values available, copy
             if (values){
                 for (uint32_t i = 0; columns.size() > i; ++i){
                     columns[i] = values[i];
