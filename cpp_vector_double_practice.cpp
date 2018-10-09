@@ -1,3 +1,5 @@
+// Begin cpp_vector_double_practice.cpp
+
 #include <cassert>
 #include <cstdint>
 #include <exception>
@@ -165,3 +167,4 @@ int32_t main(int32_t argn, char *argv[]){
 
 }
 
+// End cpp_vector_double_practice.cpp
