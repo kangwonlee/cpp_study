@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 
+#define LOG
 
 class RowVector 
 {
@@ -20,12 +21,19 @@ class RowVector
     public:
         // Default constructor
 		RowVector(){
+#ifdef LOG
+            std::cout << '[' << &columns << ']' << "RowVector()" << '\n';
+#endif
             name = "None";
 		}
 
         // Default arguments
         // If the function could not find the argument in the call, it uses the default value.
         RowVector(const uint32_t n, const double *values=NULL, const char *new_name="None"){
+#ifdef LOG
+            std::cout << '[' << &columns << ']' 
+            << "RowVector(" << n << ", " << values << ", " << new_name << ")\n";
+#endif
             columns.resize(n);
 
             // If initial values available, copy
