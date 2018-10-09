@@ -119,14 +119,7 @@ class RowVector
             return dot_product;
         }
 
-        void show(){
-#ifdef LOG
-            std::cout << '[' << &columns << ']' << "void show()\n";
-#endif
-            for (uint32_t i=0; columns.size()> i; ++i){
-                std::cout << name << '[' << i << "] = " << columns[i] << '\n';
-            }
-        }
+        void show();
 };
 
 
@@ -169,6 +162,16 @@ RowVector::RowVector(const RowVector & other){
     name = other.name;
     // Then append
     name.append("2");
+}
+
+
+void RowVector::show(){
+#ifdef LOG
+    std::cout << '[' << &columns << ']' << "void show()\n";
+#endif
+    for (uint32_t i=0; columns.size()> i; ++i){
+        std::cout << name << '[' << i << "] = " << columns[i] << '\n';
+    }
 }
 
 
