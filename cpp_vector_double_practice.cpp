@@ -20,12 +20,7 @@ class RowVector
 
     public:
         // Default constructor
-		RowVector(){
-#ifdef LOG
-            std::cout << '[' << &columns << ']' << "RowVector()" << '\n';
-#endif
-            name = "None";
-		}
+		RowVector();
 
         ~ RowVector();
 
@@ -51,6 +46,14 @@ class RowVector
 
         void show();
 };
+
+
+RowVector::RowVector(){
+#ifdef LOG
+    std::cout << '[' << &columns << ']' << "RowVector()" << '\n';
+#endif
+    name = "None";
+}
 
 
 RowVector::~ RowVector(){
