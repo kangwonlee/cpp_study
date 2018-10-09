@@ -45,6 +45,7 @@ class RowVector
         }
 
         // Instead of implementing another constructor, reusing an existing one
+        // c++ 11 or later
         RowVector(const uint32_t n, const char *new_name="None") : RowVector(n, NULL, new_name){
         }
 
@@ -93,7 +94,8 @@ class RowVector
             // Make a new vector to return
             RowVector temp(*this);
 
-            // Element loop
+            // Element loop in `for each` style
+            // c++ 11 or later
             for (auto & element : temp.columns){
                 element *= a;
             }
