@@ -138,28 +138,29 @@ class RowVector
 int32_t main(int32_t argn, char *argv[]){
 	double s[] = {1.0, 2.0};
 
+    std::cout << "RowVector row (2u, s, \"row\");\n";
 	RowVector row (2u, s, "row");
 
     row.show();
 
-	RowVector another_row (row);
     std::cout << "RowVector another_row (row);\n";
+	RowVector another_row (row);
     row.show();
     another_row.show();
 
-    another_row[1] += 0.5;
     std::cout << "another_row[1] += 0.5;\n";
+    another_row[1] += 0.5;
     row.show();
     another_row.show();
 
-    RowVector row_plus_another(row + another_row);
     std::cout << "RowVector row_plus_another(row + another_row);\n";
+    RowVector row_plus_another(row + another_row);
     row.show();
     another_row.show();
     row_plus_another.show();
 
-	RowVector zeros(3u, "zeros");
     std::cout << "RowVector zeros(3);\n";
+	RowVector zeros(3u, "zeros");
     row.show();
     another_row.show();
     row_plus_another.show();
@@ -171,8 +172,8 @@ int32_t main(int32_t argn, char *argv[]){
     std::cout << "double dot = row * ortho;\n";
     std::cout << "dot  = " << dot << '\n';
 
-    dot = row * row;
     std::cout << "dot = row * row;\n";
+    dot = row * row;
     std::cout << "dot  = " << dot << '\n';
 
 }
