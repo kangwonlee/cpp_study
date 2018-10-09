@@ -1,0 +1,9 @@
+{
+    "python.unitTest.pyTestArgs": [
+        "tests"
+    ],
+    "python.unitTest.unittestEnabled": false,
+    "python.unitTest.nosetestsEnabled": false,
+    "python.unitTest.pyTestEnabled": true,
+    "C_Cpp.default.cppStandard": "c++14"
+}
