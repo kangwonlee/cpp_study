@@ -45,22 +45,7 @@ class RowVector
 #endif
         }
 
-        RowVector(const RowVector & other){
-#ifdef LOG
-            std::cout << '[' << &columns << ']' << "RowVector(" << & other << ")\n";
-#endif
-            // https://codereview.stackexchange.com/questions/149669/c-operator-overloading-for-matrix-operations-follow-up
-            // http://www.cplusplus.com/reference/vector/vector/resize/
-            columns.resize(other.columns.size());
-            for(uint32_t i=0; columns.size() > i; ++i){
-                columns[i] = other.columns[i];
-            }
-
-            // Copy name of the other one
-            name = other.name;
-            // Then append
-            name.append("2");
-        }
+        RowVector(const RowVector & other);
 
         double & operator [] (const uint32_t i){
 #ifdef LOG
@@ -166,6 +151,24 @@ RowVector::RowVector(const uint32_t n, const double *values, std::string new_nam
     }
 
     name = new_name;
+}
+
+
+RowVector::RowVector(const RowVector & other){
+#ifdef LOG
+    std::cout << '[' << &columns << ']' << "RowVector(" << & other << ")\n";
+#endif
+    // https://codereview.stackexchange.com/questions/149669/c-operator-overloading-for-matrix-operations-follow-up
+    // http://www.cplusplus.com/reference/vector/vector/resize/
+    columns.resize(other.columns.size());
+    for(uint32_t i=0; columns.size() > i; ++i){
+        columns[i] = other.columns[i];
+    }
+
+    // Copy name of the other one
+    name = other.name;
+    // Then append
+    name.append("2");
 }
 
 
