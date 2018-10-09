@@ -100,24 +100,7 @@ class RowVector
             return temp;
         }
 
-        const double operator * (const RowVector & other){
-#ifdef LOG
-            std::cout << '[' << &columns << ']' << "RowVector operator * (" << & other << ")\n";
-#endif
-
-            // Check size
-            assert(columns.size() == other.columns.size());
-
-            double dot_product = 0.0;
-
-            // Element loop
-            for (uint32_t i = 0; columns.size() > i; ++i){
-                dot_product += columns[i] * other.columns[i];
-            }
-
-            // Returning a temporary image
-            return dot_product;
-        }
+        const double operator * (const RowVector & other);
 
         void show();
 };
@@ -162,6 +145,26 @@ RowVector::RowVector(const RowVector & other){
     name = other.name;
     // Then append
     name.append("2");
+}
+
+
+const double RowVector::operator * (const RowVector & other){
+#ifdef LOG
+    std::cout << '[' << &columns << ']' << "RowVector operator * (" << & other << ")\n";
+#endif
+
+    // Check size
+    assert(columns.size() == other.columns.size());
+
+    double dot_product = 0.0;
+
+    // Element loop
+    for (uint32_t i = 0; columns.size() > i; ++i){
+        dot_product += columns[i] * other.columns[i];
+    }
+
+    // Returning a temporary image
+    return dot_product;
 }
 
 
