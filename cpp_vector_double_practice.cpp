@@ -55,13 +55,7 @@ class RowVector
             return columns[i];
         }
 
-        const std::string get_name(){
-#ifdef LOG
-            std::cout << '[' << &columns << ']' << "void show()\n";
-#endif
-            // Return constant; to prevent change
-            return name;
-        }
+        const std::string get_name();
 
         RowVector operator + (const RowVector & other);
 
@@ -112,6 +106,15 @@ RowVector::RowVector(const RowVector & other){
     name = other.name;
     // Then append
     name.append("2");
+}
+
+
+const std::string RowVector::get_name(){
+#ifdef LOG
+    std::cout << '[' << &columns << ']' << "void show()\n";
+#endif
+    // Return constant; to prevent change
+    return name;
 }
 
 
