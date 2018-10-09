@@ -35,7 +35,7 @@ class RowVector
 
         // Default arguments
         // If the function could not find the argument in the call, it uses the default value.
-        RowVector(const uint32_t n, const double *values=NULL, const char *new_name="None"){
+        RowVector(const uint32_t n, const double *values=NULL, std::string new_name="None"){
 #ifdef LOG
             std::cout << '[' << &columns << ']' 
             << "RowVector(" << n << ", " << values << ", " << new_name << ")\n";
@@ -60,7 +60,7 @@ class RowVector
 
         // Instead of implementing another constructor, reusing an existing one
         // c++ 11 or later
-        RowVector(const uint32_t n, const char *new_name="None") : RowVector(n, NULL, new_name){
+        RowVector(const uint32_t n, std::string new_name="None") : RowVector(n, NULL, new_name){
 #ifdef LOG
             std::cout << '[' << &columns << ']' << "RowVector(" << n << ", " << new_name << ")\n";
 #endif
