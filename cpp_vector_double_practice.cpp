@@ -47,13 +47,7 @@ class RowVector
 
         RowVector(const RowVector & other);
 
-        double & operator [] (const uint32_t i){
-#ifdef LOG
-            std::cout << '[' << &columns << ']' << "double & operator [] (" << i << ")\n";
-#endif
-            // Return reference; otherwise, unable to assign
-            return columns[i];
-        }
+        double & operator [] (const uint32_t i);
 
         const std::string get_name();
 
@@ -106,6 +100,15 @@ RowVector::RowVector(const RowVector & other){
     name = other.name;
     // Then append
     name.append("2");
+}
+
+
+double & RowVector::operator [] (const uint32_t i){
+#ifdef LOG
+    std::cout << '[' << &columns << ']' << "double & operator [] (" << i << ")\n";
+#endif
+    // Return reference; otherwise, unable to assign
+    return columns[i];
 }
 
 
