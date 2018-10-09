@@ -1,21 +1,15 @@
 #include <iostream>
 #include <map>
 // https://en.cppreference.com/w/cpp/string/byte/strcmp
-#include <cstring>
+// https://stackoverflow.com/questions/3709031/mapstring-string-how-to-insert-data-in-this-map
+#include <string>
+
 
 using namespace std;
 
-// https://stackoverflow.com/questions/4157687/
-struct cmp_str
-{
-   bool operator()(char const *a, char const *b)
-   {
-      return std::strcmp(a, b) < 0;
-   }
-};
 
 int main(int argn, char * argv[]){
-	map<const char *, const char *, cmp_str>s;
+	map<string, string>s;
 
 	s["name"] = "python";
 	s["year"] = "AD1989";
