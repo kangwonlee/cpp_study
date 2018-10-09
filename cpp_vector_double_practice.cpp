@@ -61,9 +61,15 @@ class RowVector
         // Instead of implementing another constructor, reusing an existing one
         // c++ 11 or later
         RowVector(const uint32_t n, const char *new_name="None") : RowVector(n, NULL, new_name){
+#ifdef LOG
+            std::cout << '[' << &columns << ']' << "RowVector(" << n << ", " << new_name << ")\n";
+#endif
         }
 
         RowVector(const RowVector & other){
+#ifdef LOG
+            std::cout << '[' << &columns << ']' << "RowVector(" << & other << ")\n";
+#endif
             // https://codereview.stackexchange.com/questions/149669/c-operator-overloading-for-matrix-operations-follow-up
             // http://www.cplusplus.com/reference/vector/vector/resize/
             columns.resize(other.columns.size());
@@ -78,16 +84,25 @@ class RowVector
         }
 
         double & operator [] (const uint32_t i){
+#ifdef LOG
+            std::cout << '[' << &columns << ']' << "double & operator [] (" << i << ")\n";
+#endif
             // Return reference; otherwise, unable to assign
             return columns[i];
         }
 
         const std::string get_name(){
+#ifdef LOG
+            std::cout << '[' << &columns << ']' << "void show()\n";
+#endif
             // Return constant; to prevent change
             return name;
         }
 
         RowVector operator + (const RowVector & other){
+#ifdef LOG
+            std::cout << '[' << &columns << ']' << "RowVector operator + (" << & other << ")\n";
+#endif
             // Check size
             assert(columns.size() == other.columns.size());
 
@@ -104,6 +119,9 @@ class RowVector
         }
 
         RowVector operator * (const double a){
+#ifdef LOG
+            std::cout << '[' << &columns << ']' << "RowVector operator * (" << a << ")\n";
+#endif
 
             // Make a new vector to return
             RowVector temp(*this);
@@ -119,6 +137,10 @@ class RowVector
         }
 
         const double operator * (const RowVector & other){
+#ifdef LOG
+            std::cout << '[' << &columns << ']' << "RowVector operator * (" << & other << ")\n";
+#endif
+
             // Check size
             assert(columns.size() == other.columns.size());
 
@@ -134,6 +156,9 @@ class RowVector
         }
 
         void show(){
+#ifdef LOG
+            std::cout << '[' << &columns << ']' << "void show()\n";
+#endif
             for (uint32_t i=0; columns.size()> i; ++i){
                 std::cout << name << '[' << i << "] = " << columns[i] << '\n';
             }
