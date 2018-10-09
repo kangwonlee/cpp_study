@@ -168,3 +168,4 @@ int32_t main(int32_t argn, char *argv[]){
 }
 
 // End cpp_vector_double_practice.cpp
+// Build command : g++ -Wall -g -std=c++14 cpp_vector_double_practice.cpp -o cpp_vector_double_practice
