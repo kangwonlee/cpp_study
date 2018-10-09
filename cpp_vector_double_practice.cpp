@@ -27,6 +27,12 @@ class RowVector
             name = "None";
 		}
 
+        ~ RowVector(){
+#ifdef LOG
+            std::cout << '[' << &columns << ']' << "~ RowVector()" << '\n';
+#endif
+        }
+
         // Default arguments
         // If the function could not find the argument in the call, it uses the default value.
         RowVector(const uint32_t n, const double *values=NULL, const char *new_name="None"){

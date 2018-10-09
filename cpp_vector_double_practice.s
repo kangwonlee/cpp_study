@@ -7,19 +7,16 @@
    9              		.local	_ZStL8__ioinit
   10              		.comm	_ZStL8__ioinit,1,1
   11              	.LC0:
-  12 0001 526F7756 		.string	"RowVector("
-  12      6563746F 
-  12      722800
-  13              	.LC1:
-  14 000c 2C2000   		.string	", "
-  15              	.LC2:
-  16 000f 290A00   		.string	")\n"
-  17              		.section	.text._ZN9RowVectorC2EjPKdPKc,"axG",@progbits,_ZN9RowVectorC5EjPKdPKc,comdat
-  18              		.align 2
-  19              		.weak	_ZN9RowVectorC2EjPKdPKc
-  21              	_ZN9RowVectorC2EjPKdPKc:
-  22              	.LFB1842:
-  23              		.file 1 "cpp_vector_double_practice.cpp"
+  12 0001 7E20526F 		.string	"~ RowVector()"
+  12      77566563 
+  12      746F7228 
+  12      2900
+  13              		.section	.text._ZN9RowVectorD2Ev,"axG",@progbits,_ZN9RowVectorD5Ev,comdat
+  14              		.align 2
+  15              		.weak	_ZN9RowVectorD2Ev
+  17              	_ZN9RowVectorD2Ev:
+  18              	.LFB1842:
+  19              		.file 1 "cpp_vector_double_practice.cpp"
    1:cpp_vector_double_practice.cpp **** // Begin cpp_vector_double_practice.cpp
    2:cpp_vector_double_practice.cpp **** 
    3:cpp_vector_double_practice.cpp **** #include <cassert>
@@ -49,1862 +46,1564 @@
   27:cpp_vector_double_practice.cpp ****             name = "None";
   28:cpp_vector_double_practice.cpp **** 		}
   29:cpp_vector_double_practice.cpp **** 
-  30:cpp_vector_double_practice.cpp ****         // Default arguments
-  31:cpp_vector_double_practice.cpp ****         // If the function could not find the argument in the call, it uses the default value.
-  32:cpp_vector_double_practice.cpp ****         RowVector(const uint32_t n, const double *values=NULL, const char *new_name="None"){
-  24              		.loc 1 32 0
-  25              		.cfi_startproc
-  26              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
-  27              		.cfi_lsda 0x1b,.LLSDA1842
-  28 0000 55       		pushq	%rbp
-  29              		.cfi_def_cfa_offset 16
-  30              		.cfi_offset 6, -16
-  31 0001 4889E5   		movq	%rsp, %rbp
-  32              		.cfi_def_cfa_register 6
-  33 0004 53       		pushq	%rbx
-  34 0005 4883EC38 		subq	$56, %rsp
-  35              		.cfi_offset 3, -24
-  36 0009 48897DD8 		movq	%rdi, -40(%rbp)
-  37 000d 8975D4   		movl	%esi, -44(%rbp)
-  38 0010 488955C8 		movq	%rdx, -56(%rbp)
-  39 0014 48894DC0 		movq	%rcx, -64(%rbp)
-  40              	.LBB2:
-  41              		.loc 1 32 0
-  42 0018 488B45D8 		movq	-40(%rbp), %rax
-  43 001c 4889C7   		movq	%rax, %rdi
-  44 001f E8000000 		call	_ZNSt6vectorIdSaIdEEC1Ev
-  44      00
-  45 0024 488B45D8 		movq	-40(%rbp), %rax
-  46 0028 4883C018 		addq	$24, %rax
-  47 002c 4889C7   		movq	%rax, %rdi
-  48 002f E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev@PLT
-  48      00
-  49              	.LBB3:
-  33:cpp_vector_double_practice.cpp **** #ifdef LOG
-  34:cpp_vector_double_practice.cpp ****             std::cout << '[' << &columns << ']' 
-  50              		.loc 1 34 0
-  51 0034 BE5B0000 		movl	$91, %esi
-  51      00
-  52 0039 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
-  52      000000
-  53              	.LEHB0:
-  54 0040 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
+  30:cpp_vector_double_practice.cpp ****         ~ RowVector(){
+  20              		.loc 1 30 0
+  21              		.cfi_startproc
+  22              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+  23              		.cfi_lsda 0x1b,.LLSDA1842
+  24 0000 55       		pushq	%rbp
+  25              		.cfi_def_cfa_offset 16
+  26              		.cfi_offset 6, -16
+  27 0001 4889E5   		movq	%rsp, %rbp
+  28              		.cfi_def_cfa_register 6
+  29 0004 4883EC10 		subq	$16, %rsp
+  30 0008 48897DF8 		movq	%rdi, -8(%rbp)
+  31              	.LBB2:
+  31:cpp_vector_double_practice.cpp **** #ifdef LOG
+  32:cpp_vector_double_practice.cpp ****             std::cout << '[' << &columns << ']' << "~ RowVector()" << '\n';
+  32              		.loc 1 32 0
+  33 000c BE5B0000 		movl	$91, %esi
+  33      00
+  34 0011 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
+  34      000000
+  35 0018 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
+  35      00
+  36 001d 4889C2   		movq	%rax, %rdx
+  37 0020 488B45F8 		movq	-8(%rbp), %rax
+  38 0024 4889C6   		movq	%rax, %rsi
+  39 0027 4889D7   		movq	%rdx, %rdi
+  40 002a E8000000 		call	_ZNSolsEPKv@PLT
+  40      00
+  41 002f BE5D0000 		movl	$93, %esi
+  41      00
+  42 0034 4889C7   		movq	%rax, %rdi
+  43 0037 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
+  43      00
+  44 003c 488D3500 		leaq	.LC0(%rip), %rsi
+  44      000000
+  45 0043 4889C7   		movq	%rax, %rdi
+  46 0046 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+  46      00
+  47 004b BE0A0000 		movl	$10, %esi
+  47      00
+  48 0050 4889C7   		movq	%rax, %rdi
+  49 0053 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
+  49      00
+  30:cpp_vector_double_practice.cpp **** #ifdef LOG
+  50              		.loc 1 30 0
+  51 0058 488B45F8 		movq	-8(%rbp), %rax
+  52 005c 4883C018 		addq	$24, %rax
+  53 0060 4889C7   		movq	%rax, %rdi
+  54 0063 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@PLT
   54      00
-  55 0045 4889C2   		movq	%rax, %rdx
-  56 0048 488B45D8 		movq	-40(%rbp), %rax
-  57 004c 4889C6   		movq	%rax, %rsi
-  58 004f 4889D7   		movq	%rdx, %rdi
-  59 0052 E8000000 		call	_ZNSolsEPKv@PLT
-  59      00
-  35:cpp_vector_double_practice.cpp ****             << "RowVector(" << n << ", " << values << ", " << new_name << ")\n";
-  60              		.loc 1 35 0 discriminator 1
-  61 0057 BE5D0000 		movl	$93, %esi
-  61      00
-  62 005c 4889C7   		movq	%rax, %rdi
-  63 005f E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
-  63      00
-  64              		.loc 1 35 0 is_stmt 0 discriminator 2
-  65 0064 488D3500 		leaq	.LC0(%rip), %rsi
-  65      000000
-  66 006b 4889C7   		movq	%rax, %rdi
-  67 006e E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
-  67      00
-  68              		.loc 1 35 0 discriminator 1
-  69 0073 4889C2   		movq	%rax, %rdx
-  70 0076 8B45D4   		movl	-44(%rbp), %eax
-  71 0079 89C6     		movl	%eax, %esi
-  72 007b 4889D7   		movq	%rdx, %rdi
-  73 007e E8000000 		call	_ZNSolsEj@PLT
-  73      00
-  74              		.loc 1 35 0 discriminator 2
-  75 0083 488D3500 		leaq	.LC1(%rip), %rsi
-  75      000000
-  76 008a 4889C7   		movq	%rax, %rdi
-  77 008d E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
-  77      00
-  78              		.loc 1 35 0 discriminator 3
-  79 0092 4889C2   		movq	%rax, %rdx
-  80 0095 488B45C8 		movq	-56(%rbp), %rax
-  81 0099 4889C6   		movq	%rax, %rsi
-  82 009c 4889D7   		movq	%rdx, %rdi
-  83 009f E8000000 		call	_ZNSolsEPKv@PLT
-  83      00
-  84              		.loc 1 35 0 discriminator 4
-  85 00a4 488D3500 		leaq	.LC1(%rip), %rsi
-  85      000000
-  86 00ab 4889C7   		movq	%rax, %rdi
-  87 00ae E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
-  87      00
-  88              		.loc 1 35 0 discriminator 5
-  89 00b3 4889C2   		movq	%rax, %rdx
-  90 00b6 488B45C0 		movq	-64(%rbp), %rax
-  91 00ba 4889C6   		movq	%rax, %rsi
-  92 00bd 4889D7   		movq	%rdx, %rdi
-  93 00c0 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
-  93      00
-  94              		.loc 1 35 0 discriminator 6
-  95 00c5 488D3500 		leaq	.LC2(%rip), %rsi
-  95      000000
-  96 00cc 4889C7   		movq	%rax, %rdi
-  97 00cf E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
-  97      00
-  36:cpp_vector_double_practice.cpp **** #endif
-  37:cpp_vector_double_practice.cpp ****             columns.resize(n);
-  98              		.loc 1 37 0 is_stmt 1
-  99 00d4 488B45D8 		movq	-40(%rbp), %rax
- 100 00d8 8B55D4   		movl	-44(%rbp), %edx
- 101 00db 4889D6   		movq	%rdx, %rsi
- 102 00de 4889C7   		movq	%rax, %rdi
- 103 00e1 E8000000 		call	_ZNSt6vectorIdSaIdEE6resizeEm
- 103      00
- 104              	.LBB4:
-  38:cpp_vector_double_practice.cpp **** 
-  39:cpp_vector_double_practice.cpp ****             // If initial values available, copy
-  40:cpp_vector_double_practice.cpp ****             if (values){
- 105              		.loc 1 40 0
- 106 00e6 48837DC8 		cmpq	$0, -56(%rbp)
- 106      00
- 107 00eb 7456     		je	.L2
- 108              	.LBB5:
- 109              	.LBB6:
-  41:cpp_vector_double_practice.cpp ****                 for (uint32_t i = 0; columns.size() > i; ++i){
- 110              		.loc 1 41 0
- 111 00ed C745E800 		movl	$0, -24(%rbp)
- 111      000000
- 112              	.L4:
- 113              		.loc 1 41 0 is_stmt 0 discriminator 3
- 114 00f4 488B45D8 		movq	-40(%rbp), %rax
- 115 00f8 4889C7   		movq	%rax, %rdi
- 116 00fb E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+  55 0068 488B45F8 		movq	-8(%rbp), %rax
+  56 006c 4889C7   		movq	%rax, %rdi
+  57 006f E8000000 		call	_ZNSt6vectorIdSaIdEED1Ev
+  57      00
+  58              	.LBE2:
+  33:cpp_vector_double_practice.cpp **** #endif
+  34:cpp_vector_double_practice.cpp ****         }
+  59              		.loc 1 34 0
+  60 0074 90       		nop
+  61 0075 C9       		leave
+  62              		.cfi_def_cfa 7, 8
+  63 0076 C3       		ret
+  64              		.cfi_endproc
+  65              	.LFE1842:
+  66              		.globl	__gxx_personality_v0
+  67              		.section	.gcc_except_table._ZN9RowVectorD2Ev,"aG",@progbits,_ZN9RowVectorD5Ev,comdat
+  68              	.LLSDA1842:
+  69 0000 FF       		.byte	0xff
+  70 0001 FF       		.byte	0xff
+  71 0002 01       		.byte	0x1
+  72 0003 00       		.uleb128 .LLSDACSE1842-.LLSDACSB1842
+  73              	.LLSDACSB1842:
+  74              	.LLSDACSE1842:
+  75              		.section	.text._ZN9RowVectorD2Ev,"axG",@progbits,_ZN9RowVectorD5Ev,comdat
+  77              		.weak	_ZN9RowVectorD1Ev
+  78              		.set	_ZN9RowVectorD1Ev,_ZN9RowVectorD2Ev
+  79              		.section	.rodata
+  80              	.LC1:
+  81 000f 526F7756 		.string	"RowVector("
+  81      6563746F 
+  81      722800
+  82              	.LC2:
+  83 001a 2C2000   		.string	", "
+  84              	.LC3:
+  85 001d 290A00   		.string	")\n"
+  86              		.section	.text._ZN9RowVectorC2EjPKdPKc,"axG",@progbits,_ZN9RowVectorC5EjPKdPKc,comdat
+  87              		.align 2
+  88              		.weak	_ZN9RowVectorC2EjPKdPKc
+  90              	_ZN9RowVectorC2EjPKdPKc:
+  91              	.LFB1845:
+  35:cpp_vector_double_practice.cpp **** 
+  36:cpp_vector_double_practice.cpp ****         // Default arguments
+  37:cpp_vector_double_practice.cpp ****         // If the function could not find the argument in the call, it uses the default value.
+  38:cpp_vector_double_practice.cpp ****         RowVector(const uint32_t n, const double *values=NULL, const char *new_name="None"){
+  92              		.loc 1 38 0
+  93              		.cfi_startproc
+  94              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+  95              		.cfi_lsda 0x1b,.LLSDA1845
+  96 0000 55       		pushq	%rbp
+  97              		.cfi_def_cfa_offset 16
+  98              		.cfi_offset 6, -16
+  99 0001 4889E5   		movq	%rsp, %rbp
+ 100              		.cfi_def_cfa_register 6
+ 101 0004 53       		pushq	%rbx
+ 102 0005 4883EC38 		subq	$56, %rsp
+ 103              		.cfi_offset 3, -24
+ 104 0009 48897DD8 		movq	%rdi, -40(%rbp)
+ 105 000d 8975D4   		movl	%esi, -44(%rbp)
+ 106 0010 488955C8 		movq	%rdx, -56(%rbp)
+ 107 0014 48894DC0 		movq	%rcx, -64(%rbp)
+ 108              	.LBB3:
+ 109              		.loc 1 38 0
+ 110 0018 488B45D8 		movq	-40(%rbp), %rax
+ 111 001c 4889C7   		movq	%rax, %rdi
+ 112 001f E8000000 		call	_ZNSt6vectorIdSaIdEEC1Ev
+ 112      00
+ 113 0024 488B45D8 		movq	-40(%rbp), %rax
+ 114 0028 4883C018 		addq	$24, %rax
+ 115 002c 4889C7   		movq	%rax, %rdi
+ 116 002f E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev@PLT
  116      00
- 117 0100 4889C2   		movq	%rax, %rdx
- 118 0103 8B45E8   		movl	-24(%rbp), %eax
- 119 0106 4839C2   		cmpq	%rax, %rdx
- 120 0109 0F97C0   		seta	%al
- 121 010c 84C0     		testb	%al, %al
- 122 010e 7476     		je	.L5
-  42:cpp_vector_double_practice.cpp ****                     columns[i] = values[i];
- 123              		.loc 1 42 0 is_stmt 1 discriminator 2
- 124 0110 8B45E8   		movl	-24(%rbp), %eax
- 125 0113 488D14C5 		leaq	0(,%rax,8), %rdx
- 125      00000000 
- 126 011b 488B45C8 		movq	-56(%rbp), %rax
- 127 011f 488D1C02 		leaq	(%rdx,%rax), %rbx
- 128 0123 8B55E8   		movl	-24(%rbp), %edx
- 129 0126 488B45D8 		movq	-40(%rbp), %rax
- 130 012a 4889D6   		movq	%rdx, %rsi
- 131 012d 4889C7   		movq	%rax, %rdi
- 132 0130 E8000000 		call	_ZNSt6vectorIdSaIdEEixEm
- 132      00
- 133 0135 F20F1003 		movsd	(%rbx), %xmm0
- 134 0139 F20F1100 		movsd	%xmm0, (%rax)
-  41:cpp_vector_double_practice.cpp ****                 for (uint32_t i = 0; columns.size() > i; ++i){
- 135              		.loc 1 41 0 discriminator 2
- 136 013d 8345E801 		addl	$1, -24(%rbp)
- 137 0141 EBB1     		jmp	.L4
- 138              	.L2:
- 139              	.LBE6:
- 140              	.LBE5:
- 141              	.LBB7:
- 142              	.LBB8:
-  43:cpp_vector_double_practice.cpp ****                 }
-  44:cpp_vector_double_practice.cpp ****             }
-  45:cpp_vector_double_practice.cpp ****             // If no initial values, set all values zero
-  46:cpp_vector_double_practice.cpp ****             else{
-  47:cpp_vector_double_practice.cpp ****                 for (uint32_t i = 0; columns.size() > i; ++i){
- 143              		.loc 1 47 0
- 144 0143 C745EC00 		movl	$0, -20(%rbp)
- 144      000000
- 145              	.L6:
- 146              		.loc 1 47 0 is_stmt 0 discriminator 3
- 147 014a 488B45D8 		movq	-40(%rbp), %rax
- 148 014e 4889C7   		movq	%rax, %rdi
- 149 0151 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 149      00
- 150 0156 4889C2   		movq	%rax, %rdx
- 151 0159 8B45EC   		movl	-20(%rbp), %eax
- 152 015c 4839C2   		cmpq	%rax, %rdx
- 153 015f 0F97C0   		seta	%al
- 154 0162 84C0     		testb	%al, %al
- 155 0164 7420     		je	.L5
-  48:cpp_vector_double_practice.cpp ****                     columns[i] = 0.0;
- 156              		.loc 1 48 0 is_stmt 1 discriminator 2
- 157 0166 8B55EC   		movl	-20(%rbp), %edx
- 158 0169 488B45D8 		movq	-40(%rbp), %rax
- 159 016d 4889D6   		movq	%rdx, %rsi
- 160 0170 4889C7   		movq	%rax, %rdi
- 161 0173 E8000000 		call	_ZNSt6vectorIdSaIdEEixEm
+ 117              	.LBB4:
+  39:cpp_vector_double_practice.cpp **** #ifdef LOG
+  40:cpp_vector_double_practice.cpp ****             std::cout << '[' << &columns << ']' 
+ 118              		.loc 1 40 0
+ 119 0034 BE5B0000 		movl	$91, %esi
+ 119      00
+ 120 0039 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
+ 120      000000
+ 121              	.LEHB0:
+ 122 0040 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
+ 122      00
+ 123 0045 4889C2   		movq	%rax, %rdx
+ 124 0048 488B45D8 		movq	-40(%rbp), %rax
+ 125 004c 4889C6   		movq	%rax, %rsi
+ 126 004f 4889D7   		movq	%rdx, %rdi
+ 127 0052 E8000000 		call	_ZNSolsEPKv@PLT
+ 127      00
+  41:cpp_vector_double_practice.cpp ****             << "RowVector(" << n << ", " << values << ", " << new_name << ")\n";
+ 128              		.loc 1 41 0 discriminator 1
+ 129 0057 BE5D0000 		movl	$93, %esi
+ 129      00
+ 130 005c 4889C7   		movq	%rax, %rdi
+ 131 005f E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
+ 131      00
+ 132              		.loc 1 41 0 is_stmt 0 discriminator 2
+ 133 0064 488D3500 		leaq	.LC1(%rip), %rsi
+ 133      000000
+ 134 006b 4889C7   		movq	%rax, %rdi
+ 135 006e E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+ 135      00
+ 136              		.loc 1 41 0 discriminator 1
+ 137 0073 4889C2   		movq	%rax, %rdx
+ 138 0076 8B45D4   		movl	-44(%rbp), %eax
+ 139 0079 89C6     		movl	%eax, %esi
+ 140 007b 4889D7   		movq	%rdx, %rdi
+ 141 007e E8000000 		call	_ZNSolsEj@PLT
+ 141      00
+ 142              		.loc 1 41 0 discriminator 2
+ 143 0083 488D3500 		leaq	.LC2(%rip), %rsi
+ 143      000000
+ 144 008a 4889C7   		movq	%rax, %rdi
+ 145 008d E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+ 145      00
+ 146              		.loc 1 41 0 discriminator 3
+ 147 0092 4889C2   		movq	%rax, %rdx
+ 148 0095 488B45C8 		movq	-56(%rbp), %rax
+ 149 0099 4889C6   		movq	%rax, %rsi
+ 150 009c 4889D7   		movq	%rdx, %rdi
+ 151 009f E8000000 		call	_ZNSolsEPKv@PLT
+ 151      00
+ 152              		.loc 1 41 0 discriminator 4
+ 153 00a4 488D3500 		leaq	.LC2(%rip), %rsi
+ 153      000000
+ 154 00ab 4889C7   		movq	%rax, %rdi
+ 155 00ae E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+ 155      00
+ 156              		.loc 1 41 0 discriminator 5
+ 157 00b3 4889C2   		movq	%rax, %rdx
+ 158 00b6 488B45C0 		movq	-64(%rbp), %rax
+ 159 00ba 4889C6   		movq	%rax, %rsi
+ 160 00bd 4889D7   		movq	%rdx, %rdi
+ 161 00c0 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
  161      00
- 162 0178 660FEFC0 		pxor	%xmm0, %xmm0
- 163 017c F20F1100 		movsd	%xmm0, (%rax)
-  47:cpp_vector_double_practice.cpp ****                     columns[i] = 0.0;
- 164              		.loc 1 47 0 discriminator 2
- 165 0180 8345EC01 		addl	$1, -20(%rbp)
- 166 0184 EBC4     		jmp	.L6
- 167              	.L5:
- 168              	.LBE8:
- 169              	.LBE7:
- 170              	.LBE4:
+ 162              		.loc 1 41 0 discriminator 6
+ 163 00c5 488D3500 		leaq	.LC3(%rip), %rsi
+ 163      000000
+ 164 00cc 4889C7   		movq	%rax, %rdi
+ 165 00cf E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+ 165      00
+  42:cpp_vector_double_practice.cpp **** #endif
+  43:cpp_vector_double_practice.cpp ****             columns.resize(n);
+ 166              		.loc 1 43 0 is_stmt 1
+ 167 00d4 488B45D8 		movq	-40(%rbp), %rax
+ 168 00d8 8B55D4   		movl	-44(%rbp), %edx
+ 169 00db 4889D6   		movq	%rdx, %rsi
+ 170 00de 4889C7   		movq	%rax, %rdi
+ 171 00e1 E8000000 		call	_ZNSt6vectorIdSaIdEE6resizeEm
+ 171      00
+ 172              	.LBB5:
+  44:cpp_vector_double_practice.cpp **** 
+  45:cpp_vector_double_practice.cpp ****             // If initial values available, copy
+  46:cpp_vector_double_practice.cpp ****             if (values){
+ 173              		.loc 1 46 0
+ 174 00e6 48837DC8 		cmpq	$0, -56(%rbp)
+ 174      00
+ 175 00eb 7456     		je	.L3
+ 176              	.LBB6:
+ 177              	.LBB7:
+  47:cpp_vector_double_practice.cpp ****                 for (uint32_t i = 0; columns.size() > i; ++i){
+ 178              		.loc 1 47 0
+ 179 00ed C745E800 		movl	$0, -24(%rbp)
+ 179      000000
+ 180              	.L5:
+ 181              		.loc 1 47 0 is_stmt 0 discriminator 3
+ 182 00f4 488B45D8 		movq	-40(%rbp), %rax
+ 183 00f8 4889C7   		movq	%rax, %rdi
+ 184 00fb E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 184      00
+ 185 0100 4889C2   		movq	%rax, %rdx
+ 186 0103 8B45E8   		movl	-24(%rbp), %eax
+ 187 0106 4839C2   		cmpq	%rax, %rdx
+ 188 0109 0F97C0   		seta	%al
+ 189 010c 84C0     		testb	%al, %al
+ 190 010e 7476     		je	.L6
+  48:cpp_vector_double_practice.cpp ****                     columns[i] = values[i];
+ 191              		.loc 1 48 0 is_stmt 1 discriminator 2
+ 192 0110 8B45E8   		movl	-24(%rbp), %eax
+ 193 0113 488D14C5 		leaq	0(,%rax,8), %rdx
+ 193      00000000 
+ 194 011b 488B45C8 		movq	-56(%rbp), %rax
+ 195 011f 488D1C02 		leaq	(%rdx,%rax), %rbx
+ 196 0123 8B55E8   		movl	-24(%rbp), %edx
+ 197 0126 488B45D8 		movq	-40(%rbp), %rax
+ 198 012a 4889D6   		movq	%rdx, %rsi
+ 199 012d 4889C7   		movq	%rax, %rdi
+ 200 0130 E8000000 		call	_ZNSt6vectorIdSaIdEEixEm
+ 200      00
+ 201 0135 F20F1003 		movsd	(%rbx), %xmm0
+ 202 0139 F20F1100 		movsd	%xmm0, (%rax)
+  47:cpp_vector_double_practice.cpp ****                 for (uint32_t i = 0; columns.size() > i; ++i){
+ 203              		.loc 1 47 0 discriminator 2
+ 204 013d 8345E801 		addl	$1, -24(%rbp)
+ 205 0141 EBB1     		jmp	.L5
+ 206              	.L3:
+ 207              	.LBE7:
+ 208              	.LBE6:
+ 209              	.LBB8:
+ 210              	.LBB9:
   49:cpp_vector_double_practice.cpp ****                 }
   50:cpp_vector_double_practice.cpp ****             }
-  51:cpp_vector_double_practice.cpp **** 
-  52:cpp_vector_double_practice.cpp ****             name = new_name;
- 171              		.loc 1 52 0
- 172 0186 488B45D8 		movq	-40(%rbp), %rax
- 173 018a 488D5018 		leaq	24(%rax), %rdx
- 174 018e 488B45C0 		movq	-64(%rbp), %rax
- 175 0192 4889C6   		movq	%rax, %rsi
- 176 0195 4889D7   		movq	%rdx, %rdi
- 177 0198 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSEPKc@PLT
- 177      00
- 178              	.LEHE0:
- 179              	.LBE3:
- 180              	.LBE2:
-  53:cpp_vector_double_practice.cpp ****         }
- 181              		.loc 1 53 0
- 182 019d EB2A     		jmp	.L9
- 183              	.L8:
- 184 019f 4889C3   		movq	%rax, %rbx
- 185              	.LBB9:
-  32:cpp_vector_double_practice.cpp **** #ifdef LOG
- 186              		.loc 1 32 0
- 187 01a2 488B45D8 		movq	-40(%rbp), %rax
- 188 01a6 4883C018 		addq	$24, %rax
- 189 01aa 4889C7   		movq	%rax, %rdi
- 190 01ad E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@PLT
- 190      00
- 191 01b2 488B45D8 		movq	-40(%rbp), %rax
- 192 01b6 4889C7   		movq	%rax, %rdi
- 193 01b9 E8000000 		call	_ZNSt6vectorIdSaIdEED1Ev
- 193      00
- 194 01be 4889D8   		movq	%rbx, %rax
- 195 01c1 4889C7   		movq	%rax, %rdi
- 196              	.LEHB1:
- 197 01c4 E8000000 		call	_Unwind_Resume@PLT
- 197      00
- 198              	.LEHE1:
- 199              	.L9:
- 200              	.LBE9:
- 201              		.loc 1 53 0
- 202 01c9 4883C438 		addq	$56, %rsp
- 203 01cd 5B       		popq	%rbx
- 204 01ce 5D       		popq	%rbp
- 205              		.cfi_def_cfa 7, 8
- 206 01cf C3       		ret
- 207              		.cfi_endproc
- 208              	.LFE1842:
- 209              		.globl	__gxx_personality_v0
- 210              		.section	.gcc_except_table._ZN9RowVectorC2EjPKdPKc,"aG",@progbits,_ZN9RowVectorC5EjPKdPKc,comdat
- 211              	.LLSDA1842:
- 212 0000 FF       		.byte	0xff
- 213 0001 FF       		.byte	0xff
- 214 0002 01       		.byte	0x1
- 215 0003 0B       		.uleb128 .LLSDACSE1842-.LLSDACSB1842
- 216              	.LLSDACSB1842:
- 217 0004 40       		.uleb128 .LEHB0-.LFB1842
- 218 0005 DD02     		.uleb128 .LEHE0-.LEHB0
- 219 0007 9F03     		.uleb128 .L8-.LFB1842
- 220 0009 00       		.uleb128 0
- 221 000a C403     		.uleb128 .LEHB1-.LFB1842
- 222 000c 05       		.uleb128 .LEHE1-.LEHB1
- 223 000d 00       		.uleb128 0
- 224 000e 00       		.uleb128 0
- 225              	.LLSDACSE1842:
- 226              		.section	.text._ZN9RowVectorC2EjPKdPKc,"axG",@progbits,_ZN9RowVectorC5EjPKdPKc,comdat
- 228              		.weak	_ZN9RowVectorC1EjPKdPKc
- 229              		.set	_ZN9RowVectorC1EjPKdPKc,_ZN9RowVectorC2EjPKdPKc
- 230              		.section	.text._ZN9RowVectorD2Ev,"axG",@progbits,_ZN9RowVectorD5Ev,comdat
- 231              		.align 2
- 232              		.weak	_ZN9RowVectorD2Ev
- 234              	_ZN9RowVectorD2Ev:
- 235              	.LFB1846:
-  12:cpp_vector_double_practice.cpp **** {
- 236              		.loc 1 12 0
- 237              		.cfi_startproc
- 238 0000 55       		pushq	%rbp
- 239              		.cfi_def_cfa_offset 16
- 240              		.cfi_offset 6, -16
- 241 0001 4889E5   		movq	%rsp, %rbp
- 242              		.cfi_def_cfa_register 6
- 243 0004 4883EC10 		subq	$16, %rsp
- 244 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 245              	.LBB10:
-  12:cpp_vector_double_practice.cpp **** {
- 246              		.loc 1 12 0
- 247 000c 488B45F8 		movq	-8(%rbp), %rax
- 248 0010 4883C018 		addq	$24, %rax
- 249 0014 4889C7   		movq	%rax, %rdi
- 250 0017 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@PLT
- 250      00
- 251 001c 488B45F8 		movq	-8(%rbp), %rax
- 252 0020 4889C7   		movq	%rax, %rdi
- 253 0023 E8000000 		call	_ZNSt6vectorIdSaIdEED1Ev
- 253      00
- 254              	.LBE10:
- 255 0028 90       		nop
- 256 0029 C9       		leave
- 257              		.cfi_def_cfa 7, 8
- 258 002a C3       		ret
- 259              		.cfi_endproc
- 260              	.LFE1846:
- 262              		.weak	_ZN9RowVectorD1Ev
- 263              		.set	_ZN9RowVectorD1Ev,_ZN9RowVectorD2Ev
- 264              		.section	.text._ZN9RowVectorC2EjPKc,"axG",@progbits,_ZN9RowVectorC5EjPKc,comdat
- 265              		.align 2
- 266              		.weak	_ZN9RowVectorC2EjPKc
- 268              	_ZN9RowVectorC2EjPKc:
- 269              	.LFB1848:
-  54:cpp_vector_double_practice.cpp **** 
-  55:cpp_vector_double_practice.cpp ****         // Instead of implementing another constructor, reusing an existing one
-  56:cpp_vector_double_practice.cpp ****         // c++ 11 or later
-  57:cpp_vector_double_practice.cpp ****         RowVector(const uint32_t n, const char *new_name="None") : RowVector(n, NULL, new_name){
- 270              		.loc 1 57 0
- 271              		.cfi_startproc
- 272              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
- 273              		.cfi_lsda 0x1b,.LLSDA1848
- 274 0000 55       		pushq	%rbp
- 275              		.cfi_def_cfa_offset 16
- 276              		.cfi_offset 6, -16
- 277 0001 4889E5   		movq	%rsp, %rbp
- 278              		.cfi_def_cfa_register 6
- 279 0004 53       		pushq	%rbx
- 280 0005 4883EC28 		subq	$40, %rsp
- 281              		.cfi_offset 3, -24
- 282 0009 48897DE8 		movq	%rdi, -24(%rbp)
- 283 000d 8975E4   		movl	%esi, -28(%rbp)
- 284 0010 488955D8 		movq	%rdx, -40(%rbp)
- 285              	.LBB11:
- 286              		.loc 1 57 0
- 287 0014 488B55D8 		movq	-40(%rbp), %rdx
- 288 0018 8B75E4   		movl	-28(%rbp), %esi
- 289 001b 488B45E8 		movq	-24(%rbp), %rax
- 290 001f 4889D1   		movq	%rdx, %rcx
- 291 0022 BA000000 		movl	$0, %edx
- 291      00
- 292 0027 4889C7   		movq	%rax, %rdi
- 293              	.LEHB2:
- 294 002a E8000000 		call	_ZN9RowVectorC1EjPKdPKc
- 294      00
- 295              	.LEHE2:
-  58:cpp_vector_double_practice.cpp **** #ifdef LOG
-  59:cpp_vector_double_practice.cpp ****             std::cout << '[' << &columns << ']' 
- 296              		.loc 1 59 0
- 297 002f BE5B0000 		movl	$91, %esi
- 297      00
- 298 0034 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
- 298      000000
- 299              	.LEHB3:
- 300 003b E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
- 300      00
- 301 0040 4889C2   		movq	%rax, %rdx
- 302 0043 488B45E8 		movq	-24(%rbp), %rax
- 303 0047 4889C6   		movq	%rax, %rsi
- 304 004a 4889D7   		movq	%rdx, %rdi
- 305 004d E8000000 		call	_ZNSolsEPKv@PLT
- 305      00
-  60:cpp_vector_double_practice.cpp ****             << "RowVector(" << n << ", " << new_name << ")\n";
- 306              		.loc 1 60 0 discriminator 1
- 307 0052 BE5D0000 		movl	$93, %esi
- 307      00
- 308 0057 4889C7   		movq	%rax, %rdi
- 309 005a E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
- 309      00
- 310              		.loc 1 60 0 is_stmt 0 discriminator 2
- 311 005f 488D3500 		leaq	.LC0(%rip), %rsi
- 311      000000
- 312 0066 4889C7   		movq	%rax, %rdi
- 313 0069 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 313      00
- 314              		.loc 1 60 0 discriminator 1
- 315 006e 4889C2   		movq	%rax, %rdx
- 316 0071 8B45E4   		movl	-28(%rbp), %eax
- 317 0074 89C6     		movl	%eax, %esi
- 318 0076 4889D7   		movq	%rdx, %rdi
- 319 0079 E8000000 		call	_ZNSolsEj@PLT
- 319      00
- 320              		.loc 1 60 0 discriminator 2
- 321 007e 488D3500 		leaq	.LC1(%rip), %rsi
- 321      000000
- 322 0085 4889C7   		movq	%rax, %rdi
- 323 0088 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 323      00
- 324              		.loc 1 60 0 discriminator 3
- 325 008d 4889C2   		movq	%rax, %rdx
- 326 0090 488B45D8 		movq	-40(%rbp), %rax
- 327 0094 4889C6   		movq	%rax, %rsi
- 328 0097 4889D7   		movq	%rdx, %rdi
- 329 009a E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 329      00
- 330              		.loc 1 60 0 discriminator 4
- 331 009f 488D3500 		leaq	.LC2(%rip), %rsi
- 331      000000
- 332 00a6 4889C7   		movq	%rax, %rdi
- 333 00a9 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 333      00
- 334              	.LEHE3:
- 335              	.LBE11:
-  61:cpp_vector_double_practice.cpp **** #endif
-  62:cpp_vector_double_practice.cpp ****         }
- 336              		.loc 1 62 0 is_stmt 1
- 337 00ae EB1A     		jmp	.L14
- 338              	.L13:
- 339 00b0 4889C3   		movq	%rax, %rbx
- 340              	.LBB12:
-  57:cpp_vector_double_practice.cpp **** #ifdef LOG
- 341              		.loc 1 57 0
- 342 00b3 488B45E8 		movq	-24(%rbp), %rax
- 343 00b7 4889C7   		movq	%rax, %rdi
- 344 00ba E8000000 		call	_ZN9RowVectorD1Ev
- 344      00
- 345 00bf 4889D8   		movq	%rbx, %rax
- 346 00c2 4889C7   		movq	%rax, %rdi
- 347              	.LEHB4:
- 348 00c5 E8000000 		call	_Unwind_Resume@PLT
- 348      00
- 349              	.LEHE4:
- 350              	.L14:
- 351              	.LBE12:
- 352              		.loc 1 62 0
- 353 00ca 4883C428 		addq	$40, %rsp
- 354 00ce 5B       		popq	%rbx
- 355 00cf 5D       		popq	%rbp
- 356              		.cfi_def_cfa 7, 8
- 357 00d0 C3       		ret
- 358              		.cfi_endproc
- 359              	.LFE1848:
- 360              		.section	.gcc_except_table._ZN9RowVectorC2EjPKc,"aG",@progbits,_ZN9RowVectorC5EjPKc,comdat
- 361              	.LLSDA1848:
- 362 0000 FF       		.byte	0xff
- 363 0001 FF       		.byte	0xff
- 364 0002 01       		.byte	0x1
- 365 0003 0E       		.uleb128 .LLSDACSE1848-.LLSDACSB1848
- 366              	.LLSDACSB1848:
- 367 0004 2A       		.uleb128 .LEHB2-.LFB1848
- 368 0005 05       		.uleb128 .LEHE2-.LEHB2
- 369 0006 00       		.uleb128 0
- 370 0007 00       		.uleb128 0
- 371 0008 3B       		.uleb128 .LEHB3-.LFB1848
- 372 0009 73       		.uleb128 .LEHE3-.LEHB3
- 373 000a B001     		.uleb128 .L13-.LFB1848
- 374 000c 00       		.uleb128 0
- 375 000d C501     		.uleb128 .LEHB4-.LFB1848
- 376 000f 05       		.uleb128 .LEHE4-.LEHB4
- 377 0010 00       		.uleb128 0
- 378 0011 00       		.uleb128 0
- 379              	.LLSDACSE1848:
- 380              		.section	.text._ZN9RowVectorC2EjPKc,"axG",@progbits,_ZN9RowVectorC5EjPKc,comdat
- 382              		.weak	_ZN9RowVectorC1EjPKc
- 383              		.set	_ZN9RowVectorC1EjPKc,_ZN9RowVectorC2EjPKc
- 384              		.section	.rodata
- 385              	.LC4:
- 386 0012 3200     		.string	"2"
- 387              		.section	.text._ZN9RowVectorC2ERKS_,"axG",@progbits,_ZN9RowVectorC5ERKS_,comdat
- 388              		.align 2
- 389              		.weak	_ZN9RowVectorC2ERKS_
- 391              	_ZN9RowVectorC2ERKS_:
- 392              	.LFB1851:
-  63:cpp_vector_double_practice.cpp **** 
-  64:cpp_vector_double_practice.cpp ****         RowVector(const RowVector & other){
- 393              		.loc 1 64 0
- 394              		.cfi_startproc
- 395              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
- 396              		.cfi_lsda 0x1b,.LLSDA1851
- 397 0000 55       		pushq	%rbp
- 398              		.cfi_def_cfa_offset 16
- 399              		.cfi_offset 6, -16
- 400 0001 4889E5   		movq	%rsp, %rbp
- 401              		.cfi_def_cfa_register 6
- 402 0004 53       		pushq	%rbx
- 403 0005 4883EC28 		subq	$40, %rsp
- 404              		.cfi_offset 3, -24
- 405 0009 48897DD8 		movq	%rdi, -40(%rbp)
- 406 000d 488975D0 		movq	%rsi, -48(%rbp)
- 407              	.LBB13:
- 408              		.loc 1 64 0
- 409 0011 488B45D8 		movq	-40(%rbp), %rax
- 410 0015 4889C7   		movq	%rax, %rdi
- 411 0018 E8000000 		call	_ZNSt6vectorIdSaIdEEC1Ev
- 411      00
- 412 001d 488B45D8 		movq	-40(%rbp), %rax
- 413 0021 4883C018 		addq	$24, %rax
- 414 0025 4889C7   		movq	%rax, %rdi
- 415 0028 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev@PLT
- 415      00
- 416              	.LBB14:
-  65:cpp_vector_double_practice.cpp **** #ifdef LOG
-  66:cpp_vector_double_practice.cpp ****             std::cout << '[' << &columns << ']' << "RowVector(" << &other << ")\n";
- 417              		.loc 1 66 0
- 418 002d BE5B0000 		movl	$91, %esi
- 418      00
- 419 0032 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
- 419      000000
- 420              	.LEHB5:
- 421 0039 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
- 421      00
- 422 003e 4889C2   		movq	%rax, %rdx
- 423 0041 488B45D8 		movq	-40(%rbp), %rax
- 424 0045 4889C6   		movq	%rax, %rsi
- 425 0048 4889D7   		movq	%rdx, %rdi
- 426 004b E8000000 		call	_ZNSolsEPKv@PLT
- 426      00
- 427              		.loc 1 66 0 is_stmt 0 discriminator 1
- 428 0050 BE5D0000 		movl	$93, %esi
- 428      00
- 429 0055 4889C7   		movq	%rax, %rdi
- 430 0058 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
- 430      00
- 431              		.loc 1 66 0 discriminator 2
- 432 005d 488D3500 		leaq	.LC0(%rip), %rsi
- 432      000000
- 433 0064 4889C7   		movq	%rax, %rdi
- 434 0067 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 434      00
- 435              		.loc 1 66 0 discriminator 3
- 436 006c 4889C2   		movq	%rax, %rdx
- 437 006f 488B45D0 		movq	-48(%rbp), %rax
- 438 0073 4889C6   		movq	%rax, %rsi
- 439 0076 4889D7   		movq	%rdx, %rdi
- 440 0079 E8000000 		call	_ZNSolsEPKv@PLT
- 440      00
- 441              		.loc 1 66 0 discriminator 4
- 442 007e 488D3500 		leaq	.LC2(%rip), %rsi
- 442      000000
- 443 0085 4889C7   		movq	%rax, %rdi
- 444 0088 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 444      00
-  67:cpp_vector_double_practice.cpp **** #endif
-  68:cpp_vector_double_practice.cpp ****             // https://codereview.stackexchange.com/questions/149669/c-operator-overloading-for-mat
-  69:cpp_vector_double_practice.cpp ****             // http://www.cplusplus.com/reference/vector/vector/resize/
-  70:cpp_vector_double_practice.cpp ****             columns.resize(other.columns.size());
- 445              		.loc 1 70 0 is_stmt 1
- 446 008d 488B5DD8 		movq	-40(%rbp), %rbx
- 447 0091 488B45D0 		movq	-48(%rbp), %rax
- 448 0095 4889C7   		movq	%rax, %rdi
- 449 0098 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 449      00
- 450 009d 4889C6   		movq	%rax, %rsi
- 451 00a0 4889DF   		movq	%rbx, %rdi
- 452 00a3 E8000000 		call	_ZNSt6vectorIdSaIdEE6resizeEm
- 452      00
- 453              	.LBB15:
-  71:cpp_vector_double_practice.cpp ****             for(uint32_t i=0; columns.size() > i; ++i){
- 454              		.loc 1 71 0
- 455 00a8 C745EC00 		movl	$0, -20(%rbp)
- 455      000000
- 456              	.L17:
- 457              		.loc 1 71 0 is_stmt 0 discriminator 3
- 458 00af 488B45D8 		movq	-40(%rbp), %rax
- 459 00b3 4889C7   		movq	%rax, %rdi
- 460 00b6 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 460      00
- 461 00bb 4889C2   		movq	%rax, %rdx
- 462 00be 8B45EC   		movl	-20(%rbp), %eax
- 463 00c1 4839C2   		cmpq	%rax, %rdx
- 464 00c4 0F97C0   		seta	%al
- 465 00c7 84C0     		testb	%al, %al
- 466 00c9 7435     		je	.L16
-  72:cpp_vector_double_practice.cpp ****                 columns[i] = other.columns[i];
- 467              		.loc 1 72 0 is_stmt 1 discriminator 2
- 468 00cb 8B55EC   		movl	-20(%rbp), %edx
- 469 00ce 488B45D0 		movq	-48(%rbp), %rax
- 470 00d2 4889D6   		movq	%rdx, %rsi
- 471 00d5 4889C7   		movq	%rax, %rdi
- 472 00d8 E8000000 		call	_ZNKSt6vectorIdSaIdEEixEm
- 472      00
- 473 00dd 4889C3   		movq	%rax, %rbx
- 474 00e0 8B55EC   		movl	-20(%rbp), %edx
- 475 00e3 488B45D8 		movq	-40(%rbp), %rax
- 476 00e7 4889D6   		movq	%rdx, %rsi
- 477 00ea 4889C7   		movq	%rax, %rdi
- 478 00ed E8000000 		call	_ZNSt6vectorIdSaIdEEixEm
- 478      00
- 479 00f2 F20F1003 		movsd	(%rbx), %xmm0
- 480 00f6 F20F1100 		movsd	%xmm0, (%rax)
-  71:cpp_vector_double_practice.cpp ****             for(uint32_t i=0; columns.size() > i; ++i){
- 481              		.loc 1 71 0 discriminator 2
- 482 00fa 8345EC01 		addl	$1, -20(%rbp)
- 483 00fe EBAF     		jmp	.L17
- 484              	.L16:
- 485              	.LBE15:
-  73:cpp_vector_double_practice.cpp ****             }
-  74:cpp_vector_double_practice.cpp **** 
-  75:cpp_vector_double_practice.cpp ****             // Copy name of the other one
-  76:cpp_vector_double_practice.cpp ****             name = other.name;
- 486              		.loc 1 76 0
- 487 0100 488B45D0 		movq	-48(%rbp), %rax
- 488 0104 488D5018 		leaq	24(%rax), %rdx
- 489 0108 488B45D8 		movq	-40(%rbp), %rax
- 490 010c 4883C018 		addq	$24, %rax
- 491 0110 4889D6   		movq	%rdx, %rsi
- 492 0113 4889C7   		movq	%rax, %rdi
- 493 0116 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSERKS4_@PLT
- 493      00
-  77:cpp_vector_double_practice.cpp ****             // Then append
-  78:cpp_vector_double_practice.cpp ****             name.append("2");
- 494              		.loc 1 78 0
- 495 011b 488B45D8 		movq	-40(%rbp), %rax
- 496 011f 4883C018 		addq	$24, %rax
- 497 0123 488D3500 		leaq	.LC4(%rip), %rsi
- 497      000000
- 498 012a 4889C7   		movq	%rax, %rdi
- 499 012d E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE6appendEPKc@PLT
- 499      00
- 500              	.LEHE5:
- 501              	.LBE14:
- 502              	.LBE13:
-  79:cpp_vector_double_practice.cpp ****         }
- 503              		.loc 1 79 0
- 504 0132 EB2A     		jmp	.L20
- 505              	.L19:
- 506 0134 4889C3   		movq	%rax, %rbx
- 507              	.LBB16:
-  64:cpp_vector_double_practice.cpp **** #ifdef LOG
- 508              		.loc 1 64 0
- 509 0137 488B45D8 		movq	-40(%rbp), %rax
- 510 013b 4883C018 		addq	$24, %rax
- 511 013f 4889C7   		movq	%rax, %rdi
- 512 0142 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@PLT
- 512      00
- 513 0147 488B45D8 		movq	-40(%rbp), %rax
- 514 014b 4889C7   		movq	%rax, %rdi
- 515 014e E8000000 		call	_ZNSt6vectorIdSaIdEED1Ev
- 515      00
- 516 0153 4889D8   		movq	%rbx, %rax
- 517 0156 4889C7   		movq	%rax, %rdi
- 518              	.LEHB6:
- 519 0159 E8000000 		call	_Unwind_Resume@PLT
- 519      00
- 520              	.LEHE6:
- 521              	.L20:
- 522              	.LBE16:
- 523              		.loc 1 79 0
- 524 015e 4883C428 		addq	$40, %rsp
- 525 0162 5B       		popq	%rbx
- 526 0163 5D       		popq	%rbp
- 527              		.cfi_def_cfa 7, 8
- 528 0164 C3       		ret
- 529              		.cfi_endproc
- 530              	.LFE1851:
- 531              		.section	.gcc_except_table._ZN9RowVectorC2ERKS_,"aG",@progbits,_ZN9RowVectorC5ERKS_,comdat
- 532              	.LLSDA1851:
- 533 0000 FF       		.byte	0xff
- 534 0001 FF       		.byte	0xff
- 535 0002 01       		.byte	0x1
- 536 0003 0B       		.uleb128 .LLSDACSE1851-.LLSDACSB1851
- 537              	.LLSDACSB1851:
- 538 0004 39       		.uleb128 .LEHB5-.LFB1851
- 539 0005 F901     		.uleb128 .LEHE5-.LEHB5
- 540 0007 B402     		.uleb128 .L19-.LFB1851
- 541 0009 00       		.uleb128 0
- 542 000a D902     		.uleb128 .LEHB6-.LFB1851
- 543 000c 05       		.uleb128 .LEHE6-.LEHB6
- 544 000d 00       		.uleb128 0
- 545 000e 00       		.uleb128 0
- 546              	.LLSDACSE1851:
- 547              		.section	.text._ZN9RowVectorC2ERKS_,"axG",@progbits,_ZN9RowVectorC5ERKS_,comdat
- 549              		.weak	_ZN9RowVectorC1ERKS_
- 550              		.set	_ZN9RowVectorC1ERKS_,_ZN9RowVectorC2ERKS_
- 551              		.section	.rodata
- 552              	.LC5:
- 553 0014 646F7562 		.string	"double & operator [] ("
- 553      6C652026 
- 553      206F7065 
- 553      7261746F 
- 553      72205B5D 
- 554              		.section	.text._ZN9RowVectorixEj,"axG",@progbits,_ZN9RowVectorixEj,comdat
- 555              		.align 2
- 556              		.weak	_ZN9RowVectorixEj
- 558              	_ZN9RowVectorixEj:
- 559              	.LFB1853:
-  80:cpp_vector_double_practice.cpp **** 
-  81:cpp_vector_double_practice.cpp ****         double & operator [] (const uint32_t i){
- 560              		.loc 1 81 0
- 561              		.cfi_startproc
- 562 0000 55       		pushq	%rbp
- 563              		.cfi_def_cfa_offset 16
- 564              		.cfi_offset 6, -16
- 565 0001 4889E5   		movq	%rsp, %rbp
- 566              		.cfi_def_cfa_register 6
- 567 0004 4883EC10 		subq	$16, %rsp
- 568 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 569 000c 8975F4   		movl	%esi, -12(%rbp)
-  82:cpp_vector_double_practice.cpp **** #ifdef LOG
-  83:cpp_vector_double_practice.cpp ****             std::cout << '[' << &columns << ']' << "double & operator [] (" << i << ")\n";
- 570              		.loc 1 83 0
- 571 000f BE5B0000 		movl	$91, %esi
- 571      00
- 572 0014 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
- 572      000000
- 573 001b E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
- 573      00
- 574 0020 4889C2   		movq	%rax, %rdx
- 575 0023 488B45F8 		movq	-8(%rbp), %rax
- 576 0027 4889C6   		movq	%rax, %rsi
- 577 002a 4889D7   		movq	%rdx, %rdi
- 578 002d E8000000 		call	_ZNSolsEPKv@PLT
- 578      00
- 579 0032 BE5D0000 		movl	$93, %esi
- 579      00
- 580 0037 4889C7   		movq	%rax, %rdi
- 581 003a E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
- 581      00
- 582 003f 488D3500 		leaq	.LC5(%rip), %rsi
- 582      000000
- 583 0046 4889C7   		movq	%rax, %rdi
- 584 0049 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 584      00
- 585 004e 4889C2   		movq	%rax, %rdx
- 586 0051 8B45F4   		movl	-12(%rbp), %eax
- 587 0054 89C6     		movl	%eax, %esi
- 588 0056 4889D7   		movq	%rdx, %rdi
- 589 0059 E8000000 		call	_ZNSolsEj@PLT
- 589      00
- 590 005e 488D3500 		leaq	.LC2(%rip), %rsi
- 590      000000
- 591 0065 4889C7   		movq	%rax, %rdi
- 592 0068 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 592      00
-  84:cpp_vector_double_practice.cpp **** #endif
-  85:cpp_vector_double_practice.cpp ****             // Return reference; otherwise, unable to assign
-  86:cpp_vector_double_practice.cpp ****             return columns[i];
- 593              		.loc 1 86 0
- 594 006d 8B55F4   		movl	-12(%rbp), %edx
- 595 0070 488B45F8 		movq	-8(%rbp), %rax
- 596 0074 4889D6   		movq	%rdx, %rsi
- 597 0077 4889C7   		movq	%rax, %rdi
- 598 007a E8000000 		call	_ZNSt6vectorIdSaIdEEixEm
- 598      00
-  87:cpp_vector_double_practice.cpp ****         }
- 599              		.loc 1 87 0
- 600 007f C9       		leave
- 601              		.cfi_def_cfa 7, 8
- 602 0080 C3       		ret
- 603              		.cfi_endproc
- 604              	.LFE1853:
- 606              		.section	.rodata
- 607              	.LC6:
- 608 002b 526F7756 		.string	"RowVector operator + ("
- 608      6563746F 
- 608      72206F70 
- 608      65726174 
- 608      6F72202B 
- 609 0042 00000000 		.align 8
- 609      0000
- 610              	.LC7:
- 611 0048 6370705F 		.string	"cpp_vector_double_practice.cpp"
- 611      76656374 
- 611      6F725F64 
- 611      6F75626C 
- 611      655F7072 
- 612 0067 00       		.align 8
- 613              	.LC8:
- 614 0068 636F6C75 		.string	"columns.size() == other.columns.size()"
- 614      6D6E732E 
- 614      73697A65 
- 614      2829203D 
- 614      3D206F74 
- 615              		.section	.text._ZN9RowVectorplERKS_,"axG",@progbits,_ZN9RowVectorplERKS_,comdat
- 616              		.align 2
- 617              		.weak	_ZN9RowVectorplERKS_
- 619              	_ZN9RowVectorplERKS_:
- 620              	.LFB1855:
-  88:cpp_vector_double_practice.cpp **** 
-  89:cpp_vector_double_practice.cpp ****         const std::string get_name(){
-  90:cpp_vector_double_practice.cpp **** #ifdef LOG
-  91:cpp_vector_double_practice.cpp ****             std::cout << '[' << &columns << ']' << "get_name()\n";
-  92:cpp_vector_double_practice.cpp **** #endif
-  93:cpp_vector_double_practice.cpp ****             // Return constant; to prevent change
-  94:cpp_vector_double_practice.cpp ****             return name;
-  95:cpp_vector_double_practice.cpp ****         }
+  51:cpp_vector_double_practice.cpp ****             // If no initial values, set all values zero
+  52:cpp_vector_double_practice.cpp ****             else{
+  53:cpp_vector_double_practice.cpp ****                 for (uint32_t i = 0; columns.size() > i; ++i){
+ 211              		.loc 1 53 0
+ 212 0143 C745EC00 		movl	$0, -20(%rbp)
+ 212      000000
+ 213              	.L7:
+ 214              		.loc 1 53 0 is_stmt 0 discriminator 3
+ 215 014a 488B45D8 		movq	-40(%rbp), %rax
+ 216 014e 4889C7   		movq	%rax, %rdi
+ 217 0151 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 217      00
+ 218 0156 4889C2   		movq	%rax, %rdx
+ 219 0159 8B45EC   		movl	-20(%rbp), %eax
+ 220 015c 4839C2   		cmpq	%rax, %rdx
+ 221 015f 0F97C0   		seta	%al
+ 222 0162 84C0     		testb	%al, %al
+ 223 0164 7420     		je	.L6
+  54:cpp_vector_double_practice.cpp ****                     columns[i] = 0.0;
+ 224              		.loc 1 54 0 is_stmt 1 discriminator 2
+ 225 0166 8B55EC   		movl	-20(%rbp), %edx
+ 226 0169 488B45D8 		movq	-40(%rbp), %rax
+ 227 016d 4889D6   		movq	%rdx, %rsi
+ 228 0170 4889C7   		movq	%rax, %rdi
+ 229 0173 E8000000 		call	_ZNSt6vectorIdSaIdEEixEm
+ 229      00
+ 230 0178 660FEFC0 		pxor	%xmm0, %xmm0
+ 231 017c F20F1100 		movsd	%xmm0, (%rax)
+  53:cpp_vector_double_practice.cpp ****                     columns[i] = 0.0;
+ 232              		.loc 1 53 0 discriminator 2
+ 233 0180 8345EC01 		addl	$1, -20(%rbp)
+ 234 0184 EBC4     		jmp	.L7
+ 235              	.L6:
+ 236              	.LBE9:
+ 237              	.LBE8:
+ 238              	.LBE5:
+  55:cpp_vector_double_practice.cpp ****                 }
+  56:cpp_vector_double_practice.cpp ****             }
+  57:cpp_vector_double_practice.cpp **** 
+  58:cpp_vector_double_practice.cpp ****             name = new_name;
+ 239              		.loc 1 58 0
+ 240 0186 488B45D8 		movq	-40(%rbp), %rax
+ 241 018a 488D5018 		leaq	24(%rax), %rdx
+ 242 018e 488B45C0 		movq	-64(%rbp), %rax
+ 243 0192 4889C6   		movq	%rax, %rsi
+ 244 0195 4889D7   		movq	%rdx, %rdi
+ 245 0198 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSEPKc@PLT
+ 245      00
+ 246              	.LEHE0:
+ 247              	.LBE4:
+ 248              	.LBE3:
+  59:cpp_vector_double_practice.cpp ****         }
+ 249              		.loc 1 59 0
+ 250 019d EB2A     		jmp	.L10
+ 251              	.L9:
+ 252 019f 4889C3   		movq	%rax, %rbx
+ 253              	.LBB10:
+  38:cpp_vector_double_practice.cpp **** #ifdef LOG
+ 254              		.loc 1 38 0
+ 255 01a2 488B45D8 		movq	-40(%rbp), %rax
+ 256 01a6 4883C018 		addq	$24, %rax
+ 257 01aa 4889C7   		movq	%rax, %rdi
+ 258 01ad E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@PLT
+ 258      00
+ 259 01b2 488B45D8 		movq	-40(%rbp), %rax
+ 260 01b6 4889C7   		movq	%rax, %rdi
+ 261 01b9 E8000000 		call	_ZNSt6vectorIdSaIdEED1Ev
+ 261      00
+ 262 01be 4889D8   		movq	%rbx, %rax
+ 263 01c1 4889C7   		movq	%rax, %rdi
+ 264              	.LEHB1:
+ 265 01c4 E8000000 		call	_Unwind_Resume@PLT
+ 265      00
+ 266              	.LEHE1:
+ 267              	.L10:
+ 268              	.LBE10:
+ 269              		.loc 1 59 0
+ 270 01c9 4883C438 		addq	$56, %rsp
+ 271 01cd 5B       		popq	%rbx
+ 272 01ce 5D       		popq	%rbp
+ 273              		.cfi_def_cfa 7, 8
+ 274 01cf C3       		ret
+ 275              		.cfi_endproc
+ 276              	.LFE1845:
+ 277              		.section	.gcc_except_table._ZN9RowVectorC2EjPKdPKc,"aG",@progbits,_ZN9RowVectorC5EjPKdPKc,comdat
+ 278              	.LLSDA1845:
+ 279 0000 FF       		.byte	0xff
+ 280 0001 FF       		.byte	0xff
+ 281 0002 01       		.byte	0x1
+ 282 0003 0B       		.uleb128 .LLSDACSE1845-.LLSDACSB1845
+ 283              	.LLSDACSB1845:
+ 284 0004 40       		.uleb128 .LEHB0-.LFB1845
+ 285 0005 DD02     		.uleb128 .LEHE0-.LEHB0
+ 286 0007 9F03     		.uleb128 .L9-.LFB1845
+ 287 0009 00       		.uleb128 0
+ 288 000a C403     		.uleb128 .LEHB1-.LFB1845
+ 289 000c 05       		.uleb128 .LEHE1-.LEHB1
+ 290 000d 00       		.uleb128 0
+ 291 000e 00       		.uleb128 0
+ 292              	.LLSDACSE1845:
+ 293              		.section	.text._ZN9RowVectorC2EjPKdPKc,"axG",@progbits,_ZN9RowVectorC5EjPKdPKc,comdat
+ 295              		.weak	_ZN9RowVectorC1EjPKdPKc
+ 296              		.set	_ZN9RowVectorC1EjPKdPKc,_ZN9RowVectorC2EjPKdPKc
+ 297              		.section	.text._ZN9RowVectorC2EjPKc,"axG",@progbits,_ZN9RowVectorC5EjPKc,comdat
+ 298              		.align 2
+ 299              		.weak	_ZN9RowVectorC2EjPKc
+ 301              	_ZN9RowVectorC2EjPKc:
+ 302              	.LFB1848:
+  60:cpp_vector_double_practice.cpp **** 
+  61:cpp_vector_double_practice.cpp ****         // Instead of implementing another constructor, reusing an existing one
+  62:cpp_vector_double_practice.cpp ****         // c++ 11 or later
+  63:cpp_vector_double_practice.cpp ****         RowVector(const uint32_t n, const char *new_name="None") : RowVector(n, NULL, new_name){
+ 303              		.loc 1 63 0
+ 304              		.cfi_startproc
+ 305 0000 55       		pushq	%rbp
+ 306              		.cfi_def_cfa_offset 16
+ 307              		.cfi_offset 6, -16
+ 308 0001 4889E5   		movq	%rsp, %rbp
+ 309              		.cfi_def_cfa_register 6
+ 310 0004 4883EC20 		subq	$32, %rsp
+ 311 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 312 000c 8975F4   		movl	%esi, -12(%rbp)
+ 313 000f 488955E8 		movq	%rdx, -24(%rbp)
+ 314              	.LBB11:
+ 315              		.loc 1 63 0
+ 316 0013 488B55E8 		movq	-24(%rbp), %rdx
+ 317 0017 8B75F4   		movl	-12(%rbp), %esi
+ 318 001a 488B45F8 		movq	-8(%rbp), %rax
+ 319 001e 4889D1   		movq	%rdx, %rcx
+ 320 0021 BA000000 		movl	$0, %edx
+ 320      00
+ 321 0026 4889C7   		movq	%rax, %rdi
+ 322 0029 E8000000 		call	_ZN9RowVectorC1EjPKdPKc
+ 322      00
+ 323              	.LBE11:
+  64:cpp_vector_double_practice.cpp ****         }
+ 324              		.loc 1 64 0
+ 325 002e 90       		nop
+ 326 002f C9       		leave
+ 327              		.cfi_def_cfa 7, 8
+ 328 0030 C3       		ret
+ 329              		.cfi_endproc
+ 330              	.LFE1848:
+ 332              		.weak	_ZN9RowVectorC1EjPKc
+ 333              		.set	_ZN9RowVectorC1EjPKc,_ZN9RowVectorC2EjPKc
+ 334              		.section	.rodata
+ 335              	.LC5:
+ 336 0020 3200     		.string	"2"
+ 337              		.section	.text._ZN9RowVectorC2ERKS_,"axG",@progbits,_ZN9RowVectorC5ERKS_,comdat
+ 338              		.align 2
+ 339              		.weak	_ZN9RowVectorC2ERKS_
+ 341              	_ZN9RowVectorC2ERKS_:
+ 342              	.LFB1851:
+  65:cpp_vector_double_practice.cpp **** 
+  66:cpp_vector_double_practice.cpp ****         RowVector(const RowVector & other){
+ 343              		.loc 1 66 0
+ 344              		.cfi_startproc
+ 345              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+ 346              		.cfi_lsda 0x1b,.LLSDA1851
+ 347 0000 55       		pushq	%rbp
+ 348              		.cfi_def_cfa_offset 16
+ 349              		.cfi_offset 6, -16
+ 350 0001 4889E5   		movq	%rsp, %rbp
+ 351              		.cfi_def_cfa_register 6
+ 352 0004 53       		pushq	%rbx
+ 353 0005 4883EC28 		subq	$40, %rsp
+ 354              		.cfi_offset 3, -24
+ 355 0009 48897DD8 		movq	%rdi, -40(%rbp)
+ 356 000d 488975D0 		movq	%rsi, -48(%rbp)
+ 357              	.LBB12:
+ 358              		.loc 1 66 0
+ 359 0011 488B45D8 		movq	-40(%rbp), %rax
+ 360 0015 4889C7   		movq	%rax, %rdi
+ 361 0018 E8000000 		call	_ZNSt6vectorIdSaIdEEC1Ev
+ 361      00
+ 362 001d 488B45D8 		movq	-40(%rbp), %rax
+ 363 0021 4883C018 		addq	$24, %rax
+ 364 0025 4889C7   		movq	%rax, %rdi
+ 365 0028 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev@PLT
+ 365      00
+ 366              	.LBB13:
+  67:cpp_vector_double_practice.cpp ****             // https://codereview.stackexchange.com/questions/149669/c-operator-overloading-for-mat
+  68:cpp_vector_double_practice.cpp ****             // http://www.cplusplus.com/reference/vector/vector/resize/
+  69:cpp_vector_double_practice.cpp ****             columns.resize(other.columns.size());
+ 367              		.loc 1 69 0
+ 368 002d 488B5DD8 		movq	-40(%rbp), %rbx
+ 369 0031 488B45D0 		movq	-48(%rbp), %rax
+ 370 0035 4889C7   		movq	%rax, %rdi
+ 371 0038 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 371      00
+ 372 003d 4889C6   		movq	%rax, %rsi
+ 373 0040 4889DF   		movq	%rbx, %rdi
+ 374              	.LEHB2:
+ 375 0043 E8000000 		call	_ZNSt6vectorIdSaIdEE6resizeEm
+ 375      00
+ 376              	.LBB14:
+  70:cpp_vector_double_practice.cpp ****             for(uint32_t i=0; columns.size() > i; ++i){
+ 377              		.loc 1 70 0
+ 378 0048 C745EC00 		movl	$0, -20(%rbp)
+ 378      000000
+ 379              	.L14:
+ 380              		.loc 1 70 0 is_stmt 0 discriminator 3
+ 381 004f 488B45D8 		movq	-40(%rbp), %rax
+ 382 0053 4889C7   		movq	%rax, %rdi
+ 383 0056 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 383      00
+ 384 005b 4889C2   		movq	%rax, %rdx
+ 385 005e 8B45EC   		movl	-20(%rbp), %eax
+ 386 0061 4839C2   		cmpq	%rax, %rdx
+ 387 0064 0F97C0   		seta	%al
+ 388 0067 84C0     		testb	%al, %al
+ 389 0069 7435     		je	.L13
+  71:cpp_vector_double_practice.cpp ****                 columns[i] = other.columns[i];
+ 390              		.loc 1 71 0 is_stmt 1 discriminator 2
+ 391 006b 8B55EC   		movl	-20(%rbp), %edx
+ 392 006e 488B45D0 		movq	-48(%rbp), %rax
+ 393 0072 4889D6   		movq	%rdx, %rsi
+ 394 0075 4889C7   		movq	%rax, %rdi
+ 395 0078 E8000000 		call	_ZNKSt6vectorIdSaIdEEixEm
+ 395      00
+ 396 007d 4889C3   		movq	%rax, %rbx
+ 397 0080 8B55EC   		movl	-20(%rbp), %edx
+ 398 0083 488B45D8 		movq	-40(%rbp), %rax
+ 399 0087 4889D6   		movq	%rdx, %rsi
+ 400 008a 4889C7   		movq	%rax, %rdi
+ 401 008d E8000000 		call	_ZNSt6vectorIdSaIdEEixEm
+ 401      00
+ 402 0092 F20F1003 		movsd	(%rbx), %xmm0
+ 403 0096 F20F1100 		movsd	%xmm0, (%rax)
+  70:cpp_vector_double_practice.cpp ****             for(uint32_t i=0; columns.size() > i; ++i){
+ 404              		.loc 1 70 0 discriminator 2
+ 405 009a 8345EC01 		addl	$1, -20(%rbp)
+ 406 009e EBAF     		jmp	.L14
+ 407              	.L13:
+ 408              	.LBE14:
+  72:cpp_vector_double_practice.cpp ****             }
+  73:cpp_vector_double_practice.cpp **** 
+  74:cpp_vector_double_practice.cpp ****             // Copy name of the other one
+  75:cpp_vector_double_practice.cpp ****             name = other.name;
+ 409              		.loc 1 75 0
+ 410 00a0 488B45D0 		movq	-48(%rbp), %rax
+ 411 00a4 488D5018 		leaq	24(%rax), %rdx
+ 412 00a8 488B45D8 		movq	-40(%rbp), %rax
+ 413 00ac 4883C018 		addq	$24, %rax
+ 414 00b0 4889D6   		movq	%rdx, %rsi
+ 415 00b3 4889C7   		movq	%rax, %rdi
+ 416 00b6 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSERKS4_@PLT
+ 416      00
+  76:cpp_vector_double_practice.cpp ****             // Then append
+  77:cpp_vector_double_practice.cpp ****             name.append("2");
+ 417              		.loc 1 77 0
+ 418 00bb 488B45D8 		movq	-40(%rbp), %rax
+ 419 00bf 4883C018 		addq	$24, %rax
+ 420 00c3 488D3500 		leaq	.LC5(%rip), %rsi
+ 420      000000
+ 421 00ca 4889C7   		movq	%rax, %rdi
+ 422 00cd E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE6appendEPKc@PLT
+ 422      00
+ 423              	.LEHE2:
+ 424              	.LBE13:
+ 425              	.LBE12:
+  78:cpp_vector_double_practice.cpp ****         }
+ 426              		.loc 1 78 0
+ 427 00d2 EB2A     		jmp	.L17
+ 428              	.L16:
+ 429 00d4 4889C3   		movq	%rax, %rbx
+ 430              	.LBB15:
+  66:cpp_vector_double_practice.cpp ****             // https://codereview.stackexchange.com/questions/149669/c-operator-overloading-for-mat
+ 431              		.loc 1 66 0
+ 432 00d7 488B45D8 		movq	-40(%rbp), %rax
+ 433 00db 4883C018 		addq	$24, %rax
+ 434 00df 4889C7   		movq	%rax, %rdi
+ 435 00e2 E8000000 		call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@PLT
+ 435      00
+ 436 00e7 488B45D8 		movq	-40(%rbp), %rax
+ 437 00eb 4889C7   		movq	%rax, %rdi
+ 438 00ee E8000000 		call	_ZNSt6vectorIdSaIdEED1Ev
+ 438      00
+ 439 00f3 4889D8   		movq	%rbx, %rax
+ 440 00f6 4889C7   		movq	%rax, %rdi
+ 441              	.LEHB3:
+ 442 00f9 E8000000 		call	_Unwind_Resume@PLT
+ 442      00
+ 443              	.LEHE3:
+ 444              	.L17:
+ 445              	.LBE15:
+ 446              		.loc 1 78 0
+ 447 00fe 4883C428 		addq	$40, %rsp
+ 448 0102 5B       		popq	%rbx
+ 449 0103 5D       		popq	%rbp
+ 450              		.cfi_def_cfa 7, 8
+ 451 0104 C3       		ret
+ 452              		.cfi_endproc
+ 453              	.LFE1851:
+ 454              		.section	.gcc_except_table._ZN9RowVectorC2ERKS_,"aG",@progbits,_ZN9RowVectorC5ERKS_,comdat
+ 455              	.LLSDA1851:
+ 456 0000 FF       		.byte	0xff
+ 457 0001 FF       		.byte	0xff
+ 458 0002 01       		.byte	0x1
+ 459 0003 0B       		.uleb128 .LLSDACSE1851-.LLSDACSB1851
+ 460              	.LLSDACSB1851:
+ 461 0004 43       		.uleb128 .LEHB2-.LFB1851
+ 462 0005 8F01     		.uleb128 .LEHE2-.LEHB2
+ 463 0007 D401     		.uleb128 .L16-.LFB1851
+ 464 0009 00       		.uleb128 0
+ 465 000a F901     		.uleb128 .LEHB3-.LFB1851
+ 466 000c 05       		.uleb128 .LEHE3-.LEHB3
+ 467 000d 00       		.uleb128 0
+ 468 000e 00       		.uleb128 0
+ 469              	.LLSDACSE1851:
+ 470              		.section	.text._ZN9RowVectorC2ERKS_,"axG",@progbits,_ZN9RowVectorC5ERKS_,comdat
+ 472              		.weak	_ZN9RowVectorC1ERKS_
+ 473              		.set	_ZN9RowVectorC1ERKS_,_ZN9RowVectorC2ERKS_
+ 474              		.section	.text._ZN9RowVectorixEj,"axG",@progbits,_ZN9RowVectorixEj,comdat
+ 475              		.align 2
+ 476              		.weak	_ZN9RowVectorixEj
+ 478              	_ZN9RowVectorixEj:
+ 479              	.LFB1853:
+  79:cpp_vector_double_practice.cpp **** 
+  80:cpp_vector_double_practice.cpp ****         double & operator [] (const uint32_t i){
+ 480              		.loc 1 80 0
+ 481              		.cfi_startproc
+ 482 0000 55       		pushq	%rbp
+ 483              		.cfi_def_cfa_offset 16
+ 484              		.cfi_offset 6, -16
+ 485 0001 4889E5   		movq	%rsp, %rbp
+ 486              		.cfi_def_cfa_register 6
+ 487 0004 4883EC10 		subq	$16, %rsp
+ 488 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 489 000c 8975F4   		movl	%esi, -12(%rbp)
+  81:cpp_vector_double_practice.cpp ****             // Return reference; otherwise, unable to assign
+  82:cpp_vector_double_practice.cpp ****             return columns[i];
+ 490              		.loc 1 82 0
+ 491 000f 8B55F4   		movl	-12(%rbp), %edx
+ 492 0012 488B45F8 		movq	-8(%rbp), %rax
+ 493 0016 4889D6   		movq	%rdx, %rsi
+ 494 0019 4889C7   		movq	%rax, %rdi
+ 495 001c E8000000 		call	_ZNSt6vectorIdSaIdEEixEm
+ 495      00
+  83:cpp_vector_double_practice.cpp ****         }
+ 496              		.loc 1 83 0
+ 497 0021 C9       		leave
+ 498              		.cfi_def_cfa 7, 8
+ 499 0022 C3       		ret
+ 500              		.cfi_endproc
+ 501              	.LFE1853:
+ 503              		.section	.rodata
+ 504 0022 00000000 		.align 8
+ 504      0000
+ 505              	.LC6:
+ 506 0028 6370705F 		.string	"cpp_vector_double_practice.cpp"
+ 506      76656374 
+ 506      6F725F64 
+ 506      6F75626C 
+ 506      655F7072 
+ 507 0047 00       		.align 8
+ 508              	.LC7:
+ 509 0048 636F6C75 		.string	"columns.size() == other.columns.size()"
+ 509      6D6E732E 
+ 509      73697A65 
+ 509      2829203D 
+ 509      3D206F74 
+ 510              		.section	.text._ZN9RowVectorplERKS_,"axG",@progbits,_ZN9RowVectorplERKS_,comdat
+ 511              		.align 2
+ 512              		.weak	_ZN9RowVectorplERKS_
+ 514              	_ZN9RowVectorplERKS_:
+ 515              	.LFB1855:
+  84:cpp_vector_double_practice.cpp **** 
+  85:cpp_vector_double_practice.cpp ****         const std::string get_name(){
+  86:cpp_vector_double_practice.cpp ****             // Return constant; to prevent change
+  87:cpp_vector_double_practice.cpp ****             return name;
+  88:cpp_vector_double_practice.cpp ****         }
+  89:cpp_vector_double_practice.cpp **** 
+  90:cpp_vector_double_practice.cpp ****         RowVector operator + (const RowVector & other){
+ 516              		.loc 1 90 0
+ 517              		.cfi_startproc
+ 518 0000 55       		pushq	%rbp
+ 519              		.cfi_def_cfa_offset 16
+ 520              		.cfi_offset 6, -16
+ 521 0001 4889E5   		movq	%rsp, %rbp
+ 522              		.cfi_def_cfa_register 6
+ 523 0004 53       		pushq	%rbx
+ 524 0005 4883EC38 		subq	$56, %rsp
+ 525              		.cfi_offset 3, -24
+ 526 0009 48897DD8 		movq	%rdi, -40(%rbp)
+ 527 000d 488975D0 		movq	%rsi, -48(%rbp)
+ 528 0011 488955C8 		movq	%rdx, -56(%rbp)
+ 529              		.loc 1 90 0
+ 530 0015 64488B04 		movq	%fs:40, %rax
+ 530      25280000 
+ 530      00
+ 531 001e 488945E8 		movq	%rax, -24(%rbp)
+ 532 0022 31C0     		xorl	%eax, %eax
+  91:cpp_vector_double_practice.cpp ****             // Check size
+  92:cpp_vector_double_practice.cpp ****             assert(columns.size() == other.columns.size());
+ 533              		.loc 1 92 0
+ 534 0024 488B45D0 		movq	-48(%rbp), %rax
+ 535 0028 4889C7   		movq	%rax, %rdi
+ 536 002b E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 536      00
+ 537 0030 4889C3   		movq	%rax, %rbx
+ 538 0033 488B45C8 		movq	-56(%rbp), %rax
+ 539 0037 4889C7   		movq	%rax, %rdi
+ 540 003a E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 540      00
+ 541 003f 4839C3   		cmpq	%rax, %rbx
+ 542 0042 741F     		je	.L21
+ 543              		.loc 1 92 0 is_stmt 0 discriminator 1
+ 544 0044 488D0D00 		leaq	_ZZN9RowVectorplERKS_E19__PRETTY_FUNCTION__(%rip), %rcx
+ 544      000000
+ 545 004b BA5C0000 		movl	$92, %edx
+ 545      00
+ 546 0050 488D3500 		leaq	.LC6(%rip), %rsi
+ 546      000000
+ 547 0057 488D3D00 		leaq	.LC7(%rip), %rdi
+ 547      000000
+ 548 005e E8000000 		call	__assert_fail@PLT
+ 548      00
+ 549              	.L21:
+  93:cpp_vector_double_practice.cpp **** 
+  94:cpp_vector_double_practice.cpp ****             // Make a new vector to return
+  95:cpp_vector_double_practice.cpp ****             RowVector temp(other);
+ 550              		.loc 1 95 0 is_stmt 1
+ 551 0063 488B55C8 		movq	-56(%rbp), %rdx
+ 552 0067 488B45D8 		movq	-40(%rbp), %rax
+ 553 006b 4889D6   		movq	%rdx, %rsi
+ 554 006e 4889C7   		movq	%rax, %rdi
+ 555 0071 E8000000 		call	_ZN9RowVectorC1ERKS_
+ 555      00
+ 556              	.LBB16:
   96:cpp_vector_double_practice.cpp **** 
-  97:cpp_vector_double_practice.cpp ****         RowVector operator + (const RowVector & other){
- 621              		.loc 1 97 0
- 622              		.cfi_startproc
- 623              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
- 624              		.cfi_lsda 0x1b,.LLSDA1855
- 625 0000 55       		pushq	%rbp
- 626              		.cfi_def_cfa_offset 16
- 627              		.cfi_offset 6, -16
- 628 0001 4889E5   		movq	%rsp, %rbp
- 629              		.cfi_def_cfa_register 6
- 630 0004 53       		pushq	%rbx
- 631 0005 4883EC38 		subq	$56, %rsp
- 632              		.cfi_offset 3, -24
- 633 0009 48897DD8 		movq	%rdi, -40(%rbp)
- 634 000d 488975D0 		movq	%rsi, -48(%rbp)
- 635 0011 488955C8 		movq	%rdx, -56(%rbp)
- 636              		.loc 1 97 0
- 637 0015 64488B04 		movq	%fs:40, %rax
- 637      25280000 
- 637      00
- 638 001e 488945E8 		movq	%rax, -24(%rbp)
- 639 0022 31C0     		xorl	%eax, %eax
-  98:cpp_vector_double_practice.cpp **** #ifdef LOG
-  99:cpp_vector_double_practice.cpp ****             std::cout << '[' << &columns << ']' << "RowVector operator + (" << &other << ")\n";
- 640              		.loc 1 99 0
- 641 0024 BE5B0000 		movl	$91, %esi
- 641      00
- 642 0029 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
- 642      000000
- 643              	.LEHB7:
- 644 0030 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
- 644      00
- 645 0035 4889C2   		movq	%rax, %rdx
- 646 0038 488B45D0 		movq	-48(%rbp), %rax
- 647 003c 4889C6   		movq	%rax, %rsi
- 648 003f 4889D7   		movq	%rdx, %rdi
- 649 0042 E8000000 		call	_ZNSolsEPKv@PLT
- 649      00
- 650 0047 BE5D0000 		movl	$93, %esi
- 650      00
- 651 004c 4889C7   		movq	%rax, %rdi
- 652 004f E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
- 652      00
- 653 0054 488D3500 		leaq	.LC6(%rip), %rsi
- 653      000000
- 654 005b 4889C7   		movq	%rax, %rdi
- 655 005e E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 655      00
- 656 0063 4889C2   		movq	%rax, %rdx
- 657 0066 488B45C8 		movq	-56(%rbp), %rax
- 658 006a 4889C6   		movq	%rax, %rsi
- 659 006d 4889D7   		movq	%rdx, %rdi
- 660 0070 E8000000 		call	_ZNSolsEPKv@PLT
- 660      00
- 661 0075 488D3500 		leaq	.LC2(%rip), %rsi
- 661      000000
- 662 007c 4889C7   		movq	%rax, %rdi
- 663 007f E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 663      00
- 100:cpp_vector_double_practice.cpp **** #endif
- 101:cpp_vector_double_practice.cpp ****             // Check size
- 102:cpp_vector_double_practice.cpp ****             assert(columns.size() == other.columns.size());
- 664              		.loc 1 102 0
- 665 0084 488B45D0 		movq	-48(%rbp), %rax
- 666 0088 4889C7   		movq	%rax, %rdi
- 667 008b E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 667      00
- 668 0090 4889C3   		movq	%rax, %rbx
- 669 0093 488B45C8 		movq	-56(%rbp), %rax
- 670 0097 4889C7   		movq	%rax, %rdi
- 671 009a E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 671      00
- 672 009f 4839C3   		cmpq	%rax, %rbx
- 673 00a2 741F     		je	.L24
- 674              		.loc 1 102 0 is_stmt 0 discriminator 1
- 675 00a4 488D0D00 		leaq	_ZZN9RowVectorplERKS_E19__PRETTY_FUNCTION__(%rip), %rcx
- 675      000000
- 676 00ab BA660000 		movl	$102, %edx
- 676      00
- 677 00b0 488D3500 		leaq	.LC7(%rip), %rsi
- 677      000000
- 678 00b7 488D3D00 		leaq	.LC8(%rip), %rdi
- 678      000000
- 679 00be E8000000 		call	__assert_fail@PLT
- 679      00
- 680              	.L24:
- 103:cpp_vector_double_practice.cpp **** 
- 104:cpp_vector_double_practice.cpp ****             // Make a new vector to return
- 105:cpp_vector_double_practice.cpp ****             RowVector temp(other);
- 681              		.loc 1 105 0 is_stmt 1
- 682 00c3 488B55C8 		movq	-56(%rbp), %rdx
- 683 00c7 488B45D8 		movq	-40(%rbp), %rax
- 684 00cb 4889D6   		movq	%rdx, %rsi
- 685 00ce 4889C7   		movq	%rax, %rdi
- 686 00d1 E8000000 		call	_ZN9RowVectorC1ERKS_
- 686      00
- 687              	.LEHE7:
- 688              	.LBB17:
- 106:cpp_vector_double_practice.cpp **** 
- 107:cpp_vector_double_practice.cpp ****             // Element loop
- 108:cpp_vector_double_practice.cpp ****             for (uint32_t i=0; columns.size() > i; ++i){
- 689              		.loc 1 108 0
- 690 00d6 C745E400 		movl	$0, -28(%rbp)
- 690      000000
- 691              	.L26:
- 692              		.loc 1 108 0 is_stmt 0 discriminator 2
- 693 00dd 488B45D0 		movq	-48(%rbp), %rax
- 694 00e1 4889C7   		movq	%rax, %rdi
- 695 00e4 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 695      00
- 696 00e9 4889C2   		movq	%rax, %rdx
- 697 00ec 8B45E4   		movl	-28(%rbp), %eax
- 698 00ef 4839C2   		cmpq	%rax, %rdx
- 699 00f2 0F97C0   		seta	%al
- 700 00f5 84C0     		testb	%al, %al
- 701 00f7 7459     		je	.L31
- 109:cpp_vector_double_practice.cpp ****                 temp[i] += columns[i];
- 702              		.loc 1 109 0 is_stmt 1
- 703 00f9 8B55E4   		movl	-28(%rbp), %edx
- 704 00fc 488B45D0 		movq	-48(%rbp), %rax
- 705 0100 4889D6   		movq	%rdx, %rsi
- 706 0103 4889C7   		movq	%rax, %rdi
- 707 0106 E8000000 		call	_ZNSt6vectorIdSaIdEEixEm
- 707      00
- 708 010b F20F1008 		movsd	(%rax), %xmm1
- 709 010f F20F114D 		movsd	%xmm1, -64(%rbp)
- 709      C0
- 710 0114 8B55E4   		movl	-28(%rbp), %edx
- 711 0117 488B45D8 		movq	-40(%rbp), %rax
- 712 011b 89D6     		movl	%edx, %esi
- 713 011d 4889C7   		movq	%rax, %rdi
- 714              	.LEHB8:
- 715 0120 E8000000 		call	_ZN9RowVectorixEj
- 715      00
- 716              	.LEHE8:
- 717              		.loc 1 109 0 is_stmt 0 discriminator 1
- 718 0125 F20F1000 		movsd	(%rax), %xmm0
- 719 0129 F20F5845 		addsd	-64(%rbp), %xmm0
- 719      C0
- 720 012e F20F1100 		movsd	%xmm0, (%rax)
- 108:cpp_vector_double_practice.cpp ****                 temp[i] += columns[i];
- 721              		.loc 1 108 0 is_stmt 1 discriminator 1
- 722 0132 8345E401 		addl	$1, -28(%rbp)
- 723 0136 EBA5     		jmp	.L26
- 724              	.L30:
- 725 0138 4889C3   		movq	%rax, %rbx
- 726              	.LBE17:
- 727 013b 488B45D8 		movq	-40(%rbp), %rax
- 728 013f 4889C7   		movq	%rax, %rdi
- 729 0142 E8000000 		call	_ZN9RowVectorD1Ev
- 729      00
- 730 0147 4889D8   		movq	%rbx, %rax
- 731 014a 4889C7   		movq	%rax, %rdi
- 732              	.LEHB9:
- 733 014d E8000000 		call	_Unwind_Resume@PLT
- 733      00
- 734              	.LEHE9:
- 735              	.L31:
- 110:cpp_vector_double_practice.cpp ****             }
- 111:cpp_vector_double_practice.cpp **** 
- 112:cpp_vector_double_practice.cpp ****             // Returning a temporary image
- 113:cpp_vector_double_practice.cpp ****             return temp;
- 736              		.loc 1 113 0
- 737 0152 90       		nop
- 114:cpp_vector_double_practice.cpp ****         }
- 738              		.loc 1 114 0
- 739 0153 488B45D8 		movq	-40(%rbp), %rax
- 740 0157 488B4DE8 		movq	-24(%rbp), %rcx
- 741 015b 6448330C 		xorq	%fs:40, %rcx
- 741      25280000 
- 741      00
- 742 0164 7405     		je	.L29
- 743 0166 E8000000 		call	__stack_chk_fail@PLT
- 743      00
- 744              	.L29:
- 745 016b 4883C438 		addq	$56, %rsp
- 746 016f 5B       		popq	%rbx
- 747 0170 5D       		popq	%rbp
- 748              		.cfi_def_cfa 7, 8
- 749 0171 C3       		ret
- 750              		.cfi_endproc
- 751              	.LFE1855:
- 752              		.section	.gcc_except_table._ZN9RowVectorplERKS_,"aG",@progbits,_ZN9RowVectorplERKS_,comdat
- 753              	.LLSDA1855:
- 754 0000 FF       		.byte	0xff
- 755 0001 FF       		.byte	0xff
- 756 0002 01       		.byte	0x1
- 757 0003 10       		.uleb128 .LLSDACSE1855-.LLSDACSB1855
- 758              	.LLSDACSB1855:
- 759 0004 30       		.uleb128 .LEHB7-.LFB1855
- 760 0005 A601     		.uleb128 .LEHE7-.LEHB7
- 761 0007 00       		.uleb128 0
- 762 0008 00       		.uleb128 0
- 763 0009 A002     		.uleb128 .LEHB8-.LFB1855
- 764 000b 05       		.uleb128 .LEHE8-.LEHB8
- 765 000c B802     		.uleb128 .L30-.LFB1855
- 766 000e 00       		.uleb128 0
- 767 000f CD02     		.uleb128 .LEHB9-.LFB1855
- 768 0011 05       		.uleb128 .LEHE9-.LEHB9
- 769 0012 00       		.uleb128 0
- 770 0013 00       		.uleb128 0
- 771              	.LLSDACSE1855:
- 772              		.section	.text._ZN9RowVectorplERKS_,"axG",@progbits,_ZN9RowVectorplERKS_,comdat
- 774              		.section	.rodata
- 775              	.LC9:
- 776 008f 526F7756 		.string	"RowVector operator * ("
- 776      6563746F 
- 776      72206F70 
- 776      65726174 
- 776      6F72202A 
- 777              		.section	.text._ZN9RowVectormlERKS_,"axG",@progbits,_ZN9RowVectormlERKS_,comdat
- 778              		.align 2
- 779              		.weak	_ZN9RowVectormlERKS_
- 781              	_ZN9RowVectormlERKS_:
- 782              	.LFB1857:
- 115:cpp_vector_double_practice.cpp **** 
- 116:cpp_vector_double_practice.cpp ****         RowVector operator * (const double a){
- 117:cpp_vector_double_practice.cpp **** #ifdef LOG
- 118:cpp_vector_double_practice.cpp ****             std::cout << '[' << &columns << ']' << "RowVector operator * (" << a << ")\n";
- 119:cpp_vector_double_practice.cpp **** #endif
+  97:cpp_vector_double_practice.cpp ****             // Element loop
+  98:cpp_vector_double_practice.cpp ****             for (uint32_t i=0; columns.size() > i; ++i){
+ 557              		.loc 1 98 0
+ 558 0076 C745E400 		movl	$0, -28(%rbp)
+ 558      000000
+ 559              	.L23:
+ 560              		.loc 1 98 0 is_stmt 0 discriminator 3
+ 561 007d 488B45D0 		movq	-48(%rbp), %rax
+ 562 0081 4889C7   		movq	%rax, %rdi
+ 563 0084 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 563      00
+ 564 0089 4889C2   		movq	%rax, %rdx
+ 565 008c 8B45E4   		movl	-28(%rbp), %eax
+ 566 008f 4839C2   		cmpq	%rax, %rdx
+ 567 0092 0F97C0   		seta	%al
+ 568 0095 84C0     		testb	%al, %al
+ 569 0097 743F     		je	.L26
+  99:cpp_vector_double_practice.cpp ****                 temp[i] += columns[i];
+ 570              		.loc 1 99 0 is_stmt 1 discriminator 2
+ 571 0099 8B55E4   		movl	-28(%rbp), %edx
+ 572 009c 488B45D0 		movq	-48(%rbp), %rax
+ 573 00a0 4889D6   		movq	%rdx, %rsi
+ 574 00a3 4889C7   		movq	%rax, %rdi
+ 575 00a6 E8000000 		call	_ZNSt6vectorIdSaIdEEixEm
+ 575      00
+ 576 00ab F20F1008 		movsd	(%rax), %xmm1
+ 577 00af F20F114D 		movsd	%xmm1, -64(%rbp)
+ 577      C0
+ 578 00b4 8B55E4   		movl	-28(%rbp), %edx
+ 579 00b7 488B45D8 		movq	-40(%rbp), %rax
+ 580 00bb 89D6     		movl	%edx, %esi
+ 581 00bd 4889C7   		movq	%rax, %rdi
+ 582 00c0 E8000000 		call	_ZN9RowVectorixEj
+ 582      00
+ 583 00c5 F20F1000 		movsd	(%rax), %xmm0
+ 584 00c9 F20F5845 		addsd	-64(%rbp), %xmm0
+ 584      C0
+ 585 00ce F20F1100 		movsd	%xmm0, (%rax)
+  98:cpp_vector_double_practice.cpp ****                 temp[i] += columns[i];
+ 586              		.loc 1 98 0 discriminator 2
+ 587 00d2 8345E401 		addl	$1, -28(%rbp)
+ 588 00d6 EBA5     		jmp	.L23
+ 589              	.L26:
+ 590              	.LBE16:
+ 100:cpp_vector_double_practice.cpp ****             }
+ 101:cpp_vector_double_practice.cpp **** 
+ 102:cpp_vector_double_practice.cpp ****             // Returning a temporary image
+ 103:cpp_vector_double_practice.cpp ****             return temp;
+ 591              		.loc 1 103 0
+ 592 00d8 90       		nop
+ 104:cpp_vector_double_practice.cpp ****         }
+ 593              		.loc 1 104 0
+ 594 00d9 488B45D8 		movq	-40(%rbp), %rax
+ 595 00dd 488B4DE8 		movq	-24(%rbp), %rcx
+ 596 00e1 6448330C 		xorq	%fs:40, %rcx
+ 596      25280000 
+ 596      00
+ 597 00ea 7405     		je	.L25
+ 598 00ec E8000000 		call	__stack_chk_fail@PLT
+ 598      00
+ 599              	.L25:
+ 600 00f1 4883C438 		addq	$56, %rsp
+ 601 00f5 5B       		popq	%rbx
+ 602 00f6 5D       		popq	%rbp
+ 603              		.cfi_def_cfa 7, 8
+ 604 00f7 C3       		ret
+ 605              		.cfi_endproc
+ 606              	.LFE1855:
+ 608              		.section	.text._ZN9RowVectormlERKS_,"axG",@progbits,_ZN9RowVectormlERKS_,comdat
+ 609              		.align 2
+ 610              		.weak	_ZN9RowVectormlERKS_
+ 612              	_ZN9RowVectormlERKS_:
+ 613              	.LFB1857:
+ 105:cpp_vector_double_practice.cpp **** 
+ 106:cpp_vector_double_practice.cpp ****         RowVector operator * (const double a){
+ 107:cpp_vector_double_practice.cpp **** 
+ 108:cpp_vector_double_practice.cpp ****             // Make a new vector to return
+ 109:cpp_vector_double_practice.cpp ****             RowVector temp(*this);
+ 110:cpp_vector_double_practice.cpp **** 
+ 111:cpp_vector_double_practice.cpp ****             // Element loop in `for each` style
+ 112:cpp_vector_double_practice.cpp ****             // c++ 11 or later
+ 113:cpp_vector_double_practice.cpp ****             for (auto & element : temp.columns){
+ 114:cpp_vector_double_practice.cpp ****                 element *= a;
+ 115:cpp_vector_double_practice.cpp ****             }
+ 116:cpp_vector_double_practice.cpp **** 
+ 117:cpp_vector_double_practice.cpp ****             // Returning a temporary image
+ 118:cpp_vector_double_practice.cpp ****             return temp;
+ 119:cpp_vector_double_practice.cpp ****         }
  120:cpp_vector_double_practice.cpp **** 
- 121:cpp_vector_double_practice.cpp ****             // Make a new vector to return
- 122:cpp_vector_double_practice.cpp ****             RowVector temp(*this);
- 123:cpp_vector_double_practice.cpp **** 
- 124:cpp_vector_double_practice.cpp ****             // Element loop in `for each` style
- 125:cpp_vector_double_practice.cpp ****             // c++ 11 or later
- 126:cpp_vector_double_practice.cpp ****             for (auto & element : temp.columns){
- 127:cpp_vector_double_practice.cpp ****                 element *= a;
- 128:cpp_vector_double_practice.cpp ****             }
- 129:cpp_vector_double_practice.cpp **** 
- 130:cpp_vector_double_practice.cpp ****             // Returning a temporary image
- 131:cpp_vector_double_practice.cpp ****             return temp;
- 132:cpp_vector_double_practice.cpp ****         }
- 133:cpp_vector_double_practice.cpp **** 
- 134:cpp_vector_double_practice.cpp ****         const double operator * (const RowVector & other){
- 783              		.loc 1 134 0
- 784              		.cfi_startproc
- 785 0000 55       		pushq	%rbp
- 786              		.cfi_def_cfa_offset 16
- 787              		.cfi_offset 6, -16
- 788 0001 4889E5   		movq	%rsp, %rbp
- 789              		.cfi_def_cfa_register 6
- 790 0004 53       		pushq	%rbx
- 791 0005 4883EC38 		subq	$56, %rsp
- 792              		.cfi_offset 3, -24
- 793 0009 48897DD8 		movq	%rdi, -40(%rbp)
- 794 000d 488975D0 		movq	%rsi, -48(%rbp)
- 135:cpp_vector_double_practice.cpp **** #ifdef LOG
- 136:cpp_vector_double_practice.cpp ****             std::cout << '[' << &columns << ']' << "RowVector operator * (" << & other << ")\n";
- 795              		.loc 1 136 0
- 796 0011 BE5B0000 		movl	$91, %esi
- 796      00
- 797 0016 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
- 797      000000
- 798 001d E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
- 798      00
- 799 0022 4889C2   		movq	%rax, %rdx
- 800 0025 488B45D8 		movq	-40(%rbp), %rax
- 801 0029 4889C6   		movq	%rax, %rsi
- 802 002c 4889D7   		movq	%rdx, %rdi
- 803 002f E8000000 		call	_ZNSolsEPKv@PLT
- 803      00
- 804 0034 BE5D0000 		movl	$93, %esi
- 804      00
- 805 0039 4889C7   		movq	%rax, %rdi
- 806 003c E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
- 806      00
- 807 0041 488D3500 		leaq	.LC9(%rip), %rsi
- 807      000000
- 808 0048 4889C7   		movq	%rax, %rdi
- 809 004b E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 809      00
- 810 0050 4889C2   		movq	%rax, %rdx
- 811 0053 488B45D0 		movq	-48(%rbp), %rax
- 812 0057 4889C6   		movq	%rax, %rsi
- 813 005a 4889D7   		movq	%rdx, %rdi
- 814 005d E8000000 		call	_ZNSolsEPKv@PLT
- 814      00
- 815 0062 488D3500 		leaq	.LC2(%rip), %rsi
- 815      000000
- 816 0069 4889C7   		movq	%rax, %rdi
- 817 006c E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 817      00
- 137:cpp_vector_double_practice.cpp **** #endif
- 138:cpp_vector_double_practice.cpp ****             // Check size
- 139:cpp_vector_double_practice.cpp ****             assert(columns.size() == other.columns.size());
- 818              		.loc 1 139 0
- 819 0071 488B45D8 		movq	-40(%rbp), %rax
- 820 0075 4889C7   		movq	%rax, %rdi
- 821 0078 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 821      00
- 822 007d 4889C3   		movq	%rax, %rbx
- 823 0080 488B45D0 		movq	-48(%rbp), %rax
- 824 0084 4889C7   		movq	%rax, %rdi
- 825 0087 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 825      00
- 826 008c 4839C3   		cmpq	%rax, %rbx
- 827 008f 741F     		je	.L33
- 828              		.loc 1 139 0 is_stmt 0 discriminator 1
- 829 0091 488D0D00 		leaq	_ZZN9RowVectormlERKS_E19__PRETTY_FUNCTION__(%rip), %rcx
- 829      000000
- 830 0098 BA8B0000 		movl	$139, %edx
- 830      00
- 831 009d 488D3500 		leaq	.LC7(%rip), %rsi
- 831      000000
- 832 00a4 488D3D00 		leaq	.LC8(%rip), %rdi
- 832      000000
- 833 00ab E8000000 		call	__assert_fail@PLT
- 833      00
- 834              	.L33:
- 140:cpp_vector_double_practice.cpp **** 
- 141:cpp_vector_double_practice.cpp ****             double dot_product = 0.0;
- 835              		.loc 1 141 0 is_stmt 1
- 836 00b0 660FEFC0 		pxor	%xmm0, %xmm0
- 837 00b4 F20F1145 		movsd	%xmm0, -24(%rbp)
- 837      E8
- 838              	.LBB18:
+ 121:cpp_vector_double_practice.cpp ****         const double operator * (const RowVector & other){
+ 614              		.loc 1 121 0
+ 615              		.cfi_startproc
+ 616 0000 55       		pushq	%rbp
+ 617              		.cfi_def_cfa_offset 16
+ 618              		.cfi_offset 6, -16
+ 619 0001 4889E5   		movq	%rsp, %rbp
+ 620              		.cfi_def_cfa_register 6
+ 621 0004 53       		pushq	%rbx
+ 622 0005 4883EC38 		subq	$56, %rsp
+ 623              		.cfi_offset 3, -24
+ 624 0009 48897DD8 		movq	%rdi, -40(%rbp)
+ 625 000d 488975D0 		movq	%rsi, -48(%rbp)
+ 122:cpp_vector_double_practice.cpp ****             // Check size
+ 123:cpp_vector_double_practice.cpp ****             assert(columns.size() == other.columns.size());
+ 626              		.loc 1 123 0
+ 627 0011 488B45D8 		movq	-40(%rbp), %rax
+ 628 0015 4889C7   		movq	%rax, %rdi
+ 629 0018 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 629      00
+ 630 001d 4889C3   		movq	%rax, %rbx
+ 631 0020 488B45D0 		movq	-48(%rbp), %rax
+ 632 0024 4889C7   		movq	%rax, %rdi
+ 633 0027 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 633      00
+ 634 002c 4839C3   		cmpq	%rax, %rbx
+ 635 002f 741F     		je	.L28
+ 636              		.loc 1 123 0 is_stmt 0 discriminator 1
+ 637 0031 488D0D00 		leaq	_ZZN9RowVectormlERKS_E19__PRETTY_FUNCTION__(%rip), %rcx
+ 637      000000
+ 638 0038 BA7B0000 		movl	$123, %edx
+ 638      00
+ 639 003d 488D3500 		leaq	.LC6(%rip), %rsi
+ 639      000000
+ 640 0044 488D3D00 		leaq	.LC7(%rip), %rdi
+ 640      000000
+ 641 004b E8000000 		call	__assert_fail@PLT
+ 641      00
+ 642              	.L28:
+ 124:cpp_vector_double_practice.cpp **** 
+ 125:cpp_vector_double_practice.cpp ****             double dot_product = 0.0;
+ 643              		.loc 1 125 0 is_stmt 1
+ 644 0050 660FEFC0 		pxor	%xmm0, %xmm0
+ 645 0054 F20F1145 		movsd	%xmm0, -24(%rbp)
+ 645      E8
+ 646              	.LBB17:
+ 126:cpp_vector_double_practice.cpp **** 
+ 127:cpp_vector_double_practice.cpp ****             // Element loop
+ 128:cpp_vector_double_practice.cpp ****             for (uint32_t i = 0; columns.size() > i; ++i){
+ 647              		.loc 1 128 0
+ 648 0059 C745E400 		movl	$0, -28(%rbp)
+ 648      000000
+ 649              	.L30:
+ 650              		.loc 1 128 0 is_stmt 0 discriminator 3
+ 651 0060 488B45D8 		movq	-40(%rbp), %rax
+ 652 0064 4889C7   		movq	%rax, %rdi
+ 653 0067 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 653      00
+ 654 006c 4889C2   		movq	%rax, %rdx
+ 655 006f 8B45E4   		movl	-28(%rbp), %eax
+ 656 0072 4839C2   		cmpq	%rax, %rdx
+ 657 0075 0F97C0   		seta	%al
+ 658 0078 84C0     		testb	%al, %al
+ 659 007a 744A     		je	.L29
+ 129:cpp_vector_double_practice.cpp ****                 dot_product += columns[i] * other.columns[i];
+ 660              		.loc 1 129 0 is_stmt 1 discriminator 2
+ 661 007c 8B55E4   		movl	-28(%rbp), %edx
+ 662 007f 488B45D8 		movq	-40(%rbp), %rax
+ 663 0083 4889D6   		movq	%rdx, %rsi
+ 664 0086 4889C7   		movq	%rax, %rdi
+ 665 0089 E8000000 		call	_ZNSt6vectorIdSaIdEEixEm
+ 665      00
+ 666 008e F20F1010 		movsd	(%rax), %xmm2
+ 667 0092 F20F1155 		movsd	%xmm2, -56(%rbp)
+ 667      C8
+ 668 0097 8B55E4   		movl	-28(%rbp), %edx
+ 669 009a 488B45D0 		movq	-48(%rbp), %rax
+ 670 009e 4889D6   		movq	%rdx, %rsi
+ 671 00a1 4889C7   		movq	%rax, %rdi
+ 672 00a4 E8000000 		call	_ZNKSt6vectorIdSaIdEEixEm
+ 672      00
+ 673 00a9 F20F1000 		movsd	(%rax), %xmm0
+ 674 00ad F20F5945 		mulsd	-56(%rbp), %xmm0
+ 674      C8
+ 675 00b2 F20F104D 		movsd	-24(%rbp), %xmm1
+ 675      E8
+ 676 00b7 F20F58C1 		addsd	%xmm1, %xmm0
+ 677 00bb F20F1145 		movsd	%xmm0, -24(%rbp)
+ 677      E8
+ 128:cpp_vector_double_practice.cpp ****                 dot_product += columns[i] * other.columns[i];
+ 678              		.loc 1 128 0 discriminator 2
+ 679 00c0 8345E401 		addl	$1, -28(%rbp)
+ 680 00c4 EB9A     		jmp	.L30
+ 681              	.L29:
+ 682              	.LBE17:
+ 130:cpp_vector_double_practice.cpp ****             }
+ 131:cpp_vector_double_practice.cpp **** 
+ 132:cpp_vector_double_practice.cpp ****             // Returning a temporary image
+ 133:cpp_vector_double_practice.cpp ****             return dot_product;
+ 683              		.loc 1 133 0
+ 684 00c6 F20F1045 		movsd	-24(%rbp), %xmm0
+ 684      E8
+ 134:cpp_vector_double_practice.cpp ****         }
+ 685              		.loc 1 134 0
+ 686 00cb 4883C438 		addq	$56, %rsp
+ 687 00cf 5B       		popq	%rbx
+ 688 00d0 5D       		popq	%rbp
+ 689              		.cfi_def_cfa 7, 8
+ 690 00d1 C3       		ret
+ 691              		.cfi_endproc
+ 692              	.LFE1857:
+ 694              		.section	.rodata
+ 695              	.LC8:
+ 696 006f 5D203D20 		.string	"] = "
+ 696      00
+ 697              		.section	.text._ZN9RowVector4showEv,"axG",@progbits,_ZN9RowVector4showEv,comdat
+ 698              		.align 2
+ 699              		.weak	_ZN9RowVector4showEv
+ 701              	_ZN9RowVector4showEv:
+ 702              	.LFB1858:
+ 135:cpp_vector_double_practice.cpp **** 
+ 136:cpp_vector_double_practice.cpp ****         void show(){
+ 703              		.loc 1 136 0
+ 704              		.cfi_startproc
+ 705 0000 55       		pushq	%rbp
+ 706              		.cfi_def_cfa_offset 16
+ 707              		.cfi_offset 6, -16
+ 708 0001 4889E5   		movq	%rsp, %rbp
+ 709              		.cfi_def_cfa_register 6
+ 710 0004 53       		pushq	%rbx
+ 711 0005 4883EC28 		subq	$40, %rsp
+ 712              		.cfi_offset 3, -24
+ 713 0009 48897DD8 		movq	%rdi, -40(%rbp)
+ 714              	.LBB18:
+ 137:cpp_vector_double_practice.cpp ****             for (uint32_t i=0; columns.size()> i; ++i){
+ 715              		.loc 1 137 0
+ 716 000d C745EC00 		movl	$0, -20(%rbp)
+ 716      000000
+ 717              	.L34:
+ 718              		.loc 1 137 0 is_stmt 0 discriminator 3
+ 719 0014 488B45D8 		movq	-40(%rbp), %rax
+ 720 0018 4889C7   		movq	%rax, %rdi
+ 721 001b E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 721      00
+ 722 0020 4889C2   		movq	%rax, %rdx
+ 723 0023 8B45EC   		movl	-20(%rbp), %eax
+ 724 0026 4839C2   		cmpq	%rax, %rdx
+ 725 0029 0F97C0   		seta	%al
+ 726 002c 84C0     		testb	%al, %al
+ 727 002e 0F848200 		je	.L35
+ 727      0000
+ 138:cpp_vector_double_practice.cpp ****                 std::cout << name << '[' << i << "] = " << columns[i] << '\n';
+ 728              		.loc 1 138 0 is_stmt 1 discriminator 2
+ 729 0034 488B45D8 		movq	-40(%rbp), %rax
+ 730 0038 4883C018 		addq	$24, %rax
+ 731 003c 4889C6   		movq	%rax, %rsi
+ 732 003f 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
+ 732      000000
+ 733 0046 E8000000 		call	_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5
+ 733      00
+ 734 004b BE5B0000 		movl	$91, %esi
+ 734      00
+ 735 0050 4889C7   		movq	%rax, %rdi
+ 736 0053 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
+ 736      00
+ 737 0058 4889C2   		movq	%rax, %rdx
+ 738 005b 8B45EC   		movl	-20(%rbp), %eax
+ 739 005e 89C6     		movl	%eax, %esi
+ 740 0060 4889D7   		movq	%rdx, %rdi
+ 741 0063 E8000000 		call	_ZNSolsEj@PLT
+ 741      00
+ 742 0068 488D3500 		leaq	.LC8(%rip), %rsi
+ 742      000000
+ 743 006f 4889C7   		movq	%rax, %rdi
+ 744 0072 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+ 744      00
+ 745 0077 4889C3   		movq	%rax, %rbx
+ 746 007a 8B55EC   		movl	-20(%rbp), %edx
+ 747 007d 488B45D8 		movq	-40(%rbp), %rax
+ 748 0081 4889D6   		movq	%rdx, %rsi
+ 749 0084 4889C7   		movq	%rax, %rdi
+ 750 0087 E8000000 		call	_ZNSt6vectorIdSaIdEEixEm
+ 750      00
+ 751 008c 488B00   		movq	(%rax), %rax
+ 752 008f 488945D0 		movq	%rax, -48(%rbp)
+ 753 0093 F20F1045 		movsd	-48(%rbp), %xmm0
+ 753      D0
+ 754 0098 4889DF   		movq	%rbx, %rdi
+ 755 009b E8000000 		call	_ZNSolsEd@PLT
+ 755      00
+ 756 00a0 BE0A0000 		movl	$10, %esi
+ 756      00
+ 757 00a5 4889C7   		movq	%rax, %rdi
+ 758 00a8 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
+ 758      00
+ 137:cpp_vector_double_practice.cpp ****             for (uint32_t i=0; columns.size()> i; ++i){
+ 759              		.loc 1 137 0 discriminator 2
+ 760 00ad 8345EC01 		addl	$1, -20(%rbp)
+ 761 00b1 E95EFFFF 		jmp	.L34
+ 761      FF
+ 762              	.L35:
+ 763              	.LBE18:
+ 139:cpp_vector_double_practice.cpp ****             }
+ 140:cpp_vector_double_practice.cpp ****         }
+ 764              		.loc 1 140 0
+ 765 00b6 90       		nop
+ 766 00b7 4883C428 		addq	$40, %rsp
+ 767 00bb 5B       		popq	%rbx
+ 768 00bc 5D       		popq	%rbp
+ 769              		.cfi_def_cfa 7, 8
+ 770 00bd C3       		ret
+ 771              		.cfi_endproc
+ 772              	.LFE1858:
+ 774              		.section	.rodata
+ 775 0074 00000000 		.align 8
+ 776              	.LC11:
+ 777 0078 526F7756 		.string	"RowVector row (2u, s, \"row\");\n"
+ 777      6563746F 
+ 777      7220726F 
+ 777      77202832 
+ 777      752C2073 
+ 778              	.LC12:
+ 779 0097 726F7700 		.string	"row"
+ 780              	.LC13:
+ 781 009b 526F7756 		.string	"RowVector another_row (row);\n"
+ 781      6563746F 
+ 781      7220616E 
+ 781      6F746865 
+ 781      725F726F 
+ 782              	.LC14:
+ 783 00b9 616E6F74 		.string	"another_row[1] += 0.5;\n"
+ 783      6865725F 
+ 783      726F775B 
+ 783      315D202B 
+ 783      3D20302E 
+ 784 00d1 00000000 		.align 8
+ 784      000000
+ 785              	.LC16:
+ 786 00d8 526F7756 		.string	"RowVector row_plus_another(row + another_row);\n"
+ 786      6563746F 
+ 786      7220726F 
+ 786      775F706C 
+ 786      75735F61 
+ 787              	.LC17:
+ 788 0108 526F7756 		.string	"RowVector zeros(3);\n"
+ 788      6563746F 
+ 788      72207A65 
+ 788      726F7328 
+ 788      33293B0A 
+ 789              	.LC18:
+ 790 011d 7A65726F 		.string	"zeros"
+ 790      7300
+ 791              	.LC20:
+ 792 0123 6F727468 		.string	"ortho"
+ 792      6F00
+ 793              	.LC21:
+ 794 0129 646F7562 		.string	"double dot = row * ortho;\n"
+ 794      6C652064 
+ 794      6F74203D 
+ 794      20726F77 
+ 794      202A206F 
+ 795              	.LC22:
+ 796 0144 646F7420 		.string	"dot  = "
+ 796      203D2000 
+ 797              	.LC23:
+ 798 014c 646F7420 		.string	"dot = row * row;\n"
+ 798      3D20726F 
+ 798      77202A20 
+ 798      726F773B 
+ 798      0A00
+ 799              		.text
+ 800              		.globl	main
+ 802              	main:
+ 803              	.LFB1859:
+ 141:cpp_vector_double_practice.cpp **** };
  142:cpp_vector_double_practice.cpp **** 
- 143:cpp_vector_double_practice.cpp ****             // Element loop
- 144:cpp_vector_double_practice.cpp ****             for (uint32_t i = 0; columns.size() > i; ++i){
- 839              		.loc 1 144 0
- 840 00b9 C745E400 		movl	$0, -28(%rbp)
- 840      000000
- 841              	.L35:
- 842              		.loc 1 144 0 is_stmt 0 discriminator 3
- 843 00c0 488B45D8 		movq	-40(%rbp), %rax
- 844 00c4 4889C7   		movq	%rax, %rdi
- 845 00c7 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 845      00
- 846 00cc 4889C2   		movq	%rax, %rdx
- 847 00cf 8B45E4   		movl	-28(%rbp), %eax
- 848 00d2 4839C2   		cmpq	%rax, %rdx
- 849 00d5 0F97C0   		seta	%al
- 850 00d8 84C0     		testb	%al, %al
- 851 00da 744A     		je	.L34
- 145:cpp_vector_double_practice.cpp ****                 dot_product += columns[i] * other.columns[i];
- 852              		.loc 1 145 0 is_stmt 1 discriminator 2
- 853 00dc 8B55E4   		movl	-28(%rbp), %edx
- 854 00df 488B45D8 		movq	-40(%rbp), %rax
- 855 00e3 4889D6   		movq	%rdx, %rsi
- 856 00e6 4889C7   		movq	%rax, %rdi
- 857 00e9 E8000000 		call	_ZNSt6vectorIdSaIdEEixEm
- 857      00
- 858 00ee F20F1010 		movsd	(%rax), %xmm2
- 859 00f2 F20F1155 		movsd	%xmm2, -56(%rbp)
- 859      C8
- 860 00f7 8B55E4   		movl	-28(%rbp), %edx
- 861 00fa 488B45D0 		movq	-48(%rbp), %rax
- 862 00fe 4889D6   		movq	%rdx, %rsi
- 863 0101 4889C7   		movq	%rax, %rdi
- 864 0104 E8000000 		call	_ZNKSt6vectorIdSaIdEEixEm
- 864      00
- 865 0109 F20F1000 		movsd	(%rax), %xmm0
- 866 010d F20F5945 		mulsd	-56(%rbp), %xmm0
- 866      C8
- 867 0112 F20F104D 		movsd	-24(%rbp), %xmm1
- 867      E8
- 868 0117 F20F58C1 		addsd	%xmm1, %xmm0
- 869 011b F20F1145 		movsd	%xmm0, -24(%rbp)
- 869      E8
- 144:cpp_vector_double_practice.cpp ****                 dot_product += columns[i] * other.columns[i];
- 870              		.loc 1 144 0 discriminator 2
- 871 0120 8345E401 		addl	$1, -28(%rbp)
- 872 0124 EB9A     		jmp	.L35
- 873              	.L34:
- 874              	.LBE18:
- 146:cpp_vector_double_practice.cpp ****             }
- 147:cpp_vector_double_practice.cpp **** 
- 148:cpp_vector_double_practice.cpp ****             // Returning a temporary image
- 149:cpp_vector_double_practice.cpp ****             return dot_product;
- 875              		.loc 1 149 0
- 876 0126 F20F1045 		movsd	-24(%rbp), %xmm0
- 876      E8
- 150:cpp_vector_double_practice.cpp ****         }
- 877              		.loc 1 150 0
- 878 012b 4883C438 		addq	$56, %rsp
- 879 012f 5B       		popq	%rbx
- 880 0130 5D       		popq	%rbp
- 881              		.cfi_def_cfa 7, 8
- 882 0131 C3       		ret
- 883              		.cfi_endproc
- 884              	.LFE1857:
- 886              		.section	.rodata
- 887              	.LC10:
- 888 00a6 73686F77 		.string	"show()\n"
- 888      28290A00 
- 889              	.LC11:
- 890 00ae 5D203D20 		.string	"] = "
- 890      00
- 891              		.section	.text._ZN9RowVector4showEv,"axG",@progbits,_ZN9RowVector4showEv,comdat
- 892              		.align 2
- 893              		.weak	_ZN9RowVector4showEv
- 895              	_ZN9RowVector4showEv:
- 896              	.LFB1858:
+ 143:cpp_vector_double_practice.cpp **** 
+ 144:cpp_vector_double_practice.cpp **** int32_t main(int32_t argn, char *argv[]){
+ 804              		.loc 1 144 0
+ 805              		.cfi_startproc
+ 806              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+ 807              		.cfi_lsda 0x1b,.LLSDA1859
+ 808 0000 55       		pushq	%rbp
+ 809              		.cfi_def_cfa_offset 16
+ 810              		.cfi_offset 6, -16
+ 811 0001 4889E5   		movq	%rsp, %rbp
+ 812              		.cfi_def_cfa_register 6
+ 813 0004 53       		pushq	%rbx
+ 814 0005 4881EC98 		subq	$408, %rsp
+ 814      010000
+ 815              		.cfi_offset 3, -24
+ 816 000c 89BD7CFE 		movl	%edi, -388(%rbp)
+ 816      FFFF
+ 817 0012 4889B570 		movq	%rsi, -400(%rbp)
+ 817      FEFFFF
+ 818              		.loc 1 144 0
+ 819 0019 64488B04 		movq	%fs:40, %rax
+ 819      25280000 
+ 819      00
+ 820 0022 488945E8 		movq	%rax, -24(%rbp)
+ 821 0026 31C0     		xorl	%eax, %eax
+ 145:cpp_vector_double_practice.cpp **** 	double s[] = {1.0, 2.0};
+ 822              		.loc 1 145 0
+ 823 0028 F20F1005 		movsd	.LC9(%rip), %xmm0
+ 823      00000000 
+ 824 0030 F20F1185 		movsd	%xmm0, -368(%rbp)
+ 824      90FEFFFF 
+ 825 0038 F20F1005 		movsd	.LC10(%rip), %xmm0
+ 825      00000000 
+ 826 0040 F20F1185 		movsd	%xmm0, -360(%rbp)
+ 826      98FEFFFF 
+ 146:cpp_vector_double_practice.cpp **** 
+ 147:cpp_vector_double_practice.cpp ****     std::cout << "RowVector row (2u, s, \"row\");\n";
+ 827              		.loc 1 147 0
+ 828 0048 488D3500 		leaq	.LC11(%rip), %rsi
+ 828      000000
+ 829 004f 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
+ 829      000000
+ 830              	.LEHB4:
+ 831 0056 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+ 831      00
+ 148:cpp_vector_double_practice.cpp **** 	RowVector row (2u, s, "row");
+ 832              		.loc 1 148 0
+ 833 005b 488D9590 		leaq	-368(%rbp), %rdx
+ 833      FEFFFF
+ 834 0062 488D85B0 		leaq	-336(%rbp), %rax
+ 834      FEFFFF
+ 835 0069 488D0D00 		leaq	.LC12(%rip), %rcx
+ 835      000000
+ 836 0070 BE020000 		movl	$2, %esi
+ 836      00
+ 837 0075 4889C7   		movq	%rax, %rdi
+ 838 0078 E8000000 		call	_ZN9RowVectorC1EjPKdPKc
+ 838      00
+ 839              	.LEHE4:
+ 149:cpp_vector_double_practice.cpp **** 
+ 150:cpp_vector_double_practice.cpp ****     row.show();
+ 840              		.loc 1 150 0
+ 841 007d 488D85B0 		leaq	-336(%rbp), %rax
+ 841      FEFFFF
+ 842 0084 4889C7   		movq	%rax, %rdi
+ 843              	.LEHB5:
+ 844 0087 E8000000 		call	_ZN9RowVector4showEv
+ 844      00
  151:cpp_vector_double_practice.cpp **** 
- 152:cpp_vector_double_practice.cpp ****         void show(){
- 897              		.loc 1 152 0
- 898              		.cfi_startproc
- 899 0000 55       		pushq	%rbp
- 900              		.cfi_def_cfa_offset 16
- 901              		.cfi_offset 6, -16
- 902 0001 4889E5   		movq	%rsp, %rbp
- 903              		.cfi_def_cfa_register 6
- 904 0004 53       		pushq	%rbx
- 905 0005 4883EC28 		subq	$40, %rsp
- 906              		.cfi_offset 3, -24
- 907 0009 48897DD8 		movq	%rdi, -40(%rbp)
- 153:cpp_vector_double_practice.cpp **** #ifdef LOG
- 154:cpp_vector_double_practice.cpp ****             std::cout << '[' << &columns << ']' << "show()\n";
- 908              		.loc 1 154 0
- 909 000d BE5B0000 		movl	$91, %esi
- 909      00
- 910 0012 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
- 910      000000
- 911 0019 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
- 911      00
- 912 001e 4889C2   		movq	%rax, %rdx
- 913 0021 488B45D8 		movq	-40(%rbp), %rax
- 914 0025 4889C6   		movq	%rax, %rsi
- 915 0028 4889D7   		movq	%rdx, %rdi
- 916 002b E8000000 		call	_ZNSolsEPKv@PLT
- 916      00
- 917 0030 BE5D0000 		movl	$93, %esi
- 917      00
- 918 0035 4889C7   		movq	%rax, %rdi
- 919 0038 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
- 919      00
- 920 003d 488D3500 		leaq	.LC10(%rip), %rsi
- 920      000000
- 921 0044 4889C7   		movq	%rax, %rdi
- 922 0047 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 922      00
- 923              	.LBB19:
- 155:cpp_vector_double_practice.cpp **** #endif
- 156:cpp_vector_double_practice.cpp ****             for (uint32_t i=0; columns.size()> i; ++i){
- 924              		.loc 1 156 0
- 925 004c C745EC00 		movl	$0, -20(%rbp)
- 925      000000
- 926              	.L39:
- 927              		.loc 1 156 0 is_stmt 0 discriminator 3
- 928 0053 488B45D8 		movq	-40(%rbp), %rax
- 929 0057 4889C7   		movq	%rax, %rdi
- 930 005a E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 930      00
- 931 005f 4889C2   		movq	%rax, %rdx
- 932 0062 8B45EC   		movl	-20(%rbp), %eax
- 933 0065 4839C2   		cmpq	%rax, %rdx
- 934 0068 0F97C0   		seta	%al
- 935 006b 84C0     		testb	%al, %al
- 936 006d 0F848200 		je	.L40
- 936      0000
- 157:cpp_vector_double_practice.cpp ****                 std::cout << name << '[' << i << "] = " << columns[i] << '\n';
- 937              		.loc 1 157 0 is_stmt 1 discriminator 2
- 938 0073 488B45D8 		movq	-40(%rbp), %rax
- 939 0077 4883C018 		addq	$24, %rax
- 940 007b 4889C6   		movq	%rax, %rsi
- 941 007e 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
- 941      000000
- 942 0085 E8000000 		call	_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5
- 942      00
- 943 008a BE5B0000 		movl	$91, %esi
- 943      00
- 944 008f 4889C7   		movq	%rax, %rdi
- 945 0092 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
- 945      00
- 946 0097 4889C2   		movq	%rax, %rdx
- 947 009a 8B45EC   		movl	-20(%rbp), %eax
- 948 009d 89C6     		movl	%eax, %esi
- 949 009f 4889D7   		movq	%rdx, %rdi
- 950 00a2 E8000000 		call	_ZNSolsEj@PLT
- 950      00
- 951 00a7 488D3500 		leaq	.LC11(%rip), %rsi
- 951      000000
- 952 00ae 4889C7   		movq	%rax, %rdi
- 953 00b1 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 953      00
- 954 00b6 4889C3   		movq	%rax, %rbx
- 955 00b9 8B55EC   		movl	-20(%rbp), %edx
- 956 00bc 488B45D8 		movq	-40(%rbp), %rax
- 957 00c0 4889D6   		movq	%rdx, %rsi
- 958 00c3 4889C7   		movq	%rax, %rdi
- 959 00c6 E8000000 		call	_ZNSt6vectorIdSaIdEEixEm
- 959      00
- 960 00cb 488B00   		movq	(%rax), %rax
- 961 00ce 488945D0 		movq	%rax, -48(%rbp)
- 962 00d2 F20F1045 		movsd	-48(%rbp), %xmm0
- 962      D0
- 963 00d7 4889DF   		movq	%rbx, %rdi
- 964 00da E8000000 		call	_ZNSolsEd@PLT
- 964      00
- 965 00df BE0A0000 		movl	$10, %esi
- 965      00
- 966 00e4 4889C7   		movq	%rax, %rdi
- 967 00e7 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
- 967      00
- 156:cpp_vector_double_practice.cpp ****                 std::cout << name << '[' << i << "] = " << columns[i] << '\n';
- 968              		.loc 1 156 0 discriminator 2
- 969 00ec 8345EC01 		addl	$1, -20(%rbp)
- 970 00f0 E95EFFFF 		jmp	.L39
- 970      FF
- 971              	.L40:
- 972              	.LBE19:
- 158:cpp_vector_double_practice.cpp ****             }
- 159:cpp_vector_double_practice.cpp ****         }
- 973              		.loc 1 159 0
- 974 00f5 90       		nop
- 975 00f6 4883C428 		addq	$40, %rsp
- 976 00fa 5B       		popq	%rbx
- 977 00fb 5D       		popq	%rbp
- 978              		.cfi_def_cfa 7, 8
- 979 00fc C3       		ret
- 980              		.cfi_endproc
- 981              	.LFE1858:
- 983              		.section	.rodata
- 984 00b3 00000000 		.align 8
- 984      00
- 985              	.LC14:
- 986 00b8 526F7756 		.string	"RowVector row (2u, s, \"row\");\n"
- 986      6563746F 
- 986      7220726F 
- 986      77202832 
- 986      752C2073 
- 987              	.LC15:
- 988 00d7 726F7700 		.string	"row"
- 989              	.LC16:
- 990 00db 526F7756 		.string	"RowVector another_row (row);\n"
- 990      6563746F 
- 990      7220616E 
- 990      6F746865 
- 990      725F726F 
- 991              	.LC17:
- 992 00f9 616E6F74 		.string	"another_row[1] += 0.5;\n"
- 992      6865725F 
- 992      726F775B 
- 992      315D202B 
- 992      3D20302E 
- 993 0111 00000000 		.align 8
- 993      000000
- 994              	.LC19:
- 995 0118 526F7756 		.string	"RowVector row_plus_another(row + another_row);\n"
- 995      6563746F 
- 995      7220726F 
- 995      775F706C 
- 995      75735F61 
- 996              	.LC20:
- 997 0148 526F7756 		.string	"RowVector zeros(3);\n"
- 997      6563746F 
- 997      72207A65 
- 997      726F7328 
- 997      33293B0A 
- 998              	.LC21:
- 999 015d 7A65726F 		.string	"zeros"
- 999      7300
- 1000              	.LC23:
- 1001 0163 6F727468 		.string	"ortho"
- 1001      6F00
- 1002              	.LC24:
- 1003 0169 646F7562 		.string	"double dot = row * ortho;\n"
- 1003      6C652064 
- 1003      6F74203D 
- 1003      20726F77 
- 1003      202A206F 
- 1004              	.LC25:
- 1005 0184 646F7420 		.string	"dot  = "
- 1005      203D2000 
- 1006              	.LC26:
- 1007 018c 646F7420 		.string	"dot = row * row;\n"
- 1007      3D20726F 
- 1007      77202A20 
- 1007      726F773B 
- 1007      0A00
- 1008              		.text
- 1009              		.globl	main
- 1011              	main:
- 1012              	.LFB1859:
- 160:cpp_vector_double_practice.cpp **** };
+ 152:cpp_vector_double_practice.cpp ****     std::cout << "RowVector another_row (row);\n";
+ 845              		.loc 1 152 0
+ 846 008c 488D3500 		leaq	.LC13(%rip), %rsi
+ 846      000000
+ 847 0093 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
+ 847      000000
+ 848 009a E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+ 848      00
+ 153:cpp_vector_double_practice.cpp **** 	RowVector another_row (row);
+ 849              		.loc 1 153 0
+ 850 009f 488D95B0 		leaq	-336(%rbp), %rdx
+ 850      FEFFFF
+ 851 00a6 488D85F0 		leaq	-272(%rbp), %rax
+ 851      FEFFFF
+ 852 00ad 4889D6   		movq	%rdx, %rsi
+ 853 00b0 4889C7   		movq	%rax, %rdi
+ 854 00b3 E8000000 		call	_ZN9RowVectorC1ERKS_
+ 854      00
+ 855              	.LEHE5:
+ 154:cpp_vector_double_practice.cpp ****     row.show();
+ 856              		.loc 1 154 0
+ 857 00b8 488D85B0 		leaq	-336(%rbp), %rax
+ 857      FEFFFF
+ 858 00bf 4889C7   		movq	%rax, %rdi
+ 859              	.LEHB6:
+ 860 00c2 E8000000 		call	_ZN9RowVector4showEv
+ 860      00
+ 155:cpp_vector_double_practice.cpp ****     another_row.show();
+ 861              		.loc 1 155 0
+ 862 00c7 488D85F0 		leaq	-272(%rbp), %rax
+ 862      FEFFFF
+ 863 00ce 4889C7   		movq	%rax, %rdi
+ 864 00d1 E8000000 		call	_ZN9RowVector4showEv
+ 864      00
+ 156:cpp_vector_double_practice.cpp **** 
+ 157:cpp_vector_double_practice.cpp ****     std::cout << "another_row[1] += 0.5;\n";
+ 865              		.loc 1 157 0
+ 866 00d6 488D3500 		leaq	.LC14(%rip), %rsi
+ 866      000000
+ 867 00dd 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
+ 867      000000
+ 868 00e4 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+ 868      00
+ 158:cpp_vector_double_practice.cpp ****     another_row[1] += 0.5;
+ 869              		.loc 1 158 0
+ 870 00e9 488D85F0 		leaq	-272(%rbp), %rax
+ 870      FEFFFF
+ 871 00f0 BE010000 		movl	$1, %esi
+ 871      00
+ 872 00f5 4889C7   		movq	%rax, %rdi
+ 873 00f8 E8000000 		call	_ZN9RowVectorixEj
+ 873      00
+ 874 00fd F20F1008 		movsd	(%rax), %xmm1
+ 875 0101 F20F1005 		movsd	.LC15(%rip), %xmm0
+ 875      00000000 
+ 876 0109 F20F58C1 		addsd	%xmm1, %xmm0
+ 877 010d F20F1100 		movsd	%xmm0, (%rax)
+ 159:cpp_vector_double_practice.cpp ****     row.show();
+ 878              		.loc 1 159 0
+ 879 0111 488D85B0 		leaq	-336(%rbp), %rax
+ 879      FEFFFF
+ 880 0118 4889C7   		movq	%rax, %rdi
+ 881 011b E8000000 		call	_ZN9RowVector4showEv
+ 881      00
+ 160:cpp_vector_double_practice.cpp ****     another_row.show();
+ 882              		.loc 1 160 0
+ 883 0120 488D85F0 		leaq	-272(%rbp), %rax
+ 883      FEFFFF
+ 884 0127 4889C7   		movq	%rax, %rdi
+ 885 012a E8000000 		call	_ZN9RowVector4showEv
+ 885      00
  161:cpp_vector_double_practice.cpp **** 
- 162:cpp_vector_double_practice.cpp **** 
- 163:cpp_vector_double_practice.cpp **** int32_t main(int32_t argn, char *argv[]){
- 1013              		.loc 1 163 0
- 1014              		.cfi_startproc
- 1015              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
- 1016              		.cfi_lsda 0x1b,.LLSDA1859
- 1017 0000 55       		pushq	%rbp
- 1018              		.cfi_def_cfa_offset 16
- 1019              		.cfi_offset 6, -16
- 1020 0001 4889E5   		movq	%rsp, %rbp
- 1021              		.cfi_def_cfa_register 6
- 1022 0004 53       		pushq	%rbx
- 1023 0005 4881EC98 		subq	$408, %rsp
- 1023      010000
- 1024              		.cfi_offset 3, -24
- 1025 000c 89BD7CFE 		movl	%edi, -388(%rbp)
- 1025      FFFF
- 1026 0012 4889B570 		movq	%rsi, -400(%rbp)
- 1026      FEFFFF
- 1027              		.loc 1 163 0
- 1028 0019 64488B04 		movq	%fs:40, %rax
- 1028      25280000 
- 1028      00
- 1029 0022 488945E8 		movq	%rax, -24(%rbp)
- 1030 0026 31C0     		xorl	%eax, %eax
- 164:cpp_vector_double_practice.cpp **** 	double s[] = {1.0, 2.0};
- 1031              		.loc 1 164 0
- 1032 0028 F20F1005 		movsd	.LC12(%rip), %xmm0
- 1032      00000000 
- 1033 0030 F20F1185 		movsd	%xmm0, -368(%rbp)
- 1033      90FEFFFF 
- 1034 0038 F20F1005 		movsd	.LC13(%rip), %xmm0
- 1034      00000000 
- 1035 0040 F20F1185 		movsd	%xmm0, -360(%rbp)
- 1035      98FEFFFF 
- 165:cpp_vector_double_practice.cpp **** 
- 166:cpp_vector_double_practice.cpp ****     std::cout << "RowVector row (2u, s, \"row\");\n";
- 1036              		.loc 1 166 0
- 1037 0048 488D3500 		leaq	.LC14(%rip), %rsi
- 1037      000000
- 1038 004f 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
- 1038      000000
- 1039              	.LEHB10:
- 1040 0056 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 1040      00
- 167:cpp_vector_double_practice.cpp **** 	RowVector row (2u, s, "row");
- 1041              		.loc 1 167 0
- 1042 005b 488D9590 		leaq	-368(%rbp), %rdx
- 1042      FEFFFF
- 1043 0062 488D85B0 		leaq	-336(%rbp), %rax
- 1043      FEFFFF
- 1044 0069 488D0D00 		leaq	.LC15(%rip), %rcx
- 1044      000000
- 1045 0070 BE020000 		movl	$2, %esi
- 1045      00
- 1046 0075 4889C7   		movq	%rax, %rdi
- 1047 0078 E8000000 		call	_ZN9RowVectorC1EjPKdPKc
- 1047      00
- 1048              	.LEHE10:
- 168:cpp_vector_double_practice.cpp **** 
- 169:cpp_vector_double_practice.cpp ****     row.show();
- 1049              		.loc 1 169 0
- 1050 007d 488D85B0 		leaq	-336(%rbp), %rax
- 1050      FEFFFF
- 1051 0084 4889C7   		movq	%rax, %rdi
- 1052              	.LEHB11:
- 1053 0087 E8000000 		call	_ZN9RowVector4showEv
- 1053      00
- 170:cpp_vector_double_practice.cpp **** 
- 171:cpp_vector_double_practice.cpp ****     std::cout << "RowVector another_row (row);\n";
- 1054              		.loc 1 171 0
- 1055 008c 488D3500 		leaq	.LC16(%rip), %rsi
- 1055      000000
- 1056 0093 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
- 1056      000000
- 1057 009a E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 1057      00
- 172:cpp_vector_double_practice.cpp **** 	RowVector another_row (row);
- 1058              		.loc 1 172 0
- 1059 009f 488D95B0 		leaq	-336(%rbp), %rdx
- 1059      FEFFFF
- 1060 00a6 488D85F0 		leaq	-272(%rbp), %rax
- 1060      FEFFFF
- 1061 00ad 4889D6   		movq	%rdx, %rsi
- 1062 00b0 4889C7   		movq	%rax, %rdi
- 1063 00b3 E8000000 		call	_ZN9RowVectorC1ERKS_
- 1063      00
- 1064              	.LEHE11:
- 173:cpp_vector_double_practice.cpp ****     row.show();
- 1065              		.loc 1 173 0
- 1066 00b8 488D85B0 		leaq	-336(%rbp), %rax
- 1066      FEFFFF
- 1067 00bf 4889C7   		movq	%rax, %rdi
- 1068              	.LEHB12:
- 1069 00c2 E8000000 		call	_ZN9RowVector4showEv
- 1069      00
- 174:cpp_vector_double_practice.cpp ****     another_row.show();
- 1070              		.loc 1 174 0
- 1071 00c7 488D85F0 		leaq	-272(%rbp), %rax
- 1071      FEFFFF
- 1072 00ce 4889C7   		movq	%rax, %rdi
- 1073 00d1 E8000000 		call	_ZN9RowVector4showEv
- 1073      00
- 175:cpp_vector_double_practice.cpp **** 
- 176:cpp_vector_double_practice.cpp ****     std::cout << "another_row[1] += 0.5;\n";
- 1074              		.loc 1 176 0
- 1075 00d6 488D3500 		leaq	.LC17(%rip), %rsi
- 1075      000000
- 1076 00dd 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
- 1076      000000
- 1077 00e4 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 1077      00
- 177:cpp_vector_double_practice.cpp ****     another_row[1] += 0.5;
- 1078              		.loc 1 177 0
- 1079 00e9 488D85F0 		leaq	-272(%rbp), %rax
- 1079      FEFFFF
- 1080 00f0 BE010000 		movl	$1, %esi
- 1080      00
- 1081 00f5 4889C7   		movq	%rax, %rdi
- 1082 00f8 E8000000 		call	_ZN9RowVectorixEj
- 1082      00
- 1083 00fd F20F1008 		movsd	(%rax), %xmm1
- 1084 0101 F20F1005 		movsd	.LC18(%rip), %xmm0
- 1084      00000000 
- 1085 0109 F20F58C1 		addsd	%xmm1, %xmm0
- 1086 010d F20F1100 		movsd	%xmm0, (%rax)
- 178:cpp_vector_double_practice.cpp ****     row.show();
- 1087              		.loc 1 178 0
- 1088 0111 488D85B0 		leaq	-336(%rbp), %rax
- 1088      FEFFFF
- 1089 0118 4889C7   		movq	%rax, %rdi
- 1090 011b E8000000 		call	_ZN9RowVector4showEv
- 1090      00
- 179:cpp_vector_double_practice.cpp ****     another_row.show();
- 1091              		.loc 1 179 0
- 1092 0120 488D85F0 		leaq	-272(%rbp), %rax
- 1092      FEFFFF
- 1093 0127 4889C7   		movq	%rax, %rdi
- 1094 012a E8000000 		call	_ZN9RowVector4showEv
- 1094      00
+ 162:cpp_vector_double_practice.cpp ****     std::cout << "RowVector row_plus_another(row + another_row);\n";
+ 886              		.loc 1 162 0
+ 887 012f 488D3500 		leaq	.LC16(%rip), %rsi
+ 887      000000
+ 888 0136 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
+ 888      000000
+ 889 013d E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+ 889      00
+ 163:cpp_vector_double_practice.cpp ****     RowVector row_plus_another(row + another_row);
+ 890              		.loc 1 163 0
+ 891 0142 488D8530 		leaq	-208(%rbp), %rax
+ 891      FFFFFF
+ 892 0149 488D95F0 		leaq	-272(%rbp), %rdx
+ 892      FEFFFF
+ 893 0150 488D8DB0 		leaq	-336(%rbp), %rcx
+ 893      FEFFFF
+ 894 0157 4889CE   		movq	%rcx, %rsi
+ 895 015a 4889C7   		movq	%rax, %rdi
+ 896 015d E8000000 		call	_ZN9RowVectorplERKS_
+ 896      00
+ 897              	.LEHE6:
+ 164:cpp_vector_double_practice.cpp ****     row.show();
+ 898              		.loc 1 164 0
+ 899 0162 488D85B0 		leaq	-336(%rbp), %rax
+ 899      FEFFFF
+ 900 0169 4889C7   		movq	%rax, %rdi
+ 901              	.LEHB7:
+ 902 016c E8000000 		call	_ZN9RowVector4showEv
+ 902      00
+ 165:cpp_vector_double_practice.cpp ****     another_row.show();
+ 903              		.loc 1 165 0
+ 904 0171 488D85F0 		leaq	-272(%rbp), %rax
+ 904      FEFFFF
+ 905 0178 4889C7   		movq	%rax, %rdi
+ 906 017b E8000000 		call	_ZN9RowVector4showEv
+ 906      00
+ 166:cpp_vector_double_practice.cpp ****     row_plus_another.show();
+ 907              		.loc 1 166 0
+ 908 0180 488D8530 		leaq	-208(%rbp), %rax
+ 908      FFFFFF
+ 909 0187 4889C7   		movq	%rax, %rdi
+ 910 018a E8000000 		call	_ZN9RowVector4showEv
+ 910      00
+ 167:cpp_vector_double_practice.cpp **** 
+ 168:cpp_vector_double_practice.cpp ****     std::cout << "RowVector zeros(3);\n";
+ 911              		.loc 1 168 0
+ 912 018f 488D3500 		leaq	.LC17(%rip), %rsi
+ 912      000000
+ 913 0196 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
+ 913      000000
+ 914 019d E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+ 914      00
+ 169:cpp_vector_double_practice.cpp **** 	RowVector zeros(3u, "zeros");
+ 915              		.loc 1 169 0
+ 916 01a2 488D8570 		leaq	-144(%rbp), %rax
+ 916      FFFFFF
+ 917 01a9 488D1500 		leaq	.LC18(%rip), %rdx
+ 917      000000
+ 918 01b0 BE030000 		movl	$3, %esi
+ 918      00
+ 919 01b5 4889C7   		movq	%rax, %rdi
+ 920 01b8 E8000000 		call	_ZN9RowVectorC1EjPKc
+ 920      00
+ 921              	.LEHE7:
+ 170:cpp_vector_double_practice.cpp ****     row.show();
+ 922              		.loc 1 170 0
+ 923 01bd 488D85B0 		leaq	-336(%rbp), %rax
+ 923      FEFFFF
+ 924 01c4 4889C7   		movq	%rax, %rdi
+ 925              	.LEHB8:
+ 926 01c7 E8000000 		call	_ZN9RowVector4showEv
+ 926      00
+ 171:cpp_vector_double_practice.cpp ****     another_row.show();
+ 927              		.loc 1 171 0
+ 928 01cc 488D85F0 		leaq	-272(%rbp), %rax
+ 928      FEFFFF
+ 929 01d3 4889C7   		movq	%rax, %rdi
+ 930 01d6 E8000000 		call	_ZN9RowVector4showEv
+ 930      00
+ 172:cpp_vector_double_practice.cpp ****     row_plus_another.show();
+ 931              		.loc 1 172 0
+ 932 01db 488D8530 		leaq	-208(%rbp), %rax
+ 932      FFFFFF
+ 933 01e2 4889C7   		movq	%rax, %rdi
+ 934 01e5 E8000000 		call	_ZN9RowVector4showEv
+ 934      00
+ 173:cpp_vector_double_practice.cpp ****     zeros.show();
+ 935              		.loc 1 173 0
+ 936 01ea 488D8570 		leaq	-144(%rbp), %rax
+ 936      FFFFFF
+ 937 01f1 4889C7   		movq	%rax, %rdi
+ 938 01f4 E8000000 		call	_ZN9RowVector4showEv
+ 938      00
+ 174:cpp_vector_double_practice.cpp **** 
+ 175:cpp_vector_double_practice.cpp ****     double t[] = {2.0, -1.0};
+ 939              		.loc 1 175 0
+ 940 01f9 F20F1005 		movsd	.LC10(%rip), %xmm0
+ 940      00000000 
+ 941 0201 F20F1185 		movsd	%xmm0, -352(%rbp)
+ 941      A0FEFFFF 
+ 942 0209 F20F1005 		movsd	.LC19(%rip), %xmm0
+ 942      00000000 
+ 943 0211 F20F1185 		movsd	%xmm0, -344(%rbp)
+ 943      A8FEFFFF 
+ 176:cpp_vector_double_practice.cpp **** 	RowVector ortho (2u, t, "ortho");
+ 944              		.loc 1 176 0
+ 945 0219 488D95A0 		leaq	-352(%rbp), %rdx
+ 945      FEFFFF
+ 946 0220 488D45B0 		leaq	-80(%rbp), %rax
+ 947 0224 488D0D00 		leaq	.LC20(%rip), %rcx
+ 947      000000
+ 948 022b BE020000 		movl	$2, %esi
+ 948      00
+ 949 0230 4889C7   		movq	%rax, %rdi
+ 950 0233 E8000000 		call	_ZN9RowVectorC1EjPKdPKc
+ 950      00
+ 951              	.LEHE8:
+ 177:cpp_vector_double_practice.cpp ****     double dot = row * ortho;
+ 952              		.loc 1 177 0
+ 953 0238 488D55B0 		leaq	-80(%rbp), %rdx
+ 954 023c 488D85B0 		leaq	-336(%rbp), %rax
+ 954      FEFFFF
+ 955 0243 4889D6   		movq	%rdx, %rsi
+ 956 0246 4889C7   		movq	%rax, %rdi
+ 957 0249 E8000000 		call	_ZN9RowVectormlERKS_
+ 957      00
+ 958 024e 66480F7E 		movq	%xmm0, %rax
+ 958      C0
+ 959 0253 48898588 		movq	%rax, -376(%rbp)
+ 959      FEFFFF
+ 178:cpp_vector_double_practice.cpp ****     std::cout << "double dot = row * ortho;\n";
+ 960              		.loc 1 178 0
+ 961 025a 488D3500 		leaq	.LC21(%rip), %rsi
+ 961      000000
+ 962 0261 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
+ 962      000000
+ 963              	.LEHB9:
+ 964 0268 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+ 964      00
+ 179:cpp_vector_double_practice.cpp ****     std::cout << "dot  = " << dot << '\n';
+ 965              		.loc 1 179 0
+ 966 026d 488D3500 		leaq	.LC22(%rip), %rsi
+ 966      000000
+ 967 0274 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
+ 967      000000
+ 968 027b E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+ 968      00
+ 969 0280 4889C2   		movq	%rax, %rdx
+ 970 0283 488B8588 		movq	-376(%rbp), %rax
+ 970      FEFFFF
+ 971 028a 48898568 		movq	%rax, -408(%rbp)
+ 971      FEFFFF
+ 972 0291 F20F1085 		movsd	-408(%rbp), %xmm0
+ 972      68FEFFFF 
+ 973 0299 4889D7   		movq	%rdx, %rdi
+ 974 029c E8000000 		call	_ZNSolsEd@PLT
+ 974      00
+ 975              		.loc 1 179 0 is_stmt 0 discriminator 1
+ 976 02a1 BE0A0000 		movl	$10, %esi
+ 976      00
+ 977 02a6 4889C7   		movq	%rax, %rdi
+ 978 02a9 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
+ 978      00
  180:cpp_vector_double_practice.cpp **** 
- 181:cpp_vector_double_practice.cpp ****     std::cout << "RowVector row_plus_another(row + another_row);\n";
- 1095              		.loc 1 181 0
- 1096 012f 488D3500 		leaq	.LC19(%rip), %rsi
- 1096      000000
- 1097 0136 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
- 1097      000000
- 1098 013d E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 1098      00
- 182:cpp_vector_double_practice.cpp ****     RowVector row_plus_another(row + another_row);
- 1099              		.loc 1 182 0
- 1100 0142 488D8530 		leaq	-208(%rbp), %rax
- 1100      FFFFFF
- 1101 0149 488D95F0 		leaq	-272(%rbp), %rdx
- 1101      FEFFFF
- 1102 0150 488D8DB0 		leaq	-336(%rbp), %rcx
- 1102      FEFFFF
- 1103 0157 4889CE   		movq	%rcx, %rsi
- 1104 015a 4889C7   		movq	%rax, %rdi
- 1105 015d E8000000 		call	_ZN9RowVectorplERKS_
- 1105      00
- 1106              	.LEHE12:
- 183:cpp_vector_double_practice.cpp ****     row.show();
- 1107              		.loc 1 183 0
- 1108 0162 488D85B0 		leaq	-336(%rbp), %rax
- 1108      FEFFFF
- 1109 0169 4889C7   		movq	%rax, %rdi
- 1110              	.LEHB13:
- 1111 016c E8000000 		call	_ZN9RowVector4showEv
- 1111      00
- 184:cpp_vector_double_practice.cpp ****     another_row.show();
- 1112              		.loc 1 184 0
- 1113 0171 488D85F0 		leaq	-272(%rbp), %rax
- 1113      FEFFFF
- 1114 0178 4889C7   		movq	%rax, %rdi
- 1115 017b E8000000 		call	_ZN9RowVector4showEv
- 1115      00
- 185:cpp_vector_double_practice.cpp ****     row_plus_another.show();
- 1116              		.loc 1 185 0
- 1117 0180 488D8530 		leaq	-208(%rbp), %rax
- 1117      FFFFFF
- 1118 0187 4889C7   		movq	%rax, %rdi
- 1119 018a E8000000 		call	_ZN9RowVector4showEv
- 1119      00
- 186:cpp_vector_double_practice.cpp **** 
- 187:cpp_vector_double_practice.cpp ****     std::cout << "RowVector zeros(3);\n";
- 1120              		.loc 1 187 0
- 1121 018f 488D3500 		leaq	.LC20(%rip), %rsi
- 1121      000000
- 1122 0196 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
- 1122      000000
- 1123 019d E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 1123      00
- 188:cpp_vector_double_practice.cpp **** 	RowVector zeros(3u, "zeros");
- 1124              		.loc 1 188 0
- 1125 01a2 488D8570 		leaq	-144(%rbp), %rax
- 1125      FFFFFF
- 1126 01a9 488D1500 		leaq	.LC21(%rip), %rdx
- 1126      000000
- 1127 01b0 BE030000 		movl	$3, %esi
- 1127      00
- 1128 01b5 4889C7   		movq	%rax, %rdi
- 1129 01b8 E8000000 		call	_ZN9RowVectorC1EjPKc
- 1129      00
- 1130              	.LEHE13:
- 189:cpp_vector_double_practice.cpp ****     row.show();
- 1131              		.loc 1 189 0
- 1132 01bd 488D85B0 		leaq	-336(%rbp), %rax
- 1132      FEFFFF
- 1133 01c4 4889C7   		movq	%rax, %rdi
- 1134              	.LEHB14:
- 1135 01c7 E8000000 		call	_ZN9RowVector4showEv
- 1135      00
- 190:cpp_vector_double_practice.cpp ****     another_row.show();
- 1136              		.loc 1 190 0
- 1137 01cc 488D85F0 		leaq	-272(%rbp), %rax
- 1137      FEFFFF
- 1138 01d3 4889C7   		movq	%rax, %rdi
- 1139 01d6 E8000000 		call	_ZN9RowVector4showEv
- 1139      00
- 191:cpp_vector_double_practice.cpp ****     row_plus_another.show();
- 1140              		.loc 1 191 0
- 1141 01db 488D8530 		leaq	-208(%rbp), %rax
- 1141      FFFFFF
- 1142 01e2 4889C7   		movq	%rax, %rdi
- 1143 01e5 E8000000 		call	_ZN9RowVector4showEv
- 1143      00
- 192:cpp_vector_double_practice.cpp ****     zeros.show();
- 1144              		.loc 1 192 0
- 1145 01ea 488D8570 		leaq	-144(%rbp), %rax
- 1145      FFFFFF
- 1146 01f1 4889C7   		movq	%rax, %rdi
- 1147 01f4 E8000000 		call	_ZN9RowVector4showEv
- 1147      00
- 193:cpp_vector_double_practice.cpp **** 
- 194:cpp_vector_double_practice.cpp ****     double t[] = {2.0, -1.0};
- 1148              		.loc 1 194 0
- 1149 01f9 F20F1005 		movsd	.LC13(%rip), %xmm0
- 1149      00000000 
- 1150 0201 F20F1185 		movsd	%xmm0, -352(%rbp)
- 1150      A0FEFFFF 
- 1151 0209 F20F1005 		movsd	.LC22(%rip), %xmm0
- 1151      00000000 
- 1152 0211 F20F1185 		movsd	%xmm0, -344(%rbp)
- 1152      A8FEFFFF 
- 195:cpp_vector_double_practice.cpp **** 	RowVector ortho (2u, t, "ortho");
- 1153              		.loc 1 195 0
- 1154 0219 488D95A0 		leaq	-352(%rbp), %rdx
- 1154      FEFFFF
- 1155 0220 488D45B0 		leaq	-80(%rbp), %rax
- 1156 0224 488D0D00 		leaq	.LC23(%rip), %rcx
- 1156      000000
- 1157 022b BE020000 		movl	$2, %esi
- 1157      00
- 1158 0230 4889C7   		movq	%rax, %rdi
- 1159 0233 E8000000 		call	_ZN9RowVectorC1EjPKdPKc
- 1159      00
- 1160              	.LEHE14:
- 196:cpp_vector_double_practice.cpp ****     double dot = row * ortho;
- 1161              		.loc 1 196 0
- 1162 0238 488D55B0 		leaq	-80(%rbp), %rdx
- 1163 023c 488D85B0 		leaq	-336(%rbp), %rax
- 1163      FEFFFF
- 1164 0243 4889D6   		movq	%rdx, %rsi
- 1165 0246 4889C7   		movq	%rax, %rdi
- 1166              	.LEHB15:
- 1167 0249 E8000000 		call	_ZN9RowVectormlERKS_
- 1167      00
- 1168 024e 66480F7E 		movq	%xmm0, %rax
- 1168      C0
- 1169 0253 48898588 		movq	%rax, -376(%rbp)
- 1169      FEFFFF
- 197:cpp_vector_double_practice.cpp ****     std::cout << "double dot = row * ortho;\n";
- 1170              		.loc 1 197 0
- 1171 025a 488D3500 		leaq	.LC24(%rip), %rsi
- 1171      000000
- 1172 0261 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
- 1172      000000
- 1173 0268 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 1173      00
- 198:cpp_vector_double_practice.cpp ****     std::cout << "dot  = " << dot << '\n';
- 1174              		.loc 1 198 0
- 1175 026d 488D3500 		leaq	.LC25(%rip), %rsi
- 1175      000000
- 1176 0274 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
- 1176      000000
- 1177 027b E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 1177      00
- 1178 0280 4889C2   		movq	%rax, %rdx
- 1179 0283 488B8588 		movq	-376(%rbp), %rax
- 1179      FEFFFF
- 1180 028a 48898568 		movq	%rax, -408(%rbp)
- 1180      FEFFFF
- 1181 0291 F20F1085 		movsd	-408(%rbp), %xmm0
- 1181      68FEFFFF 
- 1182 0299 4889D7   		movq	%rdx, %rdi
- 1183 029c E8000000 		call	_ZNSolsEd@PLT
- 1183      00
- 1184              		.loc 1 198 0 is_stmt 0 discriminator 1
- 1185 02a1 BE0A0000 		movl	$10, %esi
- 1185      00
- 1186 02a6 4889C7   		movq	%rax, %rdi
- 1187 02a9 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
- 1187      00
- 199:cpp_vector_double_practice.cpp **** 
- 200:cpp_vector_double_practice.cpp ****     std::cout << "dot = row * row;\n";
- 1188              		.loc 1 200 0 is_stmt 1
- 1189 02ae 488D3500 		leaq	.LC26(%rip), %rsi
- 1189      000000
- 1190 02b5 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
- 1190      000000
- 1191 02bc E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 1191      00
- 201:cpp_vector_double_practice.cpp ****     dot = row * row;
- 1192              		.loc 1 201 0
- 1193 02c1 488D95B0 		leaq	-336(%rbp), %rdx
- 1193      FEFFFF
- 1194 02c8 488D85B0 		leaq	-336(%rbp), %rax
- 1194      FEFFFF
- 1195 02cf 4889D6   		movq	%rdx, %rsi
- 1196 02d2 4889C7   		movq	%rax, %rdi
- 1197 02d5 E8000000 		call	_ZN9RowVectormlERKS_
- 1197      00
- 1198 02da 66480F7E 		movq	%xmm0, %rax
- 1198      C0
- 1199 02df 48898588 		movq	%rax, -376(%rbp)
- 1199      FEFFFF
- 202:cpp_vector_double_practice.cpp ****     std::cout << "dot  = " << dot << '\n';
- 1200              		.loc 1 202 0
- 1201 02e6 488D3500 		leaq	.LC25(%rip), %rsi
- 1201      000000
- 1202 02ed 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
- 1202      000000
- 1203 02f4 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
- 1203      00
- 1204              		.loc 1 202 0 is_stmt 0 discriminator 1
- 1205 02f9 4889C2   		movq	%rax, %rdx
- 1206 02fc 488B8588 		movq	-376(%rbp), %rax
- 1206      FEFFFF
- 1207 0303 48898568 		movq	%rax, -408(%rbp)
- 1207      FEFFFF
- 1208 030a F20F1085 		movsd	-408(%rbp), %xmm0
- 1208      68FEFFFF 
- 1209 0312 4889D7   		movq	%rdx, %rdi
- 1210 0315 E8000000 		call	_ZNSolsEd@PLT
- 1210      00
- 1211 031a BE0A0000 		movl	$10, %esi
- 1211      00
- 1212 031f 4889C7   		movq	%rax, %rdi
- 1213 0322 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
- 1213      00
- 1214              	.LEHE15:
- 195:cpp_vector_double_practice.cpp ****     double dot = row * ortho;
- 1215              		.loc 1 195 0 is_stmt 1
- 1216 0327 488D45B0 		leaq	-80(%rbp), %rax
- 1217 032b 4889C7   		movq	%rax, %rdi
- 1218 032e E8000000 		call	_ZN9RowVectorD1Ev
- 1218      00
- 188:cpp_vector_double_practice.cpp ****     row.show();
- 1219              		.loc 1 188 0
- 1220 0333 488D8570 		leaq	-144(%rbp), %rax
- 1220      FFFFFF
- 1221 033a 4889C7   		movq	%rax, %rdi
- 1222 033d E8000000 		call	_ZN9RowVectorD1Ev
- 1222      00
- 182:cpp_vector_double_practice.cpp ****     row.show();
- 1223              		.loc 1 182 0
- 1224 0342 488D8530 		leaq	-208(%rbp), %rax
- 1224      FFFFFF
- 1225 0349 4889C7   		movq	%rax, %rdi
- 1226 034c E8000000 		call	_ZN9RowVectorD1Ev
- 1226      00
- 172:cpp_vector_double_practice.cpp ****     row.show();
- 1227              		.loc 1 172 0
- 1228 0351 488D85F0 		leaq	-272(%rbp), %rax
- 1228      FEFFFF
- 1229 0358 4889C7   		movq	%rax, %rdi
- 1230 035b E8000000 		call	_ZN9RowVectorD1Ev
- 1230      00
- 167:cpp_vector_double_practice.cpp **** 
- 1231              		.loc 1 167 0
- 1232 0360 488D85B0 		leaq	-336(%rbp), %rax
- 1232      FEFFFF
- 1233 0367 4889C7   		movq	%rax, %rdi
- 1234 036a E8000000 		call	_ZN9RowVectorD1Ev
- 1234      00
- 203:cpp_vector_double_practice.cpp **** 
- 204:cpp_vector_double_practice.cpp **** }
- 1235              		.loc 1 204 0
- 1236 036f B8000000 		movl	$0, %eax
- 1236      00
- 1237 0374 488B4DE8 		movq	-24(%rbp), %rcx
- 1238 0378 6448330C 		xorq	%fs:40, %rcx
- 1238      25280000 
- 1238      00
- 1239 0381 7471     		je	.L48
- 1240 0383 EB6A     		jmp	.L54
- 1241              	.L53:
- 1242 0385 4889C3   		movq	%rax, %rbx
- 195:cpp_vector_double_practice.cpp ****     double dot = row * ortho;
- 1243              		.loc 1 195 0
- 1244 0388 488D45B0 		leaq	-80(%rbp), %rax
- 1245 038c 4889C7   		movq	%rax, %rdi
- 1246 038f E8000000 		call	_ZN9RowVectorD1Ev
- 1246      00
- 1247 0394 EB03     		jmp	.L44
- 1248              	.L52:
- 1249 0396 4889C3   		movq	%rax, %rbx
- 1250              	.L44:
- 188:cpp_vector_double_practice.cpp ****     row.show();
- 1251              		.loc 1 188 0
- 1252 0399 488D8570 		leaq	-144(%rbp), %rax
- 1252      FFFFFF
- 1253 03a0 4889C7   		movq	%rax, %rdi
- 1254 03a3 E8000000 		call	_ZN9RowVectorD1Ev
- 1254      00
- 1255 03a8 EB03     		jmp	.L45
- 1256              	.L51:
- 1257 03aa 4889C3   		movq	%rax, %rbx
- 1258              	.L45:
- 182:cpp_vector_double_practice.cpp ****     row.show();
- 1259              		.loc 1 182 0
- 1260 03ad 488D8530 		leaq	-208(%rbp), %rax
- 1260      FFFFFF
- 1261 03b4 4889C7   		movq	%rax, %rdi
- 1262 03b7 E8000000 		call	_ZN9RowVectorD1Ev
- 1262      00
- 1263 03bc EB03     		jmp	.L46
- 1264              	.L50:
- 1265 03be 4889C3   		movq	%rax, %rbx
- 1266              	.L46:
- 172:cpp_vector_double_practice.cpp ****     row.show();
- 1267              		.loc 1 172 0
- 1268 03c1 488D85F0 		leaq	-272(%rbp), %rax
- 1268      FEFFFF
- 1269 03c8 4889C7   		movq	%rax, %rdi
- 1270 03cb E8000000 		call	_ZN9RowVectorD1Ev
- 1270      00
- 1271 03d0 EB03     		jmp	.L47
- 1272              	.L49:
- 1273 03d2 4889C3   		movq	%rax, %rbx
- 1274              	.L47:
- 167:cpp_vector_double_practice.cpp **** 
- 1275              		.loc 1 167 0
- 1276 03d5 488D85B0 		leaq	-336(%rbp), %rax
- 1276      FEFFFF
- 1277 03dc 4889C7   		movq	%rax, %rdi
- 1278 03df E8000000 		call	_ZN9RowVectorD1Ev
- 1278      00
- 1279 03e4 4889D8   		movq	%rbx, %rax
- 1280 03e7 4889C7   		movq	%rax, %rdi
- 1281              	.LEHB16:
- 1282 03ea E8000000 		call	_Unwind_Resume@PLT
- 1282      00
- 1283              	.LEHE16:
- 1284              	.L54:
- 1285              		.loc 1 204 0
- 1286 03ef E8000000 		call	__stack_chk_fail@PLT
- 1286      00
- 1287              	.L48:
- 1288 03f4 4881C498 		addq	$408, %rsp
- 1288      010000
- 1289 03fb 5B       		popq	%rbx
- 1290 03fc 5D       		popq	%rbp
- 1291              		.cfi_def_cfa 7, 8
- 1292 03fd C3       		ret
- 1293              		.cfi_endproc
- 1294              	.LFE1859:
- 1295              		.section	.gcc_except_table,"a",@progbits
- 1296              	.LLSDA1859:
- 1297 0000 FF       		.byte	0xff
- 1298 0001 FF       		.byte	0xff
- 1299 0002 01       		.byte	0x1
- 1300 0003 29       		.uleb128 .LLSDACSE1859-.LLSDACSB1859
- 1301              	.LLSDACSB1859:
- 1302 0004 56       		.uleb128 .LEHB10-.LFB1859
- 1303 0005 27       		.uleb128 .LEHE10-.LEHB10
- 1304 0006 00       		.uleb128 0
- 1305 0007 00       		.uleb128 0
- 1306 0008 8701     		.uleb128 .LEHB11-.LFB1859
- 1307 000a 31       		.uleb128 .LEHE11-.LEHB11
- 1308 000b D207     		.uleb128 .L49-.LFB1859
- 1309 000d 00       		.uleb128 0
- 1310 000e C201     		.uleb128 .LEHB12-.LFB1859
- 1311 0010 A001     		.uleb128 .LEHE12-.LEHB12
- 1312 0012 BE07     		.uleb128 .L50-.LFB1859
- 1313 0014 00       		.uleb128 0
- 1314 0015 EC02     		.uleb128 .LEHB13-.LFB1859
- 1315 0017 51       		.uleb128 .LEHE13-.LEHB13
- 1316 0018 AA07     		.uleb128 .L51-.LFB1859
- 1317 001a 00       		.uleb128 0
- 1318 001b C703     		.uleb128 .LEHB14-.LFB1859
- 1319 001d 71       		.uleb128 .LEHE14-.LEHB14
- 1320 001e 9607     		.uleb128 .L52-.LFB1859
- 1321 0020 00       		.uleb128 0
- 1322 0021 C904     		.uleb128 .LEHB15-.LFB1859
- 1323 0023 DE01     		.uleb128 .LEHE15-.LEHB15
- 1324 0025 8507     		.uleb128 .L53-.LFB1859
- 1325 0027 00       		.uleb128 0
- 1326 0028 EA07     		.uleb128 .LEHB16-.LFB1859
- 1327 002a 05       		.uleb128 .LEHE16-.LEHB16
- 1328 002b 00       		.uleb128 0
- 1329 002c 00       		.uleb128 0
- 1330              	.LLSDACSE1859:
- 1331              		.text
- 1333              		.section	.text._ZNSt6vectorIdSaIdEEC2Ev,"axG",@progbits,_ZNSt6vectorIdSaIdEEC5Ev,comdat
- 1334              		.align 2
- 1335              		.weak	_ZNSt6vectorIdSaIdEEC2Ev
- 1337              	_ZNSt6vectorIdSaIdEEC2Ev:
- 1338              	.LFB2098:
- 1339              		.file 2 "/usr/include/c++/7/bits/stl_vector.h"
+ 181:cpp_vector_double_practice.cpp ****     std::cout << "dot = row * row;\n";
+ 979              		.loc 1 181 0 is_stmt 1
+ 980 02ae 488D3500 		leaq	.LC23(%rip), %rsi
+ 980      000000
+ 981 02b5 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
+ 981      000000
+ 982 02bc E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+ 982      00
+ 182:cpp_vector_double_practice.cpp ****     dot = row * row;
+ 983              		.loc 1 182 0
+ 984 02c1 488D95B0 		leaq	-336(%rbp), %rdx
+ 984      FEFFFF
+ 985 02c8 488D85B0 		leaq	-336(%rbp), %rax
+ 985      FEFFFF
+ 986 02cf 4889D6   		movq	%rdx, %rsi
+ 987 02d2 4889C7   		movq	%rax, %rdi
+ 988 02d5 E8000000 		call	_ZN9RowVectormlERKS_
+ 988      00
+ 989 02da 66480F7E 		movq	%xmm0, %rax
+ 989      C0
+ 990 02df 48898588 		movq	%rax, -376(%rbp)
+ 990      FEFFFF
+ 183:cpp_vector_double_practice.cpp ****     std::cout << "dot  = " << dot << '\n';
+ 991              		.loc 1 183 0
+ 992 02e6 488D3500 		leaq	.LC22(%rip), %rsi
+ 992      000000
+ 993 02ed 488D3D00 		leaq	_ZSt4cout(%rip), %rdi
+ 993      000000
+ 994 02f4 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+ 994      00
+ 995 02f9 4889C2   		movq	%rax, %rdx
+ 996 02fc 488B8588 		movq	-376(%rbp), %rax
+ 996      FEFFFF
+ 997 0303 48898568 		movq	%rax, -408(%rbp)
+ 997      FEFFFF
+ 998 030a F20F1085 		movsd	-408(%rbp), %xmm0
+ 998      68FEFFFF 
+ 999 0312 4889D7   		movq	%rdx, %rdi
+ 1000 0315 E8000000 		call	_ZNSolsEd@PLT
+ 1000      00
+ 1001              		.loc 1 183 0 is_stmt 0 discriminator 1
+ 1002 031a BE0A0000 		movl	$10, %esi
+ 1002      00
+ 1003 031f 4889C7   		movq	%rax, %rdi
+ 1004 0322 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@PLT
+ 1004      00
+ 1005              	.LEHE9:
+ 176:cpp_vector_double_practice.cpp ****     double dot = row * ortho;
+ 1006              		.loc 1 176 0 is_stmt 1
+ 1007 0327 488D45B0 		leaq	-80(%rbp), %rax
+ 1008 032b 4889C7   		movq	%rax, %rdi
+ 1009 032e E8000000 		call	_ZN9RowVectorD1Ev
+ 1009      00
+ 169:cpp_vector_double_practice.cpp ****     row.show();
+ 1010              		.loc 1 169 0
+ 1011 0333 488D8570 		leaq	-144(%rbp), %rax
+ 1011      FFFFFF
+ 1012 033a 4889C7   		movq	%rax, %rdi
+ 1013 033d E8000000 		call	_ZN9RowVectorD1Ev
+ 1013      00
+ 163:cpp_vector_double_practice.cpp ****     row.show();
+ 1014              		.loc 1 163 0
+ 1015 0342 488D8530 		leaq	-208(%rbp), %rax
+ 1015      FFFFFF
+ 1016 0349 4889C7   		movq	%rax, %rdi
+ 1017 034c E8000000 		call	_ZN9RowVectorD1Ev
+ 1017      00
+ 153:cpp_vector_double_practice.cpp ****     row.show();
+ 1018              		.loc 1 153 0
+ 1019 0351 488D85F0 		leaq	-272(%rbp), %rax
+ 1019      FEFFFF
+ 1020 0358 4889C7   		movq	%rax, %rdi
+ 1021 035b E8000000 		call	_ZN9RowVectorD1Ev
+ 1021      00
+ 148:cpp_vector_double_practice.cpp **** 
+ 1022              		.loc 1 148 0
+ 1023 0360 488D85B0 		leaq	-336(%rbp), %rax
+ 1023      FEFFFF
+ 1024 0367 4889C7   		movq	%rax, %rdi
+ 1025 036a E8000000 		call	_ZN9RowVectorD1Ev
+ 1025      00
+ 184:cpp_vector_double_practice.cpp **** 
+ 185:cpp_vector_double_practice.cpp **** }
+ 1026              		.loc 1 185 0
+ 1027 036f B8000000 		movl	$0, %eax
+ 1027      00
+ 1028 0374 488B4DE8 		movq	-24(%rbp), %rcx
+ 1029 0378 6448330C 		xorq	%fs:40, %rcx
+ 1029      25280000 
+ 1029      00
+ 1030 0381 7471     		je	.L43
+ 1031 0383 EB6A     		jmp	.L49
+ 1032              	.L48:
+ 1033 0385 4889C3   		movq	%rax, %rbx
+ 176:cpp_vector_double_practice.cpp ****     double dot = row * ortho;
+ 1034              		.loc 1 176 0
+ 1035 0388 488D45B0 		leaq	-80(%rbp), %rax
+ 1036 038c 4889C7   		movq	%rax, %rdi
+ 1037 038f E8000000 		call	_ZN9RowVectorD1Ev
+ 1037      00
+ 1038 0394 EB03     		jmp	.L39
+ 1039              	.L47:
+ 1040 0396 4889C3   		movq	%rax, %rbx
+ 1041              	.L39:
+ 169:cpp_vector_double_practice.cpp ****     row.show();
+ 1042              		.loc 1 169 0
+ 1043 0399 488D8570 		leaq	-144(%rbp), %rax
+ 1043      FFFFFF
+ 1044 03a0 4889C7   		movq	%rax, %rdi
+ 1045 03a3 E8000000 		call	_ZN9RowVectorD1Ev
+ 1045      00
+ 1046 03a8 EB03     		jmp	.L40
+ 1047              	.L46:
+ 1048 03aa 4889C3   		movq	%rax, %rbx
+ 1049              	.L40:
+ 163:cpp_vector_double_practice.cpp ****     row.show();
+ 1050              		.loc 1 163 0
+ 1051 03ad 488D8530 		leaq	-208(%rbp), %rax
+ 1051      FFFFFF
+ 1052 03b4 4889C7   		movq	%rax, %rdi
+ 1053 03b7 E8000000 		call	_ZN9RowVectorD1Ev
+ 1053      00
+ 1054 03bc EB03     		jmp	.L41
+ 1055              	.L45:
+ 1056 03be 4889C3   		movq	%rax, %rbx
+ 1057              	.L41:
+ 153:cpp_vector_double_practice.cpp ****     row.show();
+ 1058              		.loc 1 153 0
+ 1059 03c1 488D85F0 		leaq	-272(%rbp), %rax
+ 1059      FEFFFF
+ 1060 03c8 4889C7   		movq	%rax, %rdi
+ 1061 03cb E8000000 		call	_ZN9RowVectorD1Ev
+ 1061      00
+ 1062 03d0 EB03     		jmp	.L42
+ 1063              	.L44:
+ 1064 03d2 4889C3   		movq	%rax, %rbx
+ 1065              	.L42:
+ 148:cpp_vector_double_practice.cpp **** 
+ 1066              		.loc 1 148 0
+ 1067 03d5 488D85B0 		leaq	-336(%rbp), %rax
+ 1067      FEFFFF
+ 1068 03dc 4889C7   		movq	%rax, %rdi
+ 1069 03df E8000000 		call	_ZN9RowVectorD1Ev
+ 1069      00
+ 1070 03e4 4889D8   		movq	%rbx, %rax
+ 1071 03e7 4889C7   		movq	%rax, %rdi
+ 1072              	.LEHB10:
+ 1073 03ea E8000000 		call	_Unwind_Resume@PLT
+ 1073      00
+ 1074              	.LEHE10:
+ 1075              	.L49:
+ 1076              		.loc 1 185 0
+ 1077 03ef E8000000 		call	__stack_chk_fail@PLT
+ 1077      00
+ 1078              	.L43:
+ 1079 03f4 4881C498 		addq	$408, %rsp
+ 1079      010000
+ 1080 03fb 5B       		popq	%rbx
+ 1081 03fc 5D       		popq	%rbp
+ 1082              		.cfi_def_cfa 7, 8
+ 1083 03fd C3       		ret
+ 1084              		.cfi_endproc
+ 1085              	.LFE1859:
+ 1086              		.section	.gcc_except_table,"a",@progbits
+ 1087              	.LLSDA1859:
+ 1088 0000 FF       		.byte	0xff
+ 1089 0001 FF       		.byte	0xff
+ 1090 0002 01       		.byte	0x1
+ 1091 0003 29       		.uleb128 .LLSDACSE1859-.LLSDACSB1859
+ 1092              	.LLSDACSB1859:
+ 1093 0004 56       		.uleb128 .LEHB4-.LFB1859
+ 1094 0005 27       		.uleb128 .LEHE4-.LEHB4
+ 1095 0006 00       		.uleb128 0
+ 1096 0007 00       		.uleb128 0
+ 1097 0008 8701     		.uleb128 .LEHB5-.LFB1859
+ 1098 000a 31       		.uleb128 .LEHE5-.LEHB5
+ 1099 000b D207     		.uleb128 .L44-.LFB1859
+ 1100 000d 00       		.uleb128 0
+ 1101 000e C201     		.uleb128 .LEHB6-.LFB1859
+ 1102 0010 A001     		.uleb128 .LEHE6-.LEHB6
+ 1103 0012 BE07     		.uleb128 .L45-.LFB1859
+ 1104 0014 00       		.uleb128 0
+ 1105 0015 EC02     		.uleb128 .LEHB7-.LFB1859
+ 1106 0017 51       		.uleb128 .LEHE7-.LEHB7
+ 1107 0018 AA07     		.uleb128 .L46-.LFB1859
+ 1108 001a 00       		.uleb128 0
+ 1109 001b C703     		.uleb128 .LEHB8-.LFB1859
+ 1110 001d 71       		.uleb128 .LEHE8-.LEHB8
+ 1111 001e 9607     		.uleb128 .L47-.LFB1859
+ 1112 0020 00       		.uleb128 0
+ 1113 0021 E804     		.uleb128 .LEHB9-.LFB1859
+ 1114 0023 BF01     		.uleb128 .LEHE9-.LEHB9
+ 1115 0025 8507     		.uleb128 .L48-.LFB1859
+ 1116 0027 00       		.uleb128 0
+ 1117 0028 EA07     		.uleb128 .LEHB10-.LFB1859
+ 1118 002a 05       		.uleb128 .LEHE10-.LEHB10
+ 1119 002b 00       		.uleb128 0
+ 1120 002c 00       		.uleb128 0
+ 1121              	.LLSDACSE1859:
+ 1122              		.text
+ 1124              		.section	.text._ZNSt6vectorIdSaIdEEC2Ev,"axG",@progbits,_ZNSt6vectorIdSaIdEEC5Ev,comdat
+ 1125              		.align 2
+ 1126              		.weak	_ZNSt6vectorIdSaIdEEC2Ev
+ 1128              	_ZNSt6vectorIdSaIdEEC2Ev:
+ 1129              	.LFB2098:
+ 1130              		.file 2 "/usr/include/c++/7/bits/stl_vector.h"
    1:/usr/include/c++/7/bits/stl_vector.h **** // Vector implementation -*- C++ -*-
    2:/usr/include/c++/7/bits/stl_vector.h **** 
    3:/usr/include/c++/7/bits/stl_vector.h **** // Copyright (C) 2001-2017 Free Software Foundation, Inc.
@@ -2164,50 +1863,50 @@
  257:/usr/include/c++/7/bits/stl_vector.h ****        *  @brief  Creates a %vector with no elements.
  258:/usr/include/c++/7/bits/stl_vector.h ****        */
  259:/usr/include/c++/7/bits/stl_vector.h ****       vector()
- 1340              		.loc 2 259 0
- 1341              		.cfi_startproc
- 1342              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
- 1343              		.cfi_lsda 0x1b,.LLSDA2098
- 1344 0000 55       		pushq	%rbp
- 1345              		.cfi_def_cfa_offset 16
- 1346              		.cfi_offset 6, -16
- 1347 0001 4889E5   		movq	%rsp, %rbp
- 1348              		.cfi_def_cfa_register 6
- 1349 0004 4883EC10 		subq	$16, %rsp
- 1350 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 1351              	.LBB20:
+ 1131              		.loc 2 259 0
+ 1132              		.cfi_startproc
+ 1133              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+ 1134              		.cfi_lsda 0x1b,.LLSDA2098
+ 1135 0000 55       		pushq	%rbp
+ 1136              		.cfi_def_cfa_offset 16
+ 1137              		.cfi_offset 6, -16
+ 1138 0001 4889E5   		movq	%rsp, %rbp
+ 1139              		.cfi_def_cfa_register 6
+ 1140 0004 4883EC10 		subq	$16, %rsp
+ 1141 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 1142              	.LBB19:
  260:/usr/include/c++/7/bits/stl_vector.h **** #if __cplusplus >= 201103L
  261:/usr/include/c++/7/bits/stl_vector.h ****       noexcept(is_nothrow_default_constructible<_Alloc>::value)
  262:/usr/include/c++/7/bits/stl_vector.h **** #endif
  263:/usr/include/c++/7/bits/stl_vector.h ****       : _Base() { }
- 1352              		.loc 2 263 0
- 1353 000c 488B45F8 		movq	-8(%rbp), %rax
- 1354 0010 4889C7   		movq	%rax, %rdi
- 1355 0013 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEEC2Ev
- 1355      00
- 1356              	.LBE20:
- 1357 0018 90       		nop
- 1358 0019 C9       		leave
- 1359              		.cfi_def_cfa 7, 8
- 1360 001a C3       		ret
- 1361              		.cfi_endproc
- 1362              	.LFE2098:
- 1363              		.section	.gcc_except_table
- 1364              	.LLSDA2098:
- 1365 002d FF       		.byte	0xff
- 1366 002e FF       		.byte	0xff
- 1367 002f 01       		.byte	0x1
- 1368 0030 00       		.uleb128 .LLSDACSE2098-.LLSDACSB2098
- 1369              	.LLSDACSB2098:
- 1370              	.LLSDACSE2098:
- 1371              		.section	.text._ZNSt6vectorIdSaIdEEC2Ev,"axG",@progbits,_ZNSt6vectorIdSaIdEEC5Ev,comdat
- 1373              		.weak	_ZNSt6vectorIdSaIdEEC1Ev
- 1374              		.set	_ZNSt6vectorIdSaIdEEC1Ev,_ZNSt6vectorIdSaIdEEC2Ev
- 1375              		.section	.text._ZNSt6vectorIdSaIdEED2Ev,"axG",@progbits,_ZNSt6vectorIdSaIdEED5Ev,comdat
- 1376              		.align 2
- 1377              		.weak	_ZNSt6vectorIdSaIdEED2Ev
- 1379              	_ZNSt6vectorIdSaIdEED2Ev:
- 1380              	.LFB2101:
+ 1143              		.loc 2 263 0
+ 1144 000c 488B45F8 		movq	-8(%rbp), %rax
+ 1145 0010 4889C7   		movq	%rax, %rdi
+ 1146 0013 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEEC2Ev
+ 1146      00
+ 1147              	.LBE19:
+ 1148 0018 90       		nop
+ 1149 0019 C9       		leave
+ 1150              		.cfi_def_cfa 7, 8
+ 1151 001a C3       		ret
+ 1152              		.cfi_endproc
+ 1153              	.LFE2098:
+ 1154              		.section	.gcc_except_table
+ 1155              	.LLSDA2098:
+ 1156 002d FF       		.byte	0xff
+ 1157 002e FF       		.byte	0xff
+ 1158 002f 01       		.byte	0x1
+ 1159 0030 00       		.uleb128 .LLSDACSE2098-.LLSDACSB2098
+ 1160              	.LLSDACSB2098:
+ 1161              	.LLSDACSE2098:
+ 1162              		.section	.text._ZNSt6vectorIdSaIdEEC2Ev,"axG",@progbits,_ZNSt6vectorIdSaIdEEC5Ev,comdat
+ 1164              		.weak	_ZNSt6vectorIdSaIdEEC1Ev
+ 1165              		.set	_ZNSt6vectorIdSaIdEEC1Ev,_ZNSt6vectorIdSaIdEEC2Ev
+ 1166              		.section	.text._ZNSt6vectorIdSaIdEED2Ev,"axG",@progbits,_ZNSt6vectorIdSaIdEED5Ev,comdat
+ 1167              		.align 2
+ 1168              		.weak	_ZNSt6vectorIdSaIdEED2Ev
+ 1170              	_ZNSt6vectorIdSaIdEED2Ev:
+ 1171              	.LFB2101:
  264:/usr/include/c++/7/bits/stl_vector.h **** 
  265:/usr/include/c++/7/bits/stl_vector.h ****       /**
  266:/usr/include/c++/7/bits/stl_vector.h ****        *  @brief  Creates a %vector with no elements.
@@ -2378,64 +2077,64 @@
  431:/usr/include/c++/7/bits/stl_vector.h ****        *  responsibility.
  432:/usr/include/c++/7/bits/stl_vector.h ****        */
  433:/usr/include/c++/7/bits/stl_vector.h ****       ~vector() _GLIBCXX_NOEXCEPT
- 1381              		.loc 2 433 0
- 1382              		.cfi_startproc
- 1383              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
- 1384              		.cfi_lsda 0x1b,.LLSDA2101
- 1385 0000 55       		pushq	%rbp
- 1386              		.cfi_def_cfa_offset 16
- 1387              		.cfi_offset 6, -16
- 1388 0001 4889E5   		movq	%rsp, %rbp
- 1389              		.cfi_def_cfa_register 6
- 1390 0004 4883EC10 		subq	$16, %rsp
- 1391 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 1392              	.LBB21:
+ 1172              		.loc 2 433 0
+ 1173              		.cfi_startproc
+ 1174              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+ 1175              		.cfi_lsda 0x1b,.LLSDA2101
+ 1176 0000 55       		pushq	%rbp
+ 1177              		.cfi_def_cfa_offset 16
+ 1178              		.cfi_offset 6, -16
+ 1179 0001 4889E5   		movq	%rsp, %rbp
+ 1180              		.cfi_def_cfa_register 6
+ 1181 0004 4883EC10 		subq	$16, %rsp
+ 1182 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 1183              	.LBB20:
  434:/usr/include/c++/7/bits/stl_vector.h ****       { std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
  435:/usr/include/c++/7/bits/stl_vector.h **** 		      _M_get_Tp_allocator()); }
- 1393              		.loc 2 435 0
- 1394 000c 488B45F8 		movq	-8(%rbp), %rax
- 1395 0010 4889C7   		movq	%rax, %rdi
- 1396 0013 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
- 1396      00
- 1397 0018 4889C2   		movq	%rax, %rdx
+ 1184              		.loc 2 435 0
+ 1185 000c 488B45F8 		movq	-8(%rbp), %rax
+ 1186 0010 4889C7   		movq	%rax, %rdi
+ 1187 0013 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
+ 1187      00
+ 1188 0018 4889C2   		movq	%rax, %rdx
  434:/usr/include/c++/7/bits/stl_vector.h ****       { std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
- 1398              		.loc 2 434 0
- 1399 001b 488B45F8 		movq	-8(%rbp), %rax
- 1400 001f 488B4808 		movq	8(%rax), %rcx
- 1401 0023 488B45F8 		movq	-8(%rbp), %rax
- 1402 0027 488B00   		movq	(%rax), %rax
- 1403 002a 4889CE   		movq	%rcx, %rsi
- 1404 002d 4889C7   		movq	%rax, %rdi
- 1405 0030 E8000000 		call	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E
- 1405      00
- 1406              		.loc 2 435 0
- 1407 0035 488B45F8 		movq	-8(%rbp), %rax
- 1408 0039 4889C7   		movq	%rax, %rdi
- 1409 003c E8000000 		call	_ZNSt12_Vector_baseIdSaIdEED2Ev
- 1409      00
- 1410              	.LBE21:
- 1411 0041 90       		nop
- 1412 0042 C9       		leave
- 1413              		.cfi_def_cfa 7, 8
- 1414 0043 C3       		ret
- 1415              		.cfi_endproc
- 1416              	.LFE2101:
- 1417              		.section	.gcc_except_table
- 1418              	.LLSDA2101:
- 1419 0031 FF       		.byte	0xff
- 1420 0032 FF       		.byte	0xff
- 1421 0033 01       		.byte	0x1
- 1422 0034 00       		.uleb128 .LLSDACSE2101-.LLSDACSB2101
- 1423              	.LLSDACSB2101:
- 1424              	.LLSDACSE2101:
- 1425              		.section	.text._ZNSt6vectorIdSaIdEED2Ev,"axG",@progbits,_ZNSt6vectorIdSaIdEED5Ev,comdat
- 1427              		.weak	_ZNSt6vectorIdSaIdEED1Ev
- 1428              		.set	_ZNSt6vectorIdSaIdEED1Ev,_ZNSt6vectorIdSaIdEED2Ev
- 1429              		.section	.text._ZNSt6vectorIdSaIdEE6resizeEm,"axG",@progbits,_ZNSt6vectorIdSaIdEE6resizeEm,comdat
- 1430              		.align 2
- 1431              		.weak	_ZNSt6vectorIdSaIdEE6resizeEm
- 1433              	_ZNSt6vectorIdSaIdEE6resizeEm:
- 1434              	.LFB2111:
+ 1189              		.loc 2 434 0
+ 1190 001b 488B45F8 		movq	-8(%rbp), %rax
+ 1191 001f 488B4808 		movq	8(%rax), %rcx
+ 1192 0023 488B45F8 		movq	-8(%rbp), %rax
+ 1193 0027 488B00   		movq	(%rax), %rax
+ 1194 002a 4889CE   		movq	%rcx, %rsi
+ 1195 002d 4889C7   		movq	%rax, %rdi
+ 1196 0030 E8000000 		call	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E
+ 1196      00
+ 1197              		.loc 2 435 0
+ 1198 0035 488B45F8 		movq	-8(%rbp), %rax
+ 1199 0039 4889C7   		movq	%rax, %rdi
+ 1200 003c E8000000 		call	_ZNSt12_Vector_baseIdSaIdEED2Ev
+ 1200      00
+ 1201              	.LBE20:
+ 1202 0041 90       		nop
+ 1203 0042 C9       		leave
+ 1204              		.cfi_def_cfa 7, 8
+ 1205 0043 C3       		ret
+ 1206              		.cfi_endproc
+ 1207              	.LFE2101:
+ 1208              		.section	.gcc_except_table
+ 1209              	.LLSDA2101:
+ 1210 0031 FF       		.byte	0xff
+ 1211 0032 FF       		.byte	0xff
+ 1212 0033 01       		.byte	0x1
+ 1213 0034 00       		.uleb128 .LLSDACSE2101-.LLSDACSB2101
+ 1214              	.LLSDACSB2101:
+ 1215              	.LLSDACSE2101:
+ 1216              		.section	.text._ZNSt6vectorIdSaIdEED2Ev,"axG",@progbits,_ZNSt6vectorIdSaIdEED5Ev,comdat
+ 1218              		.weak	_ZNSt6vectorIdSaIdEED1Ev
+ 1219              		.set	_ZNSt6vectorIdSaIdEED1Ev,_ZNSt6vectorIdSaIdEED2Ev
+ 1220              		.section	.text._ZNSt6vectorIdSaIdEE6resizeEm,"axG",@progbits,_ZNSt6vectorIdSaIdEE6resizeEm,comdat
+ 1221              		.align 2
+ 1222              		.weak	_ZNSt6vectorIdSaIdEE6resizeEm
+ 1224              	_ZNSt6vectorIdSaIdEE6resizeEm:
+ 1225              	.LFB2111:
  436:/usr/include/c++/7/bits/stl_vector.h **** 
  437:/usr/include/c++/7/bits/stl_vector.h ****       /**
  438:/usr/include/c++/7/bits/stl_vector.h ****        *  @brief  %Vector assignment operator.
@@ -2690,112 +2389,112 @@
  687:/usr/include/c++/7/bits/stl_vector.h ****        */
  688:/usr/include/c++/7/bits/stl_vector.h ****       void
  689:/usr/include/c++/7/bits/stl_vector.h ****       resize(size_type __new_size)
- 1435              		.loc 2 689 0
- 1436              		.cfi_startproc
- 1437 0000 55       		pushq	%rbp
- 1438              		.cfi_def_cfa_offset 16
- 1439              		.cfi_offset 6, -16
- 1440 0001 4889E5   		movq	%rsp, %rbp
- 1441              		.cfi_def_cfa_register 6
- 1442 0004 4883EC10 		subq	$16, %rsp
- 1443 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 1444 000c 488975F0 		movq	%rsi, -16(%rbp)
+ 1226              		.loc 2 689 0
+ 1227              		.cfi_startproc
+ 1228 0000 55       		pushq	%rbp
+ 1229              		.cfi_def_cfa_offset 16
+ 1230              		.cfi_offset 6, -16
+ 1231 0001 4889E5   		movq	%rsp, %rbp
+ 1232              		.cfi_def_cfa_register 6
+ 1233 0004 4883EC10 		subq	$16, %rsp
+ 1234 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 1235 000c 488975F0 		movq	%rsi, -16(%rbp)
  690:/usr/include/c++/7/bits/stl_vector.h ****       {
  691:/usr/include/c++/7/bits/stl_vector.h **** 	if (__new_size > size())
- 1445              		.loc 2 691 0
- 1446 0010 488B45F8 		movq	-8(%rbp), %rax
- 1447 0014 4889C7   		movq	%rax, %rdi
- 1448 0017 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 1448      00
- 1449 001c 483945F0 		cmpq	%rax, -16(%rbp)
- 1450 0020 0F97C0   		seta	%al
- 1451 0023 84C0     		testb	%al, %al
- 1452 0025 742A     		je	.L58
+ 1236              		.loc 2 691 0
+ 1237 0010 488B45F8 		movq	-8(%rbp), %rax
+ 1238 0014 4889C7   		movq	%rax, %rdi
+ 1239 0017 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 1239      00
+ 1240 001c 483945F0 		cmpq	%rax, -16(%rbp)
+ 1241 0020 0F97C0   		seta	%al
+ 1242 0023 84C0     		testb	%al, %al
+ 1243 0025 742A     		je	.L53
  692:/usr/include/c++/7/bits/stl_vector.h **** 	  _M_default_append(__new_size - size());
- 1453              		.loc 2 692 0
- 1454 0027 488B45F8 		movq	-8(%rbp), %rax
- 1455 002b 4889C7   		movq	%rax, %rdi
- 1456 002e E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 1456      00
- 1457 0033 4889C2   		movq	%rax, %rdx
- 1458 0036 488B45F0 		movq	-16(%rbp), %rax
- 1459 003a 4829D0   		subq	%rdx, %rax
- 1460 003d 4889C2   		movq	%rax, %rdx
- 1461 0040 488B45F8 		movq	-8(%rbp), %rax
- 1462 0044 4889D6   		movq	%rdx, %rsi
- 1463 0047 4889C7   		movq	%rax, %rdi
- 1464 004a E8000000 		call	_ZNSt6vectorIdSaIdEE17_M_default_appendEm
- 1464      00
+ 1244              		.loc 2 692 0
+ 1245 0027 488B45F8 		movq	-8(%rbp), %rax
+ 1246 002b 4889C7   		movq	%rax, %rdi
+ 1247 002e E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 1247      00
+ 1248 0033 4889C2   		movq	%rax, %rdx
+ 1249 0036 488B45F0 		movq	-16(%rbp), %rax
+ 1250 003a 4829D0   		subq	%rdx, %rax
+ 1251 003d 4889C2   		movq	%rax, %rdx
+ 1252 0040 488B45F8 		movq	-8(%rbp), %rax
+ 1253 0044 4889D6   		movq	%rdx, %rsi
+ 1254 0047 4889C7   		movq	%rax, %rdi
+ 1255 004a E8000000 		call	_ZNSt6vectorIdSaIdEE17_M_default_appendEm
+ 1255      00
  693:/usr/include/c++/7/bits/stl_vector.h **** 	else if (__new_size < size())
  694:/usr/include/c++/7/bits/stl_vector.h **** 	  _M_erase_at_end(this->_M_impl._M_start + __new_size);
  695:/usr/include/c++/7/bits/stl_vector.h ****       }
- 1465              		.loc 2 695 0
- 1466 004f EB38     		jmp	.L60
- 1467              	.L58:
+ 1256              		.loc 2 695 0
+ 1257 004f EB38     		jmp	.L55
+ 1258              	.L53:
  693:/usr/include/c++/7/bits/stl_vector.h **** 	else if (__new_size < size())
- 1468              		.loc 2 693 0
- 1469 0051 488B45F8 		movq	-8(%rbp), %rax
- 1470 0055 4889C7   		movq	%rax, %rdi
- 1471 0058 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 1471      00
- 1472 005d 483945F0 		cmpq	%rax, -16(%rbp)
- 1473 0061 0F92C0   		setb	%al
- 1474 0064 84C0     		testb	%al, %al
- 1475 0066 7421     		je	.L60
+ 1259              		.loc 2 693 0
+ 1260 0051 488B45F8 		movq	-8(%rbp), %rax
+ 1261 0055 4889C7   		movq	%rax, %rdi
+ 1262 0058 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 1262      00
+ 1263 005d 483945F0 		cmpq	%rax, -16(%rbp)
+ 1264 0061 0F92C0   		setb	%al
+ 1265 0064 84C0     		testb	%al, %al
+ 1266 0066 7421     		je	.L55
  694:/usr/include/c++/7/bits/stl_vector.h ****       }
- 1476              		.loc 2 694 0
- 1477 0068 488B45F8 		movq	-8(%rbp), %rax
- 1478 006c 488B00   		movq	(%rax), %rax
- 1479 006f 488B55F0 		movq	-16(%rbp), %rdx
- 1480 0073 48C1E203 		salq	$3, %rdx
- 1481 0077 4801C2   		addq	%rax, %rdx
- 1482 007a 488B45F8 		movq	-8(%rbp), %rax
- 1483 007e 4889D6   		movq	%rdx, %rsi
- 1484 0081 4889C7   		movq	%rax, %rdi
- 1485 0084 E8000000 		call	_ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd
- 1485      00
- 1486              	.L60:
- 1487              		.loc 2 695 0
- 1488 0089 90       		nop
- 1489 008a C9       		leave
- 1490              		.cfi_def_cfa 7, 8
- 1491 008b C3       		ret
- 1492              		.cfi_endproc
- 1493              	.LFE2111:
- 1495              		.section	.text._ZNKSt6vectorIdSaIdEE4sizeEv,"axG",@progbits,_ZNKSt6vectorIdSaIdEE4sizeEv,comdat
- 1496              		.align 2
- 1497              		.weak	_ZNKSt6vectorIdSaIdEE4sizeEv
- 1499              	_ZNKSt6vectorIdSaIdEE4sizeEv:
- 1500              	.LFB2112:
+ 1267              		.loc 2 694 0
+ 1268 0068 488B45F8 		movq	-8(%rbp), %rax
+ 1269 006c 488B00   		movq	(%rax), %rax
+ 1270 006f 488B55F0 		movq	-16(%rbp), %rdx
+ 1271 0073 48C1E203 		salq	$3, %rdx
+ 1272 0077 4801C2   		addq	%rax, %rdx
+ 1273 007a 488B45F8 		movq	-8(%rbp), %rax
+ 1274 007e 4889D6   		movq	%rdx, %rsi
+ 1275 0081 4889C7   		movq	%rax, %rdi
+ 1276 0084 E8000000 		call	_ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd
+ 1276      00
+ 1277              	.L55:
+ 1278              		.loc 2 695 0
+ 1279 0089 90       		nop
+ 1280 008a C9       		leave
+ 1281              		.cfi_def_cfa 7, 8
+ 1282 008b C3       		ret
+ 1283              		.cfi_endproc
+ 1284              	.LFE2111:
+ 1286              		.section	.text._ZNKSt6vectorIdSaIdEE4sizeEv,"axG",@progbits,_ZNKSt6vectorIdSaIdEE4sizeEv,comdat
+ 1287              		.align 2
+ 1288              		.weak	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 1290              	_ZNKSt6vectorIdSaIdEE4sizeEv:
+ 1291              	.LFB2112:
  670:/usr/include/c++/7/bits/stl_vector.h ****       { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
- 1501              		.loc 2 670 0
- 1502              		.cfi_startproc
- 1503 0000 55       		pushq	%rbp
- 1504              		.cfi_def_cfa_offset 16
- 1505              		.cfi_offset 6, -16
- 1506 0001 4889E5   		movq	%rsp, %rbp
- 1507              		.cfi_def_cfa_register 6
- 1508 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 1292              		.loc 2 670 0
+ 1293              		.cfi_startproc
+ 1294 0000 55       		pushq	%rbp
+ 1295              		.cfi_def_cfa_offset 16
+ 1296              		.cfi_offset 6, -16
+ 1297 0001 4889E5   		movq	%rsp, %rbp
+ 1298              		.cfi_def_cfa_register 6
+ 1299 0004 48897DF8 		movq	%rdi, -8(%rbp)
  671:/usr/include/c++/7/bits/stl_vector.h **** 
- 1509              		.loc 2 671 0
- 1510 0008 488B45F8 		movq	-8(%rbp), %rax
- 1511 000c 488B4008 		movq	8(%rax), %rax
- 1512 0010 4889C2   		movq	%rax, %rdx
- 1513 0013 488B45F8 		movq	-8(%rbp), %rax
- 1514 0017 488B00   		movq	(%rax), %rax
- 1515 001a 4829C2   		subq	%rax, %rdx
- 1516 001d 4889D0   		movq	%rdx, %rax
- 1517 0020 48C1F803 		sarq	$3, %rax
- 1518 0024 5D       		popq	%rbp
- 1519              		.cfi_def_cfa 7, 8
- 1520 0025 C3       		ret
- 1521              		.cfi_endproc
- 1522              	.LFE2112:
- 1524              		.section	.text._ZNSt6vectorIdSaIdEEixEm,"axG",@progbits,_ZNSt6vectorIdSaIdEEixEm,comdat
- 1525              		.align 2
- 1526              		.weak	_ZNSt6vectorIdSaIdEEixEm
- 1528              	_ZNSt6vectorIdSaIdEEixEm:
- 1529              	.LFB2113:
+ 1300              		.loc 2 671 0
+ 1301 0008 488B45F8 		movq	-8(%rbp), %rax
+ 1302 000c 488B4008 		movq	8(%rax), %rax
+ 1303 0010 4889C2   		movq	%rax, %rdx
+ 1304 0013 488B45F8 		movq	-8(%rbp), %rax
+ 1305 0017 488B00   		movq	(%rax), %rax
+ 1306 001a 4829C2   		subq	%rax, %rdx
+ 1307 001d 4889D0   		movq	%rdx, %rax
+ 1308 0020 48C1F803 		sarq	$3, %rax
+ 1309 0024 5D       		popq	%rbp
+ 1310              		.cfi_def_cfa 7, 8
+ 1311 0025 C3       		ret
+ 1312              		.cfi_endproc
+ 1313              	.LFE2112:
+ 1315              		.section	.text._ZNSt6vectorIdSaIdEEixEm,"axG",@progbits,_ZNSt6vectorIdSaIdEEixEm,comdat
+ 1316              		.align 2
+ 1317              		.weak	_ZNSt6vectorIdSaIdEEixEm
+ 1319              	_ZNSt6vectorIdSaIdEEixEm:
+ 1320              	.LFB2113:
  696:/usr/include/c++/7/bits/stl_vector.h **** 
  697:/usr/include/c++/7/bits/stl_vector.h ****       /**
  698:/usr/include/c++/7/bits/stl_vector.h ****        *  @brief  Resizes the %vector to the specified number of elements.
@@ -2896,36 +2595,36 @@
  793:/usr/include/c++/7/bits/stl_vector.h ****        */
  794:/usr/include/c++/7/bits/stl_vector.h ****       reference
  795:/usr/include/c++/7/bits/stl_vector.h ****       operator[](size_type __n) _GLIBCXX_NOEXCEPT
- 1530              		.loc 2 795 0
- 1531              		.cfi_startproc
- 1532 0000 55       		pushq	%rbp
- 1533              		.cfi_def_cfa_offset 16
- 1534              		.cfi_offset 6, -16
- 1535 0001 4889E5   		movq	%rsp, %rbp
- 1536              		.cfi_def_cfa_register 6
- 1537 0004 48897DF8 		movq	%rdi, -8(%rbp)
- 1538 0008 488975F0 		movq	%rsi, -16(%rbp)
+ 1321              		.loc 2 795 0
+ 1322              		.cfi_startproc
+ 1323 0000 55       		pushq	%rbp
+ 1324              		.cfi_def_cfa_offset 16
+ 1325              		.cfi_offset 6, -16
+ 1326 0001 4889E5   		movq	%rsp, %rbp
+ 1327              		.cfi_def_cfa_register 6
+ 1328 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 1329 0008 488975F0 		movq	%rsi, -16(%rbp)
  796:/usr/include/c++/7/bits/stl_vector.h ****       {
  797:/usr/include/c++/7/bits/stl_vector.h **** 	__glibcxx_requires_subscript(__n);
  798:/usr/include/c++/7/bits/stl_vector.h **** 	return *(this->_M_impl._M_start + __n);
- 1539              		.loc 2 798 0
- 1540 000c 488B45F8 		movq	-8(%rbp), %rax
- 1541 0010 488B00   		movq	(%rax), %rax
- 1542 0013 488B55F0 		movq	-16(%rbp), %rdx
- 1543 0017 48C1E203 		salq	$3, %rdx
- 1544 001b 4801D0   		addq	%rdx, %rax
+ 1330              		.loc 2 798 0
+ 1331 000c 488B45F8 		movq	-8(%rbp), %rax
+ 1332 0010 488B00   		movq	(%rax), %rax
+ 1333 0013 488B55F0 		movq	-16(%rbp), %rdx
+ 1334 0017 48C1E203 		salq	$3, %rdx
+ 1335 001b 4801D0   		addq	%rdx, %rax
  799:/usr/include/c++/7/bits/stl_vector.h ****       }
- 1545              		.loc 2 799 0
- 1546 001e 5D       		popq	%rbp
- 1547              		.cfi_def_cfa 7, 8
- 1548 001f C3       		ret
- 1549              		.cfi_endproc
- 1550              	.LFE2113:
- 1552              		.section	.text._ZNKSt6vectorIdSaIdEEixEm,"axG",@progbits,_ZNKSt6vectorIdSaIdEEixEm,comdat
- 1553              		.align 2
- 1554              		.weak	_ZNKSt6vectorIdSaIdEEixEm
- 1556              	_ZNKSt6vectorIdSaIdEEixEm:
- 1557              	.LFB2114:
+ 1336              		.loc 2 799 0
+ 1337 001e 5D       		popq	%rbp
+ 1338              		.cfi_def_cfa 7, 8
+ 1339 001f C3       		ret
+ 1340              		.cfi_endproc
+ 1341              	.LFE2113:
+ 1343              		.section	.text._ZNKSt6vectorIdSaIdEEixEm,"axG",@progbits,_ZNKSt6vectorIdSaIdEEixEm,comdat
+ 1344              		.align 2
+ 1345              		.weak	_ZNKSt6vectorIdSaIdEEixEm
+ 1347              	_ZNKSt6vectorIdSaIdEEixEm:
+ 1348              	.LFB2114:
  800:/usr/include/c++/7/bits/stl_vector.h **** 
  801:/usr/include/c++/7/bits/stl_vector.h ****       /**
  802:/usr/include/c++/7/bits/stl_vector.h ****        *  @brief  Subscript access to the data contained in the %vector.
@@ -2940,184 +2639,184 @@
  811:/usr/include/c++/7/bits/stl_vector.h ****        */
  812:/usr/include/c++/7/bits/stl_vector.h ****       const_reference
  813:/usr/include/c++/7/bits/stl_vector.h ****       operator[](size_type __n) const _GLIBCXX_NOEXCEPT
- 1558              		.loc 2 813 0
- 1559              		.cfi_startproc
- 1560 0000 55       		pushq	%rbp
- 1561              		.cfi_def_cfa_offset 16
- 1562              		.cfi_offset 6, -16
- 1563 0001 4889E5   		movq	%rsp, %rbp
- 1564              		.cfi_def_cfa_register 6
- 1565 0004 48897DF8 		movq	%rdi, -8(%rbp)
- 1566 0008 488975F0 		movq	%rsi, -16(%rbp)
+ 1349              		.loc 2 813 0
+ 1350              		.cfi_startproc
+ 1351 0000 55       		pushq	%rbp
+ 1352              		.cfi_def_cfa_offset 16
+ 1353              		.cfi_offset 6, -16
+ 1354 0001 4889E5   		movq	%rsp, %rbp
+ 1355              		.cfi_def_cfa_register 6
+ 1356 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 1357 0008 488975F0 		movq	%rsi, -16(%rbp)
  814:/usr/include/c++/7/bits/stl_vector.h ****       {
  815:/usr/include/c++/7/bits/stl_vector.h **** 	__glibcxx_requires_subscript(__n);
  816:/usr/include/c++/7/bits/stl_vector.h **** 	return *(this->_M_impl._M_start + __n);
- 1567              		.loc 2 816 0
- 1568 000c 488B45F8 		movq	-8(%rbp), %rax
- 1569 0010 488B00   		movq	(%rax), %rax
- 1570 0013 488B55F0 		movq	-16(%rbp), %rdx
- 1571 0017 48C1E203 		salq	$3, %rdx
- 1572 001b 4801D0   		addq	%rdx, %rax
+ 1358              		.loc 2 816 0
+ 1359 000c 488B45F8 		movq	-8(%rbp), %rax
+ 1360 0010 488B00   		movq	(%rax), %rax
+ 1361 0013 488B55F0 		movq	-16(%rbp), %rdx
+ 1362 0017 48C1E203 		salq	$3, %rdx
+ 1363 001b 4801D0   		addq	%rdx, %rax
  817:/usr/include/c++/7/bits/stl_vector.h ****       }
- 1573              		.loc 2 817 0
- 1574 001e 5D       		popq	%rbp
- 1575              		.cfi_def_cfa 7, 8
- 1576 001f C3       		ret
- 1577              		.cfi_endproc
- 1578              	.LFE2114:
- 1580              		.section	.text._ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev,"axG",@progbits,_ZNSt12_Vector_baseId
- 1581              		.align 2
- 1582              		.weak	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev
- 1584              	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev:
- 1585              	.LFB2237:
+ 1364              		.loc 2 817 0
+ 1365 001e 5D       		popq	%rbp
+ 1366              		.cfi_def_cfa 7, 8
+ 1367 001f C3       		ret
+ 1368              		.cfi_endproc
+ 1369              	.LFE2114:
+ 1371              		.section	.text._ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev,"axG",@progbits,_ZNSt12_Vector_baseId
+ 1372              		.align 2
+ 1373              		.weak	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev
+ 1375              	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev:
+ 1376              	.LFB2237:
   81:/usr/include/c++/7/bits/stl_vector.h ****       : public _Tp_alloc_type
- 1586              		.loc 2 81 0
- 1587              		.cfi_startproc
- 1588 0000 55       		pushq	%rbp
- 1589              		.cfi_def_cfa_offset 16
- 1590              		.cfi_offset 6, -16
- 1591 0001 4889E5   		movq	%rsp, %rbp
- 1592              		.cfi_def_cfa_register 6
- 1593 0004 4883EC10 		subq	$16, %rsp
- 1594 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 1595              	.LBB22:
+ 1377              		.loc 2 81 0
+ 1378              		.cfi_startproc
+ 1379 0000 55       		pushq	%rbp
+ 1380              		.cfi_def_cfa_offset 16
+ 1381              		.cfi_offset 6, -16
+ 1382 0001 4889E5   		movq	%rsp, %rbp
+ 1383              		.cfi_def_cfa_register 6
+ 1384 0004 4883EC10 		subq	$16, %rsp
+ 1385 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 1386              	.LBB21:
   81:/usr/include/c++/7/bits/stl_vector.h ****       : public _Tp_alloc_type
- 1596              		.loc 2 81 0
- 1597 000c 488B45F8 		movq	-8(%rbp), %rax
- 1598 0010 4889C7   		movq	%rax, %rdi
- 1599 0013 E8000000 		call	_ZNSaIdED2Ev
- 1599      00
- 1600              	.LBE22:
- 1601 0018 90       		nop
- 1602 0019 C9       		leave
- 1603              		.cfi_def_cfa 7, 8
- 1604 001a C3       		ret
- 1605              		.cfi_endproc
- 1606              	.LFE2237:
- 1608              		.weak	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD1Ev
- 1609              		.set	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD1Ev,_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev
- 1610              		.section	.text._ZNSt12_Vector_baseIdSaIdEEC2Ev,"axG",@progbits,_ZNSt12_Vector_baseIdSaIdEEC5Ev,com
- 1611              		.align 2
- 1612              		.weak	_ZNSt12_Vector_baseIdSaIdEEC2Ev
- 1614              	_ZNSt12_Vector_baseIdSaIdEEC2Ev:
- 1615              	.LFB2239:
+ 1387              		.loc 2 81 0
+ 1388 000c 488B45F8 		movq	-8(%rbp), %rax
+ 1389 0010 4889C7   		movq	%rax, %rdi
+ 1390 0013 E8000000 		call	_ZNSaIdED2Ev
+ 1390      00
+ 1391              	.LBE21:
+ 1392 0018 90       		nop
+ 1393 0019 C9       		leave
+ 1394              		.cfi_def_cfa 7, 8
+ 1395 001a C3       		ret
+ 1396              		.cfi_endproc
+ 1397              	.LFE2237:
+ 1399              		.weak	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD1Ev
+ 1400              		.set	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD1Ev,_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev
+ 1401              		.section	.text._ZNSt12_Vector_baseIdSaIdEEC2Ev,"axG",@progbits,_ZNSt12_Vector_baseIdSaIdEEC5Ev,com
+ 1402              		.align 2
+ 1403              		.weak	_ZNSt12_Vector_baseIdSaIdEEC2Ev
+ 1405              	_ZNSt12_Vector_baseIdSaIdEEC2Ev:
+ 1406              	.LFB2239:
  126:/usr/include/c++/7/bits/stl_vector.h ****       : _M_impl() { }
- 1616              		.loc 2 126 0
- 1617              		.cfi_startproc
- 1618 0000 55       		pushq	%rbp
- 1619              		.cfi_def_cfa_offset 16
- 1620              		.cfi_offset 6, -16
- 1621 0001 4889E5   		movq	%rsp, %rbp
- 1622              		.cfi_def_cfa_register 6
- 1623 0004 4883EC10 		subq	$16, %rsp
- 1624 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 1625              	.LBB23:
+ 1407              		.loc 2 126 0
+ 1408              		.cfi_startproc
+ 1409 0000 55       		pushq	%rbp
+ 1410              		.cfi_def_cfa_offset 16
+ 1411              		.cfi_offset 6, -16
+ 1412 0001 4889E5   		movq	%rsp, %rbp
+ 1413              		.cfi_def_cfa_register 6
+ 1414 0004 4883EC10 		subq	$16, %rsp
+ 1415 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 1416              	.LBB22:
  127:/usr/include/c++/7/bits/stl_vector.h **** 
- 1626              		.loc 2 127 0
- 1627 000c 488B45F8 		movq	-8(%rbp), %rax
- 1628 0010 4889C7   		movq	%rax, %rdi
- 1629 0013 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC1Ev
- 1629      00
- 1630              	.LBE23:
- 1631 0018 90       		nop
- 1632 0019 C9       		leave
- 1633              		.cfi_def_cfa 7, 8
- 1634 001a C3       		ret
- 1635              		.cfi_endproc
- 1636              	.LFE2239:
- 1638              		.weak	_ZNSt12_Vector_baseIdSaIdEEC1Ev
- 1639              		.set	_ZNSt12_Vector_baseIdSaIdEEC1Ev,_ZNSt12_Vector_baseIdSaIdEEC2Ev
- 1640              		.section	.text._ZNSt12_Vector_baseIdSaIdEED2Ev,"axG",@progbits,_ZNSt12_Vector_baseIdSaIdEED5Ev,com
- 1641              		.align 2
- 1642              		.weak	_ZNSt12_Vector_baseIdSaIdEED2Ev
- 1644              	_ZNSt12_Vector_baseIdSaIdEED2Ev:
- 1645              	.LFB2242:
+ 1417              		.loc 2 127 0
+ 1418 000c 488B45F8 		movq	-8(%rbp), %rax
+ 1419 0010 4889C7   		movq	%rax, %rdi
+ 1420 0013 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC1Ev
+ 1420      00
+ 1421              	.LBE22:
+ 1422 0018 90       		nop
+ 1423 0019 C9       		leave
+ 1424              		.cfi_def_cfa 7, 8
+ 1425 001a C3       		ret
+ 1426              		.cfi_endproc
+ 1427              	.LFE2239:
+ 1429              		.weak	_ZNSt12_Vector_baseIdSaIdEEC1Ev
+ 1430              		.set	_ZNSt12_Vector_baseIdSaIdEEC1Ev,_ZNSt12_Vector_baseIdSaIdEEC2Ev
+ 1431              		.section	.text._ZNSt12_Vector_baseIdSaIdEED2Ev,"axG",@progbits,_ZNSt12_Vector_baseIdSaIdEED5Ev,com
+ 1432              		.align 2
+ 1433              		.weak	_ZNSt12_Vector_baseIdSaIdEED2Ev
+ 1435              	_ZNSt12_Vector_baseIdSaIdEED2Ev:
+ 1436              	.LFB2242:
  161:/usr/include/c++/7/bits/stl_vector.h ****       { _M_deallocate(this->_M_impl._M_start, this->_M_impl._M_end_of_storage
- 1646              		.loc 2 161 0
- 1647              		.cfi_startproc
- 1648              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
- 1649              		.cfi_lsda 0x1b,.LLSDA2242
- 1650 0000 55       		pushq	%rbp
- 1651              		.cfi_def_cfa_offset 16
- 1652              		.cfi_offset 6, -16
- 1653 0001 4889E5   		movq	%rsp, %rbp
- 1654              		.cfi_def_cfa_register 6
- 1655 0004 4883EC10 		subq	$16, %rsp
- 1656 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 1657              	.LBB24:
+ 1437              		.loc 2 161 0
+ 1438              		.cfi_startproc
+ 1439              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+ 1440              		.cfi_lsda 0x1b,.LLSDA2242
+ 1441 0000 55       		pushq	%rbp
+ 1442              		.cfi_def_cfa_offset 16
+ 1443              		.cfi_offset 6, -16
+ 1444 0001 4889E5   		movq	%rsp, %rbp
+ 1445              		.cfi_def_cfa_register 6
+ 1446 0004 4883EC10 		subq	$16, %rsp
+ 1447 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 1448              	.LBB23:
  162:/usr/include/c++/7/bits/stl_vector.h **** 		      - this->_M_impl._M_start); }
- 1658              		.loc 2 162 0
- 1659 000c 488B45F8 		movq	-8(%rbp), %rax
- 1660 0010 488B4010 		movq	16(%rax), %rax
+ 1449              		.loc 2 162 0
+ 1450 000c 488B45F8 		movq	-8(%rbp), %rax
+ 1451 0010 488B4010 		movq	16(%rax), %rax
  163:/usr/include/c++/7/bits/stl_vector.h **** 
- 1661              		.loc 2 163 0
- 1662 0014 4889C2   		movq	%rax, %rdx
- 1663 0017 488B45F8 		movq	-8(%rbp), %rax
- 1664 001b 488B00   		movq	(%rax), %rax
- 1665 001e 4829C2   		subq	%rax, %rdx
- 1666 0021 4889D0   		movq	%rdx, %rax
- 1667 0024 48C1F803 		sarq	$3, %rax
+ 1452              		.loc 2 163 0
+ 1453 0014 4889C2   		movq	%rax, %rdx
+ 1454 0017 488B45F8 		movq	-8(%rbp), %rax
+ 1455 001b 488B00   		movq	(%rax), %rax
+ 1456 001e 4829C2   		subq	%rax, %rdx
+ 1457 0021 4889D0   		movq	%rdx, %rax
+ 1458 0024 48C1F803 		sarq	$3, %rax
  162:/usr/include/c++/7/bits/stl_vector.h **** 		      - this->_M_impl._M_start); }
- 1668              		.loc 2 162 0
- 1669 0028 4889C2   		movq	%rax, %rdx
- 1670 002b 488B45F8 		movq	-8(%rbp), %rax
- 1671 002f 488B08   		movq	(%rax), %rcx
- 1672 0032 488B45F8 		movq	-8(%rbp), %rax
- 1673 0036 4889CE   		movq	%rcx, %rsi
- 1674 0039 4889C7   		movq	%rax, %rdi
- 1675 003c E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm
- 1675      00
+ 1459              		.loc 2 162 0
+ 1460 0028 4889C2   		movq	%rax, %rdx
+ 1461 002b 488B45F8 		movq	-8(%rbp), %rax
+ 1462 002f 488B08   		movq	(%rax), %rcx
+ 1463 0032 488B45F8 		movq	-8(%rbp), %rax
+ 1464 0036 4889CE   		movq	%rcx, %rsi
+ 1465 0039 4889C7   		movq	%rax, %rdi
+ 1466 003c E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm
+ 1466      00
  163:/usr/include/c++/7/bits/stl_vector.h **** 
- 1676              		.loc 2 163 0
- 1677 0041 488B45F8 		movq	-8(%rbp), %rax
- 1678 0045 4889C7   		movq	%rax, %rdi
- 1679 0048 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD1Ev
- 1679      00
- 1680              	.LBE24:
- 1681 004d 90       		nop
- 1682 004e C9       		leave
- 1683              		.cfi_def_cfa 7, 8
- 1684 004f C3       		ret
- 1685              		.cfi_endproc
- 1686              	.LFE2242:
- 1687              		.section	.gcc_except_table
- 1688              	.LLSDA2242:
- 1689 0035 FF       		.byte	0xff
- 1690 0036 FF       		.byte	0xff
- 1691 0037 01       		.byte	0x1
- 1692 0038 00       		.uleb128 .LLSDACSE2242-.LLSDACSB2242
- 1693              	.LLSDACSB2242:
- 1694              	.LLSDACSE2242:
- 1695              		.section	.text._ZNSt12_Vector_baseIdSaIdEED2Ev,"axG",@progbits,_ZNSt12_Vector_baseIdSaIdEED5Ev,com
- 1697              		.weak	_ZNSt12_Vector_baseIdSaIdEED1Ev
- 1698              		.set	_ZNSt12_Vector_baseIdSaIdEED1Ev,_ZNSt12_Vector_baseIdSaIdEED2Ev
- 1699              		.section	.text._ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv,"axG",@progbits,_ZNSt12_Vector_b
- 1700              		.align 2
- 1701              		.weak	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
- 1703              	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv:
- 1704              	.LFB2244:
+ 1467              		.loc 2 163 0
+ 1468 0041 488B45F8 		movq	-8(%rbp), %rax
+ 1469 0045 4889C7   		movq	%rax, %rdi
+ 1470 0048 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD1Ev
+ 1470      00
+ 1471              	.LBE23:
+ 1472 004d 90       		nop
+ 1473 004e C9       		leave
+ 1474              		.cfi_def_cfa 7, 8
+ 1475 004f C3       		ret
+ 1476              		.cfi_endproc
+ 1477              	.LFE2242:
+ 1478              		.section	.gcc_except_table
+ 1479              	.LLSDA2242:
+ 1480 0035 FF       		.byte	0xff
+ 1481 0036 FF       		.byte	0xff
+ 1482 0037 01       		.byte	0x1
+ 1483 0038 00       		.uleb128 .LLSDACSE2242-.LLSDACSB2242
+ 1484              	.LLSDACSB2242:
+ 1485              	.LLSDACSE2242:
+ 1486              		.section	.text._ZNSt12_Vector_baseIdSaIdEED2Ev,"axG",@progbits,_ZNSt12_Vector_baseIdSaIdEED5Ev,com
+ 1488              		.weak	_ZNSt12_Vector_baseIdSaIdEED1Ev
+ 1489              		.set	_ZNSt12_Vector_baseIdSaIdEED1Ev,_ZNSt12_Vector_baseIdSaIdEED2Ev
+ 1490              		.section	.text._ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv,"axG",@progbits,_ZNSt12_Vector_b
+ 1491              		.align 2
+ 1492              		.weak	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
+ 1494              	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv:
+ 1495              	.LFB2244:
  115:/usr/include/c++/7/bits/stl_vector.h ****       { return *static_cast<_Tp_alloc_type*>(&this->_M_impl); }
- 1705              		.loc 2 115 0
- 1706              		.cfi_startproc
- 1707 0000 55       		pushq	%rbp
- 1708              		.cfi_def_cfa_offset 16
- 1709              		.cfi_offset 6, -16
- 1710 0001 4889E5   		movq	%rsp, %rbp
- 1711              		.cfi_def_cfa_register 6
- 1712 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 1496              		.loc 2 115 0
+ 1497              		.cfi_startproc
+ 1498 0000 55       		pushq	%rbp
+ 1499              		.cfi_def_cfa_offset 16
+ 1500              		.cfi_offset 6, -16
+ 1501 0001 4889E5   		movq	%rsp, %rbp
+ 1502              		.cfi_def_cfa_register 6
+ 1503 0004 48897DF8 		movq	%rdi, -8(%rbp)
  116:/usr/include/c++/7/bits/stl_vector.h **** 
- 1713              		.loc 2 116 0
- 1714 0008 488B45F8 		movq	-8(%rbp), %rax
- 1715 000c 5D       		popq	%rbp
- 1716              		.cfi_def_cfa 7, 8
- 1717 000d C3       		ret
- 1718              		.cfi_endproc
- 1719              	.LFE2244:
- 1721              		.section	.text._ZSt8_DestroyIPddEvT_S1_RSaIT0_E,"axG",@progbits,_ZSt8_DestroyIPddEvT_S1_RSaIT0_E,c
- 1722              		.weak	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E
- 1724              	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E:
- 1725              	.LFB2245:
- 1726              		.file 3 "/usr/include/c++/7/bits/stl_construct.h"
+ 1504              		.loc 2 116 0
+ 1505 0008 488B45F8 		movq	-8(%rbp), %rax
+ 1506 000c 5D       		popq	%rbp
+ 1507              		.cfi_def_cfa 7, 8
+ 1508 000d C3       		ret
+ 1509              		.cfi_endproc
+ 1510              	.LFE2244:
+ 1512              		.section	.text._ZSt8_DestroyIPddEvT_S1_RSaIT0_E,"axG",@progbits,_ZSt8_DestroyIPddEvT_S1_RSaIT0_E,c
+ 1513              		.weak	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E
+ 1515              	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E:
+ 1516              	.LFB2245:
+ 1517              		.file 3 "/usr/include/c++/7/bits/stl_construct.h"
    1:/usr/include/c++/7/bits/stl_construct.h **** // nonstandard construct and destroy functions -*- C++ -*-
    2:/usr/include/c++/7/bits/stl_construct.h **** 
    3:/usr/include/c++/7/bits/stl_construct.h **** // Copyright (C) 2001-2017 Free Software Foundation, Inc.
@@ -3321,48 +3020,48 @@
  201:/usr/include/c++/7/bits/stl_construct.h ****   template<typename _ForwardIterator, typename _Tp>
  202:/usr/include/c++/7/bits/stl_construct.h ****     inline void
  203:/usr/include/c++/7/bits/stl_construct.h ****     _Destroy(_ForwardIterator __first, _ForwardIterator __last,
- 1727              		.loc 3 203 0
- 1728              		.cfi_startproc
- 1729 0000 55       		pushq	%rbp
- 1730              		.cfi_def_cfa_offset 16
- 1731              		.cfi_offset 6, -16
- 1732 0001 4889E5   		movq	%rsp, %rbp
- 1733              		.cfi_def_cfa_register 6
- 1734 0004 4883EC20 		subq	$32, %rsp
- 1735 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 1736 000c 488975F0 		movq	%rsi, -16(%rbp)
- 1737 0010 488955E8 		movq	%rdx, -24(%rbp)
+ 1518              		.loc 3 203 0
+ 1519              		.cfi_startproc
+ 1520 0000 55       		pushq	%rbp
+ 1521              		.cfi_def_cfa_offset 16
+ 1522              		.cfi_offset 6, -16
+ 1523 0001 4889E5   		movq	%rsp, %rbp
+ 1524              		.cfi_def_cfa_register 6
+ 1525 0004 4883EC20 		subq	$32, %rsp
+ 1526 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 1527 000c 488975F0 		movq	%rsi, -16(%rbp)
+ 1528 0010 488955E8 		movq	%rdx, -24(%rbp)
  204:/usr/include/c++/7/bits/stl_construct.h **** 	     allocator<_Tp>&)
  205:/usr/include/c++/7/bits/stl_construct.h ****     {
  206:/usr/include/c++/7/bits/stl_construct.h ****       _Destroy(__first, __last);
- 1738              		.loc 3 206 0
- 1739 0014 488B55F0 		movq	-16(%rbp), %rdx
- 1740 0018 488B45F8 		movq	-8(%rbp), %rax
- 1741 001c 4889D6   		movq	%rdx, %rsi
- 1742 001f 4889C7   		movq	%rax, %rdi
- 1743 0022 E8000000 		call	_ZSt8_DestroyIPdEvT_S1_
- 1743      00
+ 1529              		.loc 3 206 0
+ 1530 0014 488B55F0 		movq	-16(%rbp), %rdx
+ 1531 0018 488B45F8 		movq	-8(%rbp), %rax
+ 1532 001c 4889D6   		movq	%rdx, %rsi
+ 1533 001f 4889C7   		movq	%rax, %rdi
+ 1534 0022 E8000000 		call	_ZSt8_DestroyIPdEvT_S1_
+ 1534      00
  207:/usr/include/c++/7/bits/stl_construct.h ****     }
- 1744              		.loc 3 207 0
- 1745 0027 90       		nop
- 1746 0028 C9       		leave
- 1747              		.cfi_def_cfa 7, 8
- 1748 0029 C3       		ret
- 1749              		.cfi_endproc
- 1750              	.LFE2245:
- 1752              		.section	.rodata
- 1753              	.LC27:
- 1754 019e 76656374 		.string	"vector::_M_default_append"
- 1754      6F723A3A 
- 1754      5F4D5F64 
- 1754      65666175 
- 1754      6C745F61 
- 1755              		.section	.text._ZNSt6vectorIdSaIdEE17_M_default_appendEm,"axG",@progbits,_ZNSt6vectorIdSaIdEE17_M_
- 1756              		.align 2
- 1757              		.weak	_ZNSt6vectorIdSaIdEE17_M_default_appendEm
- 1759              	_ZNSt6vectorIdSaIdEE17_M_default_appendEm:
- 1760              	.LFB2248:
- 1761              		.file 4 "/usr/include/c++/7/bits/vector.tcc"
+ 1535              		.loc 3 207 0
+ 1536 0027 90       		nop
+ 1537 0028 C9       		leave
+ 1538              		.cfi_def_cfa 7, 8
+ 1539 0029 C3       		ret
+ 1540              		.cfi_endproc
+ 1541              	.LFE2245:
+ 1543              		.section	.rodata
+ 1544              	.LC24:
+ 1545 015e 76656374 		.string	"vector::_M_default_append"
+ 1545      6F723A3A 
+ 1545      5F4D5F64 
+ 1545      65666175 
+ 1545      6C745F61 
+ 1546              		.section	.text._ZNSt6vectorIdSaIdEE17_M_default_appendEm,"axG",@progbits,_ZNSt6vectorIdSaIdEE17_M_
+ 1547              		.align 2
+ 1548              		.weak	_ZNSt6vectorIdSaIdEE17_M_default_appendEm
+ 1550              	_ZNSt6vectorIdSaIdEE17_M_default_appendEm:
+ 1551              	.LFB2248:
+ 1552              		.file 4 "/usr/include/c++/7/bits/vector.tcc"
    1:/usr/include/c++/7/bits/vector.tcc **** // Vector implementation (out of line) -*- C++ -*-
    2:/usr/include/c++/7/bits/vector.tcc **** 
    3:/usr/include/c++/7/bits/vector.tcc **** // Copyright (C) 2001-2017 Free Software Foundation, Inc.
@@ -3917,76 +3616,76 @@
  552:/usr/include/c++/7/bits/vector.tcc ****   template<typename _Tp, typename _Alloc>
  553:/usr/include/c++/7/bits/vector.tcc ****     void
  554:/usr/include/c++/7/bits/vector.tcc ****     vector<_Tp, _Alloc>::
- 1762              		.loc 4 554 0
- 1763              		.cfi_startproc
- 1764              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
- 1765              		.cfi_lsda 0x1b,.LLSDA2248
- 1766 0000 55       		pushq	%rbp
- 1767              		.cfi_def_cfa_offset 16
- 1768              		.cfi_offset 6, -16
- 1769 0001 4889E5   		movq	%rsp, %rbp
- 1770              		.cfi_def_cfa_register 6
- 1771 0004 53       		pushq	%rbx
- 1772 0005 4883EC38 		subq	$56, %rsp
- 1773              		.cfi_offset 3, -24
- 1774 0009 48897DC8 		movq	%rdi, -56(%rbp)
- 1775 000d 488975C0 		movq	%rsi, -64(%rbp)
- 1776              	.LBB25:
+ 1553              		.loc 4 554 0
+ 1554              		.cfi_startproc
+ 1555              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+ 1556              		.cfi_lsda 0x1b,.LLSDA2248
+ 1557 0000 55       		pushq	%rbp
+ 1558              		.cfi_def_cfa_offset 16
+ 1559              		.cfi_offset 6, -16
+ 1560 0001 4889E5   		movq	%rsp, %rbp
+ 1561              		.cfi_def_cfa_register 6
+ 1562 0004 53       		pushq	%rbx
+ 1563 0005 4883EC38 		subq	$56, %rsp
+ 1564              		.cfi_offset 3, -24
+ 1565 0009 48897DC8 		movq	%rdi, -56(%rbp)
+ 1566 000d 488975C0 		movq	%rsi, -64(%rbp)
+ 1567              	.LBB24:
  555:/usr/include/c++/7/bits/vector.tcc ****     _M_default_append(size_type __n)
  556:/usr/include/c++/7/bits/vector.tcc ****     {
  557:/usr/include/c++/7/bits/vector.tcc ****       if (__n != 0)
- 1777              		.loc 4 557 0
- 1778 0011 48837DC0 		cmpq	$0, -64(%rbp)
- 1778      00
- 1779 0016 0F84E801 		je	.L81
- 1779      0000
- 1780              	.LBB26:
- 1781              	.LBB27:
+ 1568              		.loc 4 557 0
+ 1569 0011 48837DC0 		cmpq	$0, -64(%rbp)
+ 1569      00
+ 1570 0016 0F84E801 		je	.L76
+ 1570      0000
+ 1571              	.LBB25:
+ 1572              	.LBB26:
  558:/usr/include/c++/7/bits/vector.tcc **** 	{
  559:/usr/include/c++/7/bits/vector.tcc **** 	  if (size_type(this->_M_impl._M_end_of_storage
- 1782              		.loc 4 559 0
- 1783 001c 488B45C8 		movq	-56(%rbp), %rax
- 1784 0020 488B4010 		movq	16(%rax), %rax
+ 1573              		.loc 4 559 0
+ 1574 001c 488B45C8 		movq	-56(%rbp), %rax
+ 1575 0020 488B4010 		movq	16(%rax), %rax
  560:/usr/include/c++/7/bits/vector.tcc **** 			- this->_M_impl._M_finish) >= __n)
- 1785              		.loc 4 560 0
- 1786 0024 4889C2   		movq	%rax, %rdx
- 1787 0027 488B45C8 		movq	-56(%rbp), %rax
- 1788 002b 488B4008 		movq	8(%rax), %rax
- 1789 002f 4829C2   		subq	%rax, %rdx
- 1790 0032 4889D0   		movq	%rdx, %rax
- 1791 0035 48C1F803 		sarq	$3, %rax
+ 1576              		.loc 4 560 0
+ 1577 0024 4889C2   		movq	%rax, %rdx
+ 1578 0027 488B45C8 		movq	-56(%rbp), %rax
+ 1579 002b 488B4008 		movq	8(%rax), %rax
+ 1580 002f 4829C2   		subq	%rax, %rdx
+ 1581 0032 4889D0   		movq	%rdx, %rax
+ 1582 0035 48C1F803 		sarq	$3, %rax
  559:/usr/include/c++/7/bits/vector.tcc **** 			- this->_M_impl._M_finish) >= __n)
- 1792              		.loc 4 559 0
- 1793 0039 483945C0 		cmpq	%rax, -64(%rbp)
- 1794 003d 7736     		ja	.L75
+ 1583              		.loc 4 559 0
+ 1584 0039 483945C0 		cmpq	%rax, -64(%rbp)
+ 1585 003d 7736     		ja	.L70
  561:/usr/include/c++/7/bits/vector.tcc **** 	    {
  562:/usr/include/c++/7/bits/vector.tcc **** 	      this->_M_impl._M_finish =
  563:/usr/include/c++/7/bits/vector.tcc **** 		std::__uninitialized_default_n_a(this->_M_impl._M_finish,
  564:/usr/include/c++/7/bits/vector.tcc **** 						 __n, _M_get_Tp_allocator());
- 1795              		.loc 4 564 0
- 1796 003f 488B45C8 		movq	-56(%rbp), %rax
- 1797 0043 4889C7   		movq	%rax, %rdi
- 1798 0046 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
- 1798      00
- 1799 004b 4889C2   		movq	%rax, %rdx
+ 1586              		.loc 4 564 0
+ 1587 003f 488B45C8 		movq	-56(%rbp), %rax
+ 1588 0043 4889C7   		movq	%rax, %rdi
+ 1589 0046 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
+ 1589      00
+ 1590 004b 4889C2   		movq	%rax, %rdx
  563:/usr/include/c++/7/bits/vector.tcc **** 						 __n, _M_get_Tp_allocator());
- 1800              		.loc 4 563 0
- 1801 004e 488B45C8 		movq	-56(%rbp), %rax
- 1802 0052 488B4008 		movq	8(%rax), %rax
- 1803 0056 488B4DC0 		movq	-64(%rbp), %rcx
- 1804 005a 4889CE   		movq	%rcx, %rsi
- 1805 005d 4889C7   		movq	%rax, %rdi
- 1806              	.LEHB17:
- 1807 0060 E8000000 		call	_ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E
- 1807      00
- 1808 0065 4889C2   		movq	%rax, %rdx
+ 1591              		.loc 4 563 0
+ 1592 004e 488B45C8 		movq	-56(%rbp), %rax
+ 1593 0052 488B4008 		movq	8(%rax), %rax
+ 1594 0056 488B4DC0 		movq	-64(%rbp), %rcx
+ 1595 005a 4889CE   		movq	%rcx, %rsi
+ 1596 005d 4889C7   		movq	%rax, %rdi
+ 1597              	.LEHB11:
+ 1598 0060 E8000000 		call	_ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E
+ 1598      00
+ 1599 0065 4889C2   		movq	%rax, %rdx
  562:/usr/include/c++/7/bits/vector.tcc **** 		std::__uninitialized_default_n_a(this->_M_impl._M_finish,
- 1809              		.loc 4 562 0
- 1810 0068 488B45C8 		movq	-56(%rbp), %rax
- 1811 006c 48895008 		movq	%rdx, 8(%rax)
- 1812              	.LBE27:
- 1813              	.LBE26:
- 1814              	.LBE25:
+ 1600              		.loc 4 562 0
+ 1601 0068 488B45C8 		movq	-56(%rbp), %rax
+ 1602 006c 48895008 		movq	%rdx, 8(%rax)
+ 1603              	.LBE26:
+ 1604              	.LBE25:
+ 1605              	.LBE24:
  565:/usr/include/c++/7/bits/vector.tcc **** 	    }
  566:/usr/include/c++/7/bits/vector.tcc **** 	  else
  567:/usr/include/c++/7/bits/vector.tcc **** 	    {
@@ -4023,264 +3722,264 @@
  598:/usr/include/c++/7/bits/vector.tcc **** 	    }
  599:/usr/include/c++/7/bits/vector.tcc **** 	}
  600:/usr/include/c++/7/bits/vector.tcc ****     }
- 1815              		.loc 4 600 0
- 1816 0070 E98F0100 		jmp	.L81
- 1816      00
- 1817              	.L75:
- 1818              	.LBB34:
- 1819              	.LBB32:
- 1820              	.LBB30:
- 1821              	.LBB28:
+ 1606              		.loc 4 600 0
+ 1607 0070 E98F0100 		jmp	.L76
+ 1607      00
+ 1608              	.L70:
+ 1609              	.LBB33:
+ 1610              	.LBB31:
+ 1611              	.LBB29:
+ 1612              	.LBB27:
  568:/usr/include/c++/7/bits/vector.tcc **** 		_M_check_len(__n, "vector::_M_default_append");
- 1822              		.loc 4 568 0
- 1823 0075 488B4DC0 		movq	-64(%rbp), %rcx
- 1824 0079 488B45C8 		movq	-56(%rbp), %rax
- 1825 007d 488D1500 		leaq	.LC27(%rip), %rdx
- 1825      000000
- 1826 0084 4889CE   		movq	%rcx, %rsi
- 1827 0087 4889C7   		movq	%rax, %rdi
- 1828 008a E8000000 		call	_ZNKSt6vectorIdSaIdEE12_M_check_lenEmPKc
- 1828      00
- 1829 008f 488945D8 		movq	%rax, -40(%rbp)
+ 1613              		.loc 4 568 0
+ 1614 0075 488B4DC0 		movq	-64(%rbp), %rcx
+ 1615 0079 488B45C8 		movq	-56(%rbp), %rax
+ 1616 007d 488D1500 		leaq	.LC24(%rip), %rdx
+ 1616      000000
+ 1617 0084 4889CE   		movq	%rcx, %rsi
+ 1618 0087 4889C7   		movq	%rax, %rdi
+ 1619 008a E8000000 		call	_ZNKSt6vectorIdSaIdEE12_M_check_lenEmPKc
+ 1619      00
+ 1620 008f 488945D8 		movq	%rax, -40(%rbp)
  570:/usr/include/c++/7/bits/vector.tcc **** 	      pointer __new_start(this->_M_allocate(__len));
- 1830              		.loc 4 570 0
- 1831 0093 488B45C8 		movq	-56(%rbp), %rax
- 1832 0097 4889C7   		movq	%rax, %rdi
- 1833 009a E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 1833      00
- 1834 009f 488945E0 		movq	%rax, -32(%rbp)
+ 1621              		.loc 4 570 0
+ 1622 0093 488B45C8 		movq	-56(%rbp), %rax
+ 1623 0097 4889C7   		movq	%rax, %rdi
+ 1624 009a E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 1624      00
+ 1625 009f 488945E0 		movq	%rax, -32(%rbp)
  571:/usr/include/c++/7/bits/vector.tcc **** 	      pointer __new_finish(__new_start);
- 1835              		.loc 4 571 0
- 1836 00a3 488B45C8 		movq	-56(%rbp), %rax
- 1837 00a7 488B55D8 		movq	-40(%rbp), %rdx
- 1838 00ab 4889D6   		movq	%rdx, %rsi
- 1839 00ae 4889C7   		movq	%rax, %rdi
- 1840 00b1 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm
- 1840      00
- 1841              	.LEHE17:
- 1842 00b6 488945E8 		movq	%rax, -24(%rbp)
+ 1626              		.loc 4 571 0
+ 1627 00a3 488B45C8 		movq	-56(%rbp), %rax
+ 1628 00a7 488B55D8 		movq	-40(%rbp), %rdx
+ 1629 00ab 4889D6   		movq	%rdx, %rsi
+ 1630 00ae 4889C7   		movq	%rax, %rdi
+ 1631 00b1 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm
+ 1631      00
+ 1632              	.LEHE11:
+ 1633 00b6 488945E8 		movq	%rax, -24(%rbp)
  572:/usr/include/c++/7/bits/vector.tcc **** 	      __try
- 1843              		.loc 4 572 0
- 1844 00ba 488B45E8 		movq	-24(%rbp), %rax
- 1845 00be 488945D0 		movq	%rax, -48(%rbp)
+ 1634              		.loc 4 572 0
+ 1635 00ba 488B45E8 		movq	-24(%rbp), %rax
+ 1636 00be 488945D0 		movq	%rax, -48(%rbp)
  578:/usr/include/c++/7/bits/vector.tcc **** 		  __new_finish =
- 1846              		.loc 4 578 0
- 1847 00c2 488B45C8 		movq	-56(%rbp), %rax
- 1848 00c6 4889C7   		movq	%rax, %rdi
- 1849 00c9 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
- 1849      00
- 1850 00ce 4889C1   		movq	%rax, %rcx
+ 1637              		.loc 4 578 0
+ 1638 00c2 488B45C8 		movq	-56(%rbp), %rax
+ 1639 00c6 4889C7   		movq	%rax, %rdi
+ 1640 00c9 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
+ 1640      00
+ 1641 00ce 4889C1   		movq	%rax, %rcx
  577:/usr/include/c++/7/bits/vector.tcc **** 		     __new_start, _M_get_Tp_allocator());
- 1851              		.loc 4 577 0
- 1852 00d1 488B45C8 		movq	-56(%rbp), %rax
- 1853 00d5 488B7008 		movq	8(%rax), %rsi
- 1854 00d9 488B45C8 		movq	-56(%rbp), %rax
- 1855 00dd 488B00   		movq	(%rax), %rax
+ 1642              		.loc 4 577 0
+ 1643 00d1 488B45C8 		movq	-56(%rbp), %rax
+ 1644 00d5 488B7008 		movq	8(%rax), %rsi
+ 1645 00d9 488B45C8 		movq	-56(%rbp), %rax
+ 1646 00dd 488B00   		movq	(%rax), %rax
  575:/usr/include/c++/7/bits/vector.tcc **** 		    = std::__uninitialized_move_if_noexcept_a
- 1856              		.loc 4 575 0
- 1857 00e0 488B55E8 		movq	-24(%rbp), %rdx
- 1858 00e4 4889C7   		movq	%rax, %rdi
- 1859              	.LEHB18:
- 1860 00e7 E8000000 		call	_ZSt34__uninitialized_move_if_noexcept_aIPdS0_SaIdEET0_T_S3_S2_RT1_
- 1860      00
- 1861 00ec 488945D0 		movq	%rax, -48(%rbp)
+ 1647              		.loc 4 575 0
+ 1648 00e0 488B55E8 		movq	-24(%rbp), %rdx
+ 1649 00e4 4889C7   		movq	%rax, %rdi
+ 1650              	.LEHB12:
+ 1651 00e7 E8000000 		call	_ZSt34__uninitialized_move_if_noexcept_aIPdS0_SaIdEET0_T_S3_S2_RT1_
+ 1651      00
+ 1652 00ec 488945D0 		movq	%rax, -48(%rbp)
  581:/usr/include/c++/7/bits/vector.tcc **** 		}
- 1862              		.loc 4 581 0
- 1863 00f0 488B45C8 		movq	-56(%rbp), %rax
- 1864 00f4 4889C7   		movq	%rax, %rdi
- 1865 00f7 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
- 1865      00
- 1866 00fc 4889C2   		movq	%rax, %rdx
+ 1653              		.loc 4 581 0
+ 1654 00f0 488B45C8 		movq	-56(%rbp), %rax
+ 1655 00f4 4889C7   		movq	%rax, %rdi
+ 1656 00f7 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
+ 1656      00
+ 1657 00fc 4889C2   		movq	%rax, %rdx
  579:/usr/include/c++/7/bits/vector.tcc **** 		    std::__uninitialized_default_n_a(__new_finish, __n,
- 1867              		.loc 4 579 0
- 1868 00ff 488B4DC0 		movq	-64(%rbp), %rcx
- 1869 0103 488B45D0 		movq	-48(%rbp), %rax
- 1870 0107 4889CE   		movq	%rcx, %rsi
- 1871 010a 4889C7   		movq	%rax, %rdi
- 1872 010d E8000000 		call	_ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E
- 1872      00
- 1873              	.LEHE18:
+ 1658              		.loc 4 579 0
+ 1659 00ff 488B4DC0 		movq	-64(%rbp), %rcx
+ 1660 0103 488B45D0 		movq	-48(%rbp), %rax
+ 1661 0107 4889CE   		movq	%rcx, %rsi
+ 1662 010a 4889C7   		movq	%rax, %rdi
+ 1663 010d E8000000 		call	_ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E
+ 1663      00
+ 1664              	.LEHE12:
  579:/usr/include/c++/7/bits/vector.tcc **** 		    std::__uninitialized_default_n_a(__new_finish, __n,
- 1874              		.loc 4 579 0 is_stmt 0 discriminator 1
- 1875 0112 488945D0 		movq	%rax, -48(%rbp)
+ 1665              		.loc 4 579 0 is_stmt 0 discriminator 1
+ 1666 0112 488945D0 		movq	%rax, -48(%rbp)
  591:/usr/include/c++/7/bits/vector.tcc **** 	      _M_deallocate(this->_M_impl._M_start,
- 1876              		.loc 4 591 0 is_stmt 1 discriminator 1
- 1877 0116 488B45C8 		movq	-56(%rbp), %rax
- 1878 011a 4889C7   		movq	%rax, %rdi
- 1879 011d E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
- 1879      00
- 1880 0122 4889C2   		movq	%rax, %rdx
+ 1667              		.loc 4 591 0 is_stmt 1 discriminator 1
+ 1668 0116 488B45C8 		movq	-56(%rbp), %rax
+ 1669 011a 4889C7   		movq	%rax, %rdi
+ 1670 011d E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
+ 1670      00
+ 1671 0122 4889C2   		movq	%rax, %rdx
  590:/usr/include/c++/7/bits/vector.tcc **** 			    _M_get_Tp_allocator());
- 1881              		.loc 4 590 0 discriminator 1
- 1882 0125 488B45C8 		movq	-56(%rbp), %rax
- 1883 0129 488B4808 		movq	8(%rax), %rcx
- 1884 012d 488B45C8 		movq	-56(%rbp), %rax
- 1885 0131 488B00   		movq	(%rax), %rax
- 1886 0134 4889CE   		movq	%rcx, %rsi
- 1887 0137 4889C7   		movq	%rax, %rdi
- 1888              	.LEHB19:
- 1889 013a E8000000 		call	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E
- 1889      00
+ 1672              		.loc 4 590 0 discriminator 1
+ 1673 0125 488B45C8 		movq	-56(%rbp), %rax
+ 1674 0129 488B4808 		movq	8(%rax), %rcx
+ 1675 012d 488B45C8 		movq	-56(%rbp), %rax
+ 1676 0131 488B00   		movq	(%rax), %rax
+ 1677 0134 4889CE   		movq	%rcx, %rsi
+ 1678 0137 4889C7   		movq	%rax, %rdi
+ 1679              	.LEHB13:
+ 1680 013a E8000000 		call	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E
+ 1680      00
  592:/usr/include/c++/7/bits/vector.tcc **** 			    this->_M_impl._M_end_of_storage
- 1890              		.loc 4 592 0 discriminator 1
- 1891 013f 488B45C8 		movq	-56(%rbp), %rax
+ 1681              		.loc 4 592 0 discriminator 1
+ 1682 013f 488B45C8 		movq	-56(%rbp), %rax
  593:/usr/include/c++/7/bits/vector.tcc **** 			    - this->_M_impl._M_start);
- 1892              		.loc 4 593 0 discriminator 1
- 1893 0143 488B55C8 		movq	-56(%rbp), %rdx
- 1894 0147 488B5210 		movq	16(%rdx), %rdx
+ 1683              		.loc 4 593 0 discriminator 1
+ 1684 0143 488B55C8 		movq	-56(%rbp), %rdx
+ 1685 0147 488B5210 		movq	16(%rdx), %rdx
  594:/usr/include/c++/7/bits/vector.tcc **** 	      this->_M_impl._M_start = __new_start;
- 1895              		.loc 4 594 0 discriminator 1
- 1896 014b 4889D1   		movq	%rdx, %rcx
- 1897 014e 488B55C8 		movq	-56(%rbp), %rdx
- 1898 0152 488B12   		movq	(%rdx), %rdx
- 1899 0155 4829D1   		subq	%rdx, %rcx
- 1900 0158 4889CA   		movq	%rcx, %rdx
- 1901 015b 48C1FA03 		sarq	$3, %rdx
+ 1686              		.loc 4 594 0 discriminator 1
+ 1687 014b 4889D1   		movq	%rdx, %rcx
+ 1688 014e 488B55C8 		movq	-56(%rbp), %rdx
+ 1689 0152 488B12   		movq	(%rdx), %rdx
+ 1690 0155 4829D1   		subq	%rdx, %rcx
+ 1691 0158 4889CA   		movq	%rcx, %rdx
+ 1692 015b 48C1FA03 		sarq	$3, %rdx
  592:/usr/include/c++/7/bits/vector.tcc **** 			    this->_M_impl._M_end_of_storage
- 1902              		.loc 4 592 0 discriminator 1
- 1903 015f 4889D6   		movq	%rdx, %rsi
- 1904 0162 488B55C8 		movq	-56(%rbp), %rdx
- 1905 0166 488B0A   		movq	(%rdx), %rcx
- 1906 0169 4889F2   		movq	%rsi, %rdx
- 1907 016c 4889CE   		movq	%rcx, %rsi
- 1908 016f 4889C7   		movq	%rax, %rdi
- 1909 0172 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm
- 1909      00
- 1910              	.LEHE19:
+ 1693              		.loc 4 592 0 discriminator 1
+ 1694 015f 4889D6   		movq	%rdx, %rsi
+ 1695 0162 488B55C8 		movq	-56(%rbp), %rdx
+ 1696 0166 488B0A   		movq	(%rdx), %rcx
+ 1697 0169 4889F2   		movq	%rsi, %rdx
+ 1698 016c 4889CE   		movq	%rcx, %rsi
+ 1699 016f 4889C7   		movq	%rax, %rdi
+ 1700 0172 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm
+ 1700      00
+ 1701              	.LEHE13:
  595:/usr/include/c++/7/bits/vector.tcc **** 	      this->_M_impl._M_finish = __new_finish;
- 1911              		.loc 4 595 0 discriminator 1
- 1912 0177 488B45C8 		movq	-56(%rbp), %rax
- 1913 017b 488B55E8 		movq	-24(%rbp), %rdx
- 1914 017f 488910   		movq	%rdx, (%rax)
+ 1702              		.loc 4 595 0 discriminator 1
+ 1703 0177 488B45C8 		movq	-56(%rbp), %rax
+ 1704 017b 488B55E8 		movq	-24(%rbp), %rdx
+ 1705 017f 488910   		movq	%rdx, (%rax)
  596:/usr/include/c++/7/bits/vector.tcc **** 	      this->_M_impl._M_end_of_storage = __new_start + __len;
- 1915              		.loc 4 596 0 discriminator 1
- 1916 0182 488B45C8 		movq	-56(%rbp), %rax
- 1917 0186 488B55D0 		movq	-48(%rbp), %rdx
- 1918 018a 48895008 		movq	%rdx, 8(%rax)
+ 1706              		.loc 4 596 0 discriminator 1
+ 1707 0182 488B45C8 		movq	-56(%rbp), %rax
+ 1708 0186 488B55D0 		movq	-48(%rbp), %rdx
+ 1709 018a 48895008 		movq	%rdx, 8(%rax)
  597:/usr/include/c++/7/bits/vector.tcc **** 	    }
- 1919              		.loc 4 597 0 discriminator 1
- 1920 018e 488B45D8 		movq	-40(%rbp), %rax
- 1921 0192 488D14C5 		leaq	0(,%rax,8), %rdx
- 1921      00000000 
- 1922 019a 488B45E8 		movq	-24(%rbp), %rax
- 1923 019e 4801C2   		addq	%rax, %rdx
- 1924 01a1 488B45C8 		movq	-56(%rbp), %rax
- 1925 01a5 48895010 		movq	%rdx, 16(%rax)
- 1926              	.LBE28:
- 1927              	.LBE30:
- 1928              	.LBE32:
- 1929              	.LBE34:
- 1930              		.loc 4 600 0 discriminator 1
- 1931 01a9 EB59     		jmp	.L81
- 1932              	.L79:
- 1933              	.LBB35:
- 1934              	.LBB33:
- 1935              	.LBB31:
- 1936              	.LBB29:
+ 1710              		.loc 4 597 0 discriminator 1
+ 1711 018e 488B45D8 		movq	-40(%rbp), %rax
+ 1712 0192 488D14C5 		leaq	0(,%rax,8), %rdx
+ 1712      00000000 
+ 1713 019a 488B45E8 		movq	-24(%rbp), %rax
+ 1714 019e 4801C2   		addq	%rax, %rdx
+ 1715 01a1 488B45C8 		movq	-56(%rbp), %rax
+ 1716 01a5 48895010 		movq	%rdx, 16(%rax)
+ 1717              	.LBE27:
+ 1718              	.LBE29:
+ 1719              	.LBE31:
+ 1720              	.LBE33:
+ 1721              		.loc 4 600 0 discriminator 1
+ 1722 01a9 EB59     		jmp	.L76
+ 1723              	.L74:
+ 1724              	.LBB34:
+ 1725              	.LBB32:
+ 1726              	.LBB30:
+ 1727              	.LBB28:
  583:/usr/include/c++/7/bits/vector.tcc **** 		{
- 1937              		.loc 4 583 0
- 1938 01ab 4889C7   		movq	%rax, %rdi
- 1939 01ae E8000000 		call	__cxa_begin_catch@PLT
- 1939      00
+ 1728              		.loc 4 583 0
+ 1729 01ab 4889C7   		movq	%rax, %rdi
+ 1730 01ae E8000000 		call	__cxa_begin_catch@PLT
+ 1730      00
  586:/usr/include/c++/7/bits/vector.tcc **** 		  _M_deallocate(__new_start, __len);
- 1940              		.loc 4 586 0
- 1941 01b3 488B45C8 		movq	-56(%rbp), %rax
- 1942 01b7 4889C7   		movq	%rax, %rdi
- 1943 01ba E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
- 1943      00
- 1944 01bf 4889C2   		movq	%rax, %rdx
+ 1731              		.loc 4 586 0
+ 1732 01b3 488B45C8 		movq	-56(%rbp), %rax
+ 1733 01b7 4889C7   		movq	%rax, %rdi
+ 1734 01ba E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
+ 1734      00
+ 1735 01bf 4889C2   		movq	%rax, %rdx
  585:/usr/include/c++/7/bits/vector.tcc **** 				_M_get_Tp_allocator());
- 1945              		.loc 4 585 0
- 1946 01c2 488B4DD0 		movq	-48(%rbp), %rcx
- 1947 01c6 488B45E8 		movq	-24(%rbp), %rax
- 1948 01ca 4889CE   		movq	%rcx, %rsi
- 1949 01cd 4889C7   		movq	%rax, %rdi
- 1950              	.LEHB20:
- 1951 01d0 E8000000 		call	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E
- 1951      00
+ 1736              		.loc 4 585 0
+ 1737 01c2 488B4DD0 		movq	-48(%rbp), %rcx
+ 1738 01c6 488B45E8 		movq	-24(%rbp), %rax
+ 1739 01ca 4889CE   		movq	%rcx, %rsi
+ 1740 01cd 4889C7   		movq	%rax, %rdi
+ 1741              	.LEHB14:
+ 1742 01d0 E8000000 		call	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E
+ 1742      00
  587:/usr/include/c++/7/bits/vector.tcc **** 		  __throw_exception_again;
- 1952              		.loc 4 587 0
- 1953 01d5 488B45C8 		movq	-56(%rbp), %rax
- 1954 01d9 488B55D8 		movq	-40(%rbp), %rdx
- 1955 01dd 488B4DE8 		movq	-24(%rbp), %rcx
- 1956 01e1 4889CE   		movq	%rcx, %rsi
- 1957 01e4 4889C7   		movq	%rax, %rdi
- 1958 01e7 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm
- 1958      00
+ 1743              		.loc 4 587 0
+ 1744 01d5 488B45C8 		movq	-56(%rbp), %rax
+ 1745 01d9 488B55D8 		movq	-40(%rbp), %rdx
+ 1746 01dd 488B4DE8 		movq	-24(%rbp), %rcx
+ 1747 01e1 4889CE   		movq	%rcx, %rsi
+ 1748 01e4 4889C7   		movq	%rax, %rdi
+ 1749 01e7 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm
+ 1749      00
  588:/usr/include/c++/7/bits/vector.tcc **** 		}
- 1959              		.loc 4 588 0
- 1960 01ec E8000000 		call	__cxa_rethrow@PLT
- 1960      00
- 1961              	.LEHE20:
- 1962              	.L80:
- 1963 01f1 4889C3   		movq	%rax, %rbx
+ 1750              		.loc 4 588 0
+ 1751 01ec E8000000 		call	__cxa_rethrow@PLT
+ 1751      00
+ 1752              	.LEHE14:
+ 1753              	.L75:
+ 1754 01f1 4889C3   		movq	%rax, %rbx
  583:/usr/include/c++/7/bits/vector.tcc **** 		{
- 1964              		.loc 4 583 0
- 1965 01f4 E8000000 		call	__cxa_end_catch@PLT
- 1965      00
- 1966 01f9 4889D8   		movq	%rbx, %rax
- 1967 01fc 4889C7   		movq	%rax, %rdi
- 1968              	.LEHB21:
- 1969 01ff E8000000 		call	_Unwind_Resume@PLT
- 1969      00
- 1970              	.LEHE21:
- 1971              	.L81:
- 1972              	.LBE29:
- 1973              	.LBE31:
- 1974              	.LBE33:
- 1975              	.LBE35:
- 1976              		.loc 4 600 0
- 1977 0204 90       		nop
- 1978 0205 4883C438 		addq	$56, %rsp
- 1979 0209 5B       		popq	%rbx
- 1980 020a 5D       		popq	%rbp
- 1981              		.cfi_def_cfa 7, 8
- 1982 020b C3       		ret
- 1983              		.cfi_endproc
- 1984              	.LFE2248:
- 1985              		.section	.gcc_except_table
- 1986 0039 000000   		.align 4
- 1987              	.LLSDA2248:
- 1988 003c FF       		.byte	0xff
- 1989 003d 9B       		.byte	0x9b
- 1990 003e 25       		.uleb128 .LLSDATT2248-.LLSDATTD2248
- 1991              	.LLSDATTD2248:
- 1992 003f 01       		.byte	0x1
- 1993 0040 1A       		.uleb128 .LLSDACSE2248-.LLSDACSB2248
- 1994              	.LLSDACSB2248:
- 1995 0041 60       		.uleb128 .LEHB17-.LFB2248
- 1996 0042 56       		.uleb128 .LEHE17-.LEHB17
- 1997 0043 00       		.uleb128 0
- 1998 0044 00       		.uleb128 0
- 1999 0045 E701     		.uleb128 .LEHB18-.LFB2248
- 2000 0047 2B       		.uleb128 .LEHE18-.LEHB18
- 2001 0048 AB03     		.uleb128 .L79-.LFB2248
- 2002 004a 01       		.uleb128 0x1
- 2003 004b BA02     		.uleb128 .LEHB19-.LFB2248
- 2004 004d 3D       		.uleb128 .LEHE19-.LEHB19
- 2005 004e 00       		.uleb128 0
- 2006 004f 00       		.uleb128 0
- 2007 0050 D003     		.uleb128 .LEHB20-.LFB2248
- 2008 0052 21       		.uleb128 .LEHE20-.LEHB20
- 2009 0053 F103     		.uleb128 .L80-.LFB2248
- 2010 0055 00       		.uleb128 0
- 2011 0056 FF03     		.uleb128 .LEHB21-.LFB2248
- 2012 0058 05       		.uleb128 .LEHE21-.LEHB21
- 2013 0059 00       		.uleb128 0
- 2014 005a 00       		.uleb128 0
- 2015              	.LLSDACSE2248:
- 2016 005b 01       		.byte	0x1
- 2017 005c 00       		.byte	0
- 2018 005d 000000   		.align 4
- 2019 0060 00000000 		.long	0
- 2020              	
- 2021              	.LLSDATT2248:
- 2022              		.section	.text._ZNSt6vectorIdSaIdEE17_M_default_appendEm,"axG",@progbits,_ZNSt6vectorIdSaIdEE17_M_
- 2024              		.section	.text._ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd,"axG",@progbits,_ZNSt6vectorIdSaIdEE15_M_e
- 2025              		.align 2
- 2026              		.weak	_ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd
- 2028              	_ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd:
- 2029              	.LFB2249:
+ 1755              		.loc 4 583 0
+ 1756 01f4 E8000000 		call	__cxa_end_catch@PLT
+ 1756      00
+ 1757 01f9 4889D8   		movq	%rbx, %rax
+ 1758 01fc 4889C7   		movq	%rax, %rdi
+ 1759              	.LEHB15:
+ 1760 01ff E8000000 		call	_Unwind_Resume@PLT
+ 1760      00
+ 1761              	.LEHE15:
+ 1762              	.L76:
+ 1763              	.LBE28:
+ 1764              	.LBE30:
+ 1765              	.LBE32:
+ 1766              	.LBE34:
+ 1767              		.loc 4 600 0
+ 1768 0204 90       		nop
+ 1769 0205 4883C438 		addq	$56, %rsp
+ 1770 0209 5B       		popq	%rbx
+ 1771 020a 5D       		popq	%rbp
+ 1772              		.cfi_def_cfa 7, 8
+ 1773 020b C3       		ret
+ 1774              		.cfi_endproc
+ 1775              	.LFE2248:
+ 1776              		.section	.gcc_except_table
+ 1777 0039 000000   		.align 4
+ 1778              	.LLSDA2248:
+ 1779 003c FF       		.byte	0xff
+ 1780 003d 9B       		.byte	0x9b
+ 1781 003e 25       		.uleb128 .LLSDATT2248-.LLSDATTD2248
+ 1782              	.LLSDATTD2248:
+ 1783 003f 01       		.byte	0x1
+ 1784 0040 1A       		.uleb128 .LLSDACSE2248-.LLSDACSB2248
+ 1785              	.LLSDACSB2248:
+ 1786 0041 60       		.uleb128 .LEHB11-.LFB2248
+ 1787 0042 56       		.uleb128 .LEHE11-.LEHB11
+ 1788 0043 00       		.uleb128 0
+ 1789 0044 00       		.uleb128 0
+ 1790 0045 E701     		.uleb128 .LEHB12-.LFB2248
+ 1791 0047 2B       		.uleb128 .LEHE12-.LEHB12
+ 1792 0048 AB03     		.uleb128 .L74-.LFB2248
+ 1793 004a 01       		.uleb128 0x1
+ 1794 004b BA02     		.uleb128 .LEHB13-.LFB2248
+ 1795 004d 3D       		.uleb128 .LEHE13-.LEHB13
+ 1796 004e 00       		.uleb128 0
+ 1797 004f 00       		.uleb128 0
+ 1798 0050 D003     		.uleb128 .LEHB14-.LFB2248
+ 1799 0052 21       		.uleb128 .LEHE14-.LEHB14
+ 1800 0053 F103     		.uleb128 .L75-.LFB2248
+ 1801 0055 00       		.uleb128 0
+ 1802 0056 FF03     		.uleb128 .LEHB15-.LFB2248
+ 1803 0058 05       		.uleb128 .LEHE15-.LEHB15
+ 1804 0059 00       		.uleb128 0
+ 1805 005a 00       		.uleb128 0
+ 1806              	.LLSDACSE2248:
+ 1807 005b 01       		.byte	0x1
+ 1808 005c 00       		.byte	0
+ 1809 005d 000000   		.align 4
+ 1810 0060 00000000 		.long	0
+ 1811              	
+ 1812              	.LLSDATT2248:
+ 1813              		.section	.text._ZNSt6vectorIdSaIdEE17_M_default_appendEm,"axG",@progbits,_ZNSt6vectorIdSaIdEE17_M_
+ 1815              		.section	.text._ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd,"axG",@progbits,_ZNSt6vectorIdSaIdEE15_M_e
+ 1816              		.align 2
+ 1817              		.weak	_ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd
+ 1819              	_ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd:
+ 1820              	.LFB2249:
  818:/usr/include/c++/7/bits/stl_vector.h **** 
  819:/usr/include/c++/7/bits/stl_vector.h ****     protected:
  820:/usr/include/c++/7/bits/stl_vector.h ****       /// Safety check used only from at().
@@ -4975,103 +4674,103 @@
 1509:/usr/include/c++/7/bits/stl_vector.h ****       // _M_assign_aux.
 1510:/usr/include/c++/7/bits/stl_vector.h ****       void
 1511:/usr/include/c++/7/bits/stl_vector.h ****       _M_erase_at_end(pointer __pos) _GLIBCXX_NOEXCEPT
- 2030              		.loc 2 1511 0
- 2031              		.cfi_startproc
- 2032              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
- 2033              		.cfi_lsda 0x1b,.LLSDA2249
- 2034 0000 55       		pushq	%rbp
- 2035              		.cfi_def_cfa_offset 16
- 2036              		.cfi_offset 6, -16
- 2037 0001 4889E5   		movq	%rsp, %rbp
- 2038              		.cfi_def_cfa_register 6
- 2039 0004 4883EC10 		subq	$16, %rsp
- 2040 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 2041 000c 488975F0 		movq	%rsi, -16(%rbp)
+ 1821              		.loc 2 1511 0
+ 1822              		.cfi_startproc
+ 1823              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+ 1824              		.cfi_lsda 0x1b,.LLSDA2249
+ 1825 0000 55       		pushq	%rbp
+ 1826              		.cfi_def_cfa_offset 16
+ 1827              		.cfi_offset 6, -16
+ 1828 0001 4889E5   		movq	%rsp, %rbp
+ 1829              		.cfi_def_cfa_register 6
+ 1830 0004 4883EC10 		subq	$16, %rsp
+ 1831 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 1832 000c 488975F0 		movq	%rsi, -16(%rbp)
 1512:/usr/include/c++/7/bits/stl_vector.h ****       {
 1513:/usr/include/c++/7/bits/stl_vector.h **** 	std::_Destroy(__pos, this->_M_impl._M_finish, _M_get_Tp_allocator());
- 2042              		.loc 2 1513 0
- 2043 0010 488B45F8 		movq	-8(%rbp), %rax
- 2044 0014 4889C7   		movq	%rax, %rdi
- 2045 0017 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
- 2045      00
- 2046 001c 4889C2   		movq	%rax, %rdx
- 2047 001f 488B45F8 		movq	-8(%rbp), %rax
- 2048 0023 488B4808 		movq	8(%rax), %rcx
- 2049 0027 488B45F0 		movq	-16(%rbp), %rax
- 2050 002b 4889CE   		movq	%rcx, %rsi
- 2051 002e 4889C7   		movq	%rax, %rdi
- 2052 0031 E8000000 		call	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E
- 2052      00
+ 1833              		.loc 2 1513 0
+ 1834 0010 488B45F8 		movq	-8(%rbp), %rax
+ 1835 0014 4889C7   		movq	%rax, %rdi
+ 1836 0017 E8000000 		call	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
+ 1836      00
+ 1837 001c 4889C2   		movq	%rax, %rdx
+ 1838 001f 488B45F8 		movq	-8(%rbp), %rax
+ 1839 0023 488B4808 		movq	8(%rax), %rcx
+ 1840 0027 488B45F0 		movq	-16(%rbp), %rax
+ 1841 002b 4889CE   		movq	%rcx, %rsi
+ 1842 002e 4889C7   		movq	%rax, %rdi
+ 1843 0031 E8000000 		call	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E
+ 1843      00
 1514:/usr/include/c++/7/bits/stl_vector.h **** 	this->_M_impl._M_finish = __pos;
- 2053              		.loc 2 1514 0
- 2054 0036 488B45F8 		movq	-8(%rbp), %rax
- 2055 003a 488B55F0 		movq	-16(%rbp), %rdx
- 2056 003e 48895008 		movq	%rdx, 8(%rax)
+ 1844              		.loc 2 1514 0
+ 1845 0036 488B45F8 		movq	-8(%rbp), %rax
+ 1846 003a 488B55F0 		movq	-16(%rbp), %rdx
+ 1847 003e 48895008 		movq	%rdx, 8(%rax)
 1515:/usr/include/c++/7/bits/stl_vector.h ****       }
- 2057              		.loc 2 1515 0
- 2058 0042 90       		nop
- 2059 0043 C9       		leave
- 2060              		.cfi_def_cfa 7, 8
- 2061 0044 C3       		ret
- 2062              		.cfi_endproc
- 2063              	.LFE2249:
- 2064              		.section	.gcc_except_table
- 2065              	.LLSDA2249:
- 2066 0064 FF       		.byte	0xff
- 2067 0065 FF       		.byte	0xff
- 2068 0066 01       		.byte	0x1
- 2069 0067 00       		.uleb128 .LLSDACSE2249-.LLSDACSB2249
- 2070              	.LLSDACSB2249:
- 2071              	.LLSDACSE2249:
- 2072              		.section	.text._ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd,"axG",@progbits,_ZNSt6vectorIdSaIdEE15_M_e
- 2074              		.section	.text._ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2Ev,"axG",@progbits,_ZNSt12_Vector_baseId
- 2075              		.align 2
- 2076              		.weak	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2Ev
- 2078              	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2Ev:
- 2079              	.LFB2293:
+ 1848              		.loc 2 1515 0
+ 1849 0042 90       		nop
+ 1850 0043 C9       		leave
+ 1851              		.cfi_def_cfa 7, 8
+ 1852 0044 C3       		ret
+ 1853              		.cfi_endproc
+ 1854              	.LFE2249:
+ 1855              		.section	.gcc_except_table
+ 1856              	.LLSDA2249:
+ 1857 0064 FF       		.byte	0xff
+ 1858 0065 FF       		.byte	0xff
+ 1859 0066 01       		.byte	0x1
+ 1860 0067 00       		.uleb128 .LLSDACSE2249-.LLSDACSB2249
+ 1861              	.LLSDACSB2249:
+ 1862              	.LLSDACSE2249:
+ 1863              		.section	.text._ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd,"axG",@progbits,_ZNSt6vectorIdSaIdEE15_M_e
+ 1865              		.section	.text._ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2Ev,"axG",@progbits,_ZNSt12_Vector_baseId
+ 1866              		.align 2
+ 1867              		.weak	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2Ev
+ 1869              	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2Ev:
+ 1870              	.LFB2293:
   88:/usr/include/c++/7/bits/stl_vector.h **** 	: _Tp_alloc_type(), _M_start(), _M_finish(), _M_end_of_storage()
- 2080              		.loc 2 88 0
- 2081              		.cfi_startproc
- 2082 0000 55       		pushq	%rbp
- 2083              		.cfi_def_cfa_offset 16
- 2084              		.cfi_offset 6, -16
- 2085 0001 4889E5   		movq	%rsp, %rbp
- 2086              		.cfi_def_cfa_register 6
- 2087 0004 4883EC10 		subq	$16, %rsp
- 2088 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 2089              	.LBB36:
+ 1871              		.loc 2 88 0
+ 1872              		.cfi_startproc
+ 1873 0000 55       		pushq	%rbp
+ 1874              		.cfi_def_cfa_offset 16
+ 1875              		.cfi_offset 6, -16
+ 1876 0001 4889E5   		movq	%rsp, %rbp
+ 1877              		.cfi_def_cfa_register 6
+ 1878 0004 4883EC10 		subq	$16, %rsp
+ 1879 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 1880              	.LBB35:
   89:/usr/include/c++/7/bits/stl_vector.h **** 	{ }
- 2090              		.loc 2 89 0
- 2091 000c 488B45F8 		movq	-8(%rbp), %rax
- 2092 0010 4889C7   		movq	%rax, %rdi
- 2093 0013 E8000000 		call	_ZNSaIdEC2Ev
- 2093      00
- 2094 0018 488B45F8 		movq	-8(%rbp), %rax
- 2095 001c 48C70000 		movq	$0, (%rax)
- 2095      000000
- 2096 0023 488B45F8 		movq	-8(%rbp), %rax
- 2097 0027 48C74008 		movq	$0, 8(%rax)
- 2097      00000000 
- 2098 002f 488B45F8 		movq	-8(%rbp), %rax
- 2099 0033 48C74010 		movq	$0, 16(%rax)
- 2099      00000000 
- 2100              	.LBE36:
+ 1881              		.loc 2 89 0
+ 1882 000c 488B45F8 		movq	-8(%rbp), %rax
+ 1883 0010 4889C7   		movq	%rax, %rdi
+ 1884 0013 E8000000 		call	_ZNSaIdEC2Ev
+ 1884      00
+ 1885 0018 488B45F8 		movq	-8(%rbp), %rax
+ 1886 001c 48C70000 		movq	$0, (%rax)
+ 1886      000000
+ 1887 0023 488B45F8 		movq	-8(%rbp), %rax
+ 1888 0027 48C74008 		movq	$0, 8(%rax)
+ 1888      00000000 
+ 1889 002f 488B45F8 		movq	-8(%rbp), %rax
+ 1890 0033 48C74010 		movq	$0, 16(%rax)
+ 1890      00000000 
+ 1891              	.LBE35:
   90:/usr/include/c++/7/bits/stl_vector.h **** 
- 2101              		.loc 2 90 0
- 2102 003b 90       		nop
- 2103 003c C9       		leave
- 2104              		.cfi_def_cfa 7, 8
- 2105 003d C3       		ret
- 2106              		.cfi_endproc
- 2107              	.LFE2293:
- 2109              		.weak	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC1Ev
- 2110              		.set	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC1Ev,_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2Ev
- 2111              		.section	.text._ZNSaIdED2Ev,"axG",@progbits,_ZNSaIdED5Ev,comdat
- 2112              		.align 2
- 2113              		.weak	_ZNSaIdED2Ev
- 2115              	_ZNSaIdED2Ev:
- 2116              	.LFB2296:
- 2117              		.file 5 "/usr/include/c++/7/bits/allocator.h"
+ 1892              		.loc 2 90 0
+ 1893 003b 90       		nop
+ 1894 003c C9       		leave
+ 1895              		.cfi_def_cfa 7, 8
+ 1896 003d C3       		ret
+ 1897              		.cfi_endproc
+ 1898              	.LFE2293:
+ 1900              		.weak	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC1Ev
+ 1901              		.set	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC1Ev,_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2Ev
+ 1902              		.section	.text._ZNSaIdED2Ev,"axG",@progbits,_ZNSaIdED5Ev,comdat
+ 1903              		.align 2
+ 1904              		.weak	_ZNSaIdED2Ev
+ 1906              	_ZNSaIdED2Ev:
+ 1907              	.LFB2296:
+ 1908              		.file 5 "/usr/include/c++/7/bits/allocator.h"
    1:/usr/include/c++/7/bits/allocator.h **** // Allocators -*- C++ -*-
    2:/usr/include/c++/7/bits/allocator.h **** 
    3:/usr/include/c++/7/bits/allocator.h **** // Copyright (C) 2001-2017 Free Software Foundation, Inc.
@@ -5211,106 +4910,106 @@
  137:/usr/include/c++/7/bits/allocator.h **** 	allocator(const allocator<_Tp1>&) throw() { }
  138:/usr/include/c++/7/bits/allocator.h **** 
  139:/usr/include/c++/7/bits/allocator.h ****       ~allocator() throw() { }
- 2118              		.loc 5 139 0
- 2119              		.cfi_startproc
- 2120 0000 55       		pushq	%rbp
- 2121              		.cfi_def_cfa_offset 16
- 2122              		.cfi_offset 6, -16
- 2123 0001 4889E5   		movq	%rsp, %rbp
- 2124              		.cfi_def_cfa_register 6
- 2125 0004 4883EC10 		subq	$16, %rsp
- 2126 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 2127              	.LBB37:
- 2128              		.loc 5 139 0
- 2129 000c 488B45F8 		movq	-8(%rbp), %rax
- 2130 0010 4889C7   		movq	%rax, %rdi
- 2131 0013 E8000000 		call	_ZN9__gnu_cxx13new_allocatorIdED2Ev
- 2131      00
- 2132              	.LBE37:
- 2133 0018 90       		nop
- 2134 0019 C9       		leave
- 2135              		.cfi_def_cfa 7, 8
- 2136 001a C3       		ret
- 2137              		.cfi_endproc
- 2138              	.LFE2296:
- 2140              		.weak	_ZNSaIdED1Ev
- 2141              		.set	_ZNSaIdED1Ev,_ZNSaIdED2Ev
- 2142              		.section	.text._ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm,"axG",@progbits,_ZNSt12_Vector_baseI
- 2143              		.align 2
- 2144              		.weak	_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm
- 2146              	_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm:
- 2147              	.LFB2298:
+ 1909              		.loc 5 139 0
+ 1910              		.cfi_startproc
+ 1911 0000 55       		pushq	%rbp
+ 1912              		.cfi_def_cfa_offset 16
+ 1913              		.cfi_offset 6, -16
+ 1914 0001 4889E5   		movq	%rsp, %rbp
+ 1915              		.cfi_def_cfa_register 6
+ 1916 0004 4883EC10 		subq	$16, %rsp
+ 1917 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 1918              	.LBB36:
+ 1919              		.loc 5 139 0
+ 1920 000c 488B45F8 		movq	-8(%rbp), %rax
+ 1921 0010 4889C7   		movq	%rax, %rdi
+ 1922 0013 E8000000 		call	_ZN9__gnu_cxx13new_allocatorIdED2Ev
+ 1922      00
+ 1923              	.LBE36:
+ 1924 0018 90       		nop
+ 1925 0019 C9       		leave
+ 1926              		.cfi_def_cfa 7, 8
+ 1927 001a C3       		ret
+ 1928              		.cfi_endproc
+ 1929              	.LFE2296:
+ 1931              		.weak	_ZNSaIdED1Ev
+ 1932              		.set	_ZNSaIdED1Ev,_ZNSaIdED2Ev
+ 1933              		.section	.text._ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm,"axG",@progbits,_ZNSt12_Vector_baseI
+ 1934              		.align 2
+ 1935              		.weak	_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm
+ 1937              	_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm:
+ 1938              	.LFB2298:
  176:/usr/include/c++/7/bits/stl_vector.h ****       {
- 2148              		.loc 2 176 0
- 2149              		.cfi_startproc
- 2150 0000 55       		pushq	%rbp
- 2151              		.cfi_def_cfa_offset 16
- 2152              		.cfi_offset 6, -16
- 2153 0001 4889E5   		movq	%rsp, %rbp
- 2154              		.cfi_def_cfa_register 6
- 2155 0004 4883EC20 		subq	$32, %rsp
- 2156 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 2157 000c 488975F0 		movq	%rsi, -16(%rbp)
- 2158 0010 488955E8 		movq	%rdx, -24(%rbp)
+ 1939              		.loc 2 176 0
+ 1940              		.cfi_startproc
+ 1941 0000 55       		pushq	%rbp
+ 1942              		.cfi_def_cfa_offset 16
+ 1943              		.cfi_offset 6, -16
+ 1944 0001 4889E5   		movq	%rsp, %rbp
+ 1945              		.cfi_def_cfa_register 6
+ 1946 0004 4883EC20 		subq	$32, %rsp
+ 1947 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 1948 000c 488975F0 		movq	%rsi, -16(%rbp)
+ 1949 0010 488955E8 		movq	%rdx, -24(%rbp)
  179:/usr/include/c++/7/bits/stl_vector.h **** 	  _Tr::deallocate(_M_impl, __p, __n);
- 2159              		.loc 2 179 0
- 2160 0014 48837DF0 		cmpq	$0, -16(%rbp)
- 2160      00
- 2161 0019 7417     		je	.L87
+ 1950              		.loc 2 179 0
+ 1951 0014 48837DF0 		cmpq	$0, -16(%rbp)
+ 1951      00
+ 1952 0019 7417     		je	.L82
  180:/usr/include/c++/7/bits/stl_vector.h ****       }
- 2162              		.loc 2 180 0
- 2163 001b 488B45F8 		movq	-8(%rbp), %rax
- 2164 001f 488B55E8 		movq	-24(%rbp), %rdx
- 2165 0023 488B4DF0 		movq	-16(%rbp), %rcx
- 2166 0027 4889CE   		movq	%rcx, %rsi
- 2167 002a 4889C7   		movq	%rax, %rdi
- 2168 002d E8000000 		call	_ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm
- 2168      00
- 2169              	.L87:
+ 1953              		.loc 2 180 0
+ 1954 001b 488B45F8 		movq	-8(%rbp), %rax
+ 1955 001f 488B55E8 		movq	-24(%rbp), %rdx
+ 1956 0023 488B4DF0 		movq	-16(%rbp), %rcx
+ 1957 0027 4889CE   		movq	%rcx, %rsi
+ 1958 002a 4889C7   		movq	%rax, %rdi
+ 1959 002d E8000000 		call	_ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm
+ 1959      00
+ 1960              	.L82:
  181:/usr/include/c++/7/bits/stl_vector.h **** 
- 2170              		.loc 2 181 0
- 2171 0032 90       		nop
- 2172 0033 C9       		leave
- 2173              		.cfi_def_cfa 7, 8
- 2174 0034 C3       		ret
- 2175              		.cfi_endproc
- 2176              	.LFE2298:
- 2178              		.section	.text._ZSt8_DestroyIPdEvT_S1_,"axG",@progbits,_ZSt8_DestroyIPdEvT_S1_,comdat
- 2179              		.weak	_ZSt8_DestroyIPdEvT_S1_
- 2181              	_ZSt8_DestroyIPdEvT_S1_:
- 2182              	.LFB2299:
+ 1961              		.loc 2 181 0
+ 1962 0032 90       		nop
+ 1963 0033 C9       		leave
+ 1964              		.cfi_def_cfa 7, 8
+ 1965 0034 C3       		ret
+ 1966              		.cfi_endproc
+ 1967              	.LFE2298:
+ 1969              		.section	.text._ZSt8_DestroyIPdEvT_S1_,"axG",@progbits,_ZSt8_DestroyIPdEvT_S1_,comdat
+ 1970              		.weak	_ZSt8_DestroyIPdEvT_S1_
+ 1972              	_ZSt8_DestroyIPdEvT_S1_:
+ 1973              	.LFB2299:
  127:/usr/include/c++/7/bits/stl_construct.h ****     {
- 2183              		.loc 3 127 0
- 2184              		.cfi_startproc
- 2185 0000 55       		pushq	%rbp
- 2186              		.cfi_def_cfa_offset 16
- 2187              		.cfi_offset 6, -16
- 2188 0001 4889E5   		movq	%rsp, %rbp
- 2189              		.cfi_def_cfa_register 6
- 2190 0004 4883EC10 		subq	$16, %rsp
- 2191 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 2192 000c 488975F0 		movq	%rsi, -16(%rbp)
+ 1974              		.loc 3 127 0
+ 1975              		.cfi_startproc
+ 1976 0000 55       		pushq	%rbp
+ 1977              		.cfi_def_cfa_offset 16
+ 1978              		.cfi_offset 6, -16
+ 1979 0001 4889E5   		movq	%rsp, %rbp
+ 1980              		.cfi_def_cfa_register 6
+ 1981 0004 4883EC10 		subq	$16, %rsp
+ 1982 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 1983 000c 488975F0 		movq	%rsi, -16(%rbp)
  137:/usr/include/c++/7/bits/stl_construct.h ****     }
- 2193              		.loc 3 137 0
- 2194 0010 488B55F0 		movq	-16(%rbp), %rdx
- 2195 0014 488B45F8 		movq	-8(%rbp), %rax
- 2196 0018 4889D6   		movq	%rdx, %rsi
- 2197 001b 4889C7   		movq	%rax, %rdi
- 2198 001e E8000000 		call	_ZNSt12_Destroy_auxILb1EE9__destroyIPdEEvT_S3_
- 2198      00
+ 1984              		.loc 3 137 0
+ 1985 0010 488B55F0 		movq	-16(%rbp), %rdx
+ 1986 0014 488B45F8 		movq	-8(%rbp), %rax
+ 1987 0018 4889D6   		movq	%rdx, %rsi
+ 1988 001b 4889C7   		movq	%rax, %rdi
+ 1989 001e E8000000 		call	_ZNSt12_Destroy_auxILb1EE9__destroyIPdEEvT_S3_
+ 1989      00
  138:/usr/include/c++/7/bits/stl_construct.h **** 
- 2199              		.loc 3 138 0
- 2200 0023 90       		nop
- 2201 0024 C9       		leave
- 2202              		.cfi_def_cfa 7, 8
- 2203 0025 C3       		ret
- 2204              		.cfi_endproc
- 2205              	.LFE2299:
- 2207              		.section	.text._ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E,"axG",@progbits,_ZSt27__uni
- 2208              		.weak	_ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E
- 2210              	_ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E:
- 2211              	.LFB2301:
- 2212              		.file 6 "/usr/include/c++/7/bits/stl_uninitialized.h"
+ 1990              		.loc 3 138 0
+ 1991 0023 90       		nop
+ 1992 0024 C9       		leave
+ 1993              		.cfi_def_cfa 7, 8
+ 1994 0025 C3       		ret
+ 1995              		.cfi_endproc
+ 1996              	.LFE2299:
+ 1998              		.section	.text._ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E,"axG",@progbits,_ZSt27__uni
+ 1999              		.weak	_ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E
+ 2001              	_ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E:
+ 2002              	.LFB2301:
+ 2003              		.file 6 "/usr/include/c++/7/bits/stl_uninitialized.h"
    1:/usr/include/c++/7/bits/stl_uninitialized.h **** // Raw memory manipulators -*- C++ -*-
    2:/usr/include/c++/7/bits/stl_uninitialized.h **** 
    3:/usr/include/c++/7/bits/stl_uninitialized.h **** // Copyright (C) 2001-2017 Free Software Foundation, Inc.
@@ -5954,280 +5653,280 @@
  641:/usr/include/c++/7/bits/stl_uninitialized.h ****   template<typename _ForwardIterator, typename _Size, typename _Tp>
  642:/usr/include/c++/7/bits/stl_uninitialized.h ****     inline _ForwardIterator
  643:/usr/include/c++/7/bits/stl_uninitialized.h ****     __uninitialized_default_n_a(_ForwardIterator __first, _Size __n, 
- 2213              		.loc 6 643 0
- 2214              		.cfi_startproc
- 2215 0000 55       		pushq	%rbp
- 2216              		.cfi_def_cfa_offset 16
- 2217              		.cfi_offset 6, -16
- 2218 0001 4889E5   		movq	%rsp, %rbp
- 2219              		.cfi_def_cfa_register 6
- 2220 0004 4883EC20 		subq	$32, %rsp
- 2221 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 2222 000c 488975F0 		movq	%rsi, -16(%rbp)
- 2223 0010 488955E8 		movq	%rdx, -24(%rbp)
+ 2004              		.loc 6 643 0
+ 2005              		.cfi_startproc
+ 2006 0000 55       		pushq	%rbp
+ 2007              		.cfi_def_cfa_offset 16
+ 2008              		.cfi_offset 6, -16
+ 2009 0001 4889E5   		movq	%rsp, %rbp
+ 2010              		.cfi_def_cfa_register 6
+ 2011 0004 4883EC20 		subq	$32, %rsp
+ 2012 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 2013 000c 488975F0 		movq	%rsi, -16(%rbp)
+ 2014 0010 488955E8 		movq	%rdx, -24(%rbp)
  644:/usr/include/c++/7/bits/stl_uninitialized.h **** 				allocator<_Tp>&)
  645:/usr/include/c++/7/bits/stl_uninitialized.h ****     { return std::__uninitialized_default_n(__first, __n); }
- 2224              		.loc 6 645 0
- 2225 0014 488B55F0 		movq	-16(%rbp), %rdx
- 2226 0018 488B45F8 		movq	-8(%rbp), %rax
- 2227 001c 4889D6   		movq	%rdx, %rsi
- 2228 001f 4889C7   		movq	%rax, %rdi
- 2229 0022 E8000000 		call	_ZSt25__uninitialized_default_nIPdmET_S1_T0_
- 2229      00
- 2230 0027 C9       		leave
- 2231              		.cfi_def_cfa 7, 8
- 2232 0028 C3       		ret
- 2233              		.cfi_endproc
- 2234              	.LFE2301:
- 2236              		.section	.text._ZNKSt6vectorIdSaIdEE12_M_check_lenEmPKc,"axG",@progbits,_ZNKSt6vectorIdSaIdEE12_M_
- 2237              		.align 2
- 2238              		.weak	_ZNKSt6vectorIdSaIdEE12_M_check_lenEmPKc
- 2240              	_ZNKSt6vectorIdSaIdEE12_M_check_lenEmPKc:
- 2241              	.LFB2302:
+ 2015              		.loc 6 645 0
+ 2016 0014 488B55F0 		movq	-16(%rbp), %rdx
+ 2017 0018 488B45F8 		movq	-8(%rbp), %rax
+ 2018 001c 4889D6   		movq	%rdx, %rsi
+ 2019 001f 4889C7   		movq	%rax, %rdi
+ 2020 0022 E8000000 		call	_ZSt25__uninitialized_default_nIPdmET_S1_T0_
+ 2020      00
+ 2021 0027 C9       		leave
+ 2022              		.cfi_def_cfa 7, 8
+ 2023 0028 C3       		ret
+ 2024              		.cfi_endproc
+ 2025              	.LFE2301:
+ 2027              		.section	.text._ZNKSt6vectorIdSaIdEE12_M_check_lenEmPKc,"axG",@progbits,_ZNKSt6vectorIdSaIdEE12_M_
+ 2028              		.align 2
+ 2029              		.weak	_ZNKSt6vectorIdSaIdEE12_M_check_lenEmPKc
+ 2031              	_ZNKSt6vectorIdSaIdEE12_M_check_lenEmPKc:
+ 2032              	.LFB2302:
 1497:/usr/include/c++/7/bits/stl_vector.h ****       {
- 2242              		.loc 2 1497 0
- 2243              		.cfi_startproc
- 2244 0000 55       		pushq	%rbp
- 2245              		.cfi_def_cfa_offset 16
- 2246              		.cfi_offset 6, -16
- 2247 0001 4889E5   		movq	%rsp, %rbp
- 2248              		.cfi_def_cfa_register 6
- 2249 0004 53       		pushq	%rbx
- 2250 0005 4883EC48 		subq	$72, %rsp
- 2251              		.cfi_offset 3, -24
- 2252 0009 48897DC8 		movq	%rdi, -56(%rbp)
- 2253 000d 488975C0 		movq	%rsi, -64(%rbp)
- 2254 0011 488955B8 		movq	%rdx, -72(%rbp)
+ 2033              		.loc 2 1497 0
+ 2034              		.cfi_startproc
+ 2035 0000 55       		pushq	%rbp
+ 2036              		.cfi_def_cfa_offset 16
+ 2037              		.cfi_offset 6, -16
+ 2038 0001 4889E5   		movq	%rsp, %rbp
+ 2039              		.cfi_def_cfa_register 6
+ 2040 0004 53       		pushq	%rbx
+ 2041 0005 4883EC48 		subq	$72, %rsp
+ 2042              		.cfi_offset 3, -24
+ 2043 0009 48897DC8 		movq	%rdi, -56(%rbp)
+ 2044 000d 488975C0 		movq	%rsi, -64(%rbp)
+ 2045 0011 488955B8 		movq	%rdx, -72(%rbp)
 1497:/usr/include/c++/7/bits/stl_vector.h ****       {
- 2255              		.loc 2 1497 0
- 2256 0015 64488B04 		movq	%fs:40, %rax
- 2256      25280000 
- 2256      00
- 2257 001e 488945E8 		movq	%rax, -24(%rbp)
- 2258 0022 31C0     		xorl	%eax, %eax
+ 2046              		.loc 2 1497 0
+ 2047 0015 64488B04 		movq	%fs:40, %rax
+ 2047      25280000 
+ 2047      00
+ 2048 001e 488945E8 		movq	%rax, -24(%rbp)
+ 2049 0022 31C0     		xorl	%eax, %eax
 1499:/usr/include/c++/7/bits/stl_vector.h **** 	  __throw_length_error(__N(__s));
- 2259              		.loc 2 1499 0
- 2260 0024 488B45C8 		movq	-56(%rbp), %rax
- 2261 0028 4889C7   		movq	%rax, %rdi
- 2262 002b E8000000 		call	_ZNKSt6vectorIdSaIdEE8max_sizeEv
- 2262      00
- 2263 0030 4889C3   		movq	%rax, %rbx
- 2264 0033 488B45C8 		movq	-56(%rbp), %rax
- 2265 0037 4889C7   		movq	%rax, %rdi
- 2266 003a E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 2266      00
- 2267 003f 4829C3   		subq	%rax, %rbx
- 2268 0042 4889DA   		movq	%rbx, %rdx
- 2269 0045 488B45C0 		movq	-64(%rbp), %rax
- 2270 0049 4839C2   		cmpq	%rax, %rdx
- 2271 004c 0F92C0   		setb	%al
- 2272 004f 84C0     		testb	%al, %al
- 2273 0051 740C     		je	.L92
+ 2050              		.loc 2 1499 0
+ 2051 0024 488B45C8 		movq	-56(%rbp), %rax
+ 2052 0028 4889C7   		movq	%rax, %rdi
+ 2053 002b E8000000 		call	_ZNKSt6vectorIdSaIdEE8max_sizeEv
+ 2053      00
+ 2054 0030 4889C3   		movq	%rax, %rbx
+ 2055 0033 488B45C8 		movq	-56(%rbp), %rax
+ 2056 0037 4889C7   		movq	%rax, %rdi
+ 2057 003a E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 2057      00
+ 2058 003f 4829C3   		subq	%rax, %rbx
+ 2059 0042 4889DA   		movq	%rbx, %rdx
+ 2060 0045 488B45C0 		movq	-64(%rbp), %rax
+ 2061 0049 4839C2   		cmpq	%rax, %rdx
+ 2062 004c 0F92C0   		setb	%al
+ 2063 004f 84C0     		testb	%al, %al
+ 2064 0051 740C     		je	.L87
 1500:/usr/include/c++/7/bits/stl_vector.h **** 
- 2274              		.loc 2 1500 0
- 2275 0053 488B45B8 		movq	-72(%rbp), %rax
- 2276 0057 4889C7   		movq	%rax, %rdi
- 2277 005a E8000000 		call	_ZSt20__throw_length_errorPKc@PLT
- 2277      00
- 2278              	.L92:
+ 2065              		.loc 2 1500 0
+ 2066 0053 488B45B8 		movq	-72(%rbp), %rax
+ 2067 0057 4889C7   		movq	%rax, %rdi
+ 2068 005a E8000000 		call	_ZSt20__throw_length_errorPKc@PLT
+ 2068      00
+ 2069              	.L87:
 1502:/usr/include/c++/7/bits/stl_vector.h **** 	return (__len < size() || __len > max_size()) ? max_size() : __len;
- 2279              		.loc 2 1502 0
- 2280 005f 488B45C8 		movq	-56(%rbp), %rax
- 2281 0063 4889C7   		movq	%rax, %rdi
- 2282 0066 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 2282      00
- 2283 006b 4889C3   		movq	%rax, %rbx
- 2284 006e 488B45C8 		movq	-56(%rbp), %rax
- 2285 0072 4889C7   		movq	%rax, %rdi
- 2286 0075 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 2286      00
- 2287 007a 488945D8 		movq	%rax, -40(%rbp)
- 2288 007e 488D55C0 		leaq	-64(%rbp), %rdx
- 2289 0082 488D45D8 		leaq	-40(%rbp), %rax
- 2290 0086 4889D6   		movq	%rdx, %rsi
- 2291 0089 4889C7   		movq	%rax, %rdi
- 2292 008c E8000000 		call	_ZSt3maxImERKT_S2_S2_
- 2292      00
- 2293 0091 488B00   		movq	(%rax), %rax
- 2294 0094 4801D8   		addq	%rbx, %rax
- 2295 0097 488945E0 		movq	%rax, -32(%rbp)
+ 2070              		.loc 2 1502 0
+ 2071 005f 488B45C8 		movq	-56(%rbp), %rax
+ 2072 0063 4889C7   		movq	%rax, %rdi
+ 2073 0066 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 2073      00
+ 2074 006b 4889C3   		movq	%rax, %rbx
+ 2075 006e 488B45C8 		movq	-56(%rbp), %rax
+ 2076 0072 4889C7   		movq	%rax, %rdi
+ 2077 0075 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 2077      00
+ 2078 007a 488945D8 		movq	%rax, -40(%rbp)
+ 2079 007e 488D55C0 		leaq	-64(%rbp), %rdx
+ 2080 0082 488D45D8 		leaq	-40(%rbp), %rax
+ 2081 0086 4889D6   		movq	%rdx, %rsi
+ 2082 0089 4889C7   		movq	%rax, %rdi
+ 2083 008c E8000000 		call	_ZSt3maxImERKT_S2_S2_
+ 2083      00
+ 2084 0091 488B00   		movq	(%rax), %rax
+ 2085 0094 4801D8   		addq	%rbx, %rax
+ 2086 0097 488945E0 		movq	%rax, -32(%rbp)
 1503:/usr/include/c++/7/bits/stl_vector.h ****       }
- 2296              		.loc 2 1503 0
- 2297 009b 488B45C8 		movq	-56(%rbp), %rax
- 2298 009f 4889C7   		movq	%rax, %rdi
- 2299 00a2 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
- 2299      00
- 2300 00a7 483945E0 		cmpq	%rax, -32(%rbp)
- 2301 00ab 7212     		jb	.L93
+ 2087              		.loc 2 1503 0
+ 2088 009b 488B45C8 		movq	-56(%rbp), %rax
+ 2089 009f 4889C7   		movq	%rax, %rdi
+ 2090 00a2 E8000000 		call	_ZNKSt6vectorIdSaIdEE4sizeEv
+ 2090      00
+ 2091 00a7 483945E0 		cmpq	%rax, -32(%rbp)
+ 2092 00ab 7212     		jb	.L88
 1503:/usr/include/c++/7/bits/stl_vector.h ****       }
- 2302              		.loc 2 1503 0 is_stmt 0 discriminator 2
- 2303 00ad 488B45C8 		movq	-56(%rbp), %rax
- 2304 00b1 4889C7   		movq	%rax, %rdi
- 2305 00b4 E8000000 		call	_ZNKSt6vectorIdSaIdEE8max_sizeEv
- 2305      00
- 2306 00b9 483945E0 		cmpq	%rax, -32(%rbp)
- 2307 00bd 760E     		jbe	.L94
- 2308              	.L93:
+ 2093              		.loc 2 1503 0 is_stmt 0 discriminator 2
+ 2094 00ad 488B45C8 		movq	-56(%rbp), %rax
+ 2095 00b1 4889C7   		movq	%rax, %rdi
+ 2096 00b4 E8000000 		call	_ZNKSt6vectorIdSaIdEE8max_sizeEv
+ 2096      00
+ 2097 00b9 483945E0 		cmpq	%rax, -32(%rbp)
+ 2098 00bd 760E     		jbe	.L89
+ 2099              	.L88:
 1503:/usr/include/c++/7/bits/stl_vector.h ****       }
- 2309              		.loc 2 1503 0 discriminator 3
- 2310 00bf 488B45C8 		movq	-56(%rbp), %rax
- 2311 00c3 4889C7   		movq	%rax, %rdi
- 2312 00c6 E8000000 		call	_ZNKSt6vectorIdSaIdEE8max_sizeEv
- 2312      00
- 2313 00cb EB04     		jmp	.L95
- 2314              	.L94:
+ 2100              		.loc 2 1503 0 discriminator 3
+ 2101 00bf 488B45C8 		movq	-56(%rbp), %rax
+ 2102 00c3 4889C7   		movq	%rax, %rdi
+ 2103 00c6 E8000000 		call	_ZNKSt6vectorIdSaIdEE8max_sizeEv
+ 2103      00
+ 2104 00cb EB04     		jmp	.L90
+ 2105              	.L89:
 1503:/usr/include/c++/7/bits/stl_vector.h ****       }
- 2315              		.loc 2 1503 0 discriminator 4
- 2316 00cd 488B45E0 		movq	-32(%rbp), %rax
- 2317              	.L95:
+ 2106              		.loc 2 1503 0 discriminator 4
+ 2107 00cd 488B45E0 		movq	-32(%rbp), %rax
+ 2108              	.L90:
 1504:/usr/include/c++/7/bits/stl_vector.h **** 
- 2318              		.loc 2 1504 0 is_stmt 1 discriminator 6
- 2319 00d1 488B4DE8 		movq	-24(%rbp), %rcx
- 2320 00d5 6448330C 		xorq	%fs:40, %rcx
- 2320      25280000 
- 2320      00
- 2321 00de 7405     		je	.L97
+ 2109              		.loc 2 1504 0 is_stmt 1 discriminator 6
+ 2110 00d1 488B4DE8 		movq	-24(%rbp), %rcx
+ 2111 00d5 6448330C 		xorq	%fs:40, %rcx
+ 2111      25280000 
+ 2111      00
+ 2112 00de 7405     		je	.L92
 1504:/usr/include/c++/7/bits/stl_vector.h **** 
- 2322              		.loc 2 1504 0 is_stmt 0
- 2323 00e0 E8000000 		call	__stack_chk_fail@PLT
- 2323      00
- 2324              	.L97:
- 2325 00e5 4883C448 		addq	$72, %rsp
- 2326 00e9 5B       		popq	%rbx
- 2327 00ea 5D       		popq	%rbp
- 2328              		.cfi_def_cfa 7, 8
- 2329 00eb C3       		ret
- 2330              		.cfi_endproc
- 2331              	.LFE2302:
- 2333              		.section	.text._ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm,"axG",@progbits,_ZNSt12_Vector_baseIdSaI
- 2334              		.align 2
- 2335              		.weak	_ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm
- 2337              	_ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm:
- 2338              	.LFB2303:
+ 2113              		.loc 2 1504 0 is_stmt 0
+ 2114 00e0 E8000000 		call	__stack_chk_fail@PLT
+ 2114      00
+ 2115              	.L92:
+ 2116 00e5 4883C448 		addq	$72, %rsp
+ 2117 00e9 5B       		popq	%rbx
+ 2118 00ea 5D       		popq	%rbp
+ 2119              		.cfi_def_cfa 7, 8
+ 2120 00eb C3       		ret
+ 2121              		.cfi_endproc
+ 2122              	.LFE2302:
+ 2124              		.section	.text._ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm,"axG",@progbits,_ZNSt12_Vector_baseIdSaI
+ 2125              		.align 2
+ 2126              		.weak	_ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm
+ 2128              	_ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm:
+ 2129              	.LFB2303:
  169:/usr/include/c++/7/bits/stl_vector.h ****       {
- 2339              		.loc 2 169 0 is_stmt 1
- 2340              		.cfi_startproc
- 2341 0000 55       		pushq	%rbp
- 2342              		.cfi_def_cfa_offset 16
- 2343              		.cfi_offset 6, -16
- 2344 0001 4889E5   		movq	%rsp, %rbp
- 2345              		.cfi_def_cfa_register 6
- 2346 0004 4883EC10 		subq	$16, %rsp
- 2347 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 2348 000c 488975F0 		movq	%rsi, -16(%rbp)
+ 2130              		.loc 2 169 0 is_stmt 1
+ 2131              		.cfi_startproc
+ 2132 0000 55       		pushq	%rbp
+ 2133              		.cfi_def_cfa_offset 16
+ 2134              		.cfi_offset 6, -16
+ 2135 0001 4889E5   		movq	%rsp, %rbp
+ 2136              		.cfi_def_cfa_register 6
+ 2137 0004 4883EC10 		subq	$16, %rsp
+ 2138 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 2139 000c 488975F0 		movq	%rsi, -16(%rbp)
  172:/usr/include/c++/7/bits/stl_vector.h ****       }
- 2349              		.loc 2 172 0
- 2350 0010 48837DF0 		cmpq	$0, -16(%rbp)
- 2350      00
- 2351 0015 7415     		je	.L99
+ 2140              		.loc 2 172 0
+ 2141 0010 48837DF0 		cmpq	$0, -16(%rbp)
+ 2141      00
+ 2142 0015 7415     		je	.L94
  172:/usr/include/c++/7/bits/stl_vector.h ****       }
- 2352              		.loc 2 172 0 is_stmt 0 discriminator 1
- 2353 0017 488B45F8 		movq	-8(%rbp), %rax
- 2354 001b 488B55F0 		movq	-16(%rbp), %rdx
- 2355 001f 4889D6   		movq	%rdx, %rsi
- 2356 0022 4889C7   		movq	%rax, %rdi
- 2357 0025 E8000000 		call	_ZNSt16allocator_traitsISaIdEE8allocateERS0_m
- 2357      00
- 2358 002a EB05     		jmp	.L101
- 2359              	.L99:
+ 2143              		.loc 2 172 0 is_stmt 0 discriminator 1
+ 2144 0017 488B45F8 		movq	-8(%rbp), %rax
+ 2145 001b 488B55F0 		movq	-16(%rbp), %rdx
+ 2146 001f 4889D6   		movq	%rdx, %rsi
+ 2147 0022 4889C7   		movq	%rax, %rdi
+ 2148 0025 E8000000 		call	_ZNSt16allocator_traitsISaIdEE8allocateERS0_m
+ 2148      00
+ 2149 002a EB05     		jmp	.L96
+ 2150              	.L94:
  172:/usr/include/c++/7/bits/stl_vector.h ****       }
- 2360              		.loc 2 172 0 discriminator 2
- 2361 002c B8000000 		movl	$0, %eax
- 2361      00
- 2362              	.L101:
+ 2151              		.loc 2 172 0 discriminator 2
+ 2152 002c B8000000 		movl	$0, %eax
+ 2152      00
+ 2153              	.L96:
  173:/usr/include/c++/7/bits/stl_vector.h **** 
- 2363              		.loc 2 173 0 is_stmt 1 discriminator 5
- 2364 0031 C9       		leave
- 2365              		.cfi_def_cfa 7, 8
- 2366 0032 C3       		ret
- 2367              		.cfi_endproc
- 2368              	.LFE2303:
- 2370              		.section	.text._ZSt34__uninitialized_move_if_noexcept_aIPdS0_SaIdEET0_T_S3_S2_RT1_,"axG",@progbits
- 2371              		.weak	_ZSt34__uninitialized_move_if_noexcept_aIPdS0_SaIdEET0_T_S3_S2_RT1_
- 2373              	_ZSt34__uninitialized_move_if_noexcept_aIPdS0_SaIdEET0_T_S3_S2_RT1_:
- 2374              	.LFB2304:
+ 2154              		.loc 2 173 0 is_stmt 1 discriminator 5
+ 2155 0031 C9       		leave
+ 2156              		.cfi_def_cfa 7, 8
+ 2157 0032 C3       		ret
+ 2158              		.cfi_endproc
+ 2159              	.LFE2303:
+ 2161              		.section	.text._ZSt34__uninitialized_move_if_noexcept_aIPdS0_SaIdEET0_T_S3_S2_RT1_,"axG",@progbits
+ 2162              		.weak	_ZSt34__uninitialized_move_if_noexcept_aIPdS0_SaIdEET0_T_S3_S2_RT1_
+ 2164              	_ZSt34__uninitialized_move_if_noexcept_aIPdS0_SaIdEET0_T_S3_S2_RT1_:
+ 2165              	.LFB2304:
  305:/usr/include/c++/7/bits/stl_uninitialized.h **** 				       _InputIterator __last,
- 2375              		.loc 6 305 0
- 2376              		.cfi_startproc
- 2377 0000 55       		pushq	%rbp
- 2378              		.cfi_def_cfa_offset 16
- 2379              		.cfi_offset 6, -16
- 2380 0001 4889E5   		movq	%rsp, %rbp
- 2381              		.cfi_def_cfa_register 6
- 2382 0004 53       		pushq	%rbx
- 2383 0005 4883EC28 		subq	$40, %rsp
- 2384              		.cfi_offset 3, -24
- 2385 0009 48897DE8 		movq	%rdi, -24(%rbp)
- 2386 000d 488975E0 		movq	%rsi, -32(%rbp)
- 2387 0011 488955D8 		movq	%rdx, -40(%rbp)
- 2388 0015 48894DD0 		movq	%rcx, -48(%rbp)
+ 2166              		.loc 6 305 0
+ 2167              		.cfi_startproc
+ 2168 0000 55       		pushq	%rbp
+ 2169              		.cfi_def_cfa_offset 16
+ 2170              		.cfi_offset 6, -16
+ 2171 0001 4889E5   		movq	%rsp, %rbp
+ 2172              		.cfi_def_cfa_register 6
+ 2173 0004 53       		pushq	%rbx
+ 2174 0005 4883EC28 		subq	$40, %rsp
+ 2175              		.cfi_offset 3, -24
+ 2176 0009 48897DE8 		movq	%rdi, -24(%rbp)
+ 2177 000d 488975E0 		movq	%rsi, -32(%rbp)
+ 2178 0011 488955D8 		movq	%rdx, -40(%rbp)
+ 2179 0015 48894DD0 		movq	%rcx, -48(%rbp)
  311:/usr/include/c++/7/bits/stl_uninitialized.h **** 	 _GLIBCXX_MAKE_MOVE_IF_NOEXCEPT_ITERATOR(__last), __result, __alloc);
- 2389              		.loc 6 311 0
- 2390 0019 488B45E0 		movq	-32(%rbp), %rax
- 2391 001d 4889C7   		movq	%rax, %rdi
- 2392 0020 E8000000 		call	_ZSt32__make_move_if_noexcept_iteratorIdSt13move_iteratorIPdEET0_PT_
- 2392      00
- 2393 0025 4889C3   		movq	%rax, %rbx
- 2394 0028 488B45E8 		movq	-24(%rbp), %rax
- 2395 002c 4889C7   		movq	%rax, %rdi
- 2396 002f E8000000 		call	_ZSt32__make_move_if_noexcept_iteratorIdSt13move_iteratorIPdEET0_PT_
- 2396      00
- 2397 0034 4889C7   		movq	%rax, %rdi
+ 2180              		.loc 6 311 0
+ 2181 0019 488B45E0 		movq	-32(%rbp), %rax
+ 2182 001d 4889C7   		movq	%rax, %rdi
+ 2183 0020 E8000000 		call	_ZSt32__make_move_if_noexcept_iteratorIdSt13move_iteratorIPdEET0_PT_
+ 2183      00
+ 2184 0025 4889C3   		movq	%rax, %rbx
+ 2185 0028 488B45E8 		movq	-24(%rbp), %rax
+ 2186 002c 4889C7   		movq	%rax, %rdi
+ 2187 002f E8000000 		call	_ZSt32__make_move_if_noexcept_iteratorIdSt13move_iteratorIPdEET0_PT_
+ 2187      00
+ 2188 0034 4889C7   		movq	%rax, %rdi
  312:/usr/include/c++/7/bits/stl_uninitialized.h ****     }
- 2398              		.loc 6 312 0
- 2399 0037 488B55D0 		movq	-48(%rbp), %rdx
- 2400 003b 488B45D8 		movq	-40(%rbp), %rax
- 2401 003f 4889D1   		movq	%rdx, %rcx
- 2402 0042 4889C2   		movq	%rax, %rdx
- 2403 0045 4889DE   		movq	%rbx, %rsi
- 2404 0048 E8000000 		call	_ZSt22__uninitialized_copy_aISt13move_iteratorIPdES1_dET0_T_S4_S3_RSaIT1_E
- 2404      00
+ 2189              		.loc 6 312 0
+ 2190 0037 488B55D0 		movq	-48(%rbp), %rdx
+ 2191 003b 488B45D8 		movq	-40(%rbp), %rax
+ 2192 003f 4889D1   		movq	%rdx, %rcx
+ 2193 0042 4889C2   		movq	%rax, %rdx
+ 2194 0045 4889DE   		movq	%rbx, %rsi
+ 2195 0048 E8000000 		call	_ZSt22__uninitialized_copy_aISt13move_iteratorIPdES1_dET0_T_S4_S3_RSaIT1_E
+ 2195      00
  313:/usr/include/c++/7/bits/stl_uninitialized.h **** 
- 2405              		.loc 6 313 0
- 2406 004d 4883C428 		addq	$40, %rsp
- 2407 0051 5B       		popq	%rbx
- 2408 0052 5D       		popq	%rbp
- 2409              		.cfi_def_cfa 7, 8
- 2410 0053 C3       		ret
- 2411              		.cfi_endproc
- 2412              	.LFE2304:
- 2414              		.section	.text._ZNSaIdEC2Ev,"axG",@progbits,_ZNSaIdEC5Ev,comdat
- 2415              		.align 2
- 2416              		.weak	_ZNSaIdEC2Ev
- 2418              	_ZNSaIdEC2Ev:
- 2419              	.LFB2342:
+ 2196              		.loc 6 313 0
+ 2197 004d 4883C428 		addq	$40, %rsp
+ 2198 0051 5B       		popq	%rbx
+ 2199 0052 5D       		popq	%rbp
+ 2200              		.cfi_def_cfa 7, 8
+ 2201 0053 C3       		ret
+ 2202              		.cfi_endproc
+ 2203              	.LFE2304:
+ 2205              		.section	.text._ZNSaIdEC2Ev,"axG",@progbits,_ZNSaIdEC5Ev,comdat
+ 2206              		.align 2
+ 2207              		.weak	_ZNSaIdEC2Ev
+ 2209              	_ZNSaIdEC2Ev:
+ 2210              	.LFB2342:
  131:/usr/include/c++/7/bits/allocator.h **** 
- 2420              		.loc 5 131 0
- 2421              		.cfi_startproc
- 2422 0000 55       		pushq	%rbp
- 2423              		.cfi_def_cfa_offset 16
- 2424              		.cfi_offset 6, -16
- 2425 0001 4889E5   		movq	%rsp, %rbp
- 2426              		.cfi_def_cfa_register 6
- 2427 0004 4883EC10 		subq	$16, %rsp
- 2428 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 2429              	.LBB38:
+ 2211              		.loc 5 131 0
+ 2212              		.cfi_startproc
+ 2213 0000 55       		pushq	%rbp
+ 2214              		.cfi_def_cfa_offset 16
+ 2215              		.cfi_offset 6, -16
+ 2216 0001 4889E5   		movq	%rsp, %rbp
+ 2217              		.cfi_def_cfa_register 6
+ 2218 0004 4883EC10 		subq	$16, %rsp
+ 2219 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 2220              	.LBB37:
  131:/usr/include/c++/7/bits/allocator.h **** 
- 2430              		.loc 5 131 0
- 2431 000c 488B45F8 		movq	-8(%rbp), %rax
- 2432 0010 4889C7   		movq	%rax, %rdi
- 2433 0013 E8000000 		call	_ZN9__gnu_cxx13new_allocatorIdEC2Ev
- 2433      00
- 2434              	.LBE38:
- 2435 0018 90       		nop
- 2436 0019 C9       		leave
- 2437              		.cfi_def_cfa 7, 8
- 2438 001a C3       		ret
- 2439              		.cfi_endproc
- 2440              	.LFE2342:
- 2442              		.weak	_ZNSaIdEC1Ev
- 2443              		.set	_ZNSaIdEC1Ev,_ZNSaIdEC2Ev
- 2444              		.section	.text._ZN9__gnu_cxx13new_allocatorIdED2Ev,"axG",@progbits,_ZN9__gnu_cxx13new_allocatorIdE
- 2445              		.align 2
- 2446              		.weak	_ZN9__gnu_cxx13new_allocatorIdED2Ev
- 2448              	_ZN9__gnu_cxx13new_allocatorIdED2Ev:
- 2449              	.LFB2345:
- 2450              		.file 7 "/usr/include/c++/7/ext/new_allocator.h"
+ 2221              		.loc 5 131 0
+ 2222 000c 488B45F8 		movq	-8(%rbp), %rax
+ 2223 0010 4889C7   		movq	%rax, %rdi
+ 2224 0013 E8000000 		call	_ZN9__gnu_cxx13new_allocatorIdEC2Ev
+ 2224      00
+ 2225              	.LBE37:
+ 2226 0018 90       		nop
+ 2227 0019 C9       		leave
+ 2228              		.cfi_def_cfa 7, 8
+ 2229 001a C3       		ret
+ 2230              		.cfi_endproc
+ 2231              	.LFE2342:
+ 2233              		.weak	_ZNSaIdEC1Ev
+ 2234              		.set	_ZNSaIdEC1Ev,_ZNSaIdEC2Ev
+ 2235              		.section	.text._ZN9__gnu_cxx13new_allocatorIdED2Ev,"axG",@progbits,_ZN9__gnu_cxx13new_allocatorIdE
+ 2236              		.align 2
+ 2237              		.weak	_ZN9__gnu_cxx13new_allocatorIdED2Ev
+ 2239              	_ZN9__gnu_cxx13new_allocatorIdED2Ev:
+ 2240              	.LFB2345:
+ 2241              		.file 7 "/usr/include/c++/7/ext/new_allocator.h"
    1:/usr/include/c++/7/ext/new_allocator.h **** // Allocator that wraps operator new -*- C++ -*-
    2:/usr/include/c++/7/ext/new_allocator.h **** 
    3:/usr/include/c++/7/ext/new_allocator.h **** // Copyright (C) 2001-2017 Free Software Foundation, Inc.
@@ -6314,28 +6013,28 @@
   84:/usr/include/c++/7/ext/new_allocator.h **** 	new_allocator(const new_allocator<_Tp1>&) _GLIBCXX_USE_NOEXCEPT { }
   85:/usr/include/c++/7/ext/new_allocator.h **** 
   86:/usr/include/c++/7/ext/new_allocator.h ****       ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
- 2451              		.loc 7 86 0
- 2452              		.cfi_startproc
- 2453 0000 55       		pushq	%rbp
- 2454              		.cfi_def_cfa_offset 16
- 2455              		.cfi_offset 6, -16
- 2456 0001 4889E5   		movq	%rsp, %rbp
- 2457              		.cfi_def_cfa_register 6
- 2458 0004 48897DF8 		movq	%rdi, -8(%rbp)
- 2459              		.loc 7 86 0
- 2460 0008 90       		nop
- 2461 0009 5D       		popq	%rbp
- 2462              		.cfi_def_cfa 7, 8
- 2463 000a C3       		ret
- 2464              		.cfi_endproc
- 2465              	.LFE2345:
- 2467              		.weak	_ZN9__gnu_cxx13new_allocatorIdED1Ev
- 2468              		.set	_ZN9__gnu_cxx13new_allocatorIdED1Ev,_ZN9__gnu_cxx13new_allocatorIdED2Ev
- 2469              		.section	.text._ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm,"axG",@progbits,_ZNSt16allocator
- 2470              		.weak	_ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm
- 2472              	_ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm:
- 2473              	.LFB2347:
- 2474              		.file 8 "/usr/include/c++/7/bits/alloc_traits.h"
+ 2242              		.loc 7 86 0
+ 2243              		.cfi_startproc
+ 2244 0000 55       		pushq	%rbp
+ 2245              		.cfi_def_cfa_offset 16
+ 2246              		.cfi_offset 6, -16
+ 2247 0001 4889E5   		movq	%rsp, %rbp
+ 2248              		.cfi_def_cfa_register 6
+ 2249 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 2250              		.loc 7 86 0
+ 2251 0008 90       		nop
+ 2252 0009 5D       		popq	%rbp
+ 2253              		.cfi_def_cfa 7, 8
+ 2254 000a C3       		ret
+ 2255              		.cfi_endproc
+ 2256              	.LFE2345:
+ 2258              		.weak	_ZN9__gnu_cxx13new_allocatorIdED1Ev
+ 2259              		.set	_ZN9__gnu_cxx13new_allocatorIdED1Ev,_ZN9__gnu_cxx13new_allocatorIdED2Ev
+ 2260              		.section	.text._ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm,"axG",@progbits,_ZNSt16allocator
+ 2261              		.weak	_ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm
+ 2263              	_ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm:
+ 2264              	.LFB2347:
+ 2265              		.file 8 "/usr/include/c++/7/bits/alloc_traits.h"
    1:/usr/include/c++/7/bits/alloc_traits.h **** // Allocator traits -*- C++ -*-
    2:/usr/include/c++/7/bits/alloc_traits.h **** 
    3:/usr/include/c++/7/bits/alloc_traits.h **** // Copyright (C) 2011-2017 Free Software Foundation, Inc.
@@ -6797,121 +6496,121 @@
  459:/usr/include/c++/7/bits/alloc_traits.h ****       */
  460:/usr/include/c++/7/bits/alloc_traits.h ****       static void
  461:/usr/include/c++/7/bits/alloc_traits.h ****       deallocate(allocator_type& __a, pointer __p, size_type __n)
- 2475              		.loc 8 461 0
- 2476              		.cfi_startproc
- 2477 0000 55       		pushq	%rbp
- 2478              		.cfi_def_cfa_offset 16
- 2479              		.cfi_offset 6, -16
- 2480 0001 4889E5   		movq	%rsp, %rbp
- 2481              		.cfi_def_cfa_register 6
- 2482 0004 4883EC20 		subq	$32, %rsp
- 2483 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 2484 000c 488975F0 		movq	%rsi, -16(%rbp)
- 2485 0010 488955E8 		movq	%rdx, -24(%rbp)
+ 2266              		.loc 8 461 0
+ 2267              		.cfi_startproc
+ 2268 0000 55       		pushq	%rbp
+ 2269              		.cfi_def_cfa_offset 16
+ 2270              		.cfi_offset 6, -16
+ 2271 0001 4889E5   		movq	%rsp, %rbp
+ 2272              		.cfi_def_cfa_register 6
+ 2273 0004 4883EC20 		subq	$32, %rsp
+ 2274 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 2275 000c 488975F0 		movq	%rsi, -16(%rbp)
+ 2276 0010 488955E8 		movq	%rdx, -24(%rbp)
  462:/usr/include/c++/7/bits/alloc_traits.h ****       { __a.deallocate(__p, __n); }
- 2486              		.loc 8 462 0
- 2487 0014 488B55E8 		movq	-24(%rbp), %rdx
- 2488 0018 488B4DF0 		movq	-16(%rbp), %rcx
- 2489 001c 488B45F8 		movq	-8(%rbp), %rax
- 2490 0020 4889CE   		movq	%rcx, %rsi
- 2491 0023 4889C7   		movq	%rax, %rdi
- 2492 0026 E8000000 		call	_ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm
- 2492      00
- 2493 002b 90       		nop
- 2494 002c C9       		leave
- 2495              		.cfi_def_cfa 7, 8
- 2496 002d C3       		ret
- 2497              		.cfi_endproc
- 2498              	.LFE2347:
- 2500              		.section	.text._ZNSt12_Destroy_auxILb1EE9__destroyIPdEEvT_S3_,"axG",@progbits,_ZNSt12_Destroy_auxI
- 2501              		.weak	_ZNSt12_Destroy_auxILb1EE9__destroyIPdEEvT_S3_
- 2503              	_ZNSt12_Destroy_auxILb1EE9__destroyIPdEEvT_S3_:
- 2504              	.LFB2348:
+ 2277              		.loc 8 462 0
+ 2278 0014 488B55E8 		movq	-24(%rbp), %rdx
+ 2279 0018 488B4DF0 		movq	-16(%rbp), %rcx
+ 2280 001c 488B45F8 		movq	-8(%rbp), %rax
+ 2281 0020 4889CE   		movq	%rcx, %rsi
+ 2282 0023 4889C7   		movq	%rax, %rdi
+ 2283 0026 E8000000 		call	_ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm
+ 2283      00
+ 2284 002b 90       		nop
+ 2285 002c C9       		leave
+ 2286              		.cfi_def_cfa 7, 8
+ 2287 002d C3       		ret
+ 2288              		.cfi_endproc
+ 2289              	.LFE2347:
+ 2291              		.section	.text._ZNSt12_Destroy_auxILb1EE9__destroyIPdEEvT_S3_,"axG",@progbits,_ZNSt12_Destroy_auxI
+ 2292              		.weak	_ZNSt12_Destroy_auxILb1EE9__destroyIPdEEvT_S3_
+ 2294              	_ZNSt12_Destroy_auxILb1EE9__destroyIPdEEvT_S3_:
+ 2295              	.LFB2348:
  117:/usr/include/c++/7/bits/stl_construct.h ****     };
- 2505              		.loc 3 117 0
- 2506              		.cfi_startproc
- 2507 0000 55       		pushq	%rbp
- 2508              		.cfi_def_cfa_offset 16
- 2509              		.cfi_offset 6, -16
- 2510 0001 4889E5   		movq	%rsp, %rbp
- 2511              		.cfi_def_cfa_register 6
- 2512 0004 48897DF8 		movq	%rdi, -8(%rbp)
- 2513 0008 488975F0 		movq	%rsi, -16(%rbp)
+ 2296              		.loc 3 117 0
+ 2297              		.cfi_startproc
+ 2298 0000 55       		pushq	%rbp
+ 2299              		.cfi_def_cfa_offset 16
+ 2300              		.cfi_offset 6, -16
+ 2301 0001 4889E5   		movq	%rsp, %rbp
+ 2302              		.cfi_def_cfa_register 6
+ 2303 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 2304 0008 488975F0 		movq	%rsi, -16(%rbp)
  117:/usr/include/c++/7/bits/stl_construct.h ****     };
- 2514              		.loc 3 117 0
- 2515 000c 90       		nop
- 2516 000d 5D       		popq	%rbp
- 2517              		.cfi_def_cfa 7, 8
- 2518 000e C3       		ret
- 2519              		.cfi_endproc
- 2520              	.LFE2348:
- 2522              		.section	.text._ZSt25__uninitialized_default_nIPdmET_S1_T0_,"axG",@progbits,_ZSt25__uninitialized_
- 2523              		.weak	_ZSt25__uninitialized_default_nIPdmET_S1_T0_
- 2525              	_ZSt25__uninitialized_default_nIPdmET_S1_T0_:
- 2526              	.LFB2349:
+ 2305              		.loc 3 117 0
+ 2306 000c 90       		nop
+ 2307 000d 5D       		popq	%rbp
+ 2308              		.cfi_def_cfa 7, 8
+ 2309 000e C3       		ret
+ 2310              		.cfi_endproc
+ 2311              	.LFE2348:
+ 2313              		.section	.text._ZSt25__uninitialized_default_nIPdmET_S1_T0_,"axG",@progbits,_ZSt25__uninitialized_
+ 2314              		.weak	_ZSt25__uninitialized_default_nIPdmET_S1_T0_
+ 2316              	_ZSt25__uninitialized_default_nIPdmET_S1_T0_:
+ 2317              	.LFB2349:
  574:/usr/include/c++/7/bits/stl_uninitialized.h ****     {
- 2527              		.loc 6 574 0
- 2528              		.cfi_startproc
- 2529 0000 55       		pushq	%rbp
- 2530              		.cfi_def_cfa_offset 16
- 2531              		.cfi_offset 6, -16
- 2532 0001 4889E5   		movq	%rsp, %rbp
- 2533              		.cfi_def_cfa_register 6
- 2534 0004 4883EC20 		subq	$32, %rsp
- 2535 0008 48897DE8 		movq	%rdi, -24(%rbp)
- 2536 000c 488975E0 		movq	%rsi, -32(%rbp)
+ 2318              		.loc 6 574 0
+ 2319              		.cfi_startproc
+ 2320 0000 55       		pushq	%rbp
+ 2321              		.cfi_def_cfa_offset 16
+ 2322              		.cfi_offset 6, -16
+ 2323 0001 4889E5   		movq	%rsp, %rbp
+ 2324              		.cfi_def_cfa_register 6
+ 2325 0004 4883EC20 		subq	$32, %rsp
+ 2326 0008 48897DE8 		movq	%rdi, -24(%rbp)
+ 2327 000c 488975E0 		movq	%rsi, -32(%rbp)
  579:/usr/include/c++/7/bits/stl_uninitialized.h **** 
- 2537              		.loc 6 579 0
- 2538 0010 C645FF01 		movb	$1, -1(%rbp)
+ 2328              		.loc 6 579 0
+ 2329 0010 C645FF01 		movb	$1, -1(%rbp)
  583:/usr/include/c++/7/bits/stl_uninitialized.h ****     }
- 2539              		.loc 6 583 0
- 2540 0014 488B55E0 		movq	-32(%rbp), %rdx
- 2541 0018 488B45E8 		movq	-24(%rbp), %rax
- 2542 001c 4889D6   		movq	%rdx, %rsi
- 2543 001f 4889C7   		movq	%rax, %rdi
- 2544 0022 E8000000 		call	_ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_
- 2544      00
+ 2330              		.loc 6 583 0
+ 2331 0014 488B55E0 		movq	-32(%rbp), %rdx
+ 2332 0018 488B45E8 		movq	-24(%rbp), %rax
+ 2333 001c 4889D6   		movq	%rdx, %rsi
+ 2334 001f 4889C7   		movq	%rax, %rdi
+ 2335 0022 E8000000 		call	_ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_
+ 2335      00
  584:/usr/include/c++/7/bits/stl_uninitialized.h **** 
- 2545              		.loc 6 584 0
- 2546 0027 C9       		leave
- 2547              		.cfi_def_cfa 7, 8
- 2548 0028 C3       		ret
- 2549              		.cfi_endproc
- 2550              	.LFE2349:
- 2552              		.section	.text._ZNKSt6vectorIdSaIdEE8max_sizeEv,"axG",@progbits,_ZNKSt6vectorIdSaIdEE8max_sizeEv,c
- 2553              		.align 2
- 2554              		.weak	_ZNKSt6vectorIdSaIdEE8max_sizeEv
- 2556              	_ZNKSt6vectorIdSaIdEE8max_sizeEv:
- 2557              	.LFB2350:
+ 2336              		.loc 6 584 0
+ 2337 0027 C9       		leave
+ 2338              		.cfi_def_cfa 7, 8
+ 2339 0028 C3       		ret
+ 2340              		.cfi_endproc
+ 2341              	.LFE2349:
+ 2343              		.section	.text._ZNKSt6vectorIdSaIdEE8max_sizeEv,"axG",@progbits,_ZNKSt6vectorIdSaIdEE8max_sizeEv,c
+ 2344              		.align 2
+ 2345              		.weak	_ZNKSt6vectorIdSaIdEE8max_sizeEv
+ 2347              	_ZNKSt6vectorIdSaIdEE8max_sizeEv:
+ 2348              	.LFB2350:
  675:/usr/include/c++/7/bits/stl_vector.h ****       { return _Alloc_traits::max_size(_M_get_Tp_allocator()); }
- 2558              		.loc 2 675 0
- 2559              		.cfi_startproc
- 2560 0000 55       		pushq	%rbp
- 2561              		.cfi_def_cfa_offset 16
- 2562              		.cfi_offset 6, -16
- 2563 0001 4889E5   		movq	%rsp, %rbp
- 2564              		.cfi_def_cfa_register 6
- 2565 0004 4883EC10 		subq	$16, %rsp
- 2566 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 2349              		.loc 2 675 0
+ 2350              		.cfi_startproc
+ 2351 0000 55       		pushq	%rbp
+ 2352              		.cfi_def_cfa_offset 16
+ 2353              		.cfi_offset 6, -16
+ 2354 0001 4889E5   		movq	%rsp, %rbp
+ 2355              		.cfi_def_cfa_register 6
+ 2356 0004 4883EC10 		subq	$16, %rsp
+ 2357 0008 48897DF8 		movq	%rdi, -8(%rbp)
  676:/usr/include/c++/7/bits/stl_vector.h **** 
- 2567              		.loc 2 676 0
- 2568 000c 488B45F8 		movq	-8(%rbp), %rax
- 2569 0010 4889C7   		movq	%rax, %rdi
- 2570 0013 E8000000 		call	_ZNKSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
- 2570      00
- 2571 0018 4889C7   		movq	%rax, %rdi
- 2572 001b E8000000 		call	_ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_
- 2572      00
- 2573 0020 C9       		leave
- 2574              		.cfi_def_cfa 7, 8
- 2575 0021 C3       		ret
- 2576              		.cfi_endproc
- 2577              	.LFE2350:
- 2579              		.section	.text._ZSt3maxImERKT_S2_S2_,"axG",@progbits,_ZSt3maxImERKT_S2_S2_,comdat
- 2580              		.weak	_ZSt3maxImERKT_S2_S2_
- 2582              	_ZSt3maxImERKT_S2_S2_:
- 2583              	.LFB2351:
- 2584              		.file 9 "/usr/include/c++/7/bits/stl_algobase.h"
+ 2358              		.loc 2 676 0
+ 2359 000c 488B45F8 		movq	-8(%rbp), %rax
+ 2360 0010 4889C7   		movq	%rax, %rdi
+ 2361 0013 E8000000 		call	_ZNKSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
+ 2361      00
+ 2362 0018 4889C7   		movq	%rax, %rdi
+ 2363 001b E8000000 		call	_ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_
+ 2363      00
+ 2364 0020 C9       		leave
+ 2365              		.cfi_def_cfa 7, 8
+ 2366 0021 C3       		ret
+ 2367              		.cfi_endproc
+ 2368              	.LFE2350:
+ 2370              		.section	.text._ZSt3maxImERKT_S2_S2_,"axG",@progbits,_ZSt3maxImERKT_S2_S2_,comdat
+ 2371              		.weak	_ZSt3maxImERKT_S2_S2_
+ 2373              	_ZSt3maxImERKT_S2_S2_:
+ 2374              	.LFB2351:
+ 2375              		.file 9 "/usr/include/c++/7/bits/stl_algobase.h"
    1:/usr/include/c++/7/bits/stl_algobase.h **** // Core algorithmic facilities -*- C++ -*-
    2:/usr/include/c++/7/bits/stl_algobase.h **** 
    3:/usr/include/c++/7/bits/stl_algobase.h **** // Copyright (C) 2001-2017 Free Software Foundation, Inc.
@@ -7131,78 +6830,78 @@
  217:/usr/include/c++/7/bits/stl_algobase.h ****     _GLIBCXX14_CONSTEXPR
  218:/usr/include/c++/7/bits/stl_algobase.h ****     inline const _Tp&
  219:/usr/include/c++/7/bits/stl_algobase.h ****     max(const _Tp& __a, const _Tp& __b)
- 2585              		.loc 9 219 0
- 2586              		.cfi_startproc
- 2587 0000 55       		pushq	%rbp
- 2588              		.cfi_def_cfa_offset 16
- 2589              		.cfi_offset 6, -16
- 2590 0001 4889E5   		movq	%rsp, %rbp
- 2591              		.cfi_def_cfa_register 6
- 2592 0004 48897DF8 		movq	%rdi, -8(%rbp)
- 2593 0008 488975F0 		movq	%rsi, -16(%rbp)
+ 2376              		.loc 9 219 0
+ 2377              		.cfi_startproc
+ 2378 0000 55       		pushq	%rbp
+ 2379              		.cfi_def_cfa_offset 16
+ 2380              		.cfi_offset 6, -16
+ 2381 0001 4889E5   		movq	%rsp, %rbp
+ 2382              		.cfi_def_cfa_register 6
+ 2383 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 2384 0008 488975F0 		movq	%rsi, -16(%rbp)
  220:/usr/include/c++/7/bits/stl_algobase.h ****     {
  221:/usr/include/c++/7/bits/stl_algobase.h ****       // concept requirements
  222:/usr/include/c++/7/bits/stl_algobase.h ****       __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
  223:/usr/include/c++/7/bits/stl_algobase.h ****       //return  __a < __b ? __b : __a;
  224:/usr/include/c++/7/bits/stl_algobase.h ****       if (__a < __b)
- 2594              		.loc 9 224 0
- 2595 000c 488B45F8 		movq	-8(%rbp), %rax
- 2596 0010 488B10   		movq	(%rax), %rdx
- 2597 0013 488B45F0 		movq	-16(%rbp), %rax
- 2598 0017 488B00   		movq	(%rax), %rax
- 2599 001a 4839C2   		cmpq	%rax, %rdx
- 2600 001d 7306     		jnb	.L113
+ 2385              		.loc 9 224 0
+ 2386 000c 488B45F8 		movq	-8(%rbp), %rax
+ 2387 0010 488B10   		movq	(%rax), %rdx
+ 2388 0013 488B45F0 		movq	-16(%rbp), %rax
+ 2389 0017 488B00   		movq	(%rax), %rax
+ 2390 001a 4839C2   		cmpq	%rax, %rdx
+ 2391 001d 7306     		jnb	.L108
  225:/usr/include/c++/7/bits/stl_algobase.h **** 	return __b;
- 2601              		.loc 9 225 0
- 2602 001f 488B45F0 		movq	-16(%rbp), %rax
- 2603 0023 EB04     		jmp	.L114
- 2604              	.L113:
+ 2392              		.loc 9 225 0
+ 2393 001f 488B45F0 		movq	-16(%rbp), %rax
+ 2394 0023 EB04     		jmp	.L109
+ 2395              	.L108:
  226:/usr/include/c++/7/bits/stl_algobase.h ****       return __a;
- 2605              		.loc 9 226 0
- 2606 0025 488B45F8 		movq	-8(%rbp), %rax
- 2607              	.L114:
+ 2396              		.loc 9 226 0
+ 2397 0025 488B45F8 		movq	-8(%rbp), %rax
+ 2398              	.L109:
  227:/usr/include/c++/7/bits/stl_algobase.h ****     }
- 2608              		.loc 9 227 0
- 2609 0029 5D       		popq	%rbp
- 2610              		.cfi_def_cfa 7, 8
- 2611 002a C3       		ret
- 2612              		.cfi_endproc
- 2613              	.LFE2351:
- 2615              		.section	.text._ZNSt16allocator_traitsISaIdEE8allocateERS0_m,"axG",@progbits,_ZNSt16allocator_trai
- 2616              		.weak	_ZNSt16allocator_traitsISaIdEE8allocateERS0_m
- 2618              	_ZNSt16allocator_traitsISaIdEE8allocateERS0_m:
- 2619              	.LFB2352:
+ 2399              		.loc 9 227 0
+ 2400 0029 5D       		popq	%rbp
+ 2401              		.cfi_def_cfa 7, 8
+ 2402 002a C3       		ret
+ 2403              		.cfi_endproc
+ 2404              	.LFE2351:
+ 2406              		.section	.text._ZNSt16allocator_traitsISaIdEE8allocateERS0_m,"axG",@progbits,_ZNSt16allocator_trai
+ 2407              		.weak	_ZNSt16allocator_traitsISaIdEE8allocateERS0_m
+ 2409              	_ZNSt16allocator_traitsISaIdEE8allocateERS0_m:
+ 2410              	.LFB2352:
  435:/usr/include/c++/7/bits/alloc_traits.h ****       { return __a.allocate(__n); }
- 2620              		.loc 8 435 0
- 2621              		.cfi_startproc
- 2622 0000 55       		pushq	%rbp
- 2623              		.cfi_def_cfa_offset 16
- 2624              		.cfi_offset 6, -16
- 2625 0001 4889E5   		movq	%rsp, %rbp
- 2626              		.cfi_def_cfa_register 6
- 2627 0004 4883EC10 		subq	$16, %rsp
- 2628 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 2629 000c 488975F0 		movq	%rsi, -16(%rbp)
+ 2411              		.loc 8 435 0
+ 2412              		.cfi_startproc
+ 2413 0000 55       		pushq	%rbp
+ 2414              		.cfi_def_cfa_offset 16
+ 2415              		.cfi_offset 6, -16
+ 2416 0001 4889E5   		movq	%rsp, %rbp
+ 2417              		.cfi_def_cfa_register 6
+ 2418 0004 4883EC10 		subq	$16, %rsp
+ 2419 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 2420 000c 488975F0 		movq	%rsi, -16(%rbp)
  436:/usr/include/c++/7/bits/alloc_traits.h **** 
- 2630              		.loc 8 436 0
- 2631 0010 488B4DF0 		movq	-16(%rbp), %rcx
- 2632 0014 488B45F8 		movq	-8(%rbp), %rax
- 2633 0018 BA000000 		movl	$0, %edx
- 2633      00
- 2634 001d 4889CE   		movq	%rcx, %rsi
- 2635 0020 4889C7   		movq	%rax, %rdi
- 2636 0023 E8000000 		call	_ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv
- 2636      00
- 2637 0028 C9       		leave
- 2638              		.cfi_def_cfa 7, 8
- 2639 0029 C3       		ret
- 2640              		.cfi_endproc
- 2641              	.LFE2352:
- 2643              		.section	.text._ZSt32__make_move_if_noexcept_iteratorIdSt13move_iteratorIPdEET0_PT_,"axG",@progbit
- 2644              		.weak	_ZSt32__make_move_if_noexcept_iteratorIdSt13move_iteratorIPdEET0_PT_
- 2646              	_ZSt32__make_move_if_noexcept_iteratorIdSt13move_iteratorIPdEET0_PT_:
- 2647              	.LFB2353:
- 2648              		.file 10 "/usr/include/c++/7/bits/stl_iterator.h"
+ 2421              		.loc 8 436 0
+ 2422 0010 488B4DF0 		movq	-16(%rbp), %rcx
+ 2423 0014 488B45F8 		movq	-8(%rbp), %rax
+ 2424 0018 BA000000 		movl	$0, %edx
+ 2424      00
+ 2425 001d 4889CE   		movq	%rcx, %rsi
+ 2426 0020 4889C7   		movq	%rax, %rdi
+ 2427 0023 E8000000 		call	_ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv
+ 2427      00
+ 2428 0028 C9       		leave
+ 2429              		.cfi_def_cfa 7, 8
+ 2430 0029 C3       		ret
+ 2431              		.cfi_endproc
+ 2432              	.LFE2352:
+ 2434              		.section	.text._ZSt32__make_move_if_noexcept_iteratorIdSt13move_iteratorIPdEET0_PT_,"axG",@progbit
+ 2435              		.weak	_ZSt32__make_move_if_noexcept_iteratorIdSt13move_iteratorIPdEET0_PT_
+ 2437              	_ZSt32__make_move_if_noexcept_iteratorIdSt13move_iteratorIPdEET0_PT_:
+ 2438              	.LFB2353:
+ 2439              		.file 10 "/usr/include/c++/7/bits/stl_iterator.h"
    1:/usr/include/c++/7/bits/stl_iterator.h **** // Iterators -*- C++ -*-
    2:/usr/include/c++/7/bits/stl_iterator.h **** 
    3:/usr/include/c++/7/bits/stl_iterator.h **** // Copyright (C) 2001-2017 Free Software Foundation, Inc.
@@ -8424,103 +8123,103 @@
 1219:/usr/include/c++/7/bits/stl_iterator.h **** 			   const _Tp*, move_iterator<_Tp*>>::type>
 1220:/usr/include/c++/7/bits/stl_iterator.h ****     inline _GLIBCXX17_CONSTEXPR _ReturnType
 1221:/usr/include/c++/7/bits/stl_iterator.h ****     __make_move_if_noexcept_iterator(_Tp* __i)
- 2649              		.loc 10 1221 0
- 2650              		.cfi_startproc
- 2651 0000 55       		pushq	%rbp
- 2652              		.cfi_def_cfa_offset 16
- 2653              		.cfi_offset 6, -16
- 2654 0001 4889E5   		movq	%rsp, %rbp
- 2655              		.cfi_def_cfa_register 6
- 2656 0004 4883EC20 		subq	$32, %rsp
- 2657 0008 48897DE8 		movq	%rdi, -24(%rbp)
- 2658              		.loc 10 1221 0
- 2659 000c 64488B04 		movq	%fs:40, %rax
- 2659      25280000 
- 2659      00
- 2660 0015 488945F8 		movq	%rax, -8(%rbp)
- 2661 0019 31C0     		xorl	%eax, %eax
+ 2440              		.loc 10 1221 0
+ 2441              		.cfi_startproc
+ 2442 0000 55       		pushq	%rbp
+ 2443              		.cfi_def_cfa_offset 16
+ 2444              		.cfi_offset 6, -16
+ 2445 0001 4889E5   		movq	%rsp, %rbp
+ 2446              		.cfi_def_cfa_register 6
+ 2447 0004 4883EC20 		subq	$32, %rsp
+ 2448 0008 48897DE8 		movq	%rdi, -24(%rbp)
+ 2449              		.loc 10 1221 0
+ 2450 000c 64488B04 		movq	%fs:40, %rax
+ 2450      25280000 
+ 2450      00
+ 2451 0015 488945F8 		movq	%rax, -8(%rbp)
+ 2452 0019 31C0     		xorl	%eax, %eax
 1222:/usr/include/c++/7/bits/stl_iterator.h ****     { return _ReturnType(__i); }
- 2662              		.loc 10 1222 0
- 2663 001b 488B55E8 		movq	-24(%rbp), %rdx
- 2664 001f 488D45F0 		leaq	-16(%rbp), %rax
- 2665 0023 4889D6   		movq	%rdx, %rsi
- 2666 0026 4889C7   		movq	%rax, %rdi
- 2667 0029 E8000000 		call	_ZNSt13move_iteratorIPdEC1ES0_
- 2667      00
- 2668 002e 488B45F0 		movq	-16(%rbp), %rax
- 2669 0032 488B4DF8 		movq	-8(%rbp), %rcx
- 2670 0036 6448330C 		xorq	%fs:40, %rcx
- 2670      25280000 
- 2670      00
- 2671 003f 7405     		je	.L119
- 2672 0041 E8000000 		call	__stack_chk_fail@PLT
- 2672      00
- 2673              	.L119:
- 2674 0046 C9       		leave
- 2675              		.cfi_def_cfa 7, 8
- 2676 0047 C3       		ret
- 2677              		.cfi_endproc
- 2678              	.LFE2353:
- 2680              		.section	.text._ZSt22__uninitialized_copy_aISt13move_iteratorIPdES1_dET0_T_S4_S3_RSaIT1_E,"axG",@p
- 2681              		.weak	_ZSt22__uninitialized_copy_aISt13move_iteratorIPdES1_dET0_T_S4_S3_RSaIT1_E
- 2683              	_ZSt22__uninitialized_copy_aISt13move_iteratorIPdES1_dET0_T_S4_S3_RSaIT1_E:
- 2684              	.LFB2354:
+ 2453              		.loc 10 1222 0
+ 2454 001b 488B55E8 		movq	-24(%rbp), %rdx
+ 2455 001f 488D45F0 		leaq	-16(%rbp), %rax
+ 2456 0023 4889D6   		movq	%rdx, %rsi
+ 2457 0026 4889C7   		movq	%rax, %rdi
+ 2458 0029 E8000000 		call	_ZNSt13move_iteratorIPdEC1ES0_
+ 2458      00
+ 2459 002e 488B45F0 		movq	-16(%rbp), %rax
+ 2460 0032 488B4DF8 		movq	-8(%rbp), %rcx
+ 2461 0036 6448330C 		xorq	%fs:40, %rcx
+ 2461      25280000 
+ 2461      00
+ 2462 003f 7405     		je	.L114
+ 2463 0041 E8000000 		call	__stack_chk_fail@PLT
+ 2463      00
+ 2464              	.L114:
+ 2465 0046 C9       		leave
+ 2466              		.cfi_def_cfa 7, 8
+ 2467 0047 C3       		ret
+ 2468              		.cfi_endproc
+ 2469              	.LFE2353:
+ 2471              		.section	.text._ZSt22__uninitialized_copy_aISt13move_iteratorIPdES1_dET0_T_S4_S3_RSaIT1_E,"axG",@p
+ 2472              		.weak	_ZSt22__uninitialized_copy_aISt13move_iteratorIPdES1_dET0_T_S4_S3_RSaIT1_E
+ 2474              	_ZSt22__uninitialized_copy_aISt13move_iteratorIPdES1_dET0_T_S4_S3_RSaIT1_E:
+ 2475              	.LFB2354:
  287:/usr/include/c++/7/bits/stl_uninitialized.h **** 			   _ForwardIterator __result, allocator<_Tp>&)
- 2685              		.loc 6 287 0
- 2686              		.cfi_startproc
- 2687 0000 55       		pushq	%rbp
- 2688              		.cfi_def_cfa_offset 16
- 2689              		.cfi_offset 6, -16
- 2690 0001 4889E5   		movq	%rsp, %rbp
- 2691              		.cfi_def_cfa_register 6
- 2692 0004 4883EC20 		subq	$32, %rsp
- 2693 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 2694 000c 488975F0 		movq	%rsi, -16(%rbp)
- 2695 0010 488955E8 		movq	%rdx, -24(%rbp)
- 2696 0014 48894DE0 		movq	%rcx, -32(%rbp)
+ 2476              		.loc 6 287 0
+ 2477              		.cfi_startproc
+ 2478 0000 55       		pushq	%rbp
+ 2479              		.cfi_def_cfa_offset 16
+ 2480              		.cfi_offset 6, -16
+ 2481 0001 4889E5   		movq	%rsp, %rbp
+ 2482              		.cfi_def_cfa_register 6
+ 2483 0004 4883EC20 		subq	$32, %rsp
+ 2484 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 2485 000c 488975F0 		movq	%rsi, -16(%rbp)
+ 2486 0010 488955E8 		movq	%rdx, -24(%rbp)
+ 2487 0014 48894DE0 		movq	%rcx, -32(%rbp)
  289:/usr/include/c++/7/bits/stl_uninitialized.h **** 
- 2697              		.loc 6 289 0
- 2698 0018 488B55E8 		movq	-24(%rbp), %rdx
- 2699 001c 488B4DF0 		movq	-16(%rbp), %rcx
- 2700 0020 488B45F8 		movq	-8(%rbp), %rax
- 2701 0024 4889CE   		movq	%rcx, %rsi
- 2702 0027 4889C7   		movq	%rax, %rdi
- 2703 002a E8000000 		call	_ZSt18uninitialized_copyISt13move_iteratorIPdES1_ET0_T_S4_S3_
- 2703      00
- 2704 002f C9       		leave
- 2705              		.cfi_def_cfa 7, 8
- 2706 0030 C3       		ret
- 2707              		.cfi_endproc
- 2708              	.LFE2354:
- 2710              		.section	.text._ZN9__gnu_cxx13new_allocatorIdEC2Ev,"axG",@progbits,_ZN9__gnu_cxx13new_allocatorIdE
- 2711              		.align 2
- 2712              		.weak	_ZN9__gnu_cxx13new_allocatorIdEC2Ev
- 2714              	_ZN9__gnu_cxx13new_allocatorIdEC2Ev:
- 2715              	.LFB2390:
+ 2488              		.loc 6 289 0
+ 2489 0018 488B55E8 		movq	-24(%rbp), %rdx
+ 2490 001c 488B4DF0 		movq	-16(%rbp), %rcx
+ 2491 0020 488B45F8 		movq	-8(%rbp), %rax
+ 2492 0024 4889CE   		movq	%rcx, %rsi
+ 2493 0027 4889C7   		movq	%rax, %rdi
+ 2494 002a E8000000 		call	_ZSt18uninitialized_copyISt13move_iteratorIPdES1_ET0_T_S4_S3_
+ 2494      00
+ 2495 002f C9       		leave
+ 2496              		.cfi_def_cfa 7, 8
+ 2497 0030 C3       		ret
+ 2498              		.cfi_endproc
+ 2499              	.LFE2354:
+ 2501              		.section	.text._ZN9__gnu_cxx13new_allocatorIdEC2Ev,"axG",@progbits,_ZN9__gnu_cxx13new_allocatorIdE
+ 2502              		.align 2
+ 2503              		.weak	_ZN9__gnu_cxx13new_allocatorIdEC2Ev
+ 2505              	_ZN9__gnu_cxx13new_allocatorIdEC2Ev:
+ 2506              	.LFB2390:
   79:/usr/include/c++/7/ext/new_allocator.h **** 
- 2716              		.loc 7 79 0
- 2717              		.cfi_startproc
- 2718 0000 55       		pushq	%rbp
- 2719              		.cfi_def_cfa_offset 16
- 2720              		.cfi_offset 6, -16
- 2721 0001 4889E5   		movq	%rsp, %rbp
- 2722              		.cfi_def_cfa_register 6
- 2723 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 2507              		.loc 7 79 0
+ 2508              		.cfi_startproc
+ 2509 0000 55       		pushq	%rbp
+ 2510              		.cfi_def_cfa_offset 16
+ 2511              		.cfi_offset 6, -16
+ 2512 0001 4889E5   		movq	%rsp, %rbp
+ 2513              		.cfi_def_cfa_register 6
+ 2514 0004 48897DF8 		movq	%rdi, -8(%rbp)
   79:/usr/include/c++/7/ext/new_allocator.h **** 
- 2724              		.loc 7 79 0
- 2725 0008 90       		nop
- 2726 0009 5D       		popq	%rbp
- 2727              		.cfi_def_cfa 7, 8
- 2728 000a C3       		ret
- 2729              		.cfi_endproc
- 2730              	.LFE2390:
- 2732              		.weak	_ZN9__gnu_cxx13new_allocatorIdEC1Ev
- 2733              		.set	_ZN9__gnu_cxx13new_allocatorIdEC1Ev,_ZN9__gnu_cxx13new_allocatorIdEC2Ev
- 2734              		.section	.text._ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm,"axG",@progbits,_ZN9__gnu_cxx13new_
- 2735              		.align 2
- 2736              		.weak	_ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm
- 2738              	_ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm:
- 2739              	.LFB2392:
+ 2515              		.loc 7 79 0
+ 2516 0008 90       		nop
+ 2517 0009 5D       		popq	%rbp
+ 2518              		.cfi_def_cfa 7, 8
+ 2519 000a C3       		ret
+ 2520              		.cfi_endproc
+ 2521              	.LFE2390:
+ 2523              		.weak	_ZN9__gnu_cxx13new_allocatorIdEC1Ev
+ 2524              		.set	_ZN9__gnu_cxx13new_allocatorIdEC1Ev,_ZN9__gnu_cxx13new_allocatorIdEC2Ev
+ 2525              		.section	.text._ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm,"axG",@progbits,_ZN9__gnu_cxx13new_
+ 2526              		.align 2
+ 2527              		.weak	_ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm
+ 2529              	_ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm:
+ 2530              	.LFB2392:
   87:/usr/include/c++/7/ext/new_allocator.h **** 
   88:/usr/include/c++/7/ext/new_allocator.h ****       pointer
   89:/usr/include/c++/7/ext/new_allocator.h ****       address(reference __x) const _GLIBCXX_NOEXCEPT
@@ -8551,17 +8250,17 @@
  114:/usr/include/c++/7/ext/new_allocator.h ****       // __p is not permitted to be a null pointer.
  115:/usr/include/c++/7/ext/new_allocator.h ****       void
  116:/usr/include/c++/7/ext/new_allocator.h ****       deallocate(pointer __p, size_type)
- 2740              		.loc 7 116 0
- 2741              		.cfi_startproc
- 2742 0000 55       		pushq	%rbp
- 2743              		.cfi_def_cfa_offset 16
- 2744              		.cfi_offset 6, -16
- 2745 0001 4889E5   		movq	%rsp, %rbp
- 2746              		.cfi_def_cfa_register 6
- 2747 0004 4883EC20 		subq	$32, %rsp
- 2748 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 2749 000c 488975F0 		movq	%rsi, -16(%rbp)
- 2750 0010 488955E8 		movq	%rdx, -24(%rbp)
+ 2531              		.loc 7 116 0
+ 2532              		.cfi_startproc
+ 2533 0000 55       		pushq	%rbp
+ 2534              		.cfi_def_cfa_offset 16
+ 2535              		.cfi_offset 6, -16
+ 2536 0001 4889E5   		movq	%rsp, %rbp
+ 2537              		.cfi_def_cfa_register 6
+ 2538 0004 4883EC20 		subq	$32, %rsp
+ 2539 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 2540 000c 488975F0 		movq	%rsi, -16(%rbp)
+ 2541 0010 488955E8 		movq	%rdx, -24(%rbp)
  117:/usr/include/c++/7/ext/new_allocator.h ****       {
  118:/usr/include/c++/7/ext/new_allocator.h **** #if __cpp_aligned_new
  119:/usr/include/c++/7/ext/new_allocator.h **** 	if (alignof(_Tp) > __STDCPP_DEFAULT_NEW_ALIGNMENT__)
@@ -8571,72 +8270,72 @@
  123:/usr/include/c++/7/ext/new_allocator.h **** 	  }
  124:/usr/include/c++/7/ext/new_allocator.h **** #endif
  125:/usr/include/c++/7/ext/new_allocator.h **** 	::operator delete(__p);
- 2751              		.loc 7 125 0
- 2752 0014 488B45F0 		movq	-16(%rbp), %rax
- 2753 0018 4889C7   		movq	%rax, %rdi
- 2754 001b E8000000 		call	_ZdlPv@PLT
- 2754      00
+ 2542              		.loc 7 125 0
+ 2543 0014 488B45F0 		movq	-16(%rbp), %rax
+ 2544 0018 4889C7   		movq	%rax, %rdi
+ 2545 001b E8000000 		call	_ZdlPv@PLT
+ 2545      00
  126:/usr/include/c++/7/ext/new_allocator.h ****       }
- 2755              		.loc 7 126 0
- 2756 0020 90       		nop
- 2757 0021 C9       		leave
- 2758              		.cfi_def_cfa 7, 8
- 2759 0022 C3       		ret
- 2760              		.cfi_endproc
- 2761              	.LFE2392:
- 2763              		.section	.text._ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_,"axG",@p
- 2764              		.weak	_ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_
- 2766              	_ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_:
- 2767              	.LFB2393:
+ 2546              		.loc 7 126 0
+ 2547 0020 90       		nop
+ 2548 0021 C9       		leave
+ 2549              		.cfi_def_cfa 7, 8
+ 2550 0022 C3       		ret
+ 2551              		.cfi_endproc
+ 2552              	.LFE2392:
+ 2554              		.section	.text._ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_,"axG",@p
+ 2555              		.weak	_ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_
+ 2557              	_ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_:
+ 2558              	.LFB2393:
  543:/usr/include/c++/7/bits/stl_uninitialized.h ****         {
- 2768              		.loc 6 543 0
- 2769              		.cfi_startproc
- 2770 0000 55       		pushq	%rbp
- 2771              		.cfi_def_cfa_offset 16
- 2772              		.cfi_offset 6, -16
- 2773 0001 4889E5   		movq	%rsp, %rbp
- 2774              		.cfi_def_cfa_register 6
- 2775 0004 4883EC20 		subq	$32, %rsp
- 2776 0008 48897DE8 		movq	%rdi, -24(%rbp)
- 2777 000c 488975E0 		movq	%rsi, -32(%rbp)
+ 2559              		.loc 6 543 0
+ 2560              		.cfi_startproc
+ 2561 0000 55       		pushq	%rbp
+ 2562              		.cfi_def_cfa_offset 16
+ 2563              		.cfi_offset 6, -16
+ 2564 0001 4889E5   		movq	%rsp, %rbp
+ 2565              		.cfi_def_cfa_register 6
+ 2566 0004 4883EC20 		subq	$32, %rsp
+ 2567 0008 48897DE8 		movq	%rdi, -24(%rbp)
+ 2568 000c 488975E0 		movq	%rsi, -32(%rbp)
  543:/usr/include/c++/7/bits/stl_uninitialized.h ****         {
- 2778              		.loc 6 543 0
- 2779 0010 64488B04 		movq	%fs:40, %rax
- 2779      25280000 
- 2779      00
- 2780 0019 488945F8 		movq	%rax, -8(%rbp)
- 2781 001d 31C0     		xorl	%eax, %eax
+ 2569              		.loc 6 543 0
+ 2570 0010 64488B04 		movq	%fs:40, %rax
+ 2570      25280000 
+ 2570      00
+ 2571 0019 488945F8 		movq	%rax, -8(%rbp)
+ 2572 001d 31C0     		xorl	%eax, %eax
  548:/usr/include/c++/7/bits/stl_uninitialized.h **** 	}
- 2782              		.loc 6 548 0
- 2783 001f 660FEFC0 		pxor	%xmm0, %xmm0
- 2784 0023 F20F1145 		movsd	%xmm0, -16(%rbp)
- 2784      F0
- 2785 0028 488D55F0 		leaq	-16(%rbp), %rdx
- 2786 002c 488B4DE0 		movq	-32(%rbp), %rcx
- 2787 0030 488B45E8 		movq	-24(%rbp), %rax
- 2788 0034 4889CE   		movq	%rcx, %rsi
- 2789 0037 4889C7   		movq	%rax, %rdi
- 2790 003a E8000000 		call	_ZSt6fill_nIPdmdET_S1_T0_RKT1_
- 2790      00
+ 2573              		.loc 6 548 0
+ 2574 001f 660FEFC0 		pxor	%xmm0, %xmm0
+ 2575 0023 F20F1145 		movsd	%xmm0, -16(%rbp)
+ 2575      F0
+ 2576 0028 488D55F0 		leaq	-16(%rbp), %rdx
+ 2577 002c 488B4DE0 		movq	-32(%rbp), %rcx
+ 2578 0030 488B45E8 		movq	-24(%rbp), %rax
+ 2579 0034 4889CE   		movq	%rcx, %rsi
+ 2580 0037 4889C7   		movq	%rax, %rdi
+ 2581 003a E8000000 		call	_ZSt6fill_nIPdmdET_S1_T0_RKT1_
+ 2581      00
  549:/usr/include/c++/7/bits/stl_uninitialized.h ****     };
- 2791              		.loc 6 549 0
- 2792 003f 488B4DF8 		movq	-8(%rbp), %rcx
- 2793 0043 6448330C 		xorq	%fs:40, %rcx
- 2793      25280000 
- 2793      00
- 2794 004c 7405     		je	.L126
- 2795 004e E8000000 		call	__stack_chk_fail@PLT
- 2795      00
- 2796              	.L126:
- 2797 0053 C9       		leave
- 2798              		.cfi_def_cfa 7, 8
- 2799 0054 C3       		ret
- 2800              		.cfi_endproc
- 2801              	.LFE2393:
- 2803              		.section	.text._ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_,"axG",@progbits,_ZNSt16allocator_trai
- 2804              		.weak	_ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_
- 2806              	_ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_:
- 2807              	.LFB2394:
+ 2582              		.loc 6 549 0
+ 2583 003f 488B4DF8 		movq	-8(%rbp), %rcx
+ 2584 0043 6448330C 		xorq	%fs:40, %rcx
+ 2584      25280000 
+ 2584      00
+ 2585 004c 7405     		je	.L121
+ 2586 004e E8000000 		call	__stack_chk_fail@PLT
+ 2586      00
+ 2587              	.L121:
+ 2588 0053 C9       		leave
+ 2589              		.cfi_def_cfa 7, 8
+ 2590 0054 C3       		ret
+ 2591              		.cfi_endproc
+ 2592              	.LFE2393:
+ 2594              		.section	.text._ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_,"axG",@progbits,_ZNSt16allocator_trai
+ 2595              		.weak	_ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_
+ 2597              	_ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_:
+ 2598              	.LFB2394:
  463:/usr/include/c++/7/bits/alloc_traits.h **** 
  464:/usr/include/c++/7/bits/alloc_traits.h ****       /**
  465:/usr/include/c++/7/bits/alloc_traits.h ****        *  @brief  Construct an object of type @a _Up
@@ -8670,163 +8369,163 @@
  493:/usr/include/c++/7/bits/alloc_traits.h ****       */
  494:/usr/include/c++/7/bits/alloc_traits.h ****       static size_type
  495:/usr/include/c++/7/bits/alloc_traits.h ****       max_size(const allocator_type& __a) noexcept
- 2808              		.loc 8 495 0
- 2809              		.cfi_startproc
- 2810 0000 55       		pushq	%rbp
- 2811              		.cfi_def_cfa_offset 16
- 2812              		.cfi_offset 6, -16
- 2813 0001 4889E5   		movq	%rsp, %rbp
- 2814              		.cfi_def_cfa_register 6
- 2815 0004 4883EC10 		subq	$16, %rsp
- 2816 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 2599              		.loc 8 495 0
+ 2600              		.cfi_startproc
+ 2601 0000 55       		pushq	%rbp
+ 2602              		.cfi_def_cfa_offset 16
+ 2603              		.cfi_offset 6, -16
+ 2604 0001 4889E5   		movq	%rsp, %rbp
+ 2605              		.cfi_def_cfa_register 6
+ 2606 0004 4883EC10 		subq	$16, %rsp
+ 2607 0008 48897DF8 		movq	%rdi, -8(%rbp)
  496:/usr/include/c++/7/bits/alloc_traits.h ****       { return __a.max_size(); }
- 2817              		.loc 8 496 0
- 2818 000c 488B45F8 		movq	-8(%rbp), %rax
- 2819 0010 4889C7   		movq	%rax, %rdi
- 2820 0013 E8000000 		call	_ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv
- 2820      00
- 2821 0018 C9       		leave
- 2822              		.cfi_def_cfa 7, 8
- 2823 0019 C3       		ret
- 2824              		.cfi_endproc
- 2825              	.LFE2394:
- 2827              		.section	.text._ZNKSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv,"axG",@progbits,_ZNKSt12_Vector
- 2828              		.align 2
- 2829              		.weak	_ZNKSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
- 2831              	_ZNKSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv:
- 2832              	.LFB2395:
+ 2608              		.loc 8 496 0
+ 2609 000c 488B45F8 		movq	-8(%rbp), %rax
+ 2610 0010 4889C7   		movq	%rax, %rdi
+ 2611 0013 E8000000 		call	_ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv
+ 2611      00
+ 2612 0018 C9       		leave
+ 2613              		.cfi_def_cfa 7, 8
+ 2614 0019 C3       		ret
+ 2615              		.cfi_endproc
+ 2616              	.LFE2394:
+ 2618              		.section	.text._ZNKSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv,"axG",@progbits,_ZNKSt12_Vector
+ 2619              		.align 2
+ 2620              		.weak	_ZNKSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
+ 2622              	_ZNKSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv:
+ 2623              	.LFB2395:
  119:/usr/include/c++/7/bits/stl_vector.h ****       { return *static_cast<const _Tp_alloc_type*>(&this->_M_impl); }
- 2833              		.loc 2 119 0
- 2834              		.cfi_startproc
- 2835 0000 55       		pushq	%rbp
- 2836              		.cfi_def_cfa_offset 16
- 2837              		.cfi_offset 6, -16
- 2838 0001 4889E5   		movq	%rsp, %rbp
- 2839              		.cfi_def_cfa_register 6
- 2840 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 2624              		.loc 2 119 0
+ 2625              		.cfi_startproc
+ 2626 0000 55       		pushq	%rbp
+ 2627              		.cfi_def_cfa_offset 16
+ 2628              		.cfi_offset 6, -16
+ 2629 0001 4889E5   		movq	%rsp, %rbp
+ 2630              		.cfi_def_cfa_register 6
+ 2631 0004 48897DF8 		movq	%rdi, -8(%rbp)
  120:/usr/include/c++/7/bits/stl_vector.h **** 
- 2841              		.loc 2 120 0
- 2842 0008 488B45F8 		movq	-8(%rbp), %rax
- 2843 000c 5D       		popq	%rbp
- 2844              		.cfi_def_cfa 7, 8
- 2845 000d C3       		ret
- 2846              		.cfi_endproc
- 2847              	.LFE2395:
- 2849              		.section	.text._ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv,"axG",@progbits,_ZN9__gnu_cxx13new_al
- 2850              		.align 2
- 2851              		.weak	_ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv
- 2853              	_ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv:
- 2854              	.LFB2396:
+ 2632              		.loc 2 120 0
+ 2633 0008 488B45F8 		movq	-8(%rbp), %rax
+ 2634 000c 5D       		popq	%rbp
+ 2635              		.cfi_def_cfa 7, 8
+ 2636 000d C3       		ret
+ 2637              		.cfi_endproc
+ 2638              	.LFE2395:
+ 2640              		.section	.text._ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv,"axG",@progbits,_ZN9__gnu_cxx13new_al
+ 2641              		.align 2
+ 2642              		.weak	_ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv
+ 2644              	_ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv:
+ 2645              	.LFB2396:
   99:/usr/include/c++/7/ext/new_allocator.h ****       {
- 2855              		.loc 7 99 0
- 2856              		.cfi_startproc
- 2857 0000 55       		pushq	%rbp
- 2858              		.cfi_def_cfa_offset 16
- 2859              		.cfi_offset 6, -16
- 2860 0001 4889E5   		movq	%rsp, %rbp
- 2861              		.cfi_def_cfa_register 6
- 2862 0004 4883EC20 		subq	$32, %rsp
- 2863 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 2864 000c 488975F0 		movq	%rsi, -16(%rbp)
- 2865 0010 488955E8 		movq	%rdx, -24(%rbp)
+ 2646              		.loc 7 99 0
+ 2647              		.cfi_startproc
+ 2648 0000 55       		pushq	%rbp
+ 2649              		.cfi_def_cfa_offset 16
+ 2650              		.cfi_offset 6, -16
+ 2651 0001 4889E5   		movq	%rsp, %rbp
+ 2652              		.cfi_def_cfa_register 6
+ 2653 0004 4883EC20 		subq	$32, %rsp
+ 2654 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 2655 000c 488975F0 		movq	%rsi, -16(%rbp)
+ 2656 0010 488955E8 		movq	%rdx, -24(%rbp)
  101:/usr/include/c++/7/ext/new_allocator.h **** 	  std::__throw_bad_alloc();
- 2866              		.loc 7 101 0
- 2867 0014 488B45F8 		movq	-8(%rbp), %rax
- 2868 0018 4889C7   		movq	%rax, %rdi
- 2869 001b E8000000 		call	_ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv
- 2869      00
- 2870 0020 483945F0 		cmpq	%rax, -16(%rbp)
- 2871 0024 0F97C0   		seta	%al
- 2872 0027 84C0     		testb	%al, %al
- 2873 0029 7405     		je	.L132
+ 2657              		.loc 7 101 0
+ 2658 0014 488B45F8 		movq	-8(%rbp), %rax
+ 2659 0018 4889C7   		movq	%rax, %rdi
+ 2660 001b E8000000 		call	_ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv
+ 2660      00
+ 2661 0020 483945F0 		cmpq	%rax, -16(%rbp)
+ 2662 0024 0F97C0   		seta	%al
+ 2663 0027 84C0     		testb	%al, %al
+ 2664 0029 7405     		je	.L127
  102:/usr/include/c++/7/ext/new_allocator.h **** 
- 2874              		.loc 7 102 0
- 2875 002b E8000000 		call	_ZSt17__throw_bad_allocv@PLT
- 2875      00
- 2876              	.L132:
+ 2665              		.loc 7 102 0
+ 2666 002b E8000000 		call	_ZSt17__throw_bad_allocv@PLT
+ 2666      00
+ 2667              	.L127:
  111:/usr/include/c++/7/ext/new_allocator.h ****       }
- 2877              		.loc 7 111 0
- 2878 0030 488B45F0 		movq	-16(%rbp), %rax
- 2879 0034 48C1E003 		salq	$3, %rax
- 2880 0038 4889C7   		movq	%rax, %rdi
- 2881 003b E8000000 		call	_Znwm@PLT
- 2881      00
+ 2668              		.loc 7 111 0
+ 2669 0030 488B45F0 		movq	-16(%rbp), %rax
+ 2670 0034 48C1E003 		salq	$3, %rax
+ 2671 0038 4889C7   		movq	%rax, %rdi
+ 2672 003b E8000000 		call	_Znwm@PLT
+ 2672      00
  112:/usr/include/c++/7/ext/new_allocator.h **** 
- 2882              		.loc 7 112 0
- 2883 0040 C9       		leave
- 2884              		.cfi_def_cfa 7, 8
- 2885 0041 C3       		ret
- 2886              		.cfi_endproc
- 2887              	.LFE2396:
- 2889              		.section	.text._ZNSt13move_iteratorIPdEC2ES0_,"axG",@progbits,_ZNSt13move_iteratorIPdEC5ES0_,comda
- 2890              		.align 2
- 2891              		.weak	_ZNSt13move_iteratorIPdEC2ES0_
- 2893              	_ZNSt13move_iteratorIPdEC2ES0_:
- 2894              	.LFB2398:
+ 2673              		.loc 7 112 0
+ 2674 0040 C9       		leave
+ 2675              		.cfi_def_cfa 7, 8
+ 2676 0041 C3       		ret
+ 2677              		.cfi_endproc
+ 2678              	.LFE2396:
+ 2680              		.section	.text._ZNSt13move_iteratorIPdEC2ES0_,"axG",@progbits,_ZNSt13move_iteratorIPdEC5ES0_,comda
+ 2681              		.align 2
+ 2682              		.weak	_ZNSt13move_iteratorIPdEC2ES0_
+ 2684              	_ZNSt13move_iteratorIPdEC2ES0_:
+ 2685              	.LFB2398:
 1036:/usr/include/c++/7/bits/stl_iterator.h ****       : _M_current(__i) { }
- 2895              		.loc 10 1036 0
- 2896              		.cfi_startproc
- 2897 0000 55       		pushq	%rbp
- 2898              		.cfi_def_cfa_offset 16
- 2899              		.cfi_offset 6, -16
- 2900 0001 4889E5   		movq	%rsp, %rbp
- 2901              		.cfi_def_cfa_register 6
- 2902 0004 48897DF8 		movq	%rdi, -8(%rbp)
- 2903 0008 488975F0 		movq	%rsi, -16(%rbp)
- 2904              	.LBB39:
+ 2686              		.loc 10 1036 0
+ 2687              		.cfi_startproc
+ 2688 0000 55       		pushq	%rbp
+ 2689              		.cfi_def_cfa_offset 16
+ 2690              		.cfi_offset 6, -16
+ 2691 0001 4889E5   		movq	%rsp, %rbp
+ 2692              		.cfi_def_cfa_register 6
+ 2693 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 2694 0008 488975F0 		movq	%rsi, -16(%rbp)
+ 2695              	.LBB38:
 1037:/usr/include/c++/7/bits/stl_iterator.h **** 
- 2905              		.loc 10 1037 0
- 2906 000c 488B45F8 		movq	-8(%rbp), %rax
- 2907 0010 488B55F0 		movq	-16(%rbp), %rdx
- 2908 0014 488910   		movq	%rdx, (%rax)
- 2909              	.LBE39:
- 2910 0017 90       		nop
- 2911 0018 5D       		popq	%rbp
- 2912              		.cfi_def_cfa 7, 8
- 2913 0019 C3       		ret
- 2914              		.cfi_endproc
- 2915              	.LFE2398:
- 2917              		.weak	_ZNSt13move_iteratorIPdEC1ES0_
- 2918              		.set	_ZNSt13move_iteratorIPdEC1ES0_,_ZNSt13move_iteratorIPdEC2ES0_
- 2919              		.section	.text._ZSt18uninitialized_copyISt13move_iteratorIPdES1_ET0_T_S4_S3_,"axG",@progbits,_ZSt1
- 2920              		.weak	_ZSt18uninitialized_copyISt13move_iteratorIPdES1_ET0_T_S4_S3_
- 2922              	_ZSt18uninitialized_copyISt13move_iteratorIPdES1_ET0_T_S4_S3_:
- 2923              	.LFB2400:
+ 2696              		.loc 10 1037 0
+ 2697 000c 488B45F8 		movq	-8(%rbp), %rax
+ 2698 0010 488B55F0 		movq	-16(%rbp), %rdx
+ 2699 0014 488910   		movq	%rdx, (%rax)
+ 2700              	.LBE38:
+ 2701 0017 90       		nop
+ 2702 0018 5D       		popq	%rbp
+ 2703              		.cfi_def_cfa 7, 8
+ 2704 0019 C3       		ret
+ 2705              		.cfi_endproc
+ 2706              	.LFE2398:
+ 2708              		.weak	_ZNSt13move_iteratorIPdEC1ES0_
+ 2709              		.set	_ZNSt13move_iteratorIPdEC1ES0_,_ZNSt13move_iteratorIPdEC2ES0_
+ 2710              		.section	.text._ZSt18uninitialized_copyISt13move_iteratorIPdES1_ET0_T_S4_S3_,"axG",@progbits,_ZSt1
+ 2711              		.weak	_ZSt18uninitialized_copyISt13move_iteratorIPdES1_ET0_T_S4_S3_
+ 2713              	_ZSt18uninitialized_copyISt13move_iteratorIPdES1_ET0_T_S4_S3_:
+ 2714              	.LFB2400:
  115:/usr/include/c++/7/bits/stl_uninitialized.h **** 		       _ForwardIterator __result)
- 2924              		.loc 6 115 0
- 2925              		.cfi_startproc
- 2926 0000 55       		pushq	%rbp
- 2927              		.cfi_def_cfa_offset 16
- 2928              		.cfi_offset 6, -16
- 2929 0001 4889E5   		movq	%rsp, %rbp
- 2930              		.cfi_def_cfa_register 6
- 2931 0004 4883EC30 		subq	$48, %rsp
- 2932 0008 48897DE8 		movq	%rdi, -24(%rbp)
- 2933 000c 488975E0 		movq	%rsi, -32(%rbp)
- 2934 0010 488955D8 		movq	%rdx, -40(%rbp)
+ 2715              		.loc 6 115 0
+ 2716              		.cfi_startproc
+ 2717 0000 55       		pushq	%rbp
+ 2718              		.cfi_def_cfa_offset 16
+ 2719              		.cfi_offset 6, -16
+ 2720 0001 4889E5   		movq	%rsp, %rbp
+ 2721              		.cfi_def_cfa_register 6
+ 2722 0004 4883EC30 		subq	$48, %rsp
+ 2723 0008 48897DE8 		movq	%rdi, -24(%rbp)
+ 2724 000c 488975E0 		movq	%rsi, -32(%rbp)
+ 2725 0010 488955D8 		movq	%rdx, -40(%rbp)
  128:/usr/include/c++/7/bits/stl_uninitialized.h **** #endif
- 2935              		.loc 6 128 0
- 2936 0014 C645FF01 		movb	$1, -1(%rbp)
+ 2726              		.loc 6 128 0
+ 2727 0014 C645FF01 		movb	$1, -1(%rbp)
  134:/usr/include/c++/7/bits/stl_uninitialized.h ****     }
- 2937              		.loc 6 134 0
- 2938 0018 488B55D8 		movq	-40(%rbp), %rdx
- 2939 001c 488B4DE0 		movq	-32(%rbp), %rcx
- 2940 0020 488B45E8 		movq	-24(%rbp), %rax
- 2941 0024 4889CE   		movq	%rcx, %rsi
- 2942 0027 4889C7   		movq	%rax, %rdi
- 2943 002a E8000000 		call	_ZNSt20__uninitialized_copyILb1EE13__uninit_copyISt13move_iteratorIPdES3_EET0_T_S6_S5_
- 2943      00
+ 2728              		.loc 6 134 0
+ 2729 0018 488B55D8 		movq	-40(%rbp), %rdx
+ 2730 001c 488B4DE0 		movq	-32(%rbp), %rcx
+ 2731 0020 488B45E8 		movq	-24(%rbp), %rax
+ 2732 0024 4889CE   		movq	%rcx, %rsi
+ 2733 0027 4889C7   		movq	%rax, %rdi
+ 2734 002a E8000000 		call	_ZNSt20__uninitialized_copyILb1EE13__uninit_copyISt13move_iteratorIPdES3_EET0_T_S6_S5_
+ 2734      00
  135:/usr/include/c++/7/bits/stl_uninitialized.h **** 
- 2944              		.loc 6 135 0
- 2945 002f C9       		leave
- 2946              		.cfi_def_cfa 7, 8
- 2947 0030 C3       		ret
- 2948              		.cfi_endproc
- 2949              	.LFE2400:
- 2951              		.section	.text._ZSt6fill_nIPdmdET_S1_T0_RKT1_,"axG",@progbits,_ZSt6fill_nIPdmdET_S1_T0_RKT1_,comda
- 2952              		.weak	_ZSt6fill_nIPdmdET_S1_T0_RKT1_
- 2954              	_ZSt6fill_nIPdmdET_S1_T0_RKT1_:
- 2955              	.LFB2425:
+ 2735              		.loc 6 135 0
+ 2736 002f C9       		leave
+ 2737              		.cfi_def_cfa 7, 8
+ 2738 0030 C3       		ret
+ 2739              		.cfi_endproc
+ 2740              	.LFE2400:
+ 2742              		.section	.text._ZSt6fill_nIPdmdET_S1_T0_RKT1_,"axG",@progbits,_ZSt6fill_nIPdmdET_S1_T0_RKT1_,comda
+ 2743              		.weak	_ZSt6fill_nIPdmdET_S1_T0_RKT1_
+ 2745              	_ZSt6fill_nIPdmdET_S1_T0_RKT1_:
+ 2746              	.LFB2425:
  228:/usr/include/c++/7/bits/stl_algobase.h **** 
  229:/usr/include/c++/7/bits/stl_algobase.h ****   /**
  230:/usr/include/c++/7/bits/stl_algobase.h ****    *  @brief This does what you think it does.
@@ -9384,226 +9083,226 @@
  782:/usr/include/c++/7/bits/stl_algobase.h ****   template<typename _OI, typename _Size, typename _Tp>
  783:/usr/include/c++/7/bits/stl_algobase.h ****     inline _OI
  784:/usr/include/c++/7/bits/stl_algobase.h ****     fill_n(_OI __first, _Size __n, const _Tp& __value)
- 2956              		.loc 9 784 0
- 2957              		.cfi_startproc
- 2958 0000 55       		pushq	%rbp
- 2959              		.cfi_def_cfa_offset 16
- 2960              		.cfi_offset 6, -16
- 2961 0001 4889E5   		movq	%rsp, %rbp
- 2962              		.cfi_def_cfa_register 6
- 2963 0004 4883EC20 		subq	$32, %rsp
- 2964 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 2965 000c 488975F0 		movq	%rsi, -16(%rbp)
- 2966 0010 488955E8 		movq	%rdx, -24(%rbp)
+ 2747              		.loc 9 784 0
+ 2748              		.cfi_startproc
+ 2749 0000 55       		pushq	%rbp
+ 2750              		.cfi_def_cfa_offset 16
+ 2751              		.cfi_offset 6, -16
+ 2752 0001 4889E5   		movq	%rsp, %rbp
+ 2753              		.cfi_def_cfa_register 6
+ 2754 0004 4883EC20 		subq	$32, %rsp
+ 2755 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 2756 000c 488975F0 		movq	%rsi, -16(%rbp)
+ 2757 0010 488955E8 		movq	%rdx, -24(%rbp)
  785:/usr/include/c++/7/bits/stl_algobase.h ****     {
  786:/usr/include/c++/7/bits/stl_algobase.h ****       // concept requirements
  787:/usr/include/c++/7/bits/stl_algobase.h ****       __glibcxx_function_requires(_OutputIteratorConcept<_OI, _Tp>)
  788:/usr/include/c++/7/bits/stl_algobase.h **** 
  789:/usr/include/c++/7/bits/stl_algobase.h ****       return _OI(std::__fill_n_a(std::__niter_base(__first), __n, __value));
- 2967              		.loc 9 789 0
- 2968 0014 488B45F8 		movq	-8(%rbp), %rax
- 2969 0018 4889C7   		movq	%rax, %rdi
- 2970 001b E8000000 		call	_ZSt12__niter_baseIPdET_S1_
- 2970      00
- 2971 0020 4889C1   		movq	%rax, %rcx
- 2972 0023 488B55E8 		movq	-24(%rbp), %rdx
- 2973 0027 488B45F0 		movq	-16(%rbp), %rax
- 2974 002b 4889C6   		movq	%rax, %rsi
- 2975 002e 4889CF   		movq	%rcx, %rdi
- 2976 0031 E8000000 		call	_ZSt10__fill_n_aIPdmdEN9__gnu_cxx11__enable_ifIXsrSt11__is_scalarIT1_E7__valueET_E6__typeES6_
- 2976      00
+ 2758              		.loc 9 789 0
+ 2759 0014 488B45F8 		movq	-8(%rbp), %rax
+ 2760 0018 4889C7   		movq	%rax, %rdi
+ 2761 001b E8000000 		call	_ZSt12__niter_baseIPdET_S1_
+ 2761      00
+ 2762 0020 4889C1   		movq	%rax, %rcx
+ 2763 0023 488B55E8 		movq	-24(%rbp), %rdx
+ 2764 0027 488B45F0 		movq	-16(%rbp), %rax
+ 2765 002b 4889C6   		movq	%rax, %rsi
+ 2766 002e 4889CF   		movq	%rcx, %rdi
+ 2767 0031 E8000000 		call	_ZSt10__fill_n_aIPdmdEN9__gnu_cxx11__enable_ifIXsrSt11__is_scalarIT1_E7__valueET_E6__typeES6_
+ 2767      00
  790:/usr/include/c++/7/bits/stl_algobase.h ****     }
- 2977              		.loc 9 790 0
- 2978 0036 C9       		leave
- 2979              		.cfi_def_cfa 7, 8
- 2980 0037 C3       		ret
- 2981              		.cfi_endproc
- 2982              	.LFE2425:
- 2984              		.section	.text._ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv,"axG",@progbits,_ZNK9__gnu_cxx13new_all
- 2985              		.align 2
- 2986              		.weak	_ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv
- 2988              	_ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv:
- 2989              	.LFB2426:
+ 2768              		.loc 9 790 0
+ 2769 0036 C9       		leave
+ 2770              		.cfi_def_cfa 7, 8
+ 2771 0037 C3       		ret
+ 2772              		.cfi_endproc
+ 2773              	.LFE2425:
+ 2775              		.section	.text._ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv,"axG",@progbits,_ZNK9__gnu_cxx13new_all
+ 2776              		.align 2
+ 2777              		.weak	_ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv
+ 2779              	_ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv:
+ 2780              	.LFB2426:
  127:/usr/include/c++/7/ext/new_allocator.h **** 
  128:/usr/include/c++/7/ext/new_allocator.h ****       size_type
  129:/usr/include/c++/7/ext/new_allocator.h ****       max_size() const _GLIBCXX_USE_NOEXCEPT
- 2990              		.loc 7 129 0
- 2991              		.cfi_startproc
- 2992 0000 55       		pushq	%rbp
- 2993              		.cfi_def_cfa_offset 16
- 2994              		.cfi_offset 6, -16
- 2995 0001 4889E5   		movq	%rsp, %rbp
- 2996              		.cfi_def_cfa_register 6
- 2997 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 2781              		.loc 7 129 0
+ 2782              		.cfi_startproc
+ 2783 0000 55       		pushq	%rbp
+ 2784              		.cfi_def_cfa_offset 16
+ 2785              		.cfi_offset 6, -16
+ 2786 0001 4889E5   		movq	%rsp, %rbp
+ 2787              		.cfi_def_cfa_register 6
+ 2788 0004 48897DF8 		movq	%rdi, -8(%rbp)
  130:/usr/include/c++/7/ext/new_allocator.h ****       { return size_t(-1) / sizeof(_Tp); }
- 2998              		.loc 7 130 0
- 2999 0008 48B8FFFF 		movabsq	$2305843009213693951, %rax
- 2999      FFFFFFFF 
- 2999      FF1F
- 3000 0012 5D       		popq	%rbp
- 3001              		.cfi_def_cfa 7, 8
- 3002 0013 C3       		ret
- 3003              		.cfi_endproc
- 3004              	.LFE2426:
- 3006              		.section	.text._ZNSt20__uninitialized_copyILb1EE13__uninit_copyISt13move_iteratorIPdES3_EET0_T_S6_
- 3007              		.weak	_ZNSt20__uninitialized_copyILb1EE13__uninit_copyISt13move_iteratorIPdES3_EET0_T_S6_S5_
- 3009              	_ZNSt20__uninitialized_copyILb1EE13__uninit_copyISt13move_iteratorIPdES3_EET0_T_S6_S5_:
- 3010              	.LFB2427:
+ 2789              		.loc 7 130 0
+ 2790 0008 48B8FFFF 		movabsq	$2305843009213693951, %rax
+ 2790      FFFFFFFF 
+ 2790      FF1F
+ 2791 0012 5D       		popq	%rbp
+ 2792              		.cfi_def_cfa 7, 8
+ 2793 0013 C3       		ret
+ 2794              		.cfi_endproc
+ 2795              	.LFE2426:
+ 2797              		.section	.text._ZNSt20__uninitialized_copyILb1EE13__uninit_copyISt13move_iteratorIPdES3_EET0_T_S6_
+ 2798              		.weak	_ZNSt20__uninitialized_copyILb1EE13__uninit_copyISt13move_iteratorIPdES3_EET0_T_S6_S5_
+ 2800              	_ZNSt20__uninitialized_copyILb1EE13__uninit_copyISt13move_iteratorIPdES3_EET0_T_S6_S5_:
+ 2801              	.LFB2427:
   99:/usr/include/c++/7/bits/stl_uninitialized.h **** 		      _ForwardIterator __result)
- 3011              		.loc 6 99 0
- 3012              		.cfi_startproc
- 3013 0000 55       		pushq	%rbp
- 3014              		.cfi_def_cfa_offset 16
- 3015              		.cfi_offset 6, -16
- 3016 0001 4889E5   		movq	%rsp, %rbp
- 3017              		.cfi_def_cfa_register 6
- 3018 0004 4883EC20 		subq	$32, %rsp
- 3019 0008 48897DF8 		movq	%rdi, -8(%rbp)
- 3020 000c 488975F0 		movq	%rsi, -16(%rbp)
- 3021 0010 488955E8 		movq	%rdx, -24(%rbp)
+ 2802              		.loc 6 99 0
+ 2803              		.cfi_startproc
+ 2804 0000 55       		pushq	%rbp
+ 2805              		.cfi_def_cfa_offset 16
+ 2806              		.cfi_offset 6, -16
+ 2807 0001 4889E5   		movq	%rsp, %rbp
+ 2808              		.cfi_def_cfa_register 6
+ 2809 0004 4883EC20 		subq	$32, %rsp
+ 2810 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 2811 000c 488975F0 		movq	%rsi, -16(%rbp)
+ 2812 0010 488955E8 		movq	%rdx, -24(%rbp)
  101:/usr/include/c++/7/bits/stl_uninitialized.h ****     };
- 3022              		.loc 6 101 0
- 3023 0014 488B55E8 		movq	-24(%rbp), %rdx
- 3024 0018 488B4DF0 		movq	-16(%rbp), %rcx
- 3025 001c 488B45F8 		movq	-8(%rbp), %rax
- 3026 0020 4889CE   		movq	%rcx, %rsi
- 3027 0023 4889C7   		movq	%rax, %rdi
- 3028 0026 E8000000 		call	_ZSt4copyISt13move_iteratorIPdES1_ET0_T_S4_S3_
- 3028      00
- 3029 002b C9       		leave
- 3030              		.cfi_def_cfa 7, 8
- 3031 002c C3       		ret
- 3032              		.cfi_endproc
- 3033              	.LFE2427:
- 3035              		.section	.text._ZSt12__niter_baseIPdET_S1_,"axG",@progbits,_ZSt12__niter_baseIPdET_S1_,comdat
- 3036              		.weak	_ZSt12__niter_baseIPdET_S1_
- 3038              	_ZSt12__niter_baseIPdET_S1_:
- 3039              	.LFB2436:
+ 2813              		.loc 6 101 0
+ 2814 0014 488B55E8 		movq	-24(%rbp), %rdx
+ 2815 0018 488B4DF0 		movq	-16(%rbp), %rcx
+ 2816 001c 488B45F8 		movq	-8(%rbp), %rax
+ 2817 0020 4889CE   		movq	%rcx, %rsi
+ 2818 0023 4889C7   		movq	%rax, %rdi
+ 2819 0026 E8000000 		call	_ZSt4copyISt13move_iteratorIPdES1_ET0_T_S4_S3_
+ 2819      00
+ 2820 002b C9       		leave
+ 2821              		.cfi_def_cfa 7, 8
+ 2822 002c C3       		ret
+ 2823              		.cfi_endproc
+ 2824              	.LFE2427:
+ 2826              		.section	.text._ZSt12__niter_baseIPdET_S1_,"axG",@progbits,_ZSt12__niter_baseIPdET_S1_,comdat
+ 2827              		.weak	_ZSt12__niter_baseIPdET_S1_
+ 2829              	_ZSt12__niter_baseIPdET_S1_:
+ 2830              	.LFB2436:
  277:/usr/include/c++/7/bits/stl_algobase.h ****     { return __it; }
- 3040              		.loc 9 277 0
- 3041              		.cfi_startproc
- 3042 0000 55       		pushq	%rbp
- 3043              		.cfi_def_cfa_offset 16
- 3044              		.cfi_offset 6, -16
- 3045 0001 4889E5   		movq	%rsp, %rbp
- 3046              		.cfi_def_cfa_register 6
- 3047 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 2831              		.loc 9 277 0
+ 2832              		.cfi_startproc
+ 2833 0000 55       		pushq	%rbp
+ 2834              		.cfi_def_cfa_offset 16
+ 2835              		.cfi_offset 6, -16
+ 2836 0001 4889E5   		movq	%rsp, %rbp
+ 2837              		.cfi_def_cfa_register 6
+ 2838 0004 48897DF8 		movq	%rdi, -8(%rbp)
  278:/usr/include/c++/7/bits/stl_algobase.h **** 
- 3048              		.loc 9 278 0
- 3049 0008 488B45F8 		movq	-8(%rbp), %rax
- 3050 000c 5D       		popq	%rbp
- 3051              		.cfi_def_cfa 7, 8
- 3052 000d C3       		ret
- 3053              		.cfi_endproc
- 3054              	.LFE2436:
- 3056              		.section	.text._ZSt10__fill_n_aIPdmdEN9__gnu_cxx11__enable_ifIXsrSt11__is_scalarIT1_E7__valueET_E6
- 3057              		.weak	_ZSt10__fill_n_aIPdmdEN9__gnu_cxx11__enable_ifIXsrSt11__is_scalarIT1_E7__valueET_E6__typeES6
- 3059              	_ZSt10__fill_n_aIPdmdEN9__gnu_cxx11__enable_ifIXsrSt11__is_scalarIT1_E7__valueET_E6__typeES6_T0_RKS
- 3060              	.LFB2437:
+ 2839              		.loc 9 278 0
+ 2840 0008 488B45F8 		movq	-8(%rbp), %rax
+ 2841 000c 5D       		popq	%rbp
+ 2842              		.cfi_def_cfa 7, 8
+ 2843 000d C3       		ret
+ 2844              		.cfi_endproc
+ 2845              	.LFE2436:
+ 2847              		.section	.text._ZSt10__fill_n_aIPdmdEN9__gnu_cxx11__enable_ifIXsrSt11__is_scalarIT1_E7__valueET_E6
+ 2848              		.weak	_ZSt10__fill_n_aIPdmdEN9__gnu_cxx11__enable_ifIXsrSt11__is_scalarIT1_E7__valueET_E6__typeES6
+ 2850              	_ZSt10__fill_n_aIPdmdEN9__gnu_cxx11__enable_ifIXsrSt11__is_scalarIT1_E7__valueET_E6__typeES6_T0_RKS
+ 2851              	.LFB2437:
  749:/usr/include/c++/7/bits/stl_algobase.h ****     {
- 3061              		.loc 9 749 0
- 3062              		.cfi_startproc
- 3063 0000 55       		pushq	%rbp
- 3064              		.cfi_def_cfa_offset 16
- 3065              		.cfi_offset 6, -16
- 3066 0001 4889E5   		movq	%rsp, %rbp
- 3067              		.cfi_def_cfa_register 6
- 3068 0004 48897DE8 		movq	%rdi, -24(%rbp)
- 3069 0008 488975E0 		movq	%rsi, -32(%rbp)
- 3070 000c 488955D8 		movq	%rdx, -40(%rbp)
+ 2852              		.loc 9 749 0
+ 2853              		.cfi_startproc
+ 2854 0000 55       		pushq	%rbp
+ 2855              		.cfi_def_cfa_offset 16
+ 2856              		.cfi_offset 6, -16
+ 2857 0001 4889E5   		movq	%rsp, %rbp
+ 2858              		.cfi_def_cfa_register 6
+ 2859 0004 48897DE8 		movq	%rdi, -24(%rbp)
+ 2860 0008 488975E0 		movq	%rsi, -32(%rbp)
+ 2861 000c 488955D8 		movq	%rdx, -40(%rbp)
  751:/usr/include/c++/7/bits/stl_algobase.h ****       for (__decltype(__n + 0) __niter = __n;
- 3071              		.loc 9 751 0
- 3072 0010 488B45D8 		movq	-40(%rbp), %rax
- 3073 0014 F20F1000 		movsd	(%rax), %xmm0
- 3074 0018 F20F1145 		movsd	%xmm0, -8(%rbp)
- 3074      F8
- 3075              	.LBB40:
+ 2862              		.loc 9 751 0
+ 2863 0010 488B45D8 		movq	-40(%rbp), %rax
+ 2864 0014 F20F1000 		movsd	(%rax), %xmm0
+ 2865 0018 F20F1145 		movsd	%xmm0, -8(%rbp)
+ 2865      F8
+ 2866              	.LBB39:
  752:/usr/include/c++/7/bits/stl_algobase.h **** 	   __niter > 0; --__niter, ++__first)
- 3076              		.loc 9 752 0
- 3077 001d 488B45E0 		movq	-32(%rbp), %rax
- 3078 0021 488945F0 		movq	%rax, -16(%rbp)
- 3079              	.L147:
+ 2867              		.loc 9 752 0
+ 2868 001d 488B45E0 		movq	-32(%rbp), %rax
+ 2869 0021 488945F0 		movq	%rax, -16(%rbp)
+ 2870              	.L142:
  753:/usr/include/c++/7/bits/stl_algobase.h **** 	*__first = __tmp;
- 3080              		.loc 9 753 0
- 3081 0025 48837DF0 		cmpq	$0, -16(%rbp)
- 3081      00
- 3082 002a 7419     		je	.L146
+ 2871              		.loc 9 753 0
+ 2872 0025 48837DF0 		cmpq	$0, -16(%rbp)
+ 2872      00
+ 2873 002a 7419     		je	.L141
  754:/usr/include/c++/7/bits/stl_algobase.h ****       return __first;
- 3083              		.loc 9 754 0
- 3084 002c 488B45E8 		movq	-24(%rbp), %rax
- 3085 0030 F20F1045 		movsd	-8(%rbp), %xmm0
- 3085      F8
- 3086 0035 F20F1100 		movsd	%xmm0, (%rax)
+ 2874              		.loc 9 754 0
+ 2875 002c 488B45E8 		movq	-24(%rbp), %rax
+ 2876 0030 F20F1045 		movsd	-8(%rbp), %xmm0
+ 2876      F8
+ 2877 0035 F20F1100 		movsd	%xmm0, (%rax)
  752:/usr/include/c++/7/bits/stl_algobase.h **** 	   __niter > 0; --__niter, ++__first)
- 3087              		.loc 9 752 0
- 3088 0039 48836DF0 		subq	$1, -16(%rbp)
- 3088      01
- 3089 003e 488345E8 		addq	$8, -24(%rbp)
- 3089      08
- 3090 0043 EBE0     		jmp	.L147
- 3091              	.L146:
- 3092              	.LBE40:
+ 2878              		.loc 9 752 0
+ 2879 0039 48836DF0 		subq	$1, -16(%rbp)
+ 2879      01
+ 2880 003e 488345E8 		addq	$8, -24(%rbp)
+ 2880      08
+ 2881 0043 EBE0     		jmp	.L142
+ 2882              	.L141:
+ 2883              	.LBE39:
  755:/usr/include/c++/7/bits/stl_algobase.h ****     }
- 3093              		.loc 9 755 0
- 3094 0045 488B45E8 		movq	-24(%rbp), %rax
+ 2884              		.loc 9 755 0
+ 2885 0045 488B45E8 		movq	-24(%rbp), %rax
  756:/usr/include/c++/7/bits/stl_algobase.h **** 
- 3095              		.loc 9 756 0
- 3096 0049 5D       		popq	%rbp
- 3097              		.cfi_def_cfa 7, 8
- 3098 004a C3       		ret
- 3099              		.cfi_endproc
- 3100              	.LFE2437:
- 3102              		.section	.text._ZSt4copyISt13move_iteratorIPdES1_ET0_T_S4_S3_,"axG",@progbits,_ZSt4copyISt13move_i
- 3103              		.weak	_ZSt4copyISt13move_iteratorIPdES1_ET0_T_S4_S3_
- 3105              	_ZSt4copyISt13move_iteratorIPdES1_ET0_T_S4_S3_:
- 3106              	.LFB2438:
+ 2886              		.loc 9 756 0
+ 2887 0049 5D       		popq	%rbp
+ 2888              		.cfi_def_cfa 7, 8
+ 2889 004a C3       		ret
+ 2890              		.cfi_endproc
+ 2891              	.LFE2437:
+ 2893              		.section	.text._ZSt4copyISt13move_iteratorIPdES1_ET0_T_S4_S3_,"axG",@progbits,_ZSt4copyISt13move_i
+ 2894              		.weak	_ZSt4copyISt13move_iteratorIPdES1_ET0_T_S4_S3_
+ 2896              	_ZSt4copyISt13move_iteratorIPdES1_ET0_T_S4_S3_:
+ 2897              	.LFB2438:
  446:/usr/include/c++/7/bits/stl_algobase.h ****     {
- 3107              		.loc 9 446 0
- 3108              		.cfi_startproc
- 3109 0000 55       		pushq	%rbp
- 3110              		.cfi_def_cfa_offset 16
- 3111              		.cfi_offset 6, -16
- 3112 0001 4889E5   		movq	%rsp, %rbp
- 3113              		.cfi_def_cfa_register 6
- 3114 0004 53       		pushq	%rbx
- 3115 0005 4883EC28 		subq	$40, %rsp
- 3116              		.cfi_offset 3, -24
- 3117 0009 48897DE8 		movq	%rdi, -24(%rbp)
- 3118 000d 488975E0 		movq	%rsi, -32(%rbp)
- 3119 0011 488955D8 		movq	%rdx, -40(%rbp)
+ 2898              		.loc 9 446 0
+ 2899              		.cfi_startproc
+ 2900 0000 55       		pushq	%rbp
+ 2901              		.cfi_def_cfa_offset 16
+ 2902              		.cfi_offset 6, -16
+ 2903 0001 4889E5   		movq	%rsp, %rbp
+ 2904              		.cfi_def_cfa_register 6
+ 2905 0004 53       		pushq	%rbx
+ 2906 0005 4883EC28 		subq	$40, %rsp
+ 2907              		.cfi_offset 3, -24
+ 2908 0009 48897DE8 		movq	%rdi, -24(%rbp)
+ 2909 000d 488975E0 		movq	%rsi, -32(%rbp)
+ 2910 0011 488955D8 		movq	%rdx, -40(%rbp)
  455:/usr/include/c++/7/bits/stl_algobase.h **** 	       __result));
- 3120              		.loc 9 455 0
- 3121 0015 488B45E0 		movq	-32(%rbp), %rax
- 3122 0019 4889C7   		movq	%rax, %rdi
- 3123 001c E8000000 		call	_ZSt12__miter_baseIPdEDTcl12__miter_basecldtfp_4baseEEESt13move_iteratorIT_E
- 3123      00
- 3124 0021 4889C3   		movq	%rax, %rbx
- 3125 0024 488B45E8 		movq	-24(%rbp), %rax
- 3126 0028 4889C7   		movq	%rax, %rdi
- 3127 002b E8000000 		call	_ZSt12__miter_baseIPdEDTcl12__miter_basecldtfp_4baseEEESt13move_iteratorIT_E
- 3127      00
- 3128 0030 4889C1   		movq	%rax, %rcx
+ 2911              		.loc 9 455 0
+ 2912 0015 488B45E0 		movq	-32(%rbp), %rax
+ 2913 0019 4889C7   		movq	%rax, %rdi
+ 2914 001c E8000000 		call	_ZSt12__miter_baseIPdEDTcl12__miter_basecldtfp_4baseEEESt13move_iteratorIT_E
+ 2914      00
+ 2915 0021 4889C3   		movq	%rax, %rbx
+ 2916 0024 488B45E8 		movq	-24(%rbp), %rax
+ 2917 0028 4889C7   		movq	%rax, %rdi
+ 2918 002b E8000000 		call	_ZSt12__miter_baseIPdEDTcl12__miter_basecldtfp_4baseEEESt13move_iteratorIT_E
+ 2918      00
+ 2919 0030 4889C1   		movq	%rax, %rcx
  456:/usr/include/c++/7/bits/stl_algobase.h ****     }
- 3129              		.loc 9 456 0
- 3130 0033 488B45D8 		movq	-40(%rbp), %rax
- 3131 0037 4889C2   		movq	%rax, %rdx
- 3132 003a 4889DE   		movq	%rbx, %rsi
- 3133 003d 4889CF   		movq	%rcx, %rdi
- 3134 0040 E8000000 		call	_ZSt14__copy_move_a2ILb1EPdS0_ET1_T0_S2_S1_
- 3134      00
+ 2920              		.loc 9 456 0
+ 2921 0033 488B45D8 		movq	-40(%rbp), %rax
+ 2922 0037 4889C2   		movq	%rax, %rdx
+ 2923 003a 4889DE   		movq	%rbx, %rsi
+ 2924 003d 4889CF   		movq	%rcx, %rdi
+ 2925 0040 E8000000 		call	_ZSt14__copy_move_a2ILb1EPdS0_ET1_T0_S2_S1_
+ 2925      00
  457:/usr/include/c++/7/bits/stl_algobase.h **** 
- 3135              		.loc 9 457 0
- 3136 0045 4883C428 		addq	$40, %rsp
- 3137 0049 5B       		popq	%rbx
- 3138 004a 5D       		popq	%rbp
- 3139              		.cfi_def_cfa 7, 8
- 3140 004b C3       		ret
- 3141              		.cfi_endproc
- 3142              	.LFE2438:
- 3144              		.section	.text._ZSt12__miter_baseIPdEDTcl12__miter_basecldtfp_4baseEEESt13move_iteratorIT_E,"axG",
- 3145              		.weak	_ZSt12__miter_baseIPdEDTcl12__miter_basecldtfp_4baseEEESt13move_iteratorIT_E
- 3147              	_ZSt12__miter_baseIPdEDTcl12__miter_basecldtfp_4baseEEESt13move_iteratorIT_E:
- 3148              	.LFB2441:
+ 2926              		.loc 9 457 0
+ 2927 0045 4883C428 		addq	$40, %rsp
+ 2928 0049 5B       		popq	%rbx
+ 2929 004a 5D       		popq	%rbp
+ 2930              		.cfi_def_cfa 7, 8
+ 2931 004b C3       		ret
+ 2932              		.cfi_endproc
+ 2933              	.LFE2438:
+ 2935              		.section	.text._ZSt12__miter_baseIPdEDTcl12__miter_basecldtfp_4baseEEESt13move_iteratorIT_E,"axG",
+ 2936              		.weak	_ZSt12__miter_baseIPdEDTcl12__miter_basecldtfp_4baseEEESt13move_iteratorIT_E
+ 2938              	_ZSt12__miter_baseIPdEDTcl12__miter_basecldtfp_4baseEEESt13move_iteratorIT_E:
+ 2939              	.LFB2441:
 1223:/usr/include/c++/7/bits/stl_iterator.h **** 
 1224:/usr/include/c++/7/bits/stl_iterator.h ****   // @} group iterators
 1225:/usr/include/c++/7/bits/stl_iterator.h **** 
@@ -9623,111 +9322,111 @@
 1239:/usr/include/c++/7/bits/stl_iterator.h ****   template<typename _Iterator>
 1240:/usr/include/c++/7/bits/stl_iterator.h ****     auto
 1241:/usr/include/c++/7/bits/stl_iterator.h ****     __miter_base(move_iterator<_Iterator> __it)
- 3149              		.loc 10 1241 0
- 3150              		.cfi_startproc
- 3151 0000 55       		pushq	%rbp
- 3152              		.cfi_def_cfa_offset 16
- 3153              		.cfi_offset 6, -16
- 3154 0001 4889E5   		movq	%rsp, %rbp
- 3155              		.cfi_def_cfa_register 6
- 3156 0004 4883EC10 		subq	$16, %rsp
- 3157 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 2940              		.loc 10 1241 0
+ 2941              		.cfi_startproc
+ 2942 0000 55       		pushq	%rbp
+ 2943              		.cfi_def_cfa_offset 16
+ 2944              		.cfi_offset 6, -16
+ 2945 0001 4889E5   		movq	%rsp, %rbp
+ 2946              		.cfi_def_cfa_register 6
+ 2947 0004 4883EC10 		subq	$16, %rsp
+ 2948 0008 48897DF8 		movq	%rdi, -8(%rbp)
 1242:/usr/include/c++/7/bits/stl_iterator.h ****     -> decltype(__miter_base(__it.base()))
 1243:/usr/include/c++/7/bits/stl_iterator.h ****     { return __miter_base(__it.base()); }
- 3158              		.loc 10 1243 0
- 3159 000c 488D45F8 		leaq	-8(%rbp), %rax
- 3160 0010 4889C7   		movq	%rax, %rdi
- 3161 0013 E8000000 		call	_ZNKSt13move_iteratorIPdE4baseEv
- 3161      00
- 3162 0018 4889C7   		movq	%rax, %rdi
- 3163 001b E8000000 		call	_ZSt12__miter_baseIPdET_S1_
- 3163      00
- 3164 0020 C9       		leave
- 3165              		.cfi_def_cfa 7, 8
- 3166 0021 C3       		ret
- 3167              		.cfi_endproc
- 3168              	.LFE2441:
- 3170              		.section	.text._ZSt14__copy_move_a2ILb1EPdS0_ET1_T0_S2_S1_,"axG",@progbits,_ZSt14__copy_move_a2ILb
- 3171              		.weak	_ZSt14__copy_move_a2ILb1EPdS0_ET1_T0_S2_S1_
- 3173              	_ZSt14__copy_move_a2ILb1EPdS0_ET1_T0_S2_S1_:
- 3174              	.LFB2442:
+ 2949              		.loc 10 1243 0
+ 2950 000c 488D45F8 		leaq	-8(%rbp), %rax
+ 2951 0010 4889C7   		movq	%rax, %rdi
+ 2952 0013 E8000000 		call	_ZNKSt13move_iteratorIPdE4baseEv
+ 2952      00
+ 2953 0018 4889C7   		movq	%rax, %rdi
+ 2954 001b E8000000 		call	_ZSt12__miter_baseIPdET_S1_
+ 2954      00
+ 2955 0020 C9       		leave
+ 2956              		.cfi_def_cfa 7, 8
+ 2957 0021 C3       		ret
+ 2958              		.cfi_endproc
+ 2959              	.LFE2441:
+ 2961              		.section	.text._ZSt14__copy_move_a2ILb1EPdS0_ET1_T0_S2_S1_,"axG",@progbits,_ZSt14__copy_move_a2ILb
+ 2962              		.weak	_ZSt14__copy_move_a2ILb1EPdS0_ET1_T0_S2_S1_
+ 2964              	_ZSt14__copy_move_a2ILb1EPdS0_ET1_T0_S2_S1_:
+ 2965              	.LFB2442:
  420:/usr/include/c++/7/bits/stl_algobase.h ****     {
- 3175              		.loc 9 420 0
- 3176              		.cfi_startproc
- 3177 0000 55       		pushq	%rbp
- 3178              		.cfi_def_cfa_offset 16
- 3179              		.cfi_offset 6, -16
- 3180 0001 4889E5   		movq	%rsp, %rbp
- 3181              		.cfi_def_cfa_register 6
- 3182 0004 4154     		pushq	%r12
- 3183 0006 53       		pushq	%rbx
- 3184 0007 4883EC20 		subq	$32, %rsp
- 3185              		.cfi_offset 12, -24
- 3186              		.cfi_offset 3, -32
- 3187 000b 48897DE8 		movq	%rdi, -24(%rbp)
- 3188 000f 488975E0 		movq	%rsi, -32(%rbp)
- 3189 0013 488955D8 		movq	%rdx, -40(%rbp)
+ 2966              		.loc 9 420 0
+ 2967              		.cfi_startproc
+ 2968 0000 55       		pushq	%rbp
+ 2969              		.cfi_def_cfa_offset 16
+ 2970              		.cfi_offset 6, -16
+ 2971 0001 4889E5   		movq	%rsp, %rbp
+ 2972              		.cfi_def_cfa_register 6
+ 2973 0004 4154     		pushq	%r12
+ 2974 0006 53       		pushq	%rbx
+ 2975 0007 4883EC20 		subq	$32, %rsp
+ 2976              		.cfi_offset 12, -24
+ 2977              		.cfi_offset 3, -32
+ 2978 000b 48897DE8 		movq	%rdi, -24(%rbp)
+ 2979 000f 488975E0 		movq	%rsi, -32(%rbp)
+ 2980 0013 488955D8 		movq	%rdx, -40(%rbp)
  422:/usr/include/c++/7/bits/stl_algobase.h **** 					     std::__niter_base(__last),
- 3190              		.loc 9 422 0
- 3191 0017 488B45D8 		movq	-40(%rbp), %rax
- 3192 001b 4889C7   		movq	%rax, %rdi
- 3193 001e E8000000 		call	_ZSt12__niter_baseIPdET_S1_
- 3193      00
- 3194 0023 4989C4   		movq	%rax, %r12
- 3195 0026 488B45E0 		movq	-32(%rbp), %rax
- 3196 002a 4889C7   		movq	%rax, %rdi
- 3197 002d E8000000 		call	_ZSt12__niter_baseIPdET_S1_
- 3197      00
- 3198 0032 4889C3   		movq	%rax, %rbx
- 3199 0035 488B45E8 		movq	-24(%rbp), %rax
- 3200 0039 4889C7   		movq	%rax, %rdi
- 3201 003c E8000000 		call	_ZSt12__niter_baseIPdET_S1_
- 3201      00
+ 2981              		.loc 9 422 0
+ 2982 0017 488B45D8 		movq	-40(%rbp), %rax
+ 2983 001b 4889C7   		movq	%rax, %rdi
+ 2984 001e E8000000 		call	_ZSt12__niter_baseIPdET_S1_
+ 2984      00
+ 2985 0023 4989C4   		movq	%rax, %r12
+ 2986 0026 488B45E0 		movq	-32(%rbp), %rax
+ 2987 002a 4889C7   		movq	%rax, %rdi
+ 2988 002d E8000000 		call	_ZSt12__niter_baseIPdET_S1_
+ 2988      00
+ 2989 0032 4889C3   		movq	%rax, %rbx
+ 2990 0035 488B45E8 		movq	-24(%rbp), %rax
+ 2991 0039 4889C7   		movq	%rax, %rdi
+ 2992 003c E8000000 		call	_ZSt12__niter_baseIPdET_S1_
+ 2992      00
  424:/usr/include/c++/7/bits/stl_algobase.h ****     }
- 3202              		.loc 9 424 0
- 3203 0041 4C89E2   		movq	%r12, %rdx
- 3204 0044 4889DE   		movq	%rbx, %rsi
- 3205 0047 4889C7   		movq	%rax, %rdi
- 3206 004a E8000000 		call	_ZSt13__copy_move_aILb1EPdS0_ET1_T0_S2_S1_
- 3206      00
+ 2993              		.loc 9 424 0
+ 2994 0041 4C89E2   		movq	%r12, %rdx
+ 2995 0044 4889DE   		movq	%rbx, %rsi
+ 2996 0047 4889C7   		movq	%rax, %rdi
+ 2997 004a E8000000 		call	_ZSt13__copy_move_aILb1EPdS0_ET1_T0_S2_S1_
+ 2997      00
  425:/usr/include/c++/7/bits/stl_algobase.h **** 
- 3207              		.loc 9 425 0
- 3208 004f 4883C420 		addq	$32, %rsp
- 3209 0053 5B       		popq	%rbx
- 3210 0054 415C     		popq	%r12
- 3211 0056 5D       		popq	%rbp
- 3212              		.cfi_def_cfa 7, 8
- 3213 0057 C3       		ret
- 3214              		.cfi_endproc
- 3215              	.LFE2442:
- 3217              		.section	.text._ZNKSt13move_iteratorIPdE4baseEv,"axG",@progbits,_ZNKSt13move_iteratorIPdE4baseEv,c
- 3218              		.align 2
- 3219              		.weak	_ZNKSt13move_iteratorIPdE4baseEv
- 3221              	_ZNKSt13move_iteratorIPdE4baseEv:
- 3222              	.LFB2443:
+ 2998              		.loc 9 425 0
+ 2999 004f 4883C420 		addq	$32, %rsp
+ 3000 0053 5B       		popq	%rbx
+ 3001 0054 415C     		popq	%r12
+ 3002 0056 5D       		popq	%rbp
+ 3003              		.cfi_def_cfa 7, 8
+ 3004 0057 C3       		ret
+ 3005              		.cfi_endproc
+ 3006              	.LFE2442:
+ 3008              		.section	.text._ZNKSt13move_iteratorIPdE4baseEv,"axG",@progbits,_ZNKSt13move_iteratorIPdE4baseEv,c
+ 3009              		.align 2
+ 3010              		.weak	_ZNKSt13move_iteratorIPdE4baseEv
+ 3012              	_ZNKSt13move_iteratorIPdE4baseEv:
+ 3013              	.LFB2443:
 1045:/usr/include/c++/7/bits/stl_iterator.h ****       { return _M_current; }
- 3223              		.loc 10 1045 0
- 3224              		.cfi_startproc
- 3225 0000 55       		pushq	%rbp
- 3226              		.cfi_def_cfa_offset 16
- 3227              		.cfi_offset 6, -16
- 3228 0001 4889E5   		movq	%rsp, %rbp
- 3229              		.cfi_def_cfa_register 6
- 3230 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 3014              		.loc 10 1045 0
+ 3015              		.cfi_startproc
+ 3016 0000 55       		pushq	%rbp
+ 3017              		.cfi_def_cfa_offset 16
+ 3018              		.cfi_offset 6, -16
+ 3019 0001 4889E5   		movq	%rsp, %rbp
+ 3020              		.cfi_def_cfa_register 6
+ 3021 0004 48897DF8 		movq	%rdi, -8(%rbp)
 1046:/usr/include/c++/7/bits/stl_iterator.h **** 
- 3231              		.loc 10 1046 0
- 3232 0008 488B45F8 		movq	-8(%rbp), %rax
- 3233 000c 488B00   		movq	(%rax), %rax
- 3234 000f 5D       		popq	%rbp
- 3235              		.cfi_def_cfa 7, 8
- 3236 0010 C3       		ret
- 3237              		.cfi_endproc
- 3238              	.LFE2443:
- 3240              		.section	.text._ZSt12__miter_baseIPdET_S1_,"axG",@progbits,_ZSt12__miter_baseIPdET_S1_,comdat
- 3241              		.weak	_ZSt12__miter_baseIPdET_S1_
- 3243              	_ZSt12__miter_baseIPdET_S1_:
- 3244              	.LFB2444:
- 3245              		.file 11 "/usr/include/c++/7/bits/cpp_type_traits.h"
+ 3022              		.loc 10 1046 0
+ 3023 0008 488B45F8 		movq	-8(%rbp), %rax
+ 3024 000c 488B00   		movq	(%rax), %rax
+ 3025 000f 5D       		popq	%rbp
+ 3026              		.cfi_def_cfa 7, 8
+ 3027 0010 C3       		ret
+ 3028              		.cfi_endproc
+ 3029              	.LFE2443:
+ 3031              		.section	.text._ZSt12__miter_baseIPdET_S1_,"axG",@progbits,_ZSt12__miter_baseIPdET_S1_,comdat
+ 3032              		.weak	_ZSt12__miter_baseIPdET_S1_
+ 3034              	_ZSt12__miter_baseIPdET_S1_:
+ 3035              	.LFB2444:
+ 3036              		.file 11 "/usr/include/c++/7/bits/cpp_type_traits.h"
    1:/usr/include/c++/7/bits/cpp_type_traits.h **** // The  -*- C++ -*- type traits classes for internal use in libstdc++
    2:/usr/include/c++/7/bits/cpp_type_traits.h **** 
    3:/usr/include/c++/7/bits/cpp_type_traits.h **** // Copyright (C) 2000-2017 Free Software Foundation, Inc.
@@ -10136,133 +9835,133 @@
  406:/usr/include/c++/7/bits/cpp_type_traits.h ****   template<typename _Iterator>
  407:/usr/include/c++/7/bits/cpp_type_traits.h ****     inline _Iterator
  408:/usr/include/c++/7/bits/cpp_type_traits.h ****     __miter_base(_Iterator __it)
- 3246              		.loc 11 408 0
- 3247              		.cfi_startproc
- 3248 0000 55       		pushq	%rbp
- 3249              		.cfi_def_cfa_offset 16
- 3250              		.cfi_offset 6, -16
- 3251 0001 4889E5   		movq	%rsp, %rbp
- 3252              		.cfi_def_cfa_register 6
- 3253 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 3037              		.loc 11 408 0
+ 3038              		.cfi_startproc
+ 3039 0000 55       		pushq	%rbp
+ 3040              		.cfi_def_cfa_offset 16
+ 3041              		.cfi_offset 6, -16
+ 3042 0001 4889E5   		movq	%rsp, %rbp
+ 3043              		.cfi_def_cfa_register 6
+ 3044 0004 48897DF8 		movq	%rdi, -8(%rbp)
  409:/usr/include/c++/7/bits/cpp_type_traits.h ****     { return __it; }
- 3254              		.loc 11 409 0
- 3255 0008 488B45F8 		movq	-8(%rbp), %rax
- 3256 000c 5D       		popq	%rbp
- 3257              		.cfi_def_cfa 7, 8
- 3258 000d C3       		ret
- 3259              		.cfi_endproc
- 3260              	.LFE2444:
- 3262              		.section	.text._ZSt13__copy_move_aILb1EPdS0_ET1_T0_S2_S1_,"axG",@progbits,_ZSt13__copy_move_aILb1E
- 3263              		.weak	_ZSt13__copy_move_aILb1EPdS0_ET1_T0_S2_S1_
- 3265              	_ZSt13__copy_move_aILb1EPdS0_ET1_T0_S2_S1_:
- 3266              	.LFB2445:
+ 3045              		.loc 11 409 0
+ 3046 0008 488B45F8 		movq	-8(%rbp), %rax
+ 3047 000c 5D       		popq	%rbp
+ 3048              		.cfi_def_cfa 7, 8
+ 3049 000d C3       		ret
+ 3050              		.cfi_endproc
+ 3051              	.LFE2444:
+ 3053              		.section	.text._ZSt13__copy_move_aILb1EPdS0_ET1_T0_S2_S1_,"axG",@progbits,_ZSt13__copy_move_aILb1E
+ 3054              		.weak	_ZSt13__copy_move_aILb1EPdS0_ET1_T0_S2_S1_
+ 3056              	_ZSt13__copy_move_aILb1EPdS0_ET1_T0_S2_S1_:
+ 3057              	.LFB2445:
  375:/usr/include/c++/7/bits/stl_algobase.h ****     {
- 3267              		.loc 9 375 0
- 3268              		.cfi_startproc
- 3269 0000 55       		pushq	%rbp
- 3270              		.cfi_def_cfa_offset 16
- 3271              		.cfi_offset 6, -16
- 3272 0001 4889E5   		movq	%rsp, %rbp
- 3273              		.cfi_def_cfa_register 6
- 3274 0004 4883EC30 		subq	$48, %rsp
- 3275 0008 48897DE8 		movq	%rdi, -24(%rbp)
- 3276 000c 488975E0 		movq	%rsi, -32(%rbp)
- 3277 0010 488955D8 		movq	%rdx, -40(%rbp)
+ 3058              		.loc 9 375 0
+ 3059              		.cfi_startproc
+ 3060 0000 55       		pushq	%rbp
+ 3061              		.cfi_def_cfa_offset 16
+ 3062              		.cfi_offset 6, -16
+ 3063 0001 4889E5   		movq	%rsp, %rbp
+ 3064              		.cfi_def_cfa_register 6
+ 3065 0004 4883EC30 		subq	$48, %rsp
+ 3066 0008 48897DE8 		movq	%rdi, -24(%rbp)
+ 3067 000c 488975E0 		movq	%rsi, -32(%rbp)
+ 3068 0010 488955D8 		movq	%rdx, -40(%rbp)
  380:/usr/include/c++/7/bits/stl_algobase.h **** 	                     && __is_pointer<_II>::__value
- 3278              		.loc 9 380 0
- 3279 0014 C645FF01 		movb	$1, -1(%rbp)
+ 3069              		.loc 9 380 0
+ 3070 0014 C645FF01 		movb	$1, -1(%rbp)
  386:/usr/include/c++/7/bits/stl_algobase.h ****     }
- 3280              		.loc 9 386 0
- 3281 0018 488B55D8 		movq	-40(%rbp), %rdx
- 3282 001c 488B4DE0 		movq	-32(%rbp), %rcx
- 3283 0020 488B45E8 		movq	-24(%rbp), %rax
- 3284 0024 4889CE   		movq	%rcx, %rsi
- 3285 0027 4889C7   		movq	%rax, %rdi
- 3286 002a E8000000 		call	_ZNSt11__copy_moveILb1ELb1ESt26random_access_iterator_tagE8__copy_mIdEEPT_PKS3_S6_S4_
- 3286      00
+ 3071              		.loc 9 386 0
+ 3072 0018 488B55D8 		movq	-40(%rbp), %rdx
+ 3073 001c 488B4DE0 		movq	-32(%rbp), %rcx
+ 3074 0020 488B45E8 		movq	-24(%rbp), %rax
+ 3075 0024 4889CE   		movq	%rcx, %rsi
+ 3076 0027 4889C7   		movq	%rax, %rdi
+ 3077 002a E8000000 		call	_ZNSt11__copy_moveILb1ELb1ESt26random_access_iterator_tagE8__copy_mIdEEPT_PKS3_S6_S4_
+ 3077      00
  387:/usr/include/c++/7/bits/stl_algobase.h **** 
- 3287              		.loc 9 387 0
- 3288 002f C9       		leave
- 3289              		.cfi_def_cfa 7, 8
- 3290 0030 C3       		ret
- 3291              		.cfi_endproc
- 3292              	.LFE2445:
- 3294              		.section	.text._ZNSt11__copy_moveILb1ELb1ESt26random_access_iterator_tagE8__copy_mIdEEPT_PKS3_S6_S
- 3295              		.weak	_ZNSt11__copy_moveILb1ELb1ESt26random_access_iterator_tagE8__copy_mIdEEPT_PKS3_S6_S4_
- 3297              	_ZNSt11__copy_moveILb1ELb1ESt26random_access_iterator_tagE8__copy_mIdEEPT_PKS3_S6_S4_:
- 3298              	.LFB2446:
+ 3078              		.loc 9 387 0
+ 3079 002f C9       		leave
+ 3080              		.cfi_def_cfa 7, 8
+ 3081 0030 C3       		ret
+ 3082              		.cfi_endproc
+ 3083              	.LFE2445:
+ 3085              		.section	.text._ZNSt11__copy_moveILb1ELb1ESt26random_access_iterator_tagE8__copy_mIdEEPT_PKS3_S6_S
+ 3086              		.weak	_ZNSt11__copy_moveILb1ELb1ESt26random_access_iterator_tagE8__copy_mIdEEPT_PKS3_S6_S4_
+ 3088              	_ZNSt11__copy_moveILb1ELb1ESt26random_access_iterator_tagE8__copy_mIdEEPT_PKS3_S6_S4_:
+ 3089              	.LFB2446:
  357:/usr/include/c++/7/bits/stl_algobase.h ****         {
- 3299              		.loc 9 357 0
- 3300              		.cfi_startproc
- 3301 0000 55       		pushq	%rbp
- 3302              		.cfi_def_cfa_offset 16
- 3303              		.cfi_offset 6, -16
- 3304 0001 4889E5   		movq	%rsp, %rbp
- 3305              		.cfi_def_cfa_register 6
- 3306 0004 4883EC30 		subq	$48, %rsp
- 3307 0008 48897DE8 		movq	%rdi, -24(%rbp)
- 3308 000c 488975E0 		movq	%rsi, -32(%rbp)
- 3309 0010 488955D8 		movq	%rdx, -40(%rbp)
+ 3090              		.loc 9 357 0
+ 3091              		.cfi_startproc
+ 3092 0000 55       		pushq	%rbp
+ 3093              		.cfi_def_cfa_offset 16
+ 3094              		.cfi_offset 6, -16
+ 3095 0001 4889E5   		movq	%rsp, %rbp
+ 3096              		.cfi_def_cfa_register 6
+ 3097 0004 4883EC30 		subq	$48, %rsp
+ 3098 0008 48897DE8 		movq	%rdi, -24(%rbp)
+ 3099 000c 488975E0 		movq	%rsi, -32(%rbp)
+ 3100 0010 488955D8 		movq	%rdx, -40(%rbp)
  366:/usr/include/c++/7/bits/stl_algobase.h **** 	  if (_Num)
- 3310              		.loc 9 366 0
- 3311 0014 488B55E0 		movq	-32(%rbp), %rdx
- 3312 0018 488B45E8 		movq	-24(%rbp), %rax
- 3313 001c 4829C2   		subq	%rax, %rdx
- 3314 001f 4889D0   		movq	%rdx, %rax
- 3315 0022 48C1F803 		sarq	$3, %rax
- 3316 0026 488945F8 		movq	%rax, -8(%rbp)
+ 3101              		.loc 9 366 0
+ 3102 0014 488B55E0 		movq	-32(%rbp), %rdx
+ 3103 0018 488B45E8 		movq	-24(%rbp), %rax
+ 3104 001c 4829C2   		subq	%rax, %rdx
+ 3105 001f 4889D0   		movq	%rdx, %rax
+ 3106 0022 48C1F803 		sarq	$3, %rax
+ 3107 0026 488945F8 		movq	%rax, -8(%rbp)
  367:/usr/include/c++/7/bits/stl_algobase.h **** 	    __builtin_memmove(__result, __first, sizeof(_Tp) * _Num);
- 3317              		.loc 9 367 0
- 3318 002a 48837DF8 		cmpq	$0, -8(%rbp)
- 3318      00
- 3319 002f 741F     		je	.L162
+ 3108              		.loc 9 367 0
+ 3109 002a 48837DF8 		cmpq	$0, -8(%rbp)
+ 3109      00
+ 3110 002f 741F     		je	.L157
  368:/usr/include/c++/7/bits/stl_algobase.h **** 	  return __result + _Num;
- 3320              		.loc 9 368 0
- 3321 0031 488B45F8 		movq	-8(%rbp), %rax
- 3322 0035 488D14C5 		leaq	0(,%rax,8), %rdx
- 3322      00000000 
- 3323 003d 488B4DE8 		movq	-24(%rbp), %rcx
- 3324 0041 488B45D8 		movq	-40(%rbp), %rax
- 3325 0045 4889CE   		movq	%rcx, %rsi
- 3326 0048 4889C7   		movq	%rax, %rdi
- 3327 004b E8000000 		call	memmove@PLT
- 3327      00
- 3328              	.L162:
+ 3111              		.loc 9 368 0
+ 3112 0031 488B45F8 		movq	-8(%rbp), %rax
+ 3113 0035 488D14C5 		leaq	0(,%rax,8), %rdx
+ 3113      00000000 
+ 3114 003d 488B4DE8 		movq	-24(%rbp), %rcx
+ 3115 0041 488B45D8 		movq	-40(%rbp), %rax
+ 3116 0045 4889CE   		movq	%rcx, %rsi
+ 3117 0048 4889C7   		movq	%rax, %rdi
+ 3118 004b E8000000 		call	memmove@PLT
+ 3118      00
+ 3119              	.L157:
  369:/usr/include/c++/7/bits/stl_algobase.h **** 	}
- 3329              		.loc 9 369 0
- 3330 0050 488B45F8 		movq	-8(%rbp), %rax
- 3331 0054 488D14C5 		leaq	0(,%rax,8), %rdx
- 3331      00000000 
- 3332 005c 488B45D8 		movq	-40(%rbp), %rax
- 3333 0060 4801D0   		addq	%rdx, %rax
+ 3120              		.loc 9 369 0
+ 3121 0050 488B45F8 		movq	-8(%rbp), %rax
+ 3122 0054 488D14C5 		leaq	0(,%rax,8), %rdx
+ 3122      00000000 
+ 3123 005c 488B45D8 		movq	-40(%rbp), %rax
+ 3124 0060 4801D0   		addq	%rdx, %rax
  370:/usr/include/c++/7/bits/stl_algobase.h ****     };
- 3334              		.loc 9 370 0
- 3335 0063 C9       		leave
- 3336              		.cfi_def_cfa 7, 8
- 3337 0064 C3       		ret
- 3338              		.cfi_endproc
- 3339              	.LFE2446:
- 3341              		.text
- 3343              	_Z41__static_initialization_and_destruction_0ii:
- 3344              	.LFB2447:
- 3345              		.loc 1 204 0
- 3346              		.cfi_startproc
- 3347 03fe 55       		pushq	%rbp
- 3348              		.cfi_def_cfa_offset 16
- 3349              		.cfi_offset 6, -16
- 3350 03ff 4889E5   		movq	%rsp, %rbp
- 3351              		.cfi_def_cfa_register 6
- 3352 0402 4883EC10 		subq	$16, %rsp
- 3353 0406 897DFC   		movl	%edi, -4(%rbp)
- 3354 0409 8975F8   		movl	%esi, -8(%rbp)
- 3355              		.loc 1 204 0
- 3356 040c 837DFC01 		cmpl	$1, -4(%rbp)
- 3357 0410 7532     		jne	.L166
- 3358              		.loc 1 204 0 is_stmt 0 discriminator 1
- 3359 0412 817DF8FF 		cmpl	$65535, -8(%rbp)
- 3359      FF0000
- 3360 0419 7529     		jne	.L166
- 3361              		.file 12 "/usr/include/c++/7/iostream"
+ 3125              		.loc 9 370 0
+ 3126 0063 C9       		leave
+ 3127              		.cfi_def_cfa 7, 8
+ 3128 0064 C3       		ret
+ 3129              		.cfi_endproc
+ 3130              	.LFE2446:
+ 3132              		.text
+ 3134              	_Z41__static_initialization_and_destruction_0ii:
+ 3135              	.LFB2447:
+ 3136              		.loc 1 185 0
+ 3137              		.cfi_startproc
+ 3138 03fe 55       		pushq	%rbp
+ 3139              		.cfi_def_cfa_offset 16
+ 3140              		.cfi_offset 6, -16
+ 3141 03ff 4889E5   		movq	%rsp, %rbp
+ 3142              		.cfi_def_cfa_register 6
+ 3143 0402 4883EC10 		subq	$16, %rsp
+ 3144 0406 897DFC   		movl	%edi, -4(%rbp)
+ 3145 0409 8975F8   		movl	%esi, -8(%rbp)
+ 3146              		.loc 1 185 0
+ 3147 040c 837DFC01 		cmpl	$1, -4(%rbp)
+ 3148 0410 7532     		jne	.L161
+ 3149              		.loc 1 185 0 is_stmt 0 discriminator 1
+ 3150 0412 817DF8FF 		cmpl	$65535, -8(%rbp)
+ 3150      FF0000
+ 3151 0419 7529     		jne	.L161
+ 3152              		.file 12 "/usr/include/c++/7/iostream"
    1:/usr/include/c++/7/iostream **** // Standard iostream objects -*- C++ -*-
    2:/usr/include/c++/7/iostream **** 
    3:/usr/include/c++/7/iostream **** // Copyright (C) 1997-2017 Free Software Foundation, Inc.
@@ -10337,143 +10036,143 @@
   72:/usr/include/c++/7/iostream **** 
   73:/usr/include/c++/7/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
   74:/usr/include/c++/7/iostream ****   static ios_base::Init __ioinit;
- 3362              		.loc 12 74 0 is_stmt 1
- 3363 041b 488D3D00 		leaq	_ZStL8__ioinit(%rip), %rdi
- 3363      000000
- 3364 0422 E8000000 		call	_ZNSt8ios_base4InitC1Ev@PLT
- 3364      00
- 3365 0427 488D1500 		leaq	__dso_handle(%rip), %rdx
- 3365      000000
- 3366 042e 488D3500 		leaq	_ZStL8__ioinit(%rip), %rsi
- 3366      000000
- 3367 0435 488B0500 		movq	_ZNSt8ios_base4InitD1Ev@GOTPCREL(%rip), %rax
- 3367      000000
- 3368 043c 4889C7   		movq	%rax, %rdi
- 3369 043f E8000000 		call	__cxa_atexit@PLT
- 3369      00
- 3370              	.L166:
- 3371              		.loc 1 204 0
- 3372 0444 90       		nop
- 3373 0445 C9       		leave
- 3374              		.cfi_def_cfa 7, 8
- 3375 0446 C3       		ret
- 3376              		.cfi_endproc
- 3377              	.LFE2447:
- 3380              	_GLOBAL__sub_I_main:
- 3381              	.LFB2448:
- 3382              		.loc 1 204 0
- 3383              		.cfi_startproc
- 3384 0447 55       		pushq	%rbp
- 3385              		.cfi_def_cfa_offset 16
- 3386              		.cfi_offset 6, -16
- 3387 0448 4889E5   		movq	%rsp, %rbp
- 3388              		.cfi_def_cfa_register 6
- 3389              		.loc 1 204 0
- 3390 044b BEFFFF00 		movl	$65535, %esi
- 3390      00
- 3391 0450 BF010000 		movl	$1, %edi
- 3391      00
- 3392 0455 E8A4FFFF 		call	_Z41__static_initialization_and_destruction_0ii
- 3392      FF
- 3393 045a 5D       		popq	%rbp
- 3394              		.cfi_def_cfa 7, 8
- 3395 045b C3       		ret
- 3396              		.cfi_endproc
- 3397              	.LFE2448:
- 3399              		.section	.init_array,"aw"
- 3400              		.align 8
- 3401 0000 00000000 		.quad	_GLOBAL__sub_I_main
- 3401      00000000 
- 3402              		.section	.rodata
- 3403 01b8 00000000 		.align 32
- 3403      00000000 
- 3406              	_ZZN9RowVectorplERKS_E19__PRETTY_FUNCTION__:
- 3407 01c0 526F7756 		.string	"RowVector RowVector::operator+(const RowVector&)"
- 3407      6563746F 
- 3407      7220526F 
- 3407      77566563 
- 3407      746F723A 
- 3408 01f1 00000000 		.align 32
- 3408      00000000 
- 3408      00000000 
- 3408      000000
- 3411              	_ZZN9RowVectormlERKS_E19__PRETTY_FUNCTION__:
- 3412 0200 636F6E73 		.string	"const double RowVector::operator*(const RowVector&)"
- 3412      7420646F 
- 3412      75626C65 
- 3412      20526F77 
- 3412      56656374 
- 3413 0234 00000000 		.align 8
- 3414              	.LC12:
- 3415 0238 00000000 		.long	0
- 3416 023c 0000F03F 		.long	1072693248
- 3417              		.align 8
- 3418              	.LC13:
- 3419 0240 00000000 		.long	0
- 3420 0244 00000040 		.long	1073741824
- 3421              		.align 8
- 3422              	.LC18:
- 3423 0248 00000000 		.long	0
- 3424 024c 0000E03F 		.long	1071644672
- 3425              		.align 8
- 3426              	.LC22:
- 3427 0250 00000000 		.long	0
- 3428 0254 0000F0BF 		.long	-1074790400
- 3429              		.text
- 3430              	.Letext0:
- 3431              		.file 13 "/usr/include/c++/7/bits/basic_string.h"
- 3432              		.file 14 "/usr/include/c++/7/bits/stringfwd.h"
- 3433              		.file 15 "/usr/include/c++/7/cstdint"
- 3434              		.file 16 "/usr/include/c++/7/new"
- 3435              		.file 17 "/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h"
- 3436              		.file 18 "/usr/include/c++/7/bits/exception_ptr.h"
- 3437              		.file 19 "/usr/include/c++/7/type_traits"
- 3438              		.file 20 "/usr/include/c++/7/cwchar"
- 3439              		.file 21 "/usr/include/c++/7/bits/stl_pair.h"
- 3440              		.file 22 "/usr/include/c++/7/debug/debug.h"
- 3441              		.file 23 "/usr/include/c++/7/bits/char_traits.h"
- 3442              		.file 24 "/usr/include/c++/7/clocale"
- 3443              		.file 25 "/usr/include/c++/7/cstdlib"
- 3444              		.file 26 "/usr/include/c++/7/cstdio"
- 3445              		.file 27 "/usr/include/c++/7/initializer_list"
- 3446              		.file 28 "/usr/include/c++/7/system_error"
- 3447              		.file 29 "/usr/include/c++/7/bits/ios_base.h"
- 3448              		.file 30 "/usr/include/c++/7/cwctype"
- 3449              		.file 31 "/usr/include/c++/7/iosfwd"
- 3450              		.file 32 "/usr/include/c++/7/bits/stl_iterator_base_types.h"
- 3451              		.file 33 "/usr/include/c++/7/bits/move.h"
- 3452              		.file 34 "/usr/include/c++/7/bits/predefined_ops.h"
- 3453              		.file 35 "/usr/include/c++/7/ext/numeric_traits.h"
- 3454              		.file 36 "/usr/include/c++/7/ext/alloc_traits.h"
- 3455              		.file 37 "/usr/include/c++/7/ext/type_traits.h"
- 3456              		.file 38 "/usr/include/x86_64-linux-gnu/bits/types.h"
- 3457              		.file 39 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h"
- 3458              		.file 40 "/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h"
- 3459              		.file 41 "/usr/include/stdint.h"
- 3460              		.file 42 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h"
- 3461              		.file 43 "<built-in>"
- 3462              		.file 44 "/usr/include/x86_64-linux-gnu/bits/types/wint_t.h"
- 3463              		.file 45 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h"
- 3464              		.file 46 "/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h"
- 3465              		.file 47 "/usr/include/x86_64-linux-gnu/bits/types/__FILE.h"
- 3466              		.file 48 "/usr/include/x86_64-linux-gnu/bits/libio.h"
- 3467              		.file 49 "/usr/include/x86_64-linux-gnu/bits/types/FILE.h"
- 3468              		.file 50 "/usr/include/wchar.h"
- 3469              		.file 51 "/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h"
- 3470              		.file 52 "/usr/include/locale.h"
- 3471              		.file 53 "/usr/include/time.h"
- 3472              		.file 54 "/usr/include/x86_64-linux-gnu/c++/7/bits/atomic_word.h"
- 3473              		.file 55 "/usr/include/stdlib.h"
- 3474              		.file 56 "/usr/include/x86_64-linux-gnu/bits/_G_config.h"
- 3475              		.file 57 "/usr/include/stdio.h"
- 3476              		.file 58 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h"
- 3477              		.file 59 "/usr/include/errno.h"
- 3478              		.file 60 "/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h"
- 3479              		.file 61 "/usr/include/wctype.h"
- 22004              		.align 8
- 22007              	DW.ref.__gxx_personality_v0:
- 22008 0000 00000000 		.quad	__gxx_personality_v0
- 22008      00000000 
- 22009              		.hidden	__dso_handle
- 22010              		.ident	"GCC: (Ubuntu 7.3.0-16ubuntu3) 7.3.0"
- 22011              		.section	.note.GNU-stack,"",@progbits
+ 3153              		.loc 12 74 0 is_stmt 1
+ 3154 041b 488D3D00 		leaq	_ZStL8__ioinit(%rip), %rdi
+ 3154      000000
+ 3155 0422 E8000000 		call	_ZNSt8ios_base4InitC1Ev@PLT
+ 3155      00
+ 3156 0427 488D1500 		leaq	__dso_handle(%rip), %rdx
+ 3156      000000
+ 3157 042e 488D3500 		leaq	_ZStL8__ioinit(%rip), %rsi
+ 3157      000000
+ 3158 0435 488B0500 		movq	_ZNSt8ios_base4InitD1Ev@GOTPCREL(%rip), %rax
+ 3158      000000
+ 3159 043c 4889C7   		movq	%rax, %rdi
+ 3160 043f E8000000 		call	__cxa_atexit@PLT
+ 3160      00
+ 3161              	.L161:
+ 3162              		.loc 1 185 0
+ 3163 0444 90       		nop
+ 3164 0445 C9       		leave
+ 3165              		.cfi_def_cfa 7, 8
+ 3166 0446 C3       		ret
+ 3167              		.cfi_endproc
+ 3168              	.LFE2447:
+ 3171              	_GLOBAL__sub_I_main:
+ 3172              	.LFB2448:
+ 3173              		.loc 1 185 0
+ 3174              		.cfi_startproc
+ 3175 0447 55       		pushq	%rbp
+ 3176              		.cfi_def_cfa_offset 16
+ 3177              		.cfi_offset 6, -16
+ 3178 0448 4889E5   		movq	%rsp, %rbp
+ 3179              		.cfi_def_cfa_register 6
+ 3180              		.loc 1 185 0
+ 3181 044b BEFFFF00 		movl	$65535, %esi
+ 3181      00
+ 3182 0450 BF010000 		movl	$1, %edi
+ 3182      00
+ 3183 0455 E8A4FFFF 		call	_Z41__static_initialization_and_destruction_0ii
+ 3183      FF
+ 3184 045a 5D       		popq	%rbp
+ 3185              		.cfi_def_cfa 7, 8
+ 3186 045b C3       		ret
+ 3187              		.cfi_endproc
+ 3188              	.LFE2448:
+ 3190              		.section	.init_array,"aw"
+ 3191              		.align 8
+ 3192 0000 00000000 		.quad	_GLOBAL__sub_I_main
+ 3192      00000000 
+ 3193              		.section	.rodata
+ 3194 0178 00000000 		.align 32
+ 3194      00000000 
+ 3197              	_ZZN9RowVectorplERKS_E19__PRETTY_FUNCTION__:
+ 3198 0180 526F7756 		.string	"RowVector RowVector::operator+(const RowVector&)"
+ 3198      6563746F 
+ 3198      7220526F 
+ 3198      77566563 
+ 3198      746F723A 
+ 3199 01b1 00000000 		.align 32
+ 3199      00000000 
+ 3199      00000000 
+ 3199      000000
+ 3202              	_ZZN9RowVectormlERKS_E19__PRETTY_FUNCTION__:
+ 3203 01c0 636F6E73 		.string	"const double RowVector::operator*(const RowVector&)"
+ 3203      7420646F 
+ 3203      75626C65 
+ 3203      20526F77 
+ 3203      56656374 
+ 3204 01f4 00000000 		.align 8
+ 3205              	.LC9:
+ 3206 01f8 00000000 		.long	0
+ 3207 01fc 0000F03F 		.long	1072693248
+ 3208              		.align 8
+ 3209              	.LC10:
+ 3210 0200 00000000 		.long	0
+ 3211 0204 00000040 		.long	1073741824
+ 3212              		.align 8
+ 3213              	.LC15:
+ 3214 0208 00000000 		.long	0
+ 3215 020c 0000E03F 		.long	1071644672
+ 3216              		.align 8
+ 3217              	.LC19:
+ 3218 0210 00000000 		.long	0
+ 3219 0214 0000F0BF 		.long	-1074790400
+ 3220              		.text
+ 3221              	.Letext0:
+ 3222              		.file 13 "/usr/include/c++/7/bits/basic_string.h"
+ 3223              		.file 14 "/usr/include/c++/7/bits/stringfwd.h"
+ 3224              		.file 15 "/usr/include/c++/7/cstdint"
+ 3225              		.file 16 "/usr/include/c++/7/new"
+ 3226              		.file 17 "/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h"
+ 3227              		.file 18 "/usr/include/c++/7/bits/exception_ptr.h"
+ 3228              		.file 19 "/usr/include/c++/7/type_traits"
+ 3229              		.file 20 "/usr/include/c++/7/cwchar"
+ 3230              		.file 21 "/usr/include/c++/7/bits/stl_pair.h"
+ 3231              		.file 22 "/usr/include/c++/7/debug/debug.h"
+ 3232              		.file 23 "/usr/include/c++/7/bits/char_traits.h"
+ 3233              		.file 24 "/usr/include/c++/7/clocale"
+ 3234              		.file 25 "/usr/include/c++/7/cstdlib"
+ 3235              		.file 26 "/usr/include/c++/7/cstdio"
+ 3236              		.file 27 "/usr/include/c++/7/initializer_list"
+ 3237              		.file 28 "/usr/include/c++/7/system_error"
+ 3238              		.file 29 "/usr/include/c++/7/bits/ios_base.h"
+ 3239              		.file 30 "/usr/include/c++/7/cwctype"
+ 3240              		.file 31 "/usr/include/c++/7/iosfwd"
+ 3241              		.file 32 "/usr/include/c++/7/bits/stl_iterator_base_types.h"
+ 3242              		.file 33 "/usr/include/c++/7/bits/move.h"
+ 3243              		.file 34 "/usr/include/c++/7/bits/predefined_ops.h"
+ 3244              		.file 35 "/usr/include/c++/7/ext/numeric_traits.h"
+ 3245              		.file 36 "/usr/include/c++/7/ext/alloc_traits.h"
+ 3246              		.file 37 "/usr/include/c++/7/ext/type_traits.h"
+ 3247              		.file 38 "/usr/include/x86_64-linux-gnu/bits/types.h"
+ 3248              		.file 39 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h"
+ 3249              		.file 40 "/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h"
+ 3250              		.file 41 "/usr/include/stdint.h"
+ 3251              		.file 42 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h"
+ 3252              		.file 43 "<built-in>"
+ 3253              		.file 44 "/usr/include/x86_64-linux-gnu/bits/types/wint_t.h"
+ 3254              		.file 45 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h"
+ 3255              		.file 46 "/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h"
+ 3256              		.file 47 "/usr/include/x86_64-linux-gnu/bits/types/__FILE.h"
+ 3257              		.file 48 "/usr/include/x86_64-linux-gnu/bits/libio.h"
+ 3258              		.file 49 "/usr/include/x86_64-linux-gnu/bits/types/FILE.h"
+ 3259              		.file 50 "/usr/include/wchar.h"
+ 3260              		.file 51 "/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h"
+ 3261              		.file 52 "/usr/include/locale.h"
+ 3262              		.file 53 "/usr/include/time.h"
+ 3263              		.file 54 "/usr/include/x86_64-linux-gnu/c++/7/bits/atomic_word.h"
+ 3264              		.file 55 "/usr/include/stdlib.h"
+ 3265              		.file 56 "/usr/include/x86_64-linux-gnu/bits/_G_config.h"
+ 3266              		.file 57 "/usr/include/stdio.h"
+ 3267              		.file 58 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h"
+ 3268              		.file 59 "/usr/include/errno.h"
+ 3269              		.file 60 "/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h"
+ 3270              		.file 61 "/usr/include/wctype.h"
+ 21776              		.align 8
+ 21779              	DW.ref.__gxx_personality_v0:
+ 21780 0000 00000000 		.quad	__gxx_personality_v0
+ 21780      00000000 
+ 21781              		.hidden	__dso_handle
+ 21782              		.ident	"GCC: (Ubuntu 7.3.0-16ubuntu3) 7.3.0"
+ 21783              		.section	.note.GNU-stack,"",@progbits
