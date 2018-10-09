@@ -35,28 +35,7 @@ class RowVector
 
         // Default arguments
         // If the function could not find the argument in the call, it uses the default value.
-        RowVector(const uint32_t n, const double *values=NULL, std::string new_name="None"){
-#ifdef LOG
-            std::cout << '[' << &columns << ']' 
-            << "RowVector(" << n << ", " << values << ", " << new_name << ")\n";
-#endif
-            columns.resize(n);
-
-            // If initial values available, copy
-            if (values){
-                for (uint32_t i = 0; columns.size() > i; ++i){
-                    columns[i] = values[i];
-                }
-            }
-            // If no initial values, set all values zero
-            else{
-                for (uint32_t i = 0; columns.size() > i; ++i){
-                    columns[i] = 0.0;
-                }
-            }
-
-            name = new_name;
-        }
+        RowVector(const uint32_t n, const double *values=NULL, std::string new_name="None");
 
         // Instead of implementing another constructor, reusing an existing one
         // c++ 11 or later
@@ -164,6 +143,30 @@ class RowVector
             }
         }
 };
+
+
+RowVector::RowVector(const uint32_t n, const double *values, std::string new_name){
+#ifdef LOG
+    std::cout << '[' << &columns << ']' 
+    << "RowVector(" << n << ", " << values << ", " << new_name << ")\n";
+#endif
+    columns.resize(n);
+
+    // If initial values available, copy
+    if (values){
+        for (uint32_t i = 0; columns.size() > i; ++i){
+            columns[i] = values[i];
+        }
+    }
+    // If no initial values, set all values zero
+    else{
+        for (uint32_t i = 0; columns.size() > i; ++i){
+            columns[i] = 0.0;
+        }
+    }
+
+    name = new_name;
+}
 
 
 int32_t main(int32_t argn, char *argv[]){
