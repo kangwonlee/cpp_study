@@ -1,8 +1,9 @@
 import os
-import nbformat
-import sys
 import re
+import sys
 import tempfile
+
+import nbformat
 
 
 def has_gpp():
