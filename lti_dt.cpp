@@ -59,23 +59,23 @@ LTI_DT::~LTI_DT(){
 #ifdef LOG
     std::cout << "delete &A;\n";
 #endif
-    delete &A;
+    // delete &A;
 #ifdef LOG
     std::cout << "delete &B;\n";
 #endif
-    delete &B;
+    // delete &B;
 #ifdef LOG
     std::cout << "delete &C;\n";
 #endif
-    delete &C;
+    // delete &C;
 #ifdef LOG
     std::cout << "delete &D;\n";
 #endif
-    delete &D;
+    // delete &D;
 #ifdef LOG
     std::cout << "delete &X;\n";
 #endif
-    delete &X;
+    // delete &X;
 }
 
 const Matrix LTI_DT::get_y(const double u){
@@ -85,7 +85,7 @@ const Matrix LTI_DT::get_y(const double u){
 void LTI_DT::get_next_x(const double u){
     Matrix next_X (A * X + B * u);
 
-    delete &X;
+    // delete &X;
 
     X = next_X;
 }
