@@ -166,7 +166,7 @@ Matrix Matrix::operator + (const Matrix & other){
     std::cout << "Matrix temp(other);\n";
 #endif
     // Make a new vector to return
-    Matrix temp(other);
+    Matrix temp(other, get_name() + '+' + other.get_name());
 
 #ifdef LOG
     std::cout << "Begin row loop\n";
