@@ -146,7 +146,7 @@ const RowVector Matrix::operator [] (const uint32_t i) const {
 }
 
 
-const std::string Matrix::get_name(){
+const std::string Matrix::get_name() const{
 #ifdef LOG
     std::cout << '[' << &rows << ']' << "const std::string Matrix::get_name()\n";
 #endif

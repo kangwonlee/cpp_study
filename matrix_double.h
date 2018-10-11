@@ -36,7 +36,7 @@ class Matrix
 
         const RowVector operator [] (const uint32_t i) const;
 
-        const std::string get_name();
+        const std::string get_name() const;
 
         Matrix operator + (const Matrix & other);
 
