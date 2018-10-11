@@ -7,11 +7,16 @@
 #include <string>
 #include <vector>
 
+
 #ifndef VECTOR_DOUBLE
 #define VECTOR_DOUBLE
 
 #ifndef LOG
 #define LOG
+#endif
+
+#ifndef LOGBRACKET
+// #define LOGBRACKET
 #endif
 
 

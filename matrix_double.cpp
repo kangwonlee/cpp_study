@@ -105,7 +105,7 @@ Matrix::Matrix(const Matrix & other, std::string new_name){
 
 
 RowVector & Matrix::operator [] (const uint32_t i){
-#ifdef LOG
+#ifdef LOGBRACKET
     std::cout << '[' << &rows << ']' << "RowVector & Matrix::operator [] (" << i << ")\n";
 #endif
     // Return reference; otherwise, unable to assign
@@ -113,7 +113,7 @@ RowVector & Matrix::operator [] (const uint32_t i){
 }
 
 const RowVector Matrix::operator [] (const uint32_t i) const {
-#ifdef LOG
+#ifdef LOGBRACKET
     std::cout << '[' << &rows << ']' << "const RowVector Matrix::operator [] (" << i << ")\n";
 #endif
     // Return reference; otherwise, unable to assign
