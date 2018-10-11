@@ -1,6 +1,7 @@
 // Begin cpp_matrix_double_practice.cpp
 
 #include <cassert>
+#include <cmath>
 #include <cstdint>
 #include <exception>
 #include <iostream>
@@ -17,6 +18,14 @@ int32_t main(int32_t argn, char *argv[]){
 	Matrix identity (2u, 2u, s, "id");
 
     identity.show();
+
+    double r[] = {cos(M_PI/6.0), -sin(M_PI/6.0),
+                  sin(M_PI/6.0), +cos(M_PI/6.0)};
+
+    std::cout << "Matrix rotation (2u, 2u, r, \"rot\");\n";
+    Matrix rotation (2u, 2u, r, "rot");
+    identity.show();
+    rotation.show();
 
 }
 
