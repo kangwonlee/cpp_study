@@ -15,15 +15,19 @@ int32_t main(int32_t argn, char *argv[]){
     // https://ccrma.stanford.edu/~jos/fp/State_Space_Simulation_Matlab.html
 
     const double A_d[] = {0, 1, -1, 0};
+    std::cout << "Matrix A(2u, 2u, A_d, \"A\");\n";
     Matrix A(2u, 2u, A_d, "A");
 
     const double B_d[] = {0, 1};
+    std::cout << "Matrix B(2u, 1u, B_d, \"B\");\n";
     Matrix B(2u, 1u, B_d, "B");
 
     const double C_d[] = {1, 0, 0, 1, 0, 1};
+    std::cout << "Matrix C(3u, 2u, C_d, \"C\");\n";
     Matrix C(3u, 2u, C_d, "C");
 
     const double D_d[] = {0, 0, 0};
+    std::cout << "Matrix D(3u, 1u, D_d, \"D\");\n";
     Matrix D(3u, 1u, D_d, "D");
 
     const uint32_t n = 10;
