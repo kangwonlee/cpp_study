@@ -179,7 +179,7 @@ RowVector Matrix::operator * (const RowVector &v){
 #endif
 
     // Make a new vector to return
-    RowVector temp(rows.size(), NULL);
+    RowVector temp(rows.size(), NULL, name + '*' + v.get_name());
 
     // Element loop in `for each` style
     // c++ 11 or later
