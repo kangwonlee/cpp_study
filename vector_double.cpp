@@ -166,5 +166,9 @@ void RowVector::resize(std::size_t new_size){
 }
 
 
+std::size_t RowVector::size() const noexcept{
+    return columns.size();
+}
+
 // End vector_double.cpp
 // Build command : g++ -Wall -g -std=c++14 vector_double.cpp -fsyntax-only
