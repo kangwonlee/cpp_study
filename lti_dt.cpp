@@ -16,10 +16,26 @@ LTI_DT::LTI_DT(Matrix &new_A, Matrix &new_B, Matrix &new_C, Matrix &new_D, Matri
 #ifdef LOG
     std::cout << '[' << &A << ']' << "LTI_DT::LTI_DT(" << &new_A << ", " << &new_B << ", " << &new_C << ", " << &new_D << ")\n";
 #endif
-    A = new_A;
-    B = new_B;
-    C = new_C;
-    D = new_D;
+    
+#ifdef LOG
+    std::cout << "LTI_DT::LTI_DT(): A = new_A;\n";
+#endif
+    A = new_A;    
+#ifdef LOG
+    std::cout << "LTI_DT::LTI_DT(): B = new_B;\n";
+#endif
+    B = new_B;    
+#ifdef LOG
+    std::cout << "LTI_DT::LTI_DT(): C = new_C;\n";
+#endif
+    C = new_C;    
+#ifdef LOG
+    std::cout << "LTI_DT::LTI_DT(): D = new_D;\n";
+#endif
+    D = new_D;    
+#ifdef LOG
+    std::cout << "LTI_DT::LTI_DT(): X = new_X;\n";
+#endif
     X = new_X;
 
     // is A matrix square?
@@ -40,10 +56,25 @@ LTI_DT::~LTI_DT(){
 #ifdef LOG
     std::cout << '[' << &A << ']' << "LTI_DT::!LTI_DT()\n";
 #endif
+#ifdef LOG
+    std::cout << "delete &A;\n";
+#endif
     delete &A;
+#ifdef LOG
+    std::cout << "delete &B;\n";
+#endif
     delete &B;
+#ifdef LOG
+    std::cout << "delete &C;\n";
+#endif
     delete &C;
+#ifdef LOG
+    std::cout << "delete &D;\n";
+#endif
     delete &D;
+#ifdef LOG
+    std::cout << "delete &X;\n";
+#endif
     delete &X;
 }
 
