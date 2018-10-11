@@ -47,6 +47,8 @@ class RowVector
         const double operator * (const RowVector & other);
 
         void show();
+
+        void resize(std::size_t new_size);
 };
 
 // End vector_double.h
