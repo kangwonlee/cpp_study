@@ -69,7 +69,7 @@ Matrix::Matrix(const uint32_t m, const uint32_t n, std::string new_name) : Matri
 }
 
 
-Matrix::Matrix(const Matrix & other){
+Matrix::Matrix(const Matrix & other, std::string new_name){
 #ifdef LOG
     std::cout << '[' << &rows << ']' << "Matrix(" << & other << ")\n";
 #endif
@@ -92,10 +92,15 @@ Matrix::Matrix(const Matrix & other){
 
     }
 
+    if ("" != new_name){
+        name = new_name;
+    }
+    else{
     // Copy name of the other one
     name = other.name;
     // Then append
     name.append("2");
+}
 }
 
 

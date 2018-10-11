@@ -28,7 +28,7 @@ class Matrix
 
         Matrix(const uint32_t m, const uint32_t n, std::string new_name="None");
 
-        Matrix(const Matrix & other);
+        Matrix(const Matrix & other, std::string new_name="");
 
         RowVector & operator [] (const uint32_t i);
 
