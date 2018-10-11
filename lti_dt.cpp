@@ -24,6 +24,16 @@ LTI_DT::LTI_DT(Matrix &new_A, Matrix &new_B, Matrix &new_C, Matrix &new_D, Matri
 
     // is A matrix square?
     assert(A.get_height() == A.get_width());
+
+    // number of state variables
+    n = A.get_height();
+
+    // check number of rows of B matrix
+    assert(B.get_height() == n);
+    
+    // expected size of input
+    m = B.get_width();
+
 }
 
 LTI_DT::~LTI_DT(){
