@@ -33,6 +33,13 @@ int32_t main(int32_t argn, char *argv[]){
     rotation.show();
     sum.show();
 
+    // Check sum operation result
+    for (uint32_t i=0; 2u > i; ++i){
+        for (uint32_t j=0; 2u > j; ++j){
+            assert(sum[i][j] == (identity[i][j] + rotation[i][j]));
+        }
+    }
+
 }
 
 // End cpp_matrix_double_practice.cpp
