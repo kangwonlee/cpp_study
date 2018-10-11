@@ -231,9 +231,8 @@ void Matrix::show(){
     for (uint32_t i=0; rows.size()> i; ++i){
         // column loop
         for (uint32_t j=0; rows[i].size()> j; ++j){
-            std::cout << rows[i][j] << '\t';
+            std::cout << get_name() << '['<< i << "][" << j << "]= " << rows[i][j] << '\n';
         }
-        std::cout << '\n';
     }
 }
 
