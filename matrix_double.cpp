@@ -160,7 +160,8 @@ Matrix Matrix::operator + (const Matrix & other){
     std::cout << '[' << &rows << ']' << "Matrix Matrix::operator + ("<< & other <<")\n";
 #endif
     // Check size
-    assert(rows.size() == other.rows.size());
+    assert(this->get_height() == other.get_height());
+    assert(this->get_width() == other.get_width());
 
 #ifdef LOG
     std::cout << "Matrix temp(other);\n";
