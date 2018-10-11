@@ -190,7 +190,8 @@ Matrix Matrix::operator * (const double a){
 #endif
 
     // Make a new vector to return
-    Matrix temp(*this);
+    // https://stackoverflow.com/questions/332111/how-do-i-convert-a-double-into-a-string-in-c
+    Matrix temp(*this, std::to_string(a) + '*' + get_name());
 
     // Element loop in `for each` style
     // c++ 11 or later
