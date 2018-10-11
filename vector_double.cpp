@@ -188,5 +188,14 @@ RowVector & RowVector::operator += (const RowVector & other) {
 }
 
 
+RowVector & RowVector::operator *= (const double a) {
+    // https://stackoverflow.com/questions/4581961/c-how-to-overload-operator
+    for (uint32_t i=0; size()>i; ++i){
+        columns[i] *= a;
+    }
+    return *this;
+}
+
+
 // End vector_double.cpp
 // Build command : g++ -Wall -g -std=c++14 vector_double.cpp -fsyntax-only
