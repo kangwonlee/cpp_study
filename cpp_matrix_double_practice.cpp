@@ -19,8 +19,8 @@ int32_t main(int32_t argn, char *argv[]){
 
     identity.show();
 
-    double r[] = {cos(M_PI/6.0), -sin(M_PI/6.0),
-                  sin(M_PI/6.0), +cos(M_PI/6.0)};
+    double r[] = {+cos(M_PI/6.0), sin(M_PI/6.0),
+                  -sin(M_PI/6.0), cos(M_PI/6.0)};
 
     std::cout << "Matrix rotation (2u, 2u, r, \"rot\");\n";
     Matrix rotation (2u, 2u, r, "rot");
