@@ -67,6 +67,24 @@ int32_t main(int32_t argn, char *argv[]){
     assert(abs(ninety_degrees[1][0] - (-1.0)) < 1e-12);
     assert(abs(ninety_degrees[1][1] - ( 0.0)) < 1e-12);
 
+    // State Space Representation Ax + B u
+    double xi_d[] = {1.0, 0.0};
+    double ones_d[] = {1.0, 1.0};
+
+    Matrix xi(2, 1, xi_d, "xi");
+    Matrix B(2, 1, ones_d, "B");
+
+    double u = 0.75;
+
+    Matrix xj;
+    // xj = A xi  + B u
+    xj = rotation * xi + B * u;
+
+    xj.show();
+
+    assert(abs(xj[0][0] - ( 0.75 + cos(M_PI/6.0))) < 1e-12);
+    assert(abs(xj[1][0] - ( 0.75 - sin(M_PI/6.0))) < 1e-12);
+
 }
 
 // End cpp_matrix_double_practice.cpp
