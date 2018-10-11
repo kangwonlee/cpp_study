@@ -79,12 +79,17 @@ Matrix::Matrix(const Matrix & other){
     // row loop
     for(uint32_t i=0; rows.size() > i; ++i){
         rows[i].resize(other.rows[i].size());
-        // column loop
 
+        // column loop
         for(uint32_t j=0; other.rows[i].size() > j; ++j){
-            rows[i][j] = other[i][j];
+            // Another possibility is as follows
+            // rows[i][j] = other.rows[i][j];
+            // However for now the line above would create a temporary row vector
+            // To avoid seemingly unnecessary such temporary object, 
+            // for now would use the following line
+            rows[i][j] = other.rows[i][j];
         }
-        
+
     }
 
     // Copy name of the other one
