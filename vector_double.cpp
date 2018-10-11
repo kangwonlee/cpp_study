@@ -82,6 +82,14 @@ double & RowVector::operator [] (const uint32_t i){
     return columns[i];
 }
 
+double RowVector::operator [] (const uint32_t i) const {
+#ifdef LOG
+    std::cout << '[' << &columns << ']' << "double operator [] (" << i << ") const\n";
+#endif
+    // Return reference; otherwise, unable to assign
+    return columns[i];
+}
+
 
 const std::string RowVector::get_name(){
 #ifdef LOG
@@ -169,6 +177,16 @@ void RowVector::resize(std::size_t new_size){
 std::size_t RowVector::size() const noexcept{
     return columns.size();
 }
+
+
+RowVector & RowVector::operator += (const RowVector & other) {
+    // https://stackoverflow.com/questions/4581961/c-how-to-overload-operator
+    for (uint32_t i=0; size()>i; ++i){
+        columns[i] += other[i];
+    }
+    return *this;
+}
+
 
 // End vector_double.cpp
 // Build command : g++ -Wall -g -std=c++14 vector_double.cpp -fsyntax-only

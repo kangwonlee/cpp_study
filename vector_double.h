@@ -7,6 +7,8 @@
 #include <string>
 #include <vector>
 
+#ifndef VECTOR_DOUBLE
+#define VECTOR_DOUBLE
 
 #ifndef LOG
 #define LOG
@@ -38,6 +40,8 @@ class RowVector
 
         double & operator [] (const uint32_t i);
 
+        double operator [] (const uint32_t i) const;
+
         const std::string get_name();
 
         RowVector operator + (const RowVector & other);
@@ -51,6 +55,9 @@ class RowVector
         void resize(std::size_t new_size);
 
         std::size_t size() const noexcept;
+
+        RowVector & operator += (const RowVector & other);
 };
 
+#endif
 // End vector_double.h
