@@ -104,6 +104,31 @@ Matrix::Matrix(const Matrix & other, std::string new_name){
 }
 
 
+Matrix::Matrix(const RowVector & other, std::string new_name){
+    // RowVector -> n x 1 matrix    
+#ifdef LOG
+    std::cout << '[' << &rows << ']' << "Matrix(const RowVector &" << & other << ")\n";
+#endif
+    rows.resize(other.size());
+
+    // row loop
+    for(uint32_t i=0; rows.size() > i; ++i){
+        rows[i].resize(1);
+        rows[i][0] = other[0];
+    }
+
+    if ("" != new_name){
+        name = new_name;
+    }
+    else{
+        // Copy name of the other one
+        name = other.get_name();
+        // Then append
+        name.append("2");
+    }
+}
+
+
 RowVector & Matrix::operator [] (const uint32_t i){
 #ifdef LOGBRACKET
     std::cout << '[' << &rows << ']' << "RowVector & Matrix::operator [] (" << i << ")\n";

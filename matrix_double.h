@@ -30,6 +30,8 @@ class Matrix
 
         Matrix(const Matrix & other, std::string new_name="");
 
+        Matrix(const RowVector & other, std::string new_name="");
+
         RowVector & operator [] (const uint32_t i);
 
         const RowVector operator [] (const uint32_t i) const;
