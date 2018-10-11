@@ -63,6 +63,8 @@ RowVector::RowVector(const RowVector & other){
     // https://codereview.stackexchange.com/questions/149669/c-operator-overloading-for-matrix-operations-follow-up
     // http://www.cplusplus.com/reference/vector/vector/resize/
     columns.resize(other.columns.size());
+
+    // element loop
     for(uint32_t i=0; columns.size() > i; ++i){
         columns[i] = other.columns[i];
     }
