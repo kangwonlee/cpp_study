@@ -93,7 +93,7 @@ double RowVector::operator [] (const uint32_t i) const {
 }
 
 
-const std::string RowVector::get_name(){
+const std::string RowVector::get_name() const{
 #ifdef LOG
     std::cout << '[' << &columns << ']' << "const std::string RowVector::get_name()\n";
 #endif

@@ -42,7 +42,7 @@ class RowVector
 
         double operator [] (const uint32_t i) const;
 
-        const std::string get_name();
+        const std::string get_name() const;
 
         RowVector operator + (const RowVector & other);
 
