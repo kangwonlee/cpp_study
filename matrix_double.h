@@ -49,6 +49,10 @@ class Matrix
         void show();
 
         Matrix transpose();
+
+        const size_t get_height() const;
+
+        const size_t get_width() const;
 };
 
 #endif
