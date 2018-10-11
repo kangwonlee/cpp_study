@@ -47,7 +47,8 @@ RowVector::RowVector(const uint32_t n, const double *values, std::string new_nam
     name = new_name;
 }
 
-
+// Instead of implementing another constructor, calling an existing one
+// c++ 11 or later
 RowVector::RowVector(const uint32_t n, std::string new_name) : RowVector(n, NULL, new_name){
 #ifdef LOG
     std::cout << '[' << &columns << ']' << "RowVector(" << n << ", " << new_name << ")\n";

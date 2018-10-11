@@ -32,8 +32,6 @@ class RowVector
         // If the function could not find the argument in the call, it uses the default value.
         RowVector(const uint32_t n, const double *values=NULL, std::string new_name="None");
 
-        // Instead of implementing another constructor, reusing an existing one
-        // c++ 11 or later
         RowVector(const uint32_t n, std::string new_name="None");
 
         RowVector(const RowVector & other);
