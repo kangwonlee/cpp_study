@@ -49,6 +49,16 @@ int32_t main(int32_t argn, char *argv[]){
     assert(twice[1][0] == 0.0);
     assert(twice[1][1] == 2.0);
 
+    std::cout << "Matrix new_axis(twice * rotation);\n";
+    Matrix new_axis(twice * rotation);
+
+    // Check matrix multiplication result
+    for (uint32_t i=0; 2u > i; ++i){
+        for (uint32_t j=0; 2u > j; ++j){
+            assert(new_axis[i][j] == (2.0 * rotation[i][j]));
+        }
+    }
+
 }
 
 // End cpp_matrix_double_practice.cpp
