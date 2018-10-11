@@ -46,8 +46,7 @@ int32_t main(int32_t argn, char *argv[]){
     }
 
     for(uint32_t i=0; n>i; ++i){
-        std::cout << "i = " << i << '\n';
-        y_list[i].show();
+        std::cout << "y[" << i << "] = " << y_list[i][2][0] << '\n';
     }
 
     return 0;
