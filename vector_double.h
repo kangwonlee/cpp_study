@@ -7,10 +7,6 @@
 #include <string>
 #include <vector>
 
-
-#ifndef VECTOR_DOUBLE
-#define VECTOR_DOUBLE
-
 #ifndef LOG
 #define LOG
 #endif
@@ -19,6 +15,8 @@
 // #define LOGBRACKET
 #endif
 
+#ifndef VECTOR_DOUBLE
+#define VECTOR_DOUBLE
 
 class RowVector 
 {
