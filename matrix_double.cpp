@@ -96,11 +96,11 @@ Matrix::Matrix(const Matrix & other, std::string new_name){
         name = new_name;
     }
     else{
-    // Copy name of the other one
-    name = other.name;
-    // Then append
-    name.append("2");
-}
+        // Copy name of the other one
+        name = other.name;
+        // Then append
+        name.append("2");
+    }
 }
 
 
