@@ -1,4 +1,4 @@
-// Begin dt_ss.cpp
+// Begin lti_dt.h
 
 #include <cassert>
 #include <cstdint>
@@ -27,3 +27,5 @@ class LTI_DT{
         ~LTI_DT();
 };
 #endif
+
+// End lti_dt.h

@@ -1,4 +1,4 @@
-// Begin dt_ss.cpp
+// Begin lti_dt.cpp
 
 #include <cassert>
 #include <cstdint>
@@ -9,7 +9,7 @@
 
 #include    "vector_double.h"
 #include    "matrix_double.h"
-#include    "dt_ss.h"
+#include    "lti_dt.h"
 
 // Discrete Time State Space model
 LTI_DT::LTI_DT(Matrix &new_A, Matrix &new_B, Matrix &new_C, Matrix &new_D, Matrix &new_X){
@@ -33,4 +33,4 @@ LTI_DT::~LTI_DT(){
     delete &D;
     delete &X;
 }
-// End dt_ss.cpp
+// End lti_dt.cpp
