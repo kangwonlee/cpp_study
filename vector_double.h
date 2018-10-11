@@ -57,6 +57,8 @@ class RowVector
         std::size_t size() const noexcept;
 
         RowVector & operator += (const RowVector & other);
+
+        RowVector & operator *= (const double a);
 };
 
 #endif
