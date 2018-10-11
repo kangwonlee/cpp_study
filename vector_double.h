@@ -49,6 +49,8 @@ class RowVector
         void show();
 
         void resize(std::size_t new_size);
+
+        std::size_t size() const noexcept;
 };
 
 // End vector_double.h
