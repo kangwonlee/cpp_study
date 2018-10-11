@@ -173,6 +173,25 @@ Matrix Matrix::operator * (const double a){
 }
 
 
+RowVector Matrix::operator * (const RowVector &v){
+#ifdef LOG
+    std::cout << '[' << &rows << ']' << "Matrix Matrix::operator * (" << &v << ")\n";
+#endif
+
+    // Make a new vector to return
+    RowVector temp(rows.size(), NULL);
+
+    // Element loop in `for each` style
+    // c++ 11 or later
+    for (uint32_t i=0; rows.size()>i; ++i){
+        temp[i] = rows[i] * v;
+    }
+
+    // Returning a temporary image
+    return temp;
+}
+
+
 Matrix Matrix::operator * (const Matrix & other){
 #ifdef LOG
     std::cout << '[' << &rows << ']' << "Matrix Matrix::operator * (" << &other << ")\n";

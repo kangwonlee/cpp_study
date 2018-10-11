@@ -40,6 +40,8 @@ class Matrix
 
         Matrix operator * (const double a);
 
+        RowVector operator * (const RowVector &v);
+
         Matrix operator * (const Matrix & other);
 
         void show();
