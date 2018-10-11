@@ -27,6 +27,8 @@ class LTI_DT{
     public:
         LTI_DT(Matrix &new_A, Matrix &new_B, Matrix &new_C, Matrix &new_D, Matrix &new_X);
         ~LTI_DT();
+        const Matrix get_y(const double u);
+        const Matrix get_next_x(const double u);
 };
 #endif
 

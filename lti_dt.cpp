@@ -46,4 +46,17 @@ LTI_DT::~LTI_DT(){
     delete &D;
     delete &X;
 }
+
+const Matrix LTI_DT::get_y(const double u){
+    return Matrix (C * X + D * u);
+}
+
+const Matrix LTI_DT::get_next_x(const double u){
+    Matrix next_X (A * X + B * u);
+
+    delete &X;
+
+    X = next_X;
+}
+
 // End lti_dt.cpp
