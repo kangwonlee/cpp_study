@@ -40,6 +40,15 @@ int32_t main(int32_t argn, char *argv[]){
         }
     }
 
+    std::cout << "Matrix twice(identity * 2.0);\n";
+    Matrix twice(identity * 2.0);
+
+    // Check scala multiplication result
+    assert(twice[0][0] == 2.0);
+    assert(twice[0][1] == 0.0);
+    assert(twice[1][0] == 0.0);
+    assert(twice[1][1] == 2.0);
+
 }
 
 // End cpp_matrix_double_practice.cpp
