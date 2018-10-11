@@ -232,5 +232,23 @@ void Matrix::show(){
     }
 }
 
+
+Matrix Matrix::transpose(){
+#ifdef LOG
+    std::cout << '[' << &rows << ']' << "Matrix Matrix::transpose()\n";
+#endif
+    Matrix temp(rows[0].size(), rows.size(), name+"T");
+
+    // row loop
+    for(uint32_t i=0; temp.rows.size()> i; ++i){
+        // column loop
+        for(uint32_t j=0; temp.rows.size()> j; ++j){
+            temp[i][j] = rows[i][j];
+        }        
+    }
+
+    return temp;
+}
+
 // End matrix_double.cpp
 // Build command : g++ -Wall -g -std=c++14 matrix_double.cpp -fsyntax-only

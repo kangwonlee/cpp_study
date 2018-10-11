@@ -45,6 +45,8 @@ class Matrix
         Matrix operator * (const Matrix & other);
 
         void show();
+
+        Matrix transpose();
 };
 
 #endif
