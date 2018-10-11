@@ -77,7 +77,7 @@ RowVector::RowVector(const RowVector & other){
 
 
 double & RowVector::operator [] (const uint32_t i){
-#ifdef LOG
+#ifdef LOGBRACKET
     std::cout << '[' << &columns << ']' << "double & RowVector::operator [] (" << i << ")\n";
 #endif
     // Return reference; otherwise, unable to assign
@@ -85,7 +85,7 @@ double & RowVector::operator [] (const uint32_t i){
 }
 
 double RowVector::operator [] (const uint32_t i) const {
-#ifdef LOG
+#ifdef LOGBRACKET
     std::cout << '[' << &columns << ']' << "double RowVector::operator [] (" << i << ") const\n";
 #endif
     // Return reference; otherwise, unable to assign
