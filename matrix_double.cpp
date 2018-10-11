@@ -39,14 +39,22 @@ Matrix::Matrix(const uint32_t m, const uint32_t n, const double *values, std::st
     if (values){
         // row loop
         for (uint32_t i = 0; m > i; ++i){
-            rows[i] = RowVector(n, values + i * n, name);
+            rows[i].resize(n);
+            // column loop
+            for (uint32_t j = 0; n > j; ++j){
+                rows[i][j] = *(values + i * n + j) ;
+            }
         }
     }
     // If no initial values, set all values zero
     else{
         // row loop
         for (uint32_t i = 0; m > i; ++i){
-            rows[i] = RowVector(n, values + i * n, name);
+            rows[i].resize(n);
+            // column loop
+            for (uint32_t j = 0; n > j; ++j){
+                rows[i][j] = 0.0;
+            }
         }
     }
 
