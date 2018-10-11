@@ -29,7 +29,25 @@ int32_t main(int32_t argn, char *argv[]){
     const uint32_t n = 10;
     const double u[n] = {1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
 
+    std::vector<Matrix> y_list;
+
+    Matrix X(2u, 1u, "x");
+
+    LTI_DT ss_dt(A, B, C, D, X);
+
+    for(uint32_t k=0; n > k; ++k){
+        Matrix y_now(ss_dt.get_y(u[k]));
+        y_list.push_back(y_now);
+        ss_dt.get_next_x(u[k]);
+    }
+
+    for(uint32_t i=0; n>i; ++i){
+        std::cout << "i = " << i << '\n';
+        y_list[i].show();
+    }
+
+    return 0;
 }
 // End lti_dt_example.cpp
-// Build command : g++ -Wall -g -std=c++14 lti_dt_example.cpp vector_double.cpp matrix_double.cpp -o lti_dt_example
+// Build command : g++ -Wall -g -std=c++14 lti_dt_example.cpp vector_double.cpp matrix_double.cpp lti_dt.cpp -o lti_dt_example
 
