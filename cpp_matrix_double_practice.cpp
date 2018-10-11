@@ -59,6 +59,14 @@ int32_t main(int32_t argn, char *argv[]){
         }
     }
 
+    Matrix ninety_degrees(rotation * rotation * rotation);
+
+    // Check matrix multiplication result
+    assert(abs(ninety_degrees[0][0] - ( 0.0)) < 1e-12);
+    assert(abs(ninety_degrees[0][1] - ( 1.0)) < 1e-12);
+    assert(abs(ninety_degrees[1][0] - (-1.0)) < 1e-12);
+    assert(abs(ninety_degrees[1][1] - ( 0.0)) < 1e-12);
+
 }
 
 // End cpp_matrix_double_practice.cpp
