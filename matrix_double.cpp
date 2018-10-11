@@ -127,13 +127,22 @@ Matrix Matrix::operator + (const Matrix & other){
     // Check size
     assert(rows.size() == other.rows.size());
 
+#ifdef LOG
+    std::cout << "Matrix temp(other);\n";
+#endif
     // Make a new vector to return
     Matrix temp(other);
 
-    // Element loop
+#ifdef LOG
+    std::cout << "Begin row loop\n";
+#endif
+    // Row loop
     for (uint32_t i=0; rows.size() > i; ++i){
         temp[i] += rows[i];
     }
+#ifdef LOG
+    std::cout << "End row loop\n";
+#endif
 
     // Returning a temporary image
     return temp;
