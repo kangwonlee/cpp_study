@@ -11,10 +11,10 @@
 #include    "matrix_double.h"
 
 
-#ifndef SSDT
+#ifndef LTI_DT
 
 // Discrete Time State Space model
-class SsDt{
+class LTI_DT{
     protected:
         Matrix A;
         Matrix B;
@@ -23,7 +23,7 @@ class SsDt{
         Matrix X;
 
     public:
-        SsDt(Matrix &new_A, Matrix &new_B, Matrix &new_C, Matrix &new_D, Matrix &new_X);
-        ~SsDt();
+        LTI_DT(Matrix &new_A, Matrix &new_B, Matrix &new_C, Matrix &new_D, Matrix &new_X);
+        ~LTI_DT();
 };
 #endif

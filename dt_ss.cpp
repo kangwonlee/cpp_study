@@ -12,9 +12,9 @@
 #include    "dt_ss.h"
 
 // Discrete Time State Space model
-SsDt::SsDt(Matrix &new_A, Matrix &new_B, Matrix &new_C, Matrix &new_D, Matrix &new_X){
+LTI_DT::LTI_DT(Matrix &new_A, Matrix &new_B, Matrix &new_C, Matrix &new_D, Matrix &new_X){
 #ifdef LOG
-    std::cout << '[' << &A << ']' << "SsDt::SsDt(" << &new_A << ", " << &new_B << ", " << &new_C << ", " << &new_D << ")\n";
+    std::cout << '[' << &A << ']' << "LTI_DT::LTI_DT(" << &new_A << ", " << &new_B << ", " << &new_C << ", " << &new_D << ")\n";
 #endif
     A = new_A;
     B = new_B;
@@ -23,9 +23,9 @@ SsDt::SsDt(Matrix &new_A, Matrix &new_B, Matrix &new_C, Matrix &new_D, Matrix &n
     X = new_X;
 }
 
-SsDt::~SsDt(){
+LTI_DT::~LTI_DT(){
 #ifdef LOG
-    std::cout << '[' << &A << ']' << "SsDt::!SsDt()\n";
+    std::cout << '[' << &A << ']' << "LTI_DT::!LTI_DT()\n";
 #endif
     delete &A;
     delete &B;
