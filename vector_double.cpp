@@ -76,7 +76,7 @@ RowVector::RowVector(const RowVector & other){
 
 double & RowVector::operator [] (const uint32_t i){
 #ifdef LOG
-    std::cout << '[' << &columns << ']' << "double & operator [] (" << i << ")\n";
+    std::cout << '[' << &columns << ']' << "double & RowVector::operator [] (" << i << ")\n";
 #endif
     // Return reference; otherwise, unable to assign
     return columns[i];
@@ -84,7 +84,7 @@ double & RowVector::operator [] (const uint32_t i){
 
 double RowVector::operator [] (const uint32_t i) const {
 #ifdef LOG
-    std::cout << '[' << &columns << ']' << "double operator [] (" << i << ") const\n";
+    std::cout << '[' << &columns << ']' << "double RowVector::operator [] (" << i << ") const\n";
 #endif
     // Return reference; otherwise, unable to assign
     return columns[i];
@@ -93,7 +93,7 @@ double RowVector::operator [] (const uint32_t i) const {
 
 const std::string RowVector::get_name(){
 #ifdef LOG
-    std::cout << '[' << &columns << ']' << "void show()\n";
+    std::cout << '[' << &columns << ']' << "const std::string RowVector::get_name()\n";
 #endif
     // Return constant; to prevent change
     return name;
@@ -102,7 +102,7 @@ const std::string RowVector::get_name(){
 
 RowVector RowVector::operator + (const RowVector & other){
 #ifdef LOG
-    std::cout << '[' << &columns << ']' << "RowVector operator + (" << & other << ")\n";
+    std::cout << '[' << &columns << ']' << "RowVector RowVector::operator + (" << & other << ")\n";
 #endif
     // Check size
     assert(columns.size() == other.columns.size());
@@ -122,7 +122,7 @@ RowVector RowVector::operator + (const RowVector & other){
 
 RowVector RowVector::operator * (const double a){
 #ifdef LOG
-    std::cout << '[' << &columns << ']' << "RowVector operator * (" << a << ")\n";
+    std::cout << '[' << &columns << ']' << "RowVector RowVector::operator * (" << a << ")\n";
 #endif
 
     // Make a new vector to return
@@ -141,7 +141,7 @@ RowVector RowVector::operator * (const double a){
 
 const double RowVector::operator * (const RowVector & other){
 #ifdef LOG
-    std::cout << '[' << &columns << ']' << "RowVector operator * (" << & other << ")\n";
+    std::cout << '[' << &columns << ']' << "const double RowVector::operator * (" << & other << ")\n";
 #endif
 
     // Check size
@@ -161,7 +161,7 @@ const double RowVector::operator * (const RowVector & other){
 
 void RowVector::show(){
 #ifdef LOG
-    std::cout << '[' << &columns << ']' << "void show()\n";
+    std::cout << '[' << &columns << ']' << "void RowVector::show()\n";
 #endif
     for (uint32_t i=0; columns.size()> i; ++i){
         std::cout << name << '[' << i << "] = " << columns[i] << '\n';
@@ -170,16 +170,25 @@ void RowVector::show(){
 
 
 void RowVector::resize(std::size_t new_size){
+#ifdef LOG
+    std::cout << '[' << &columns << ']' << "void RowVector::resize(" << new_size << ")\n";
+#endif
     columns.resize(new_size);
 }
 
 
 std::size_t RowVector::size() const noexcept{
+#ifdef LOG
+    std::cout << '[' << &columns << ']' << "std::size_t RowVector::size() const noexcept\n";
+#endif
     return columns.size();
 }
 
 
 RowVector & RowVector::operator += (const RowVector & other) {
+#ifdef LOG
+    std::cout << '[' << &columns << ']' << "RowVector & RowVector::operator += (" << & other << ")\n";
+#endif
     // https://stackoverflow.com/questions/4581961/c-how-to-overload-operator
     for (uint32_t i=0; size()>i; ++i){
         columns[i] += other[i];
@@ -189,13 +198,15 @@ RowVector & RowVector::operator += (const RowVector & other) {
 
 
 RowVector & RowVector::operator *= (const double a) {
+#ifdef LOG
+    std::cout << '[' << &columns << ']' << "RowVector & RowVector::operator *= (" << a << ")\n";
+#endif
     // https://stackoverflow.com/questions/4581961/c-how-to-overload-operator
     for (uint32_t i=0; size()>i; ++i){
         columns[i] *= a;
     }
     return *this;
 }
-
 
 // End vector_double.cpp
 // Build command : g++ -Wall -g -std=c++14 vector_double.cpp -fsyntax-only
