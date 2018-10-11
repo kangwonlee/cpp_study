@@ -27,6 +27,12 @@ int32_t main(int32_t argn, char *argv[]){
     identity.show();
     rotation.show();
 
+    std::cout << "Matrix sum(identity + rotation);\n";
+    Matrix sum(identity + rotation);
+    identity.show();
+    rotation.show();
+    sum.show();
+
 }
 
 // End cpp_matrix_double_practice.cpp
