@@ -200,7 +200,7 @@ Matrix Matrix::operator * (const Matrix & other){
     // Check size
     assert(rows[0].size() == other.rows.size());
 
-    Matrix temp(rows.size(), other[0].size());
+    Matrix temp(rows.size(), other[0].size(), name + '*' + other.name);
 
     // row loop
     for (uint32_t i = 0; rows.size() > i; ++i){
