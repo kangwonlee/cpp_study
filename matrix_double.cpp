@@ -280,5 +280,16 @@ Matrix Matrix::transpose(){
     return temp;
 }
 
+
+const size_t Matrix::get_height() const{
+    return rows.size();
+}
+
+
+const size_t Matrix::get_width() const{
+    return rows[0].size();
+}
+
+
 // End matrix_double.cpp
 // Build command : g++ -Wall -g -std=c++14 matrix_double.cpp -fsyntax-only
