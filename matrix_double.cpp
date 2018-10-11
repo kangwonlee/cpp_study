@@ -160,7 +160,8 @@ Matrix Matrix::operator + (const Matrix & other){
     std::cout << '[' << &rows << ']' << "Matrix Matrix::operator + ("<< & other <<")\n";
 #endif
     // Check size
-    assert(rows.size() == other.rows.size());
+    assert(this->get_height() == other.get_height());
+    assert(this->get_width() == other.get_width());
 
 #ifdef LOG
     std::cout << "Matrix temp(other);\n";
@@ -279,6 +280,17 @@ Matrix Matrix::transpose(){
 
     return temp;
 }
+
+
+const size_t Matrix::get_height() const{
+    return rows.size();
+}
+
+
+const size_t Matrix::get_width() const{
+    return rows[0].size();
+}
+
 
 // End matrix_double.cpp
 // Build command : g++ -Wall -g -std=c++14 matrix_double.cpp -fsyntax-only
