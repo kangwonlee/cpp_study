@@ -21,6 +21,9 @@ LTI_DT::LTI_DT(Matrix &new_A, Matrix &new_B, Matrix &new_C, Matrix &new_D, Matri
     C = new_C;
     D = new_D;
     X = new_X;
+
+    // is A matrix square?
+    assert(A.get_height() == A.get_width());
 }
 
 LTI_DT::~LTI_DT(){
