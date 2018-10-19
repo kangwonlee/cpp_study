@@ -29,6 +29,7 @@ int32_t main(const int32_t argn, const char * argv[]){
                 std::cout << "| " << std::hex << std::setw(2) << r
                           << " | " << std::setw(2) << g
                           << " | " << std::setw(2) << b
+                          << " | " << std::setw(8) << rgb_union.hex
                           << " |\n";
             }
         }
