@@ -1,3 +1,4 @@
+#include <bitset>
 #include <cstdint>
 #include <iomanip>
 #include <iostream>
@@ -28,10 +29,16 @@ int32_t main(const int32_t argn, const char * argv[]){
                 rgb_union.rgb_struct.green = g;
                 rgb_union.rgb_struct.blue = b;
 
-                std::cout << "| " << std::hex << std::setw(2) << r
-                          << " | " << std::setw(2) << g
-                          << " | " << std::setw(2) << b
-                          << " | " << std::setw(4) << rgb_union.hex
+                // https://stackoverflow.com/questions/7349689
+                std::bitset<5> b_r(r);
+                std::bitset<6> b_g(g);
+                std::bitset<6> b_b(b);
+                std::bitset<16> b_hex(rgb_union.hex);
+
+                std::cout << "| " << std::hex << std::setw(6) << b_r
+                          << " | " << std::setw(6) << b_g
+                          << " | " << std::setw(6) << b_b
+                          << " | " << std::setw(16) << b_hex
                           << " |\n";
             }
         }
