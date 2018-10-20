@@ -1,5 +1,6 @@
 #include <bitset>
 #include <cstdint>
+#include <cstdlib>
 #include <iomanip>
 #include <iostream>
 
@@ -20,28 +21,30 @@ union high_color_union_tag{
 
 int32_t main(const int32_t argn, const char * argv[]){
     union high_color_union_tag rgb_union;
+    const int32_t n = 10;
 
-    int32_t r = 0, g = 0, b = 0;
-    for (r = 0; 2*2*2*2*2> r; r+=3){
-        for (g = 0; 2*2*2*2*2*2> g; g+=3){
-            for (b = 0; 2*2*2*2*2> b; b+=3){
-                rgb_union.rgb_struct.red = r;
-                rgb_union.rgb_struct.green = g;
-                rgb_union.rgb_struct.blue = b;
+    int32_t r = 0, g = 0, b = 0, i = 0;
 
-                // https://stackoverflow.com/questions/7349689
-                std::bitset<5> b_r(r);
-                std::bitset<6> b_g(g);
-                std::bitset<6> b_b(b);
-                std::bitset<16> b_hex(rgb_union.hex);
+    for(i = 0; n > i; ++i){
+        r = rand() % (1 << 5);
+        g = rand() % (1 << 6);
+        b = rand() % (1 << 5);
 
-                std::cout << "| " << std::hex << std::setw(6) << b_r
-                          << " | " << std::setw(6) << b_g
-                          << " | " << std::setw(6) << b_b
-                          << " | " << std::setw(16) << b_hex
-                          << " |\n";
-            }
-        }
+        rgb_union.rgb_struct.red = r;
+        rgb_union.rgb_struct.green = g;
+        rgb_union.rgb_struct.blue = b;
+
+        // https://stackoverflow.com/questions/7349689
+        std::bitset<5> b_r(r);
+        std::bitset<6> b_g(g);
+        std::bitset<6> b_b(b);
+        std::bitset<16> b_hex(rgb_union.hex);
+
+        std::cout << "| " << std::hex << std::setw(6) << b_r
+                    << " | " << std::setw(6) << b_g
+                    << " | " << std::setw(6) << b_b
+                    << " | " << std::setw(16) << b_hex
+                    << " |\n";
     }
 
     std::cout << "sizeof(rgb_union.rgb_struct)" << sizeof(rgb_union.rgb_struct) << '\n';
