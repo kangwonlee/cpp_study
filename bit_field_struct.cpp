@@ -24,6 +24,9 @@ int32_t main(const int32_t argn, const char * argv[]){
     const int32_t n = 10;
 
     int32_t r = 0, g = 0, b = 0, i = 0;
+    
+    std::cout << "| `r` | `g` | `b` | `hex` |" << '\n';
+    std::cout << "|:---:|:---:|:---:|:-----:|" << '\n';
 
     for(i = 0; n > i; ++i){
         r = rand() % (1 << 5);
@@ -47,6 +50,6 @@ int32_t main(const int32_t argn, const char * argv[]){
                     << " |\n";
     }
 
-    std::cout << "sizeof(rgb_union.rgb_struct)" << sizeof(rgb_union.rgb_struct) << '\n';
+    // std::cout << "sizeof(rgb_union.rgb_struct)" << sizeof(rgb_union.rgb_struct) << '\n';
 
 }
