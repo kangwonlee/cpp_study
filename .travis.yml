@@ -115,14 +115,15 @@ install:
   - echo $CONDA_PYTHON
   # Useful for debugging any issues with conda
   - conda info -a
-  # Apply python module recipies
-  - if [[ "$TRAVIS_PYTHON_VERSION" == "3.6" ]]; then
-      conda env create -n test-environment python=$TRAVIS_PYTHON_VERSION -f ./tests/environment.3.6.yml;
-    elif [[ "$TRAVIS_PYTHON_VERSION" == "3.7" ]]; then
-      conda env create -n test-environment python=$TRAVIS_PYTHON_VERSION -f ./tests/environment.3.7.yml;
+  # See if test-environment already available
+  # As necessary, apply python module recipies
+  - if [[ ! -d $MINICONDA_PATH/envs/test-environment ]]; then
+      echo "create test-environment";
+      conda env create -n test-environment python=$CONDA_PYTHON -f ./tests/environment.${CONDA_PYTHON}.yml;
     else
-      conda env create -n test-environment python=$TRAVIS_PYTHON_VERSION -f ./tests/environment.nightly.yml;
-    fi
+      echo "update test-environment";
+      conda env update -n test-environment python=$CONDA_PYTHON -f ./tests/environment.${CONDA_PYTHON}.yml;
+    fi;
   - source activate test-environment
   - conda list
 
