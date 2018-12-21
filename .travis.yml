@@ -37,6 +37,17 @@ addons:
     packages:
       - g++-6
 
+before_install:
+  # Set conda path info
+  - if [[ "$TRAVIS_OS_NAME" != "windows" ]]; then
+      MINICONDA_PATH=$HOME/miniconda;
+      MINICONDA_SUB_PATH=$MINICONDA_PATH/bin;
+    elif [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
+      MINICONDA_PATH=/c/tools/miniconda3;
+      MINICONDA_SUB_PATH=$MINICONDA_PATH/Scripts;
+    fi;
+  - export PATH="$MINICONDA_PATH:$MINICONDA_SUB_PATH:$PATH";
+
 install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90;
