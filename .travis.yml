@@ -97,7 +97,7 @@ install:
       echo "still need conda";
       if [[ "$TRAVIS_OS_NAME" != "windows" ]]; then
         echo "install miniconda for posix";
-        bash $HOME/download/miniconda.sh -b -p $MINICONDA_PATH;
+        bash $HOME/download/miniconda.sh -u -b -p $MINICONDA_PATH;
       elif [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
         echo "install miniconda for windows";
         choco install miniconda3;
