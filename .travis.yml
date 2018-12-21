@@ -86,12 +86,27 @@ install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90;
     fi
-  # Install miniconda
-  - bash miniconda.sh -b -p $HOME/miniconda
-  # Add miniconda path
-  - export PATH="$HOME/miniconda/bin:$PATH"
-  # Forget all rememberd locations
+  # To help debugging
+  - echo $TRAVIS_OS_NAME
+  - echo $CONDA_PYTHON
+  # See of conda available
+  # If necessary, install miniconda
+  - if [[ -f `which conda` && "$CONDA_PYTHON"!="nightly" ]]; then
+      echo "conda already available";
+    else
+      echo "still need conda";
+      if [[ "$TRAVIS_OS_NAME" != "windows" ]]; then
+        echo "install miniconda for posix";
+        bash $HOME/download/miniconda.sh -b -p $MINICONDA_PATH;
+      elif [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
+        echo "install miniconda for windows";
+        choco install miniconda3;
+      fi
+    fi;
+  # Forget all remembered locations
   - hash -r
+  # Conda location
+  - which conda
   # Conda setup options
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
