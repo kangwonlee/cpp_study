@@ -54,7 +54,7 @@ install:
   - conda update -q conda
   # To help debugging
   - echo $TRAVIS_OS_NAME
-  - echo $TRAVIS_PYTHON_VERSION
+  - echo $CONDA_PYTHON
   # Useful for debugging any issues with conda
   - conda info -a
   # Apply python module recipies
