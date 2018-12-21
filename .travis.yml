@@ -1,8 +1,18 @@
-# ref : Francesco Mosconi, Travis + Anaconda + Jupyter, https://github.com/ghego/travis_anaconda_jupyter
+# references :
+#
+#       Francesco Mosconi, Travis + Anaconda + Jupyter, https://github.com/ghego/travis_anaconda_jupyter
 #       Anaconda Inc., Using conda with Travis CI, Conda documentation, https://conda.io/docs/user-guide/tasks/use-conda-with-travis-ci.html
 #       .travis.yml for gcc-5 compiler support on Travis CI , https://gist.github.com/cotsog/3ce84675af0d74438d91
 #       CodeChat, .travis.yml - Travis CI configuration, https://pythonhosted.org/CodeChat/.travis.yml.html
 #       Travis CI, Python example (unsupported languages), https://docs.travis-ci.com/user/multi-os/#python-example-unsupported-languages
+#       Travis CI, Testing Your Project on Multiple Operating Systems, https://docs.travis-ci.com/user/multi-os/
+#       Kalderimis & Nagy, Windows is Available (Early Release), Oct 10 2018, https://blog.travis-ci.com/2018-10-11-windows-early-release
+#       Miniconda (Python 3) 4.5.11, Chocolatey Gallery, https://chocolatey.org/packages/miniconda3
+#       The Windows Build Environment, https://docs.travis-ci.com/user/reference/windows/
+#       QCGrids : a numerical integration library for quantum chemistry, https://github.com/theochem/qcgrids/
+#       Caching Dependencies and Directories, https://docs.travis-ci.com/user/caching/
+#       Caching is now enabled in Windows with rewritten caching utility, https://changelog.travis-ci.com/caching-is-now-enabled-in-windows-with-rewritten-caching-utility-76161
+#       To which folder does Chocolatey download the packages before installing them?, https://stackoverflow.com/questions/38421395/to-which-folder-does-chocolatey-download-the-packages-before-installing-them
 
 language: shell
 
